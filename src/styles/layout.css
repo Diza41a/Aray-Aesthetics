@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0.5px solid green;
+}
+
+button {
+  cursor: pointer;
+}
+
+.App {
+  min-height: 200vh;
+  position: relative;
+}
+.App header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1.5vh 2vw;
+  font-size: 22.4px;
+}
+.App header .tools {
+  margin-right: 2vw;
+  display: flex;
+  align-items: center;
+}
+.App header .tools div, .App header .tools i {
+  cursor: pointer;
+}
+.App header .tools .theme-selector-toggle {
+  margin-right: 3vw;
+}
+.App header .tools .theme-selector-toggle .arrow {
+  font-size: 16px;
+}
+.App header .tools .burger {
+  font-size: 28px;
+}
+.App header nav {
+  display: flex;
+  justify-content: space-around;
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 20px;
+  padding: 1vh 2vw;
+}
+.App header nav a {
+  text-decoration: none;
+}
+.App header nav.hidden {
+  display: none;
+}
+.App .mobile-nav-wrap {
+  height: 4.5vh;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+.App .direct-links {
+  max-width: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+.App .direct-links i {
+  cursor: pointer;
+  margin: 0 5.6px;
+  font-size: 24px;
+}
+.App .page-progress-wrap .progressBar-wrap {
+  width: 50vw;
+  height: 6px;
+  background-color: gray;
+  position: fixed;
+  bottom: 5.75vh;
+  left: 3vw;
+}
+.App .page-progress-wrap .progressBar-wrap .progressBar {
+  width: 0;
+  height: 6px;
+  background-color: blue;
+}
+.App .page-progress-wrap .page-progress-indicators {
+  height: 4.5vh;
+  width: 50vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 3vw;
+  font-size: 21.6px;
+}
+.App .page-progress-wrap .page-progress-indicators a {
+  text-decoration: none;
+}
+.App .landing-wrap {
+  height: 95.5vh;
+}
+.App .landing-wrap .landing-intro-wrap {
+  width: 85vw;
+  margin: auto;
+  margin-top: 15vh;
+}
+.App .landing-wrap .landing-intro-wrap .landing-intro-body {
+  margin: 4vh 5vw;
+}
+.App .landing-wrap .landing-intro-wrap .landing-intro-body h2 {
+  margin: 0 3vw;
+  text-align: center;
+}
+.App .landing-wrap .landing-intro-wrap .landing-intro-body ul {
+  width: 70%;
+  margin: auto;
+  margin-top: 3vh;
+  direction: rtl;
+  text-align: left;
+  font-size: 22.4px;
+}
+.App .landing-wrap .landing-intro-wrap .landing-intro-body .address-bar {
+  font-style: italic;
+  margin-top: 7.5vh;
+}
+.App .landing-wrap #leave-landing-button {
+  width: 28px;
+  margin-left: calc(50vw - 28px);
+  margin-top: 10vh;
+  font-size: 26.4px;
+}
+
+/*# sourceMappingURL=layout.css.map */

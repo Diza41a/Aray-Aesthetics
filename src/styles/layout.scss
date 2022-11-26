@@ -1,0 +1,172 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0.5px solid green;
+}
+
+button {
+  cursor: pointer;
+}
+
+@mixin mobileView($fontSize) {
+  $footer: 4.5vh;
+
+  .App {
+    min-height: 200vh;
+    position: relative;
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 1.5vh 2vw;
+      font-size: $fontSize * 1.4;
+
+      .tools {
+        margin-right: 2vw;
+        display: flex;
+        align-items: center;
+
+        div, i {
+          cursor: pointer;
+        }
+
+        .theme-selector-toggle {
+          margin-right: 3vw;
+
+          .arrow {
+            font-size: $fontSize;
+          }
+        }
+
+        .burger {
+          font-size: $fontSize * 1.75;
+        }
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-around;
+        flex-basis: 100%;
+        text-align: center;
+        font-size: $fontSize * 1.25;
+        padding: 1vh 2vw;
+
+        a {
+          text-decoration: none;
+        }
+
+        &.hidden {
+          display: none;
+        }
+      }
+    }
+
+    .mobile-nav-wrap {
+      height: $footer;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+    }
+
+    .direct-links {
+      max-width: 20vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: $fontSize * 0.5 $fontSize;
+
+      position: fixed;
+      bottom: 0;
+      right: 0;
+
+      i {
+        cursor: pointer;
+        margin: 0 $fontSize * 0.35;
+        font-size: $fontSize * 1.5;
+      }
+    }
+
+    .page-progress-wrap {
+      .progressBar-wrap {
+        width: 50vw;
+        height: 6px;
+        background-color: gray;
+        position: fixed;
+        bottom: 5.75vh;
+        left: 3vw;
+
+        .progressBar {
+          width: 0;
+          height: 6px;
+          background-color: blue;
+        }
+      }
+
+      .page-progress-indicators {
+        height: 4.5vh;
+        width: 50vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 3vw;
+
+        font-size: $fontSize * 1.35;
+
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+
+    // landing
+    .landing-wrap {
+      height: 100vh - $footer;
+
+      .landing-intro-wrap {
+        width: 85vw;
+        margin: auto;
+        margin-top: 15vh;
+
+        .landing-intro-body {
+          margin: 4vh 5vw;
+
+          h2 {
+            margin: 0 3vw;
+            text-align: center;
+          }
+
+          ul {
+            width: 70%;
+            margin: auto;
+            margin-top: 3vh;
+            direction: rtl;
+            text-align: left;
+            font-size: $fontSize * 1.4;
+          }
+
+          .address-bar {
+            font-style: italic;
+            margin-top: 7.5vh;
+          }
+        }
+      }
+
+      #leave-landing-button {
+        width: $fontSize * 1.75;
+        margin-left: calc(50vw - $fontSize * 1.75);
+        margin-top: 10vh;
+        font-size: $fontSize * 1.65;
+      }
+    }
+  }
+}
+
+@include mobileView(16px);
