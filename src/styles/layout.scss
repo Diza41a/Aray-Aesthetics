@@ -9,6 +9,10 @@ button {
   cursor: pointer;
 }
 
+.hidden-dev {
+  display: none;
+}
+
 @mixin mobileView($fontSize) {
   $footer: 4.5vh;
 
@@ -126,6 +130,14 @@ button {
       }
     }
 
+    // section title
+    .section-title {
+      text-transform: uppercase;
+      text-align: center;
+      padding: 3vh 0;
+      font-size: $fontSize * 2.5;
+    }
+
     // landing
     .landing-wrap {
       height: 100vh - $footer;
@@ -154,7 +166,8 @@ button {
 
           .address-bar {
             font-style: italic;
-            margin-top: 7.5vh;
+
+            margin: 7.5vh auto 2.5vh auto;
           }
         }
       }
@@ -164,6 +177,29 @@ button {
         margin-left: calc(50vw - $fontSize * 1.75);
         margin-top: 10vh;
         font-size: $fontSize * 1.65;
+      }
+    }
+    //about me
+    .about-me-wrap {
+      .about-me-description {
+        width: 85%;
+        margin-top: 4vh;
+        margin-right: 5vw;
+        margin-left: auto;
+        padding-top: 5vh;
+
+        text-align: right;
+
+        .title {
+          font-size: $fontSize * 1.5;
+          margin-bottom: 1.5vh;
+        }
+
+        .bio {
+          font-size: $fontSize * 1.35;
+          // width: 90vw;
+          // margin-left: 1vw;
+        }
       }
     }
   }

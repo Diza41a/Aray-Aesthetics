@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Landing() {
   return (
-    <div className="landing-wrap">
+    <div className="landing-wrap hidden-dev">
       <div className="landing-intro-wrap">
         <div className="landing-intro-body">
           <h2>Lorem Ipsum! <br /> Eat a blueberry croissant and check out the next page!</h2>

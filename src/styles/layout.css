@@ -8,6 +8,10 @@ button {
   cursor: pointer;
 }
 
+.hidden-dev {
+  display: none;
+}
+
 .App {
   min-height: 200vh;
   position: relative;
@@ -102,6 +106,12 @@ button {
 .App .page-progress-wrap .page-progress-indicators a {
   text-decoration: none;
 }
+.App .section-title {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 3vh 0;
+  font-size: 40px;
+}
 .App .landing-wrap {
   height: 95.5vh;
 }
@@ -127,13 +137,28 @@ button {
 }
 .App .landing-wrap .landing-intro-wrap .landing-intro-body .address-bar {
   font-style: italic;
-  margin-top: 7.5vh;
+  margin: 7.5vh auto 2.5vh auto;
 }
 .App .landing-wrap #leave-landing-button {
   width: 28px;
   margin-left: calc(50vw - 28px);
   margin-top: 10vh;
   font-size: 26.4px;
+}
+.App .about-me-wrap .about-me-description {
+  width: 85%;
+  margin-top: 4vh;
+  margin-right: 5vw;
+  margin-left: auto;
+  padding-top: 5vh;
+  text-align: right;
+}
+.App .about-me-wrap .about-me-description .title {
+  font-size: 24px;
+  margin-bottom: 1.5vh;
+}
+.App .about-me-wrap .about-me-description .bio {
+  font-size: 21.6px;
 }
 
 /*# sourceMappingURL=layout.css.map */

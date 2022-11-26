@@ -3,14 +3,16 @@ import './styles/themes.css';
 
 // Component imports
 import Header from './components/Header.jsx';
-import Landing from './components/Landing.jsx';
 import SliderLinks from './components/SliderLinks.jsx';
+import Landing from './components/Landing.jsx';
+import AboutMe from './components/AboutMe.jsx';
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Landing />
+      <AboutMe />
       <SliderLinks />
     </div>
   );
