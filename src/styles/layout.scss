@@ -181,12 +181,15 @@ button {
     }
     //about me
     .about-me-wrap {
+      height: 100vh - $footer;
+
       .about-me-description {
         width: 85%;
         margin-top: 4vh;
         margin-right: 5vw;
         margin-left: auto;
-        padding-top: 5vh;
+        padding: 5vh 2vw 7.5vh 2vw;
+        border-color: red;
 
         text-align: right;
 
@@ -197,8 +200,33 @@ button {
 
         .bio {
           font-size: $fontSize * 1.35;
-          // width: 90vw;
-          // margin-left: 1vw;
+          width: 105%;
+          position: relative;
+          right: 5%;
+        }
+      }
+
+      .about-me-pics {
+        width: 85%;
+        margin: auto;
+        margin-top: 5vh;
+        display: flex;
+        flex-direction: column;
+
+        img {
+          width: 50vw;
+          height: auto;
+
+          &:first-child {
+            align-self: flex-end;
+            transform: rotate(6.5deg);
+          }
+
+          &:nth-child(2) {
+            transform: rotate(-5.5deg);
+            position: relative;
+            bottom: 5vh;
+          }
         }
       }
     }
