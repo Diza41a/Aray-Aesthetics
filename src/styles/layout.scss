@@ -24,7 +24,7 @@ button {
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      position: sticky;
+      // position: sticky;
       top: 0;
       z-index: 1000;
       padding: 1.5vh 2vw;
@@ -146,6 +146,10 @@ button {
         margin: auto;
         margin-top: 15vh;
 
+        .photo-wrap {
+          display: none;
+        }
+
         .landing-intro-body {
           margin: 4vh 5vw;
 
@@ -164,9 +168,13 @@ button {
           }
 
           .address-bar {
+            text-align: center;
             font-style: italic;
-
             margin: 7.5vh auto 2.5vh auto;
+
+            a {
+              text-decoration: none;
+            }
           }
         }
       }
@@ -178,9 +186,10 @@ button {
         font-size: $fontSize * 1.65;
       }
     }
+
     //about me
     .about-me-wrap {
-      margin: 10vh auto;
+      margin: 10vh auto!important;
       height: 100vh - $footer;
 
       .about-me-description {
@@ -208,6 +217,7 @@ button {
 
       .about-me-pics {
         width: 85%;
+        max-width: 700px;
         margin: auto;
         margin-top: 5vh;
         display: flex;
@@ -215,6 +225,7 @@ button {
 
         img {
           width: 50vw;
+          max-width: 350px;
           height: auto;
 
           &:first-child {
@@ -397,6 +408,9 @@ button {
               font-size: $fontSize * 1.25;
               text-align: right;
             }
+            .input-wrap {
+              width: 100%;
+            }
           }
 
           &.row-method {
@@ -475,4 +489,380 @@ button {
   }
 }
 
+@mixin mediumView($fontSize) {
+  header {
+    .tools {
+      margin-right: 0!important;
+      margin-left: auto;
+
+      .theme-selector-toggle {
+        margin-right: 0!important;
+        font-size: $fontSize * 1.1!important;
+
+        .arrow {
+          font-size: $fontSize * 0.5!important;
+        }
+      }
+
+      .burger {
+        display: none;
+      }
+    }
+
+    nav {
+      flex-basis: initial!important;
+
+      a {
+        margin: 0 $fontSize * 0.45;
+        font-size: $fontSize * 1.05!important;
+      }
+
+      &.hidden {
+        display: initial!important;
+      }
+    }
+  }
+
+  .mobile-nav-wrap {
+    display: none;
+  }
+
+  .direct-links {
+    max-width: 5vw!important;
+    flex-direction: column;
+    padding: $fontSize * 0.35 $fontSize * 0.5!important;
+
+    bottom: initial!important;
+    right: initial!important;
+    left: 0;
+    top: 25vh;
+
+    i {
+      margin: $fontSize * 0.25 0!important;
+      font-size: $fontSize * 1.25!important;
+
+      &.fa-instagram {
+        font-size: $fontSize * 1.4!important;
+      }
+    }
+  }
+
+  .page-progress-wrap {
+    .progressBar-wrap {
+      width: 20vh!important;
+      transform: rotate(90deg);
+      bottom: initial!important;
+      left: initial!important;
+      right: calc(1vw - 10vh);
+      top: 30vh;
+    }
+
+    .page-progress-indicators {
+      height: 20vh!important;
+      width: initial!important;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      bottom: initial!important;
+      left: initial!important;
+      right: 2vw;
+      top: 20.3vh;
+
+      font-size: $fontSize * 1.05!important;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  // section title
+  .section-title {
+    font-size: $fontSize * 2.25!important;
+  }
+
+  // landing
+  .landing-wrap {
+    .landing-intro-wrap {
+      .landing-intro-body {
+
+        h2 {
+          width: 75%;
+          margin: auto!important;
+        }
+
+        ul {
+          width: 40%!important;
+          text-align: center!important;
+          font-size: $fontSize * 1.25!important;
+        }
+
+        .address-bar {
+          margin: 0!important;
+          position: fixed;
+          z-index: 1000;
+          bottom: 0.5vh;
+          left: 1vw;
+        }
+      }
+    }
+
+    #leave-landing-button {
+      width: $fontSize * 1.85!important;
+      margin-left: calc(50vw - $fontSize * 1.85)!important;
+      margin-top: 15vh!important;
+      font-size: $fontSize * 1.75!important;
+    }
+  }
+
+  //about me
+  .about-me-wrap {
+    // margin-top: 0!important;
+    // height: 100vh - $footer;
+
+    .about-me-pics {
+      width: 75%!important;
+
+      img {
+        width: 40vw!important;
+      }
+    }
+  }
+
+  // services
+  .services-wrap {
+    margin-top: 0!important;
+
+    .services-gallery-wrap {
+      .service-wrap {
+        height: 80vh!important;
+        width: 42.5vw!important;
+        max-width: 500px;
+      }
+    }
+
+    .services-reach-out {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5vh 10vw!important;
+
+      * {
+        margin: 0 2vw;
+      }
+
+      .contact-btn {
+        flex-basis: 50%!important;
+        max-width: 250px;
+        border-radius: $fontSize * 0.75!important;
+
+        i {
+          margin: 0;
+        }
+
+      }
+    }
+  }
+
+  // gallery
+  .gallery-wrap {
+    margin-bottom: 20vh!important;
+
+    .gallery-gate {
+      max-width: 775px;
+      margin: auto;
+
+      .row-img {
+
+        img {
+          max-width: 300px;
+        }
+
+        &:first-child {
+          img {
+            &:first-child {
+              transform: rotate(-5deg);
+            }
+            &:nth-child(2) {
+              transform: rotate(7.5deg);
+            }
+          }
+        }
+
+        &:nth-child(3) {
+          img {
+            &:first-child {
+              transform: rotate(5deg);
+            }
+            &:nth-child(2) {
+              transform: rotate(-7.5deg);
+            }
+          }
+        }
+      }
+
+      .row-btn {
+        text-align: center;
+
+        button {
+          font-size: $fontSize * 1.5;
+          padding: $fontSize * 0.75 $fontSize * 1.75;
+
+          position: relative;
+          z-index: 999;
+        }
+      }
+    }
+  }
+
+  // contact
+  .contact-wrap {
+    width: 85vw!important;
+    padding: 5vh 0;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center!important;
+
+    form {
+      width: 110%;
+      padding: 1vh 2vw!important;
+      position: relative;
+      left: -2vw;
+
+      .row {
+        .input-wrap {
+          label {
+            font-size: $fontSize * 1.35!important;
+          }
+
+          input, textarea {
+            font-size: $fontSize * 1.35!important;
+          }
+        }
+
+        &.row-name {
+          p {
+            max-width: 150px;
+            font-size: $fontSize * 1.4!important;
+          }
+        }
+
+        &.row-method {
+          p {
+            font-size: $fontSize * 1.45!important;
+          }
+        }
+      }
+    }
+
+    .contact-direct {
+      margin-top: 5vh;
+    }
+  }
+
+}
+
+@mixin mainView($fontSize) {
+  // landing
+  .landing-wrap {
+    .landing-intro-wrap {
+      // display: flex;
+      position: relative;
+
+      // max-height: 40vh;
+
+      .landing-intro-body {
+        width: 45vw!important;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        h2 {
+          width: 90%!important;
+          font-size: $fontSize * 2!important;
+          margin: 0 1vw!important;
+          text-align: right!important;
+        }
+
+        ul {
+          width: 40%;
+          margin: 5% 10% 15% 10%!important;
+          text-align: right!important;
+          font-size: $fontSize * 1.35!important;
+        }
+
+        .address-bar {
+          text-align: center;
+          font-style: italic;
+          margin: 7.5vh auto 2.5vh auto;
+
+          a {
+            text-decoration: none;
+          }
+        }
+      }
+
+      .photo-wrap {
+        position: absolute;
+        right: 8vw;
+        bottom: 0;
+        display: initial!important;
+
+        img {
+          width: 30vw;
+        }
+      }
+    }
+  }
+
+  //about me
+  .about-me-wrap {
+    padding: 3vh 2vw!important;
+    margin-top: 0!important;
+    height: initial!important;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+
+    .about-me-description {
+      width: 80%!important;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .title {
+        font-size: $fontSize * 1.8!important;
+        width: 110%;
+        position: relative;
+        right: 10%;
+      }
+
+      .bio {
+        width: 120%!important;
+        position: relative;
+        right: 20%!important;
+      }
+    }
+
+    .about-me-pics {
+      width: 100%!important;
+
+      img {
+        margin: 1.5vh 0;
+        width: 23.5vw!important;
+      }
+    }
+  }
+}
+
 @include mobileView(16px);
+
+@media (min-width: 780px) {
+  @include mediumView(16px);
+}
+
+@media (min-width: 1000px) {
+  @include mainView(16px);
+}

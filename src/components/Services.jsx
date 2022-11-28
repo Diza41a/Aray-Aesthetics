@@ -1,9 +1,11 @@
 import React from 'react';
+import { useScrollContainer } from 'react-indiana-drag-scroll';
 
 // Data imports
 const servicesJSON = require('../data/services.json');
 
 export default function Services() {
+  const scrollContainer = useScrollContainer();
 
   const renderServices = () => servicesJSON.map((service, i) => {
     return (
@@ -20,7 +22,7 @@ export default function Services() {
     <>
       <h2 className="section-title" id="services">Services</h2>
       <div className="services-wrap">
-        <div className="services-gallery-wrap">
+        <div className="services-gallery-wrap" ref={scrollContainer.ref}>
           {renderServices()}
         </div>
         <div className="services-reach-out">

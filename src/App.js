@@ -10,9 +10,14 @@ import Services from './components/Services.jsx';
 import Gallery from './components/Gallery.jsx';
 import Contact from './components/Contact.jsx';
 
+// Misc
+import AnimatedCursor from "react-animated-cursor"
+
 function App() {
   return (
     <div className="App">
+      <AnimatedCursor />
+
       <Header />
 
       <Landing/>
