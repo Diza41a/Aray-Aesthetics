@@ -1,7 +1,10 @@
 * {
   margin: 0;
   padding: 0;
-  border: 0.5px solid green;
+}
+
+a {
+  text-decoration: none;
 }
 
 button {
@@ -160,7 +163,6 @@ button {
   margin-right: 5vw;
   margin-left: auto;
   padding: 5vh 2vw 7.5vh 2vw;
-  border-color: red;
   text-align: right;
 }
 .App .about-me-wrap .about-me-description .title {
@@ -216,7 +218,6 @@ button {
   width: 80%;
 }
 .App .services-wrap .services-gallery-wrap .service-wrap .title-wrap .number {
-  border: none;
   font-size: 32px;
   text-align: right;
   position: relative;

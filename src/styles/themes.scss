@@ -1,0 +1,40 @@
+@font-face {
+  font-family: Nickainley;
+  src: url(./fonts//Nickainley-Normal.otf);
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(./fonts/Montserrat.ttf);
+}
+
+
+
+@mixin theme(/* fonts */ $logoFont, $mainFont,
+/* colors */ $mainBack, $mainFontColor) {
+  header {
+    background-color: $mainBack;
+    color: $mainFontColor;
+
+    .logo {
+      font-family: $logoFont;
+      a {
+        color: $mainFontColor;
+      }
+    }
+
+    nav {
+      a {
+        font-family: $mainFont;
+        color: $mainFontColor;
+      }
+    }
+  }
+}
+
+.App {
+  &.main-theme {
+
+    @include theme(Nickainley, Montserrat, /* colors */ #323232ae, #fff);
+  }
+}
