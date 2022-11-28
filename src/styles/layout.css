@@ -13,7 +13,6 @@ button {
 }
 
 .App {
-  min-height: 200vh;
   position: relative;
 }
 .App header {
@@ -109,7 +108,7 @@ button {
 .App .section-title {
   text-transform: uppercase;
   text-align: center;
-  padding: 3vh 0;
+  padding: 2vh 0;
   font-size: 40px;
 }
 .App .landing-wrap {
@@ -146,6 +145,7 @@ button {
   font-size: 26.4px;
 }
 .App .about-me-wrap {
+  margin: 10vh auto;
   height: 95.5vh;
 }
 .App .about-me-wrap .about-me-description {
@@ -186,6 +186,190 @@ button {
   transform: rotate(-5.5deg);
   position: relative;
   bottom: 5vh;
+}
+.App .services-wrap {
+  margin: 10vh auto;
+}
+.App .services-wrap .services-gallery-wrap {
+  display: flex;
+  overflow-x: scroll;
+}
+.App .services-wrap .services-gallery-wrap .service-wrap {
+  flex-shrink: 0;
+  height: 71.5vh;
+  width: 72.5vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-bottom: 8.5vh;
+  background-size: cover;
+}
+.App .services-wrap .services-gallery-wrap .service-wrap .title-wrap {
+  width: 80%;
+}
+.App .services-wrap .services-gallery-wrap .service-wrap .title-wrap .number {
+  border: none;
+  font-size: 32px;
+  text-align: right;
+  position: relative;
+  top: 21.6px;
+}
+.App .services-wrap .services-gallery-wrap .service-wrap .title-wrap .title {
+  text-transform: capitalize;
+  font-size: 24px;
+  padding: 12px 0;
+  padding-right: 24px;
+  text-align: right;
+}
+.App .services-wrap .services-gallery-wrap .service-wrap:nth-child(2n) {
+  background-color: red;
+}
+.App .services-wrap .services-gallery-wrap .service-wrap:nth-child(2n-1) {
+  background-color: yellow;
+}
+.App .services-wrap .services-reach-out {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh 2vw;
+}
+.App .services-wrap .services-reach-out p {
+  font-size: 18.4px;
+  text-align: center;
+}
+.App .services-wrap .services-reach-out .contact-btn {
+  flex-basis: 60%;
+  font-size: 17.6px;
+  border-radius: 7.2px;
+  padding-top: 5.6px;
+  padding-bottom: 5.6px;
+}
+.App .services-wrap .services-reach-out .contact-btn .arrow {
+  font-size: 12px;
+}
+.App .gallery-wrap {
+  width: 90vw;
+  height: 50vh;
+  margin: 10vh auto;
+}
+.App .gallery-wrap .gallery-gate {
+  position: relative;
+  bottom: 5vw;
+  display: flex;
+  flex-direction: column;
+}
+.App .gallery-wrap .gallery-gate .row-img {
+  display: flex;
+  justify-content: space-between;
+}
+.App .gallery-wrap .gallery-gate .row-img img {
+  width: 35vw;
+}
+.App .gallery-wrap .gallery-gate .row-img:first-child img:first-child {
+  transform: rotate(-5deg);
+}
+.App .gallery-wrap .gallery-gate .row-img:first-child img:nth-child(2) {
+  transform: rotate(7.5deg);
+}
+.App .gallery-wrap .gallery-gate .row-img:nth-child(3) img:first-child {
+  transform: rotate(5deg);
+}
+.App .gallery-wrap .gallery-gate .row-img:nth-child(3) img:nth-child(2) {
+  transform: rotate(-7.5deg);
+}
+.App .gallery-wrap .gallery-gate .row-btn {
+  text-align: center;
+}
+.App .gallery-wrap .gallery-gate .row-btn button {
+  font-size: 24px;
+  padding: 12px 28px;
+  position: relative;
+  z-index: 999;
+}
+.App .contact-wrap {
+  margin: 10vh auto;
+}
+.App .contact-wrap form {
+  padding: 16px 4px;
+}
+.App .contact-wrap form .row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 12px 0;
+}
+.App .contact-wrap form .row .input-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.App .contact-wrap form .row .input-wrap label {
+  font-size: 20px;
+  margin-left: 12px;
+}
+.App .contact-wrap form .row .input-wrap input, .App .contact-wrap form .row .input-wrap textarea {
+  font-size: 20px;
+  padding: 7.2px 5%;
+}
+.App .contact-wrap form .row.row-name p {
+  margin: 0 8px;
+  font-size: 20px;
+  text-align: right;
+}
+.App .contact-wrap form .row.row-method .input-wrap input {
+  width: 90%;
+}
+.App .contact-wrap form .row.row-method p {
+  font-size: 21.6px;
+  margin: 0 20px;
+}
+.App .contact-wrap form .row.row-inquiry {
+  width: 100%;
+}
+.App .contact-wrap form .row.row-inquiry .textarea-wrap {
+  width: 100%;
+}
+.App .contact-wrap form .row.row-inquiry .textarea-wrap textarea {
+  height: 80px;
+  resize: none;
+}
+.App .contact-wrap form .row.row-submit {
+  justify-content: flex-end;
+}
+.App .contact-wrap form .row.row-submit button {
+  font-size: 20px;
+  width: 160px;
+  padding: 5.6px 0;
+  border-radius: 16px;
+}
+.App .contact-wrap .contact-direct {
+  padding: 16px 20px;
+}
+.App .contact-wrap .contact-direct .method {
+  display: flex;
+  align-items: center;
+  margin: 16px 0;
+}
+.App .contact-wrap .contact-direct .method i {
+  font-size: 48px;
+}
+.App .contact-wrap .contact-direct .method a {
+  text-decoration: none;
+  margin-left: 12px;
+  font-size: 20px;
+}
+.App .contact-wrap .contact-direct .links {
+  width: 90%;
+  margin: auto;
+  margin-top: 24px;
+  padding: 12px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 32px;
+}
+.App .contact-wrap .contact-direct .links i {
+  font-size: 44px;
+  margin: 0 8px;
 }
 
 /*# sourceMappingURL=layout.css.map */

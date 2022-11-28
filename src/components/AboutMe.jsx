@@ -3,8 +3,8 @@ import React from 'react';
 export default function AboutMe() {
   return (
     <>
-      <h2 className="section-title hidden-dev">About Me</h2>
-      <div className="about-me-wrap hidden-dev">
+      <h2 className="section-title" id="about-me">About Me</h2>
+      <div className="about-me-wrap">
         <div className="about-me-description">
           <h4 className="title">I'm a blueberry croissant</h4>
           <p className="bio">

@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <header>
       <div className="logo">
-        <span>Aray Aesthetics</span>
+        <a href="#top">Aray Aesthetics</a>
       </div>
       <div className="tools">
         <div className="theme-selector-toggle">
@@ -26,10 +26,10 @@ export default function Header() {
         <i className="fa-solid fa-bars burger" onClick={toggleNav} />
       </div>
       <nav ref={navRef} className="hidden">
-        <a href="#">About me</a>
-        <a href="#">Services</a>
-        <a href="#">Works</a>
-        <a href="#">Contact</a>
+        <a href="#about-me">About me</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Works</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
   );
