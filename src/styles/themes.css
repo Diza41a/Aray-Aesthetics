@@ -6,9 +6,21 @@
   font-family: Montserrat;
   src: url(./fonts/Montserrat.ttf);
 }
+@font-face {
+  font-family: Lora;
+  src: url(./fonts/Lora.ttf);
+}
+#root {
+  background-image: url(../../public/assets/images/mockBackground.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .App.main-theme header {
   background-color: rgba(50, 50, 50, 0.6823529412);
   color: #fff;
+  border-bottom: 2px solid white;
+  box-shadow: 0 13px 10px -10px rgb(249, 104, 239);
 }
 .App.main-theme header .logo {
   font-family: Nickainley;
@@ -19,6 +31,54 @@
 .App.main-theme header nav a {
   font-family: Montserrat;
   color: #fff;
+}
+.App.main-theme .landing-wrap .landing-intro-wrap {
+  background-color: rgba(50, 50, 50, 0.6823529412);
+  border-bottom: 2px solid #fff;
+  box-shadow: 0 13px 10px -10px rgb(249, 104, 239);
+}
+.App.main-theme .landing-wrap .landing-intro-wrap .landing-intro-body {
+  background-color: rgba(50, 50, 50, 0.6823529412);
+  border: 0.75px dashed white;
+  color: #fff;
+}
+.App.main-theme .landing-wrap .landing-intro-wrap .landing-intro-body h2 {
+  font-family: Lora;
+  color: #fff;
+  text-shadow: -1px -1px 10px rgb(249, 104, 239);
+}
+.App.main-theme .landing-wrap .landing-intro-wrap .landing-intro-body ul {
+  font-family: Montserrat;
+}
+.App.main-theme .landing-wrap .landing-intro-wrap .landing-intro-body .address-bar a {
+  font-family: Montserrat;
+  color: #fff;
+}
+.App.main-theme .landing-wrap #leave-landing-button {
+  background: none;
+  border: none;
+  outline: none;
+}
+.App.main-theme .landing-wrap #leave-landing-button i {
+  color: #fff;
+}
+.App.main-theme .direct-links {
+  background-color: rgba(50, 50, 50, 0.6823529412);
+}
+.App.main-theme .direct-links i {
+  color: #fff;
+}
+.App.main-theme .mobile-nav-wrap {
+  background-color: rgba(50, 50, 50, 0.6823529412);
+}
+.App.main-theme .page-progress-wrap .page-progress-indicators a {
+  color: #fff;
+}
+.App.main-theme .page-progress-wrap .progressBar-wrap {
+  background-color: rgba(50, 50, 50, 0.6823529412);
+}
+.App.main-theme .page-progress-wrap .progressBar-wrap .progressBar {
+  background-color: white;
 }
 
 /*# sourceMappingURL=themes.css.map */

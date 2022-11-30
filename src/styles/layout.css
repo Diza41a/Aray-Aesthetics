@@ -83,7 +83,6 @@ button {
 .App .page-progress-wrap .progressBar-wrap {
   width: 50vw;
   height: 6px;
-  background-color: gray;
   position: fixed;
   bottom: 5.75vh;
   left: 3vw;
@@ -91,7 +90,6 @@ button {
 .App .page-progress-wrap .progressBar-wrap .progressBar {
   width: 0;
   height: 6px;
-  background-color: blue;
 }
 .App .page-progress-wrap .page-progress-indicators {
   height: 4.5vh;
@@ -114,6 +112,7 @@ button {
   font-size: 40px;
 }
 .App .landing-wrap {
+  margin-top: 22.5vh;
   height: 95.5vh;
 }
 .App .landing-wrap .landing-intro-wrap {
@@ -579,6 +578,10 @@ button {
   }
 }
 @media (min-width: 1000px) {
+  header .logo a {
+    font-size: 28px;
+  }
+
   .landing-wrap .landing-intro-wrap {
     position: relative;
   }
@@ -609,6 +612,7 @@ button {
     text-decoration: none;
   }
   .landing-wrap .landing-intro-wrap .photo-wrap {
+    transform: scaleX(-1);
     position: absolute;
     right: 8vw;
     bottom: 0;

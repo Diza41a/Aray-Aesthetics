@@ -2,6 +2,7 @@
 * {
   margin: 0;
   padding: 0;
+  // border: 1px solid transparent;
 }
 
 a {
@@ -102,7 +103,6 @@ button {
       .progressBar-wrap {
         width: 50vw;
         height: 6px;
-        background-color: gray;
         position: fixed;
         bottom: 5.75vh;
         left: 3vw;
@@ -110,7 +110,6 @@ button {
         .progressBar {
           width: 0;
           height: 6px;
-          background-color: blue;
         }
       }
 
@@ -142,6 +141,7 @@ button {
 
     // landing
     .landing-wrap {
+      margin-top: 22.5vh;
       height: 100vh - $footer;
 
       .landing-intro-wrap {
@@ -765,6 +765,14 @@ button {
 }
 
 @mixin mainView($fontSize) {
+  header {
+    .logo {
+      a {
+        font-size: $fontSize * 1.75;
+      }
+    }
+  }
+
   // landing
   .landing-wrap {
     .landing-intro-wrap {
@@ -805,6 +813,7 @@ button {
       }
 
       .photo-wrap {
+        transform: scaleX(-1);
         position: absolute;
         right: 8vw;
         bottom: 0;

@@ -16,7 +16,7 @@ import AnimatedCursor from "react-animated-cursor"
 function App() {
   return (
     <div className="App main-theme">
-      <AnimatedCursor />
+      <AnimatedCursor color='255, 255, 255'/>
 
       <Header />
 

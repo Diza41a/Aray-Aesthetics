@@ -8,13 +8,38 @@
   src: url(./fonts/Montserrat.ttf);
 }
 
+@font-face {
+  font-family: Lora;
+  src: url(./fonts/Lora.ttf);
+}
 
+#root {
+  background-image: url(../../public/assets/images/mockBackground.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
 
-@mixin theme(/* fonts */ $logoFont, $mainFont,
-/* colors */ $mainBack, $mainFontColor) {
+@mixin glowingBorder($color, $glowColor) {
+  border-bottom: 2px solid $color;
+  // box-shadow: 0 0 10px $glowColor;
+  box-shadow: 0 13px 10px -10px $glowColor;
+}
+
+@mixin basicBorder {
+  border: 0.75px dashed white;
+}
+
+@mixin glowingText($color, $glowColor) {
+  color: $color;
+  text-shadow: -1px -1px 10px $glowColor;
+}
+
+@mixin theme(/* fonts */ $logoFont, $mainFont, $tertiaryFont,
+/* colors */ $mainBack, $mainFontColor, $borderGlowColor) {
   header {
     background-color: $mainBack;
     color: $mainFontColor;
+    @include glowingBorder(white, $borderGlowColor);
 
     .logo {
       font-family: $logoFont;
@@ -30,11 +55,85 @@
       }
     }
   }
+
+  // landing
+  .landing-wrap {
+
+    .landing-intro-wrap {
+      background-color: $mainBack;
+      @include glowingBorder($mainFontColor, $borderGlowColor);
+
+      .photo-wrap {
+      }
+
+      .landing-intro-body {
+        background-color: $mainBack;
+        @include basicBorder();
+        color: $mainFontColor;
+
+        h2 {
+          font-family: $tertiaryFont;
+          @include glowingText($mainFontColor, $borderGlowColor);
+        }
+
+        ul {
+          font-family: $mainFont;
+        }
+
+        .address-bar {
+          a {
+            font-family: $mainFont;
+            color: $mainFontColor;
+
+          }
+        }
+      }
+    }
+
+    #leave-landing-button {
+      background: none;
+      border: none;
+      outline: none;
+
+      i {
+        color: $mainFontColor;
+      }
+    }
+  }
+
+  .direct-links {
+    background-color: $mainBack;
+
+    i {
+      color: $mainFontColor;
+    }
+  }
+
+  .mobile-nav-wrap {
+    background-color: $mainBack;
+  }
+
+  .page-progress-wrap {
+
+    .page-progress-indicators {
+      a {
+        color: $mainFontColor;
+      }
+    }
+
+    .progressBar-wrap {
+      background-color: $mainBack;
+
+      .progressBar {
+        background-color: white;
+      }
+    }
+  }
+
 }
 
 .App {
   &.main-theme {
-
-    @include theme(Nickainley, Montserrat, /* colors */ #323232ae, #fff);
+    @include theme(Nickainley, Montserrat, Lora, /* colors */ #323232ae, #fff, rgb(249, 104, 239));
   }
 }
