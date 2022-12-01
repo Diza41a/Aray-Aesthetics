@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useRef } from 'react';
+import Link from 'next/link';
 
 // helpers
 import { toggleClass } from './helpers.js';
@@ -16,7 +17,7 @@ export default function Header() {
   return (
     <header>
       <div className="logo">
-        <a href="#top">Aray Aesthetics</a>
+        <Link href="/">Aray Aesthetics</Link>
       </div>
       <div className="tools">
         <div className="theme-selector-toggle">
@@ -26,10 +27,10 @@ export default function Header() {
         <i className="fa-solid fa-bars burger" onClick={toggleNav} />
       </div>
       <nav ref={navRef} className="hidden">
-        <a href="#about-me">About me</a>
-        <a href="#services">Services</a>
-        <a href="#gallery">Works</a>
-        <a href="#contact">Contact</a>
+        <Link href="/about">About me</Link>
+        <Link href="/services">Services</Link>
+        <Link href="/gallery">Works</Link>
+        <Link href="/contact">Contact</Link>
       </nav>
     </header>
   );

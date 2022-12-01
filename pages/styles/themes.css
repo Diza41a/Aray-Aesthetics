@@ -19,7 +19,7 @@
 .App.main-theme header {
   background-color: rgba(50, 50, 50, 0.6823529412);
   color: #fff;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #fff;
   box-shadow: 0 13px 10px -10px rgb(249, 104, 239);
 }
 .App.main-theme header .logo {
@@ -32,6 +32,11 @@
   font-family: Montserrat;
   color: #fff;
 }
+.App.main-theme .section-title {
+  font-family: Lora;
+  color: #fff;
+  text-shadow: -1px -1px 10px rgb(249, 104, 239);
+}
 .App.main-theme .landing-wrap .landing-intro-wrap {
   background-color: rgba(50, 50, 50, 0.6823529412);
   border-bottom: 2px solid #fff;
@@ -39,7 +44,7 @@
 }
 .App.main-theme .landing-wrap .landing-intro-wrap .landing-intro-body {
   background-color: rgba(50, 50, 50, 0.6823529412);
-  border: 0.75px dashed white;
+  border: 0.15px dashed rgba(255, 255, 255, 0.447);
   color: #fff;
 }
 .App.main-theme .landing-wrap .landing-intro-wrap .landing-intro-body h2 {
@@ -62,6 +67,64 @@
 .App.main-theme .landing-wrap #leave-landing-button i {
   color: #fff;
 }
+.App.main-theme .about-me-wrap {
+  background-color: rgba(50, 50, 50, 0.6823529412);
+  border: 0.15px dashed rgba(255, 255, 255, 0.447);
+  border-bottom: 2px solid #fff;
+  box-shadow: 0 13px 10px -10px rgb(249, 104, 239);
+}
+.App.main-theme .about-me-wrap .about-me-description {
+  background-color: rgba(50, 50, 50, 0.6823529412);
+  border: 0.15px dashed rgba(255, 255, 255, 0.447);
+}
+.App.main-theme .about-me-wrap .about-me-description .title {
+  font-family: Lora;
+  color: #fff;
+  text-shadow: -1px -1px 10px rgb(249, 104, 239);
+}
+.App.main-theme .about-me-wrap .about-me-description .bio {
+  font-family: Montserrat;
+  color: #fff;
+}
+.App.main-theme .services-wrap {
+  margin: 0 auto;
+}
+.App.main-theme .services-wrap .services-gallery-wrap .service-wrap .title-wrap .number {
+  font-family: Montserrat;
+  font-weight: bold;
+  color: #fff;
+}
+.App.main-theme .services-wrap .services-gallery-wrap .service-wrap .title-wrap .title {
+  font-family: Lora;
+  color: #fff;
+  text-shadow: -1px -1px 10px rgb(249, 104, 239);
+  background-color: rgba(50, 50, 50, 0.6823529412);
+  border: 0.15px dashed rgba(255, 255, 255, 0.447);
+  border-right: none;
+}
+.App.main-theme .services-wrap .services-reach-out {
+  background-color: rgba(50, 50, 50, 0.6823529412);
+  border: 0.15px dashed rgba(255, 255, 255, 0.447);
+  border-left: none;
+  border-right: none;
+}
+.App.main-theme .services-wrap .services-reach-out p {
+  color: #fff;
+  font-family: Lora;
+}
+.App.main-theme .services-wrap .services-reach-out .contact-btn {
+  background-color: #000000;
+  border: none;
+  outline: none;
+}
+.App.main-theme .services-wrap .services-reach-out .contact-btn span {
+  font-family: Montserrat;
+  color: #fff;
+  text-shadow: -1px -1px 10px rgb(249, 104, 239);
+}
+.App.main-theme .services-wrap .services-reach-out .contact-btn i {
+  color: #fee8fb;
+}
 .App.main-theme .direct-links {
   background-color: rgba(50, 50, 50, 0.6823529412);
 }
@@ -72,6 +135,7 @@
   background-color: rgba(50, 50, 50, 0.6823529412);
 }
 .App.main-theme .page-progress-wrap .page-progress-indicators a {
+  font-family: Montserrat;
   color: #fff;
 }
 .App.main-theme .page-progress-wrap .progressBar-wrap {

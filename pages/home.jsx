@@ -23,14 +23,14 @@ export default function Landing() {
           </p>
         </div>
         {/* Aray image */}
-        <div className="photo-wrap">
+        <div className="photo-wrap" draggable={false}>
           <img src="./assets/images/mockLanding.png" alt="" />
         </div>
       </div>
       {/* down arrow */}
-      <button id="leave-landing-button">
+      {/* <button id="leave-landing-button">
         <i className="fa-solid fa-chevron-down" />
-      </button>
+      </button> */}
     </div>
   );
 };

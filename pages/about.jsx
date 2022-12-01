@@ -15,7 +15,7 @@ export default function AboutMe() {
         </div>
         <div className="about-me-pics">
           <img src="./assets/images/mock.jpg" alt="" />
-          <img src="./assets/images/mock.jpg" alt="" />
+          <img src="./assets/images/mock2.jpg" alt="" />
         </div>
       </div>
     </>

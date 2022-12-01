@@ -17,19 +17,47 @@ button {
   display: none;
 }
 
+@mixin nonDraggable {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+img {
+  @include nonDraggable();
+}
+
 @mixin mobileView($fontSize) {
   $footer: 4.5vh;
 
+  #root {
+    min-height: 100vh;
+  }
+
   .App {
+    // &:last-child {
+    //   padding-bottom: $footer;
+    // }
+    overflow-x: hidden;
+
+    min-height: 100vh;
     position: relative;
+    display: flex;
+    flex-direction: column;
 
     header {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      // position: sticky;
+      // position: fixed;
+      position: sticky;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 1000;
       padding: 1.5vh 2vw;
       font-size: $fontSize * 1.4;
@@ -101,6 +129,7 @@ button {
 
     .page-progress-wrap {
       .progressBar-wrap {
+        display: none;
         width: 50vw;
         height: 6px;
         position: fixed;
@@ -141,20 +170,23 @@ button {
 
     // landing
     .landing-wrap {
-      margin-top: 22.5vh;
-      height: 100vh - $footer;
+      // max-height: 100vh;
+      // margin-top: 22.5vh;
+      // height: 100vh - $footer;
+      margin: auto;
 
       .landing-intro-wrap {
         width: 85vw;
         margin: auto;
-        margin-top: 15vh;
+        padding: 4vh 0;
 
         .photo-wrap {
           display: none;
         }
 
         .landing-intro-body {
-          margin: 4vh 5vw;
+          margin: 0 5vw;
+          padding: 2.5vh 2vw 0 0;
 
           h2 {
             margin: 0 3vw;
@@ -192,11 +224,12 @@ button {
 
     //about me
     .about-me-wrap {
-      margin: 10vh auto!important;
-      height: 100vh - $footer;
+      margin: 0 1.5vw;
+      // height: 100vh - $footer;
 
       .about-me-description {
-        width: 85%;
+        // width: 85%;
+        width: 83%;
         margin-top: 4vh;
         margin-right: 5vw;
         margin-left: auto;
@@ -210,7 +243,8 @@ button {
         }
 
         .bio {
-          font-size: $fontSize * 1.35;
+          line-height: 1.5;
+          font-size: $fontSize * 1.25;
           width: 105%;
           position: relative;
           right: 5%;
@@ -246,11 +280,14 @@ button {
 
     // services
     .services-wrap {
-      margin: 10vh auto;
+      margin: 0 auto;
 
       .services-gallery-wrap {
+        max-width: 100vw;
+        // cursor: none;
         display: flex;
-        overflow-x: scroll;
+        // overflow-x: scroll;
+        overflow-x: overlay;
 
         .service-wrap {
           flex-shrink: 0;
@@ -268,7 +305,8 @@ button {
             width: 80%;
 
             .number {
-              font-size: $fontSize * 2;
+              font-size: $fontSize * 2.3;
+              margin-right: $fontSize * 0.5;
               text-align: right;
               position: relative;
               top: $fontSize * 1.35;
@@ -276,19 +314,38 @@ button {
 
             .title {
               text-transform: capitalize;
-              font-size: $fontSize * 1.5;
+              font-size: $fontSize * 1.55;
               padding: $fontSize * 0.75 0;
               padding-right: $fontSize * 1.5;
               text-align: right;
+              max-width: $fontSize * 15.62 /* 250px (16px) */;
+              margin-left: auto;
             }
           }
 
-          &:nth-child(2n) {
-            background-color: red;
-          }
-          &:nth-child(2n - 1) {
-            background-color: yellow;
-          }
+          // &:nth-child(2n) {
+          //   background-color: red;
+          // }
+          // &:nth-child(2n - 1) {
+          //   background-color: yellow;
+          // }
+        }
+
+        /* Width */
+        &::-webkit-scrollbar {
+          width: 50%;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+          background-color: #32323283;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          background: rgba(255, 255, 255, 0.663);
+          border: 1px solid #323232a3;
+          border-radius: $fontSize * 0.25;
         }
       }
 
@@ -304,11 +361,15 @@ button {
         }
 
         .contact-btn {
-          flex-basis: 60%;
+          flex-basis: 70%;
           font-size: $fontSize * 1.1;
-          border-radius: $fontSize * 0.45;
-          padding-top: $fontSize * 0.35;
-          padding-bottom: $fontSize * 0.35;
+          border-radius: $fontSize * 1;
+          padding-top: $fontSize * 0.55;
+          padding-bottom: $fontSize * 0.55;
+
+          span {
+            margin-right: $fontSize * 0.25;
+          }
 
           .arrow {
             font-size: $fontSize * 0.75;
@@ -550,6 +611,7 @@ button {
 
   .page-progress-wrap {
     .progressBar-wrap {
+      display: initial!important;
       width: 20vh!important;
       transform: rotate(90deg);
       bottom: initial!important;
@@ -595,6 +657,7 @@ button {
 
         ul {
           width: 40%!important;
+          margin-bottom: 4vh!important;
           text-align: center!important;
           font-size: $fontSize * 1.25!important;
         }
@@ -653,10 +716,19 @@ button {
         margin: 0 2vw;
       }
 
+      p {
+        font-size: $fontSize * 1.5!important;
+        max-width: $fontSize * 18.75 /* 300px (16px) */;
+      }
+
       .contact-btn {
+        font-size: $fontSize * 1.45!important;
+        padding-top: $fontSize!important;
+        padding-bottom: $fontSize!important;
+
         flex-basis: 50%!important;
         max-width: 250px;
-        border-radius: $fontSize * 0.75!important;
+        border-radius: $fontSize * 2!important;
 
         i {
           margin: 0;
@@ -773,10 +845,17 @@ button {
     }
   }
 
+  // section title
+  .section-title {
+    display: none;
+  }
+
   // landing
   .landing-wrap {
+    // bookmark
+    // margin-right: 0!important;
     .landing-intro-wrap {
-      // display: flex;
+      margin-top: 5%!important;
       position: relative;
 
       // max-height: 40vh;
@@ -796,7 +875,8 @@ button {
 
         ul {
           width: 40%;
-          margin: 5% 10% 15% 10%!important;
+          margin: 3.5vh 7.5vw 15% 10%!important;
+
           text-align: right!important;
           font-size: $fontSize * 1.35!important;
         }
@@ -815,12 +895,14 @@ button {
       .photo-wrap {
         transform: scaleX(-1);
         position: absolute;
-        right: 8vw;
+        right: 1vw;
         bottom: 0;
-        display: initial!important;
+        display: flex!important;
 
         img {
-          width: 30vw;
+          width: 40vw;
+          min-width: 450px;
+          max-width: $fontSize * 37.5 /* 16px * 37.5 = 600px */;
         }
       }
     }
@@ -829,8 +911,10 @@ button {
   //about me
   .about-me-wrap {
     padding: 3vh 2vw!important;
-    margin-top: 0!important;
-    height: initial!important;
+    margin: auto!important;
+    // margin-top: 0!important;
+    // height: initial!important;
+    // max-height: $fontSize * 29.68 /* 16px * 29.68 = 400px */;
     width: 80vw;
     display: flex;
     align-items: center;
@@ -841,15 +925,18 @@ button {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding-top: 9vh!important;
+      padding-bottom: 11.5vh!important;
 
       .title {
-        font-size: $fontSize * 1.8!important;
+        font-size: $fontSize * 1.95!important;
         width: 110%;
         position: relative;
         right: 10%;
       }
 
       .bio {
+        font-size: $fontSize * 1.45!important;
         width: 120%!important;
         position: relative;
         right: 20%!important;
@@ -858,6 +945,8 @@ button {
 
     .about-me-pics {
       width: 100%!important;
+      // position: relative;
+      // bottom: 3vh;
 
       img {
         margin: 1.5vh 0;
@@ -875,4 +964,10 @@ button {
 
 @media (min-width: 1000px) {
   @include mainView(16px);
+}
+
+@media (min-width: 1600px) {
+  @include mobileView(20px);
+  @include mediumView(20px);
+  @include mainView(20px);
 }

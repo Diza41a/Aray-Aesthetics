@@ -1,0 +1,38 @@
+[
+  {
+    "name": "First Service",
+    "description": "something blank for now...",
+    "imageUri": "./assets/images/mock.png",
+    "backgroundPositionX": "95%"
+  },
+  {
+    "name": "Second Service",
+    "description": "something blank for now...",
+    "imageUri": "./assets/images/mock2.png",
+    "backgroundPositionX": "76%"
+  },
+  {
+    "name": "Third Service",
+    "description": "something blank for now...",
+    "imageUri": "./assets/images/mock3.png",
+    "backgroundPositionX": "49%"
+  },
+  {
+    "name": "Fourth Service",
+    "description": "something blank for now...",
+    "imageUri": "./assets/images/mock.png",
+    "backgroundPositionX": "95%"
+  },
+  {
+    "name": "Fifth Service",
+    "description": "something blank for now...",
+    "imageUri": "./assets/images/mock2.png",
+    "backgroundPositionX": "76%"
+  },
+  {
+    "name": "And more...",
+    "description": "reach out for up to date info...",
+    "imageUri": "./assets/images/mock3.png",
+    "backgroundPositionX": "49%"
+  }
+]

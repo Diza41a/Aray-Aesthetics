@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Helpers
-import { makeInputBox, makeTextArea } from './helpers.js';
+import { makeInputBox, makeTextArea } from './subcomponents/helpers.js';
 
 export default function Contact() {
 

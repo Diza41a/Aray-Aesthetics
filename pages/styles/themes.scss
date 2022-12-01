@@ -26,7 +26,7 @@
 }
 
 @mixin basicBorder {
-  border: 0.75px dashed white;
+  border: 0.15px dashed rgba(255, 255, 255, 0.447);
 }
 
 @mixin glowingText($color, $glowColor) {
@@ -34,12 +34,27 @@
   text-shadow: -1px -1px 10px $glowColor;
 }
 
+@mixin button($color, $glowColor, $iconColor, $backColor, $font) {
+  background-color: $backColor;
+  border: none;
+  outline: none;
+
+  span {
+    font-family: $font;
+    @include glowingText($color, $glowColor);
+  }
+
+  i {
+    color: $iconColor;
+  }
+}
+
 @mixin theme(/* fonts */ $logoFont, $mainFont, $tertiaryFont,
 /* colors */ $mainBack, $mainFontColor, $borderGlowColor) {
   header {
     background-color: $mainBack;
     color: $mainFontColor;
-    @include glowingBorder(white, $borderGlowColor);
+    @include glowingBorder($mainFontColor, $borderGlowColor);
 
     .logo {
       font-family: $logoFont;
@@ -54,6 +69,12 @@
         color: $mainFontColor;
       }
     }
+  }
+
+  // section title
+  .section-title {
+    font-family: $tertiaryFont;
+    @include glowingText($mainFontColor, $borderGlowColor);
   }
 
   // landing
@@ -101,6 +122,88 @@
     }
   }
 
+  //about me
+  .about-me-wrap {
+    background-color: $mainBack;
+    @include basicBorder();
+    @include glowingBorder($mainFontColor, $borderGlowColor);
+
+    .about-me-description {
+      background-color: $mainBack;
+      @include basicBorder();
+
+      .title {
+        font-family: $tertiaryFont;
+        @include glowingText($mainFontColor, $borderGlowColor);
+      }
+
+      .bio {
+        font-family: $mainFont;
+        color: $mainFontColor;
+      }
+    }
+
+    .about-me-pics {
+
+      img {
+
+        &:first-child {
+        }
+
+        &:nth-child(2) {
+        }
+      }
+    }
+  }
+
+  // services
+  .services-wrap {
+    margin: 0 auto;
+
+    .services-gallery-wrap {
+
+      .service-wrap {
+
+        .title-wrap {
+
+          .number {
+            font-family: $mainFont;
+            font-weight: bold;
+            color: $mainFontColor;
+          }
+
+          .title {
+            font-family: $tertiaryFont;
+            @include glowingText($mainFontColor, $borderGlowColor);
+            background-color: $mainBack;
+            @include basicBorder();
+            border-right: none;
+          }
+        }
+      }
+    }
+
+    .services-reach-out {
+      background-color: $mainBack;
+      @include basicBorder();
+      border-left: none;
+      border-right: none;
+
+      p {
+        color: $mainFontColor;
+        font-family: $tertiaryFont;
+      }
+
+      .contact-btn {
+        // $color, $glowColor, $backColor, $font
+        @include button($mainFontColor, $borderGlowColor, #fee8fb, #000000, $mainFont);
+
+        .arrow {
+        }
+      }
+    }
+  }
+
   .direct-links {
     background-color: $mainBack;
 
@@ -117,6 +220,7 @@
 
     .page-progress-indicators {
       a {
+        font-family: $mainFont;
         color: $mainFontColor;
       }
     }
