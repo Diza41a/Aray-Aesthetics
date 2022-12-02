@@ -123,11 +123,15 @@ export default function Particle() {
             blur: 25,
             color: {
               value: "#ffffff"
+              // value: "#f096fc"
+              // value: "#000000"
             },
             enable: true,
             offset: {
-              x: 0,
-              y: 0
+              // x: 0,
+              // y: 0
+              x: 5,
+              y: 5
             }
           },
           size: {
