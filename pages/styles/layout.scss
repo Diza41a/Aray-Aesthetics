@@ -381,12 +381,12 @@ img {
     // gallery
     .gallery-wrap {
       width: 90vw;
-      height: 50vh;
+      // height: 40vh;
       margin: 10vh auto;
 
       .gallery-gate {
         position: relative;
-        bottom: 5vw;
+        bottom: 1vh;
 
         display: flex;
         flex-direction: column;
@@ -395,23 +395,31 @@ img {
           display: flex;
           justify-content: space-between;
 
-          img {
-            width: 35vw;
+          div {
+            height: fit-content;
+
+            img {
+              width: 35vw;
+            }
           }
 
           &:first-child {
-            img {
+            div {
               &:first-child {
                 transform: rotate(-5deg);
               }
               &:nth-child(2) {
-                transform: rotate(7.5deg);
+                position: relative;
+                top: 5vw;
+                transform: rotate(9.5deg);
               }
             }
           }
 
           &:nth-child(3) {
-            img {
+            margin-top: 2vh;
+
+            div {
               &:first-child {
                 transform: rotate(5deg);
               }
@@ -548,6 +556,120 @@ img {
         }
       }
     }
+
+    // contact
+    .contact-wrap {
+      margin: 10vh auto;
+
+      form {
+        padding: $fontSize $fontSize * 0.25;
+
+        .row {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          margin: $fontSize * 0.75 0;
+
+          .input-wrap {
+            display: flex;
+            flex-direction: column;
+
+            label {
+              font-size: $fontSize * 1.25;
+              margin-left: $fontSize * 0.75;
+            }
+
+            input, textarea {
+              font-size: $fontSize * 1.25;
+              padding: $fontSize * 0.45 5%;
+            }
+          }
+
+          &.row-name {
+            p {
+              margin: 0 $fontSize * 0.5;
+              font-size: $fontSize * 1.25;
+              text-align: right;
+            }
+            .input-wrap {
+              width: 100%;
+            }
+          }
+
+          &.row-method {
+            .input-wrap {
+              input {
+                width: calc(100% - 5% * 2);
+              }
+            }
+
+            p {
+              font-size: $fontSize * 1.35;
+              margin: 0 $fontSize * 1.25;
+            }
+          }
+
+          &.row-inquiry {
+            width: 100%;
+            .textarea-wrap {
+              width: 100%;
+              textarea {
+                // width: 100%;
+                height: $fontSize * 5;
+                resize: none;
+              }
+            }
+          }
+
+          &.row-submit {
+            justify-content: flex-end;
+            button {
+              font-size: $fontSize * 1.25;
+              width: $fontSize * 10;
+              padding: $fontSize * 0.35 0;
+              border-radius: $fontSize;
+            }
+          }
+        }
+      }
+
+      .contact-direct {
+        padding: $fontSize $fontSize * 1.25;
+
+        .method {
+          display: flex;
+          align-items: center;
+          margin: $fontSize 0;
+
+          i {
+            font-size: $fontSize * 3;
+          }
+
+          a {
+            text-decoration: none;
+            margin-left: $fontSize * 0.75;
+            font-size: $fontSize * 1.25;
+          }
+        }
+
+        .links {
+          width: 90%;
+          margin: auto;
+          margin-top: $fontSize * 1.5;
+          padding: $fontSize * 0.75 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: $fontSize * 2;
+
+          i {
+            font-size: $fontSize * 2.75;
+            margin: 0 $fontSize * 0.5;
+          }
+        }
+      }
+    }
+
   }
 }
 
@@ -621,6 +743,7 @@ img {
     }
 
     .page-progress-indicators {
+      mix-blend-mode: difference;
       height: 20vh!important;
       width: initial!important;
       display: flex;
@@ -740,7 +863,8 @@ img {
 
   // gallery
   .gallery-wrap {
-    margin-bottom: 20vh!important;
+    width: 70vw!important;
+    // margin-bottom: 20vh!important;
 
     .gallery-gate {
       max-width: 775px;
@@ -776,14 +900,9 @@ img {
       }
 
       .row-btn {
-        text-align: center;
-
         button {
-          font-size: $fontSize * 1.5;
-          padding: $fontSize * 0.75 $fontSize * 1.75;
-
-          position: relative;
-          z-index: 999;
+          font-size: $fontSize * 1.75!important;
+          padding: $fontSize * 1.5 $fontSize * 4!important;
         }
       }
     }
@@ -791,14 +910,15 @@ img {
 
   // contact
   .contact-wrap {
-    width: 85vw!important;
+    width: 100vw!important;
     padding: 5vh 0;
-    max-width: 1000px;
+    max-width: $fontSize * 75 /* 1200px */;
     display: flex;
     justify-content: center!important;
 
     form {
       width: 110%;
+      max-width: $fontSize * 40.63 /* 650px */;
       padding: 1vh 2vw!important;
       position: relative;
       left: -2vw;

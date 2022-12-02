@@ -23,7 +23,7 @@ export default function Contact() {
             {makeTextArea('Your Inquiry')}
           </div>
           <div className="row-submit row">
-            <button id="submit">Submit</button>
+            <button id="submit"><span>Submit</span></button>
           </div>
         </form>
         <div className="contact-direct">

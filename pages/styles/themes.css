@@ -125,6 +125,98 @@
 .App.main-theme .services-wrap .services-reach-out .contact-btn i {
   color: #fee8fb;
 }
+.App.main-theme .gallery-wrap {
+  background-color: rgba(50, 50, 50, 0.6823529412);
+}
+.App.main-theme .gallery-wrap .gallery-gate .row-img div img ::after {
+  box-shadow: 0px 0px 0px 24px rgba(255, 255, 255, 0.69) inset;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.App.main-theme .gallery-wrap .gallery-gate .row-img div img::after {
+  box-shadow: 0px 0px 0px 24px rgba(255, 255, 255, 0.69) inset;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.App.main-theme .gallery-wrap .gallery-gate .row-img div::after {
+  box-shadow: 0px 0px 0px 20px rgba(255, 255, 255, 0.19) inset;
+  content: "";
+  display: block;
+  height: 105%;
+  position: absolute;
+  top: -3.5%;
+  left: -2.5%;
+  width: 105%;
+}
+.App.main-theme .gallery-wrap .gallery-gate .row-btn button {
+  font-family: Montserrat;
+  color: #fff;
+  background-color: rgba(50, 50, 50, 0.6823529412);
+  border: 0.5px solid white;
+}
+.App.main-theme .contact-wrap {
+  background-color: rgba(50, 50, 50, 0.6823529412);
+  border-bottom: 2px solid #fff;
+  box-shadow: 0 13px 10px -10px rgb(249, 104, 239);
+}
+.App.main-theme .contact-wrap form {
+  background-color: rgba(50, 50, 50, 0.6823529412);
+  border: 0.15px dashed rgba(255, 255, 255, 0.447);
+}
+.App.main-theme .contact-wrap form .row .input-wrap label {
+  font-family: Montserrat;
+  color: #fff;
+}
+.App.main-theme .contact-wrap form .row .input-wrap input, .App.main-theme .contact-wrap form .row .input-wrap textarea {
+  font-family: Montserrat;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.27);
+  border: none;
+}
+.App.main-theme .contact-wrap form .row.row-name p {
+  font-family: Lora;
+  color: #fff;
+  text-shadow: -1px -1px 10px rgb(249, 104, 239);
+}
+.App.main-theme .contact-wrap form .row.row-method p {
+  font-family: Montserrat;
+  color: #fff;
+}
+.App.main-theme .contact-wrap form .row.row-submit button {
+  background-color: #000000;
+  border: none;
+  outline: none;
+}
+.App.main-theme .contact-wrap form .row.row-submit button span {
+  font-family: Montserrat;
+  color: #fff;
+  text-shadow: -1px -1px 10px rgb(249, 104, 239);
+}
+.App.main-theme .contact-wrap form .row.row-submit button i {
+  color: #fee8fb;
+}
+.App.main-theme .contact-wrap .contact-direct .method i {
+  color: #fff;
+}
+.App.main-theme .contact-wrap .contact-direct .method a {
+  font-family: Lora;
+  color: #fff;
+  text-shadow: -1px -1px 10px rgb(249, 104, 239);
+}
+.App.main-theme .contact-wrap .contact-direct .links {
+  background-color: rgba(0, 0, 0, 0.6666666667);
+}
+.App.main-theme .contact-wrap .contact-direct .links i {
+  color: #fff;
+}
 .App.main-theme .direct-links {
   background-color: rgba(50, 50, 50, 0.6823529412);
 }

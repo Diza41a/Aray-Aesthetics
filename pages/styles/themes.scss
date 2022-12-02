@@ -204,6 +204,140 @@
     }
   }
 
+  // gallery
+  .gallery-wrap {
+    background-color: $mainBack;
+
+    .gallery-gate {
+
+      .row-img {
+
+        div {
+
+          img {
+            ::after {
+              box-shadow: 0px 0px 0px 24px rgba(255,255,255,0.69) inset;
+              content: '';
+              display: block;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              width: 100%;
+            }
+            &::after {
+              box-shadow: 0px 0px 0px 24px rgba(255,255,255,0.69) inset;
+              content: '';
+              display: block;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              width: 100%;
+            }
+          }
+
+          &::after {
+            box-shadow: 0px 0px 0px 20px rgba(255, 255, 255, 0.19) inset;
+            content: '';
+            display: block;
+            height: 105%;
+            position: absolute;
+            top: -3.5%;
+            left: -2.5%;
+            width: 105%;
+          }
+        }
+      }
+
+      .row-btn {
+
+        button {
+          font-family: $mainFont;
+          color: $mainFontColor;
+          background-color: $mainBack;
+          border: 0.5px solid white;
+        }
+      }
+    }
+  }
+
+  // contact
+  .contact-wrap {
+    background-color: $mainBack;
+    @include glowingBorder($mainFontColor, $borderGlowColor);
+
+    form {
+      background-color: $mainBack;
+      @include basicBorder();
+
+      .row {
+
+        .input-wrap {
+
+          label {
+            font-family: $mainFont;
+            color: $mainFontColor;
+          }
+
+          input, textarea {
+            font-family: $mainFont;
+            color: $mainFontColor;
+            background-color: rgba(255, 255, 255, 0.27);
+            border: none;
+          }
+        }
+
+        &.row-name {
+          p {
+            font-family: $tertiaryFont;
+            @include glowingText($mainFontColor, $borderGlowColor);
+          }
+        }
+
+        &.row-method {
+          p {
+            font-family: $mainFont;
+            color: $mainFontColor;
+          }
+        }
+
+        &.row-inquiry {
+          .textarea-wrap {
+            textarea {
+            }
+          }
+        }
+
+        &.row-submit {
+          button {
+            @include button($mainFontColor, $borderGlowColor, #fee8fb, #000000, $mainFont);
+          }
+        }
+      }
+    }
+
+    .contact-direct {
+
+      .method {
+        i {
+          color: $mainFontColor;
+        }
+
+        a {
+          font-family: $tertiaryFont;
+          @include glowingText($mainFontColor, $borderGlowColor);
+        }
+      }
+
+      .links {
+        background-color: #000000aa;
+
+        i {
+          color: $mainFontColor;
+        }
+      }
+    }
+  }
+
   .direct-links {
     background-color: $mainBack;
 

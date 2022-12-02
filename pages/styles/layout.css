@@ -293,12 +293,11 @@ img {
 }
 .App .gallery-wrap {
   width: 90vw;
-  height: 50vh;
   margin: 10vh auto;
 }
 .App .gallery-wrap .gallery-gate {
   position: relative;
-  bottom: 5vw;
+  bottom: 1vh;
   display: flex;
   flex-direction: column;
 }
@@ -306,19 +305,27 @@ img {
   display: flex;
   justify-content: space-between;
 }
-.App .gallery-wrap .gallery-gate .row-img img {
+.App .gallery-wrap .gallery-gate .row-img div {
+  height: fit-content;
+}
+.App .gallery-wrap .gallery-gate .row-img div img {
   width: 35vw;
 }
-.App .gallery-wrap .gallery-gate .row-img:first-child img:first-child {
+.App .gallery-wrap .gallery-gate .row-img:first-child div:first-child {
   transform: rotate(-5deg);
 }
-.App .gallery-wrap .gallery-gate .row-img:first-child img:nth-child(2) {
-  transform: rotate(7.5deg);
+.App .gallery-wrap .gallery-gate .row-img:first-child div:nth-child(2) {
+  position: relative;
+  top: 5vw;
+  transform: rotate(9.5deg);
 }
-.App .gallery-wrap .gallery-gate .row-img:nth-child(3) img:first-child {
+.App .gallery-wrap .gallery-gate .row-img:nth-child(3) {
+  margin-top: 2vh;
+}
+.App .gallery-wrap .gallery-gate .row-img:nth-child(3) div:first-child {
   transform: rotate(5deg);
 }
-.App .gallery-wrap .gallery-gate .row-img:nth-child(3) img:nth-child(2) {
+.App .gallery-wrap .gallery-gate .row-img:nth-child(3) div:nth-child(2) {
   transform: rotate(-7.5deg);
 }
 .App .gallery-wrap .gallery-gate .row-btn {
@@ -329,6 +336,94 @@ img {
   padding: 12px 28px;
   position: relative;
   z-index: 999;
+}
+.App .contact-wrap {
+  margin: 10vh auto;
+}
+.App .contact-wrap form {
+  padding: 16px 4px;
+}
+.App .contact-wrap form .row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 12px 0;
+}
+.App .contact-wrap form .row .input-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.App .contact-wrap form .row .input-wrap label {
+  font-size: 20px;
+  margin-left: 12px;
+}
+.App .contact-wrap form .row .input-wrap input, .App .contact-wrap form .row .input-wrap textarea {
+  font-size: 20px;
+  padding: 7.2px 5%;
+}
+.App .contact-wrap form .row.row-name p {
+  margin: 0 8px;
+  font-size: 20px;
+  text-align: right;
+}
+.App .contact-wrap form .row.row-name .input-wrap {
+  width: 100%;
+}
+.App .contact-wrap form .row.row-method .input-wrap input {
+  width: 90%;
+}
+.App .contact-wrap form .row.row-method p {
+  font-size: 21.6px;
+  margin: 0 20px;
+}
+.App .contact-wrap form .row.row-inquiry {
+  width: 100%;
+}
+.App .contact-wrap form .row.row-inquiry .textarea-wrap {
+  width: 100%;
+}
+.App .contact-wrap form .row.row-inquiry .textarea-wrap textarea {
+  height: 80px;
+  resize: none;
+}
+.App .contact-wrap form .row.row-submit {
+  justify-content: flex-end;
+}
+.App .contact-wrap form .row.row-submit button {
+  font-size: 20px;
+  width: 160px;
+  padding: 5.6px 0;
+  border-radius: 16px;
+}
+.App .contact-wrap .contact-direct {
+  padding: 16px 20px;
+}
+.App .contact-wrap .contact-direct .method {
+  display: flex;
+  align-items: center;
+  margin: 16px 0;
+}
+.App .contact-wrap .contact-direct .method i {
+  font-size: 48px;
+}
+.App .contact-wrap .contact-direct .method a {
+  text-decoration: none;
+  margin-left: 12px;
+  font-size: 20px;
+}
+.App .contact-wrap .contact-direct .links {
+  width: 90%;
+  margin: auto;
+  margin-top: 24px;
+  padding: 12px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 32px;
+}
+.App .contact-wrap .contact-direct .links i {
+  font-size: 44px;
+  margin: 0 8px;
 }
 .App .contact-wrap {
   margin: 10vh auto;
@@ -476,6 +571,7 @@ img {
     top: 30vh;
   }
   .page-progress-wrap .page-progress-indicators {
+    mix-blend-mode: difference;
     height: 20vh !important;
     width: initial !important;
     display: flex;
@@ -561,7 +657,7 @@ img {
   }
 
   .gallery-wrap {
-    margin-bottom: 20vh !important;
+    width: 70vw !important;
   }
   .gallery-wrap .gallery-gate {
     max-width: 775px;
@@ -582,25 +678,21 @@ img {
   .gallery-wrap .gallery-gate .row-img:nth-child(3) img:nth-child(2) {
     transform: rotate(-7.5deg);
   }
-  .gallery-wrap .gallery-gate .row-btn {
-    text-align: center;
-  }
   .gallery-wrap .gallery-gate .row-btn button {
-    font-size: 24px;
-    padding: 12px 28px;
-    position: relative;
-    z-index: 999;
+    font-size: 28px !important;
+    padding: 24px 64px !important;
   }
 
   .contact-wrap {
-    width: 85vw !important;
+    width: 100vw !important;
     padding: 5vh 0;
-    max-width: 1000px;
+    max-width: 1200px;
     display: flex;
     justify-content: center !important;
   }
   .contact-wrap form {
     width: 110%;
+    max-width: 650.08px;
     padding: 1vh 2vw !important;
     position: relative;
     left: -2vw;
@@ -980,12 +1072,11 @@ img {
   }
   .App .gallery-wrap {
     width: 90vw;
-    height: 50vh;
     margin: 10vh auto;
   }
   .App .gallery-wrap .gallery-gate {
     position: relative;
-    bottom: 5vw;
+    bottom: 1vh;
     display: flex;
     flex-direction: column;
   }
@@ -993,19 +1084,27 @@ img {
     display: flex;
     justify-content: space-between;
   }
-  .App .gallery-wrap .gallery-gate .row-img img {
+  .App .gallery-wrap .gallery-gate .row-img div {
+    height: fit-content;
+  }
+  .App .gallery-wrap .gallery-gate .row-img div img {
     width: 35vw;
   }
-  .App .gallery-wrap .gallery-gate .row-img:first-child img:first-child {
+  .App .gallery-wrap .gallery-gate .row-img:first-child div:first-child {
     transform: rotate(-5deg);
   }
-  .App .gallery-wrap .gallery-gate .row-img:first-child img:nth-child(2) {
-    transform: rotate(7.5deg);
+  .App .gallery-wrap .gallery-gate .row-img:first-child div:nth-child(2) {
+    position: relative;
+    top: 5vw;
+    transform: rotate(9.5deg);
   }
-  .App .gallery-wrap .gallery-gate .row-img:nth-child(3) img:first-child {
+  .App .gallery-wrap .gallery-gate .row-img:nth-child(3) {
+    margin-top: 2vh;
+  }
+  .App .gallery-wrap .gallery-gate .row-img:nth-child(3) div:first-child {
     transform: rotate(5deg);
   }
-  .App .gallery-wrap .gallery-gate .row-img:nth-child(3) img:nth-child(2) {
+  .App .gallery-wrap .gallery-gate .row-img:nth-child(3) div:nth-child(2) {
     transform: rotate(-7.5deg);
   }
   .App .gallery-wrap .gallery-gate .row-btn {
@@ -1016,6 +1115,94 @@ img {
     padding: 15px 35px;
     position: relative;
     z-index: 999;
+  }
+  .App .contact-wrap {
+    margin: 10vh auto;
+  }
+  .App .contact-wrap form {
+    padding: 20px 5px;
+  }
+  .App .contact-wrap form .row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 15px 0;
+  }
+  .App .contact-wrap form .row .input-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  .App .contact-wrap form .row .input-wrap label {
+    font-size: 25px;
+    margin-left: 15px;
+  }
+  .App .contact-wrap form .row .input-wrap input, .App .contact-wrap form .row .input-wrap textarea {
+    font-size: 25px;
+    padding: 9px 5%;
+  }
+  .App .contact-wrap form .row.row-name p {
+    margin: 0 10px;
+    font-size: 25px;
+    text-align: right;
+  }
+  .App .contact-wrap form .row.row-name .input-wrap {
+    width: 100%;
+  }
+  .App .contact-wrap form .row.row-method .input-wrap input {
+    width: 90%;
+  }
+  .App .contact-wrap form .row.row-method p {
+    font-size: 27px;
+    margin: 0 25px;
+  }
+  .App .contact-wrap form .row.row-inquiry {
+    width: 100%;
+  }
+  .App .contact-wrap form .row.row-inquiry .textarea-wrap {
+    width: 100%;
+  }
+  .App .contact-wrap form .row.row-inquiry .textarea-wrap textarea {
+    height: 100px;
+    resize: none;
+  }
+  .App .contact-wrap form .row.row-submit {
+    justify-content: flex-end;
+  }
+  .App .contact-wrap form .row.row-submit button {
+    font-size: 25px;
+    width: 200px;
+    padding: 7px 0;
+    border-radius: 20px;
+  }
+  .App .contact-wrap .contact-direct {
+    padding: 20px 25px;
+  }
+  .App .contact-wrap .contact-direct .method {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+  }
+  .App .contact-wrap .contact-direct .method i {
+    font-size: 60px;
+  }
+  .App .contact-wrap .contact-direct .method a {
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 25px;
+  }
+  .App .contact-wrap .contact-direct .links {
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+  }
+  .App .contact-wrap .contact-direct .links i {
+    font-size: 55px;
+    margin: 0 10px;
   }
   .App .contact-wrap {
     margin: 10vh auto;
@@ -1162,6 +1349,7 @@ img {
     top: 30vh;
   }
   .page-progress-wrap .page-progress-indicators {
+    mix-blend-mode: difference;
     height: 20vh !important;
     width: initial !important;
     display: flex;
@@ -1247,7 +1435,7 @@ img {
   }
 
   .gallery-wrap {
-    margin-bottom: 20vh !important;
+    width: 70vw !important;
   }
   .gallery-wrap .gallery-gate {
     max-width: 775px;
@@ -1268,25 +1456,21 @@ img {
   .gallery-wrap .gallery-gate .row-img:nth-child(3) img:nth-child(2) {
     transform: rotate(-7.5deg);
   }
-  .gallery-wrap .gallery-gate .row-btn {
-    text-align: center;
-  }
   .gallery-wrap .gallery-gate .row-btn button {
-    font-size: 30px;
-    padding: 15px 35px;
-    position: relative;
-    z-index: 999;
+    font-size: 35px !important;
+    padding: 30px 80px !important;
   }
 
   .contact-wrap {
-    width: 85vw !important;
+    width: 100vw !important;
     padding: 5vh 0;
-    max-width: 1000px;
+    max-width: 1500px;
     display: flex;
     justify-content: center !important;
   }
   .contact-wrap form {
     width: 110%;
+    max-width: 812.6px;
     padding: 1vh 2vw !important;
     position: relative;
     left: -2vw;

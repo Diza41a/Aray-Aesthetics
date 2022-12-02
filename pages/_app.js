@@ -1,3 +1,6 @@
+import { useEffect, useState } from 'react';
+import Particle from './subcomponents/particle.jsx';
+
 // Styles
 import './styles/layout.css';
 import './styles/themes.css';
@@ -8,8 +11,8 @@ import Header from './subcomponents/header.jsx';
 import SliderLinks from './subcomponents/sliderLinks.jsx';
 
 // Misc
-import { useEffect, useState } from 'react';
 import AnimatedCursor from "react-animated-cursor";
+import { useDraggable } from "react-use-draggable-scroll";
 
 function MyApp({ Component, pageProps }) {
   const [onClient, toggleOnClient] = useState(false);
@@ -24,6 +27,8 @@ function MyApp({ Component, pageProps }) {
       <Script src="https://kit.fontawesome.com/4d1f2bd158.js" crossorigin="anonymous" />
 
       <div id="root">
+        <Particle />
+
         <div className="App main-theme">
         {onClient ? <AnimatedCursor
          color='255, 255, 255'
