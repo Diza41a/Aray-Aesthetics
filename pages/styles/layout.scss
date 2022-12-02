@@ -17,6 +17,11 @@ button {
   display: none;
 }
 
+body {
+  width:100%;
+  overflow-x:hidden;
+}
+
 @mixin nonDraggable {
   user-drag: none;
   -webkit-user-drag: none;
@@ -110,6 +115,7 @@ img {
     }
 
     .direct-links {
+      z-index: 1000;
       max-width: 20vw;
       display: flex;
       justify-content: center;
@@ -128,6 +134,8 @@ img {
     }
 
     .page-progress-wrap {
+      z-index: 1000;
+
       .progressBar-wrap {
         display: none;
         width: 50vw;
@@ -158,6 +166,17 @@ img {
           text-decoration: none;
         }
       }
+    }
+
+    .fixed-address-bar {
+      display: none;
+    }
+
+    .next-page-link {
+      position: absolute;
+      bottom: 5%;
+      left: calc(50% - $fontSize * 1.25);
+      font-size: $fontSize * 2.5;
     }
 
     // section title
@@ -200,6 +219,7 @@ img {
             direction: rtl;
             text-align: left;
             font-size: $fontSize * 1.4;
+            line-height: 1.5  ;
           }
 
           .address-bar {
@@ -286,10 +306,11 @@ img {
         max-width: 100vw;
         // cursor: none;
         display: flex;
-        // overflow-x: scroll;
-        overflow-x: overlay;
+        overflow-y: overlay;
+        // overflow: hidden;
 
         .service-wrap {
+          overflow: hidden;
           flex-shrink: 0;
           height: 71.5vh;
           width: 72.5vw;
@@ -299,9 +320,23 @@ img {
           align-items: flex-end;
           padding-bottom: 8.5vh;
 
-          background-size: cover;
+          .service-background {
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+
+            width: 100%;
+            transition: width 1s ease-in-out;
+          }
 
           .title-wrap {
+            z-index: 100;
+            transition: opacity 0.25s ease-in, visibility 1s ease-in;
+
             width: 80%;
 
             .number {
@@ -320,6 +355,81 @@ img {
               text-align: right;
               max-width: $fontSize * 15.62 /* 250px (16px) */;
               margin-left: auto;
+            }
+          }
+
+          position: relative;
+          .service-description {
+            z-index: 100;
+            transition: opacity 0.25s ease-out, transform 0.5s ease-out;
+            transform: scale(0.85);
+            opacity: 0;
+            visibility: hidden;
+
+            position: absolute;
+            top: 20%;
+            bottom: 20%;
+            left: 5%;
+            right: 5%;
+
+            padding-top: 25%;
+            padding: 25% 2% 0 2%;
+            text-align: center;
+
+            .title {
+              font-size: $fontSize * 1.55;
+            }
+
+            .description {
+              margin-top: 5%;
+              font-size: $fontSize * 1.25;
+              padding: 0 3%;
+            }
+          }
+
+          &:hover {
+            .service-background {
+              // &:nth-child(2n - 1) {
+              //   width: 105%;
+              // }
+              // &:nth-child(2n) {
+              //   width: 95%;
+              // }
+              width: 102.5%;
+
+              transition: width 1s ease-in-out;
+            }
+
+            .title-wrap {
+              transition: opacity 0.25s ease-out, visibility 1s ease-out;
+              visibility: hidden;
+              opacity: 0;
+            }
+
+            .service-description {
+              transition: visibility 1s ease-in, opacity 0.75s ease-in, transform 0.5s ease-in;
+              transform: scale(1);
+              visibility: initial!important;
+              opacity: 1;
+            }
+          }
+
+          &:last-child {
+            .title-wrap {
+              display: none;
+            }
+
+            .service-description {
+              visibility: visible;
+              opacity: 1;
+              transform: scale(1);
+            }
+
+            &:hover {
+              .service-background {
+                width: 100%;
+                height: 100%;
+              }
             }
           }
 
@@ -350,6 +460,7 @@ img {
       }
 
       .services-reach-out {
+        margin-bottom: $footer;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -446,120 +557,7 @@ img {
 
     // contact
     .contact-wrap {
-      margin: 10vh auto;
-
-      form {
-        padding: $fontSize $fontSize * 0.25;
-
-        .row {
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          margin: $fontSize * 0.75 0;
-
-          .input-wrap {
-            display: flex;
-            flex-direction: column;
-
-            label {
-              font-size: $fontSize * 1.25;
-              margin-left: $fontSize * 0.75;
-            }
-
-            input, textarea {
-              font-size: $fontSize * 1.25;
-              padding: $fontSize * 0.45 5%;
-            }
-          }
-
-          &.row-name {
-            p {
-              margin: 0 $fontSize * 0.5;
-              font-size: $fontSize * 1.25;
-              text-align: right;
-            }
-            .input-wrap {
-              width: 100%;
-            }
-          }
-
-          &.row-method {
-            .input-wrap {
-              input {
-                width: calc(100% - 5% * 2);
-              }
-            }
-
-            p {
-              font-size: $fontSize * 1.35;
-              margin: 0 $fontSize * 1.25;
-            }
-          }
-
-          &.row-inquiry {
-            width: 100%;
-            .textarea-wrap {
-              width: 100%;
-              textarea {
-                // width: 100%;
-                height: $fontSize * 5;
-                resize: none;
-              }
-            }
-          }
-
-          &.row-submit {
-            justify-content: flex-end;
-            button {
-              font-size: $fontSize * 1.25;
-              width: $fontSize * 10;
-              padding: $fontSize * 0.35 0;
-              border-radius: $fontSize;
-            }
-          }
-        }
-      }
-
-      .contact-direct {
-        padding: $fontSize $fontSize * 1.25;
-
-        .method {
-          display: flex;
-          align-items: center;
-          margin: $fontSize 0;
-
-          i {
-            font-size: $fontSize * 3;
-          }
-
-          a {
-            text-decoration: none;
-            margin-left: $fontSize * 0.75;
-            font-size: $fontSize * 1.25;
-          }
-        }
-
-        .links {
-          width: 90%;
-          margin: auto;
-          margin-top: $fontSize * 1.5;
-          padding: $fontSize * 0.75 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border-radius: $fontSize * 2;
-
-          i {
-            font-size: $fontSize * 2.75;
-            margin: 0 $fontSize * 0.5;
-          }
-        }
-      }
-    }
-
-    // contact
-    .contact-wrap {
-      margin: 10vh auto;
+      margin: 0 auto;
 
       form {
         padding: $fontSize $fontSize * 0.25;
@@ -675,6 +673,10 @@ img {
 
 @mixin mediumView($fontSize) {
   header {
+    height: 4.3vh;
+    max-height: 50px;
+    min-height: 40px;
+
     .tools {
       margin-right: 0!important;
       margin-left: auto;
@@ -714,7 +716,7 @@ img {
   .direct-links {
     max-width: 5vw!important;
     flex-direction: column;
-    padding: $fontSize * 0.35 $fontSize * 0.5!important;
+    padding: $fontSize * 0.5 $fontSize * 0.55!important;
 
     bottom: initial!important;
     right: initial!important;
@@ -722,7 +724,7 @@ img {
     top: 25vh;
 
     i {
-      margin: $fontSize * 0.25 0!important;
+      margin: $fontSize * 0.35 0!important;
       font-size: $fontSize * 1.25!important;
 
       &.fa-instagram {
@@ -763,6 +765,18 @@ img {
     }
   }
 
+  .fixed-address-bar {
+    display: initial!important;
+
+    mix-blend-mode: difference;
+    margin: 0!important;
+    position: fixed;
+    z-index: 1000;
+    bottom: 0.5vh;
+    left: 1vw;
+    font-style: italic;
+  }
+
   // section title
   .section-title {
     font-size: $fontSize * 2.25!important;
@@ -786,6 +800,8 @@ img {
         }
 
         .address-bar {
+          display: none;
+
           margin: 0!important;
           position: fixed;
           z-index: 1000;
@@ -820,12 +836,30 @@ img {
   // services
   .services-wrap {
     margin-top: 0!important;
+    height: 92.7vh!important;
 
     .services-gallery-wrap {
+      // overflow: initial!important;
+      // overflow-y: overlay!important;
+
       .service-wrap {
-        height: 80vh!important;
+        height: 83.7vh!important;
         width: 42.5vw!important;
         max-width: 500px;
+
+        .service-description {
+          left: 15%!important;
+          right: 15%!important;
+
+          .title {
+            font-size: $fontSize * 1.75!important;
+          }
+
+          .description {
+            font-size: $fontSize * 1.35!important;
+          }
+
+        }
       }
     }
 
@@ -834,6 +868,7 @@ img {
       justify-content: center;
       align-items: center;
       padding: 5vh 10vw!important;
+      margin-bottom: 0!important;
 
       * {
         margin: 0 2vw;
@@ -911,7 +946,9 @@ img {
   // contact
   .contact-wrap {
     width: 100vw!important;
+    max-width: $fontSize * 68.75!important /* 1100px (16px) */;
     padding: 5vh 0;
+    margin: auto!important;
     max-width: $fontSize * 75 /* 1200px */;
     display: flex;
     justify-content: center!important;
@@ -936,8 +973,8 @@ img {
 
         &.row-name {
           p {
-            max-width: 150px;
-            font-size: $fontSize * 1.4!important;
+            max-width: $fontSize * 11;
+            font-size: $fontSize * 1.75!important;
           }
         }
 
@@ -946,11 +983,41 @@ img {
             font-size: $fontSize * 1.45!important;
           }
         }
+
+        &.row-submit {
+          button {
+            text-align: center;
+            font-size: $fontSize * 1.35!important;
+            padding: $fontSize * 0.75 0!important;
+            margin-top: $fontSize * 1.5;
+            width: $fontSize * 12!important;
+          }
+        }
       }
     }
 
     .contact-direct {
       margin-top: 5vh;
+
+      .method {
+        margin-bottom: 3vh!important;
+        i {
+          font-size: $fontSize * 3.5!important;
+        }
+
+        a {
+          font-size: $fontSize * 1.5!important;
+        }
+      }
+
+      .links {
+        border-radius: $fontSize * 5!important;
+
+        i {
+          font-size: $fontSize * 3!important;
+          margin: 0 $fontSize!important;
+        }
+      }
     }
   }
 
@@ -1001,15 +1068,15 @@ img {
           font-size: $fontSize * 1.35!important;
         }
 
-        .address-bar {
-          text-align: center;
-          font-style: italic;
-          margin: 7.5vh auto 2.5vh auto;
+        // .address-bar {
+        //   text-align: center;
+        //   font-style: italic;
+        //   margin: 7.5vh auto 2.5vh auto;
 
-          a {
-            text-decoration: none;
-          }
-        }
+        //   a {
+        //     text-decoration: none;
+        //   }
+        // }
       }
 
       .photo-wrap {
@@ -1020,9 +1087,9 @@ img {
         display: flex!important;
 
         img {
-          width: 40vw;
+          width: 44vw;
           min-width: 450px;
-          max-width: $fontSize * 37.5 /* 16px * 37.5 = 600px */;
+          max-width: $fontSize * 38.5 /* 16px * 37.5 = 600px */;
         }
       }
     }
@@ -1079,6 +1146,10 @@ img {
 @include mobileView(16px);
 
 @media (min-width: 780px) {
+  body {
+    overflow-y:hidden;
+  }
+
   @include mediumView(16px);
 }
 

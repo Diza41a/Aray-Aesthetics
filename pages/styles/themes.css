@@ -11,16 +11,53 @@
   src: url(./fonts/Lora.ttf);
 }
 #root {
-  background-image: url(../../public/assets/images/mockBackground.jpg);
+  background-image: url(../../public/assets/images/test.jpeg);
   background-size: cover;
   background-attachment: fixed;
 }
 
+* {
+  /* Width */
+  /* Track */
+  /* Handle */
+}
+*::-webkit-scrollbar {
+  width: 0.5em;
+}
+*::-webkit-scrollbar-track {
+  background-color: rgba(98, 96, 96, 0.9921568627);
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(55, 55, 55, 0.973);
+  border: 1px solid rgba(50, 50, 50, 0.6392156863);
+  border-radius: 4px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  49% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .App.main-theme header {
   background-color: rgba(50, 50, 50, 0.6823529412);
   color: #fff;
   border-bottom: 2px solid #fff;
   box-shadow: 0 13px 10px -10px rgb(249, 104, 239);
+  animation: breathingBorder 1s alternate-reverse infinite;
+}
+@keyframes breathingBorder {
+  from {
+    box-shadow: 0 13px 10px -10px rgb(249, 104, 239);
+  }
+  to {
+    box-shadow: 0 13px 10px -9px rgb(249, 104, 239);
+  }
 }
 .App.main-theme header .logo {
   font-family: Nickainley;
@@ -32,15 +69,40 @@
   font-family: Montserrat;
   color: #fff;
 }
+.App.main-theme .address-bar, .App.main-theme .fixed-address-bar {
+  mix-blend-mode: difference;
+}
+.App.main-theme .address-bar a, .App.main-theme .fixed-address-bar a {
+  font-family: Montserrat;
+  color: #fff;
+}
 .App.main-theme .section-title {
   font-family: Lora;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
+  animation: breathingText 2s alternate-reverse infinite;
+}
+@keyframes breathingText {
+  from {
+    text-shadow: -1px -1px 8px rgb(249, 104, 239);
+  }
+  to {
+    text-shadow: -1px -1px 15px rgb(249, 104, 239);
+  }
 }
 .App.main-theme .landing-wrap .landing-intro-wrap {
   background-color: rgba(50, 50, 50, 0.6823529412);
   border-bottom: 2px solid #fff;
   box-shadow: 0 13px 10px -10px rgb(249, 104, 239);
+  animation: breathingBorder 1s alternate-reverse infinite;
+}
+@keyframes breathingBorder {
+  from {
+    box-shadow: 0 13px 10px -10px rgb(249, 104, 239);
+  }
+  to {
+    box-shadow: 0 13px 10px -9px rgb(249, 104, 239);
+  }
 }
 .App.main-theme .landing-wrap .landing-intro-wrap .landing-intro-body {
   background-color: rgba(50, 50, 50, 0.6823529412);
@@ -51,13 +113,18 @@
   font-family: Lora;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
+  animation: breathingText 2s alternate-reverse infinite;
+}
+@keyframes breathingText {
+  from {
+    text-shadow: -1px -1px 8px rgb(249, 104, 239);
+  }
+  to {
+    text-shadow: -1px -1px 15px rgb(249, 104, 239);
+  }
 }
 .App.main-theme .landing-wrap .landing-intro-wrap .landing-intro-body ul {
   font-family: Montserrat;
-}
-.App.main-theme .landing-wrap .landing-intro-wrap .landing-intro-body .address-bar a {
-  font-family: Montserrat;
-  color: #fff;
 }
 .App.main-theme .landing-wrap #leave-landing-button {
   background: none;
@@ -72,6 +139,15 @@
   border: 0.15px dashed rgba(255, 255, 255, 0.447);
   border-bottom: 2px solid #fff;
   box-shadow: 0 13px 10px -10px rgb(249, 104, 239);
+  animation: breathingBorder 1s alternate-reverse infinite;
+}
+@keyframes breathingBorder {
+  from {
+    box-shadow: 0 13px 10px -10px rgb(249, 104, 239);
+  }
+  to {
+    box-shadow: 0 13px 10px -9px rgb(249, 104, 239);
+  }
 }
 .App.main-theme .about-me-wrap .about-me-description {
   background-color: rgba(50, 50, 50, 0.6823529412);
@@ -81,6 +157,15 @@
   font-family: Lora;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
+  animation: breathingText 2s alternate-reverse infinite;
+}
+@keyframes breathingText {
+  from {
+    text-shadow: -1px -1px 8px rgb(249, 104, 239);
+  }
+  to {
+    text-shadow: -1px -1px 15px rgb(249, 104, 239);
+  }
 }
 .App.main-theme .about-me-wrap .about-me-description .bio {
   font-family: Montserrat;
@@ -98,9 +183,30 @@
   font-family: Lora;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
+  animation: breathingText 2s alternate-reverse infinite;
   background-color: rgba(50, 50, 50, 0.6823529412);
   border: 0.15px dashed rgba(255, 255, 255, 0.447);
   border-right: none;
+}
+@keyframes breathingText {
+  from {
+    text-shadow: -1px -1px 8px rgb(249, 104, 239);
+  }
+  to {
+    text-shadow: -1px -1px 15px rgb(249, 104, 239);
+  }
+}
+.App.main-theme .services-wrap .services-gallery-wrap .service-wrap .service-description {
+  background-color: rgba(50, 50, 50, 0.6823529412);
+  border: 0.15px dashed rgba(255, 255, 255, 0.447);
+}
+.App.main-theme .services-wrap .services-gallery-wrap .service-wrap .service-description .title {
+  font-family: Lora;
+  color: #fff;
+}
+.App.main-theme .services-wrap .services-gallery-wrap .service-wrap .service-description .description {
+  font-family: Lora;
+  color: #fff;
 }
 .App.main-theme .services-wrap .services-reach-out {
   background-color: rgba(50, 50, 50, 0.6823529412);
@@ -121,6 +227,15 @@
   font-family: Montserrat;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
+  animation: breathingText 2s alternate-reverse infinite;
+}
+@keyframes breathingText {
+  from {
+    text-shadow: -1px -1px 8px rgb(249, 104, 239);
+  }
+  to {
+    text-shadow: -1px -1px 15px rgb(249, 104, 239);
+  }
 }
 .App.main-theme .services-wrap .services-reach-out .contact-btn i {
   color: #fee8fb;
@@ -166,6 +281,15 @@
   background-color: rgba(50, 50, 50, 0.6823529412);
   border-bottom: 2px solid #fff;
   box-shadow: 0 13px 10px -10px rgb(249, 104, 239);
+  animation: breathingBorder 1s alternate-reverse infinite;
+}
+@keyframes breathingBorder {
+  from {
+    box-shadow: 0 13px 10px -10px rgb(249, 104, 239);
+  }
+  to {
+    box-shadow: 0 13px 10px -9px rgb(249, 104, 239);
+  }
 }
 .App.main-theme .contact-wrap form {
   background-color: rgba(50, 50, 50, 0.6823529412);
@@ -185,6 +309,15 @@
   font-family: Lora;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
+  animation: breathingText 2s alternate-reverse infinite;
+}
+@keyframes breathingText {
+  from {
+    text-shadow: -1px -1px 8px rgb(249, 104, 239);
+  }
+  to {
+    text-shadow: -1px -1px 15px rgb(249, 104, 239);
+  }
 }
 .App.main-theme .contact-wrap form .row.row-method p {
   font-family: Montserrat;
@@ -199,6 +332,15 @@
   font-family: Montserrat;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
+  animation: breathingText 2s alternate-reverse infinite;
+}
+@keyframes breathingText {
+  from {
+    text-shadow: -1px -1px 8px rgb(249, 104, 239);
+  }
+  to {
+    text-shadow: -1px -1px 15px rgb(249, 104, 239);
+  }
 }
 .App.main-theme .contact-wrap form .row.row-submit button i {
   color: #fee8fb;
@@ -210,6 +352,15 @@
   font-family: Lora;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
+  animation: breathingText 2s alternate-reverse infinite;
+}
+@keyframes breathingText {
+  from {
+    text-shadow: -1px -1px 8px rgb(249, 104, 239);
+  }
+  to {
+    text-shadow: -1px -1px 15px rgb(249, 104, 239);
+  }
 }
 .App.main-theme .contact-wrap .contact-direct .links {
   background-color: rgba(0, 0, 0, 0.6666666667);
@@ -235,6 +386,10 @@
 }
 .App.main-theme .page-progress-wrap .progressBar-wrap .progressBar {
   background-color: white;
+}
+.App.main-theme .next-page-link {
+  color: #fff;
+  animation: fadeIn 2s linear;
 }
 
 /*# sourceMappingURL=themes.css.map */

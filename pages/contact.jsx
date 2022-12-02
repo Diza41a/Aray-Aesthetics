@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimatedLayout from './subcomponents/AnimatedLayout.jsx';
 
 // Helpers
 import { makeInputBox, makeTextArea } from './subcomponents/helpers.js';
@@ -8,7 +9,7 @@ export default function Contact() {
   return (
     <>
       <h2 className="section-title" id="contact">Contact</h2>
-      <div className="contact-wrap">
+      <AnimatedLayout props={{className: "contact-wrap"}}>
         <form action="submit">
           <div className="row-name row">
             {makeInputBox('Name')}
@@ -42,7 +43,7 @@ export default function Contact() {
           </div>
           <div className="method"></div>
         </div>
-      </div>
+      </AnimatedLayout>
     </>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
-// import { useScrollContainer } from 'react-indiana-drag-scroll';
+import AnimatedLayout from './subcomponents/AnimatedLayout.jsx';
 import { useDraggable } from "react-use-draggable-scroll";
+import NextPageLink from './subcomponents/NextPageLink.jsx';
 
 // Data imports
 const servicesJSON = require('./data/services.json');
@@ -12,10 +13,22 @@ export default function Services() {
 
   const renderServices = () => servicesJSON.map((service, i) => {
     return (
-      <div className="service-wrap" key={i} style={{ backgroundImage: `url('${service.imageUri}')`, backgroundPositionX: service.backgroundPositionX }}>
+      <div className="service-wrap" key={i}>
+        <div
+        className="service-background"
+        style={{
+          backgroundImage: `url('${service.imageUri}')`, backgroundPositionX: service.backgroundPositionX,
+         }}
+         />
         <div className="title-wrap">
           <p className="number">{('0' + (i + 1)).slice(-2)}</p>
           <h5 className="title">{service.name}</h5>
+        </div>
+
+        {/* Service description (hover) */}
+        <div className="service-description">
+          <h5 className="title">{service.name}</h5>
+          <p className="description">{service.description}</p>
         </div>
       </div>
     );
@@ -24,7 +37,7 @@ export default function Services() {
   return (
     <>
       {/* <h2 className="section-title" id="services">Services</h2> */}
-      <div className="services-wrap">
+      <AnimatedLayout props={{className: "services-wrap"}}>
 
         <h2 className="section-title" id="services">Services</h2>
 
@@ -47,7 +60,8 @@ export default function Services() {
             <i className="fa-solid fa-chevron-down arrow" />
           </button>
         </div>
-      </div>
+        {/* <NextPageLink props={{ href: '/gallery', style: {right: '10%', left: 'initial'} }} /> */}
+      </AnimatedLayout>
     </>
   );
 };

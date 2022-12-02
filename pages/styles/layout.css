@@ -15,6 +15,11 @@ button {
   display: none;
 }
 
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 img {
   user-drag: none;
   -webkit-user-drag: none;
@@ -86,6 +91,7 @@ img {
   bottom: 0;
 }
 .App .direct-links {
+  z-index: 1000;
   max-width: 20vw;
   display: flex;
   justify-content: center;
@@ -99,6 +105,9 @@ img {
   cursor: pointer;
   margin: 0 5.6px;
   font-size: 24px;
+}
+.App .page-progress-wrap {
+  z-index: 1000;
 }
 .App .page-progress-wrap .progressBar-wrap {
   display: none;
@@ -125,6 +134,15 @@ img {
 }
 .App .page-progress-wrap .page-progress-indicators a {
   text-decoration: none;
+}
+.App .fixed-address-bar {
+  display: none;
+}
+.App .next-page-link {
+  position: absolute;
+  bottom: 5%;
+  left: calc(50% - 20px);
+  font-size: 40px;
 }
 .App .section-title {
   text-transform: uppercase;
@@ -158,6 +176,7 @@ img {
   direction: rtl;
   text-align: left;
   font-size: 22.4px;
+  line-height: 1.5;
 }
 .App .landing-wrap .landing-intro-wrap .landing-intro-body .address-bar {
   text-align: center;
@@ -223,12 +242,13 @@ img {
 .App .services-wrap .services-gallery-wrap {
   max-width: 100vw;
   display: flex;
-  overflow-x: overlay;
+  overflow-y: overlay;
   /* Width */
   /* Track */
   /* Handle */
 }
 .App .services-wrap .services-gallery-wrap .service-wrap {
+  overflow: hidden;
   flex-shrink: 0;
   height: 71.5vh;
   width: 72.5vw;
@@ -236,9 +256,22 @@ img {
   justify-content: flex-end;
   align-items: flex-end;
   padding-bottom: 8.5vh;
+  position: relative;
+}
+.App .services-wrap .services-gallery-wrap .service-wrap .service-background {
   background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  transition: width 1s ease-in-out;
 }
 .App .services-wrap .services-gallery-wrap .service-wrap .title-wrap {
+  z-index: 100;
+  transition: opacity 0.25s ease-in, visibility 1s ease-in;
   width: 80%;
 }
 .App .services-wrap .services-gallery-wrap .service-wrap .title-wrap .number {
@@ -257,6 +290,56 @@ img {
   max-width: 249.92px;
   margin-left: auto;
 }
+.App .services-wrap .services-gallery-wrap .service-wrap .service-description {
+  z-index: 100;
+  transition: opacity 0.25s ease-out, transform 0.5s ease-out;
+  transform: scale(0.85);
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 20%;
+  bottom: 20%;
+  left: 5%;
+  right: 5%;
+  padding-top: 25%;
+  padding: 25% 2% 0 2%;
+  text-align: center;
+}
+.App .services-wrap .services-gallery-wrap .service-wrap .service-description .title {
+  font-size: 24.8px;
+}
+.App .services-wrap .services-gallery-wrap .service-wrap .service-description .description {
+  margin-top: 5%;
+  font-size: 20px;
+  padding: 0 3%;
+}
+.App .services-wrap .services-gallery-wrap .service-wrap:hover .service-background {
+  width: 102.5%;
+  transition: width 1s ease-in-out;
+}
+.App .services-wrap .services-gallery-wrap .service-wrap:hover .title-wrap {
+  transition: opacity 0.25s ease-out, visibility 1s ease-out;
+  visibility: hidden;
+  opacity: 0;
+}
+.App .services-wrap .services-gallery-wrap .service-wrap:hover .service-description {
+  transition: visibility 1s ease-in, opacity 0.75s ease-in, transform 0.5s ease-in;
+  transform: scale(1);
+  visibility: initial !important;
+  opacity: 1;
+}
+.App .services-wrap .services-gallery-wrap .service-wrap:last-child .title-wrap {
+  display: none;
+}
+.App .services-wrap .services-gallery-wrap .service-wrap:last-child .service-description {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+.App .services-wrap .services-gallery-wrap .service-wrap:last-child:hover .service-background {
+  width: 100%;
+  height: 100%;
+}
 .App .services-wrap .services-gallery-wrap::-webkit-scrollbar {
   width: 50%;
 }
@@ -269,6 +352,7 @@ img {
   border-radius: 4px;
 }
 .App .services-wrap .services-reach-out {
+  margin-bottom: 4.5vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -338,95 +422,7 @@ img {
   z-index: 999;
 }
 .App .contact-wrap {
-  margin: 10vh auto;
-}
-.App .contact-wrap form {
-  padding: 16px 4px;
-}
-.App .contact-wrap form .row {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 12px 0;
-}
-.App .contact-wrap form .row .input-wrap {
-  display: flex;
-  flex-direction: column;
-}
-.App .contact-wrap form .row .input-wrap label {
-  font-size: 20px;
-  margin-left: 12px;
-}
-.App .contact-wrap form .row .input-wrap input, .App .contact-wrap form .row .input-wrap textarea {
-  font-size: 20px;
-  padding: 7.2px 5%;
-}
-.App .contact-wrap form .row.row-name p {
-  margin: 0 8px;
-  font-size: 20px;
-  text-align: right;
-}
-.App .contact-wrap form .row.row-name .input-wrap {
-  width: 100%;
-}
-.App .contact-wrap form .row.row-method .input-wrap input {
-  width: 90%;
-}
-.App .contact-wrap form .row.row-method p {
-  font-size: 21.6px;
-  margin: 0 20px;
-}
-.App .contact-wrap form .row.row-inquiry {
-  width: 100%;
-}
-.App .contact-wrap form .row.row-inquiry .textarea-wrap {
-  width: 100%;
-}
-.App .contact-wrap form .row.row-inquiry .textarea-wrap textarea {
-  height: 80px;
-  resize: none;
-}
-.App .contact-wrap form .row.row-submit {
-  justify-content: flex-end;
-}
-.App .contact-wrap form .row.row-submit button {
-  font-size: 20px;
-  width: 160px;
-  padding: 5.6px 0;
-  border-radius: 16px;
-}
-.App .contact-wrap .contact-direct {
-  padding: 16px 20px;
-}
-.App .contact-wrap .contact-direct .method {
-  display: flex;
-  align-items: center;
-  margin: 16px 0;
-}
-.App .contact-wrap .contact-direct .method i {
-  font-size: 48px;
-}
-.App .contact-wrap .contact-direct .method a {
-  text-decoration: none;
-  margin-left: 12px;
-  font-size: 20px;
-}
-.App .contact-wrap .contact-direct .links {
-  width: 90%;
-  margin: auto;
-  margin-top: 24px;
-  padding: 12px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 32px;
-}
-.App .contact-wrap .contact-direct .links i {
-  font-size: 44px;
-  margin: 0 8px;
-}
-.App .contact-wrap {
-  margin: 10vh auto;
+  margin: 0 auto;
 }
 .App .contact-wrap form {
   padding: 16px 4px;
@@ -515,6 +511,15 @@ img {
 }
 
 @media (min-width: 780px) {
+  body {
+    overflow-y: hidden;
+  }
+
+  header {
+    height: 4.3vh;
+    max-height: 50px;
+    min-height: 40px;
+  }
   header .tools {
     margin-right: 0 !important;
     margin-left: auto;
@@ -547,14 +552,14 @@ img {
   .direct-links {
     max-width: 5vw !important;
     flex-direction: column;
-    padding: 5.6px 8px !important;
+    padding: 8px 8.8px !important;
     bottom: initial !important;
     right: initial !important;
     left: 0;
     top: 25vh;
   }
   .direct-links i {
-    margin: 4px 0 !important;
+    margin: 5.6px 0 !important;
     font-size: 20px !important;
   }
   .direct-links i.fa-instagram {
@@ -588,6 +593,17 @@ img {
     text-decoration: none;
   }
 
+  .fixed-address-bar {
+    display: initial !important;
+    mix-blend-mode: difference;
+    margin: 0 !important;
+    position: fixed;
+    z-index: 1000;
+    bottom: 0.5vh;
+    left: 1vw;
+    font-style: italic;
+  }
+
   .section-title {
     font-size: 36px !important;
   }
@@ -603,6 +619,7 @@ img {
     font-size: 20px !important;
   }
   .landing-wrap .landing-intro-wrap .landing-intro-body .address-bar {
+    display: none;
     margin: 0 !important;
     position: fixed;
     z-index: 1000;
@@ -625,17 +642,29 @@ img {
 
   .services-wrap {
     margin-top: 0 !important;
+    height: 92.7vh !important;
   }
   .services-wrap .services-gallery-wrap .service-wrap {
-    height: 80vh !important;
+    height: 83.7vh !important;
     width: 42.5vw !important;
     max-width: 500px;
+  }
+  .services-wrap .services-gallery-wrap .service-wrap .service-description {
+    left: 15% !important;
+    right: 15% !important;
+  }
+  .services-wrap .services-gallery-wrap .service-wrap .service-description .title {
+    font-size: 28px !important;
+  }
+  .services-wrap .services-gallery-wrap .service-wrap .service-description .description {
+    font-size: 21.6px !important;
   }
   .services-wrap .services-reach-out {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5vh 10vw !important;
+    margin-bottom: 0 !important;
   }
   .services-wrap .services-reach-out * {
     margin: 0 2vw;
@@ -685,7 +714,9 @@ img {
 
   .contact-wrap {
     width: 100vw !important;
+    max-width: 1100px !important;
     padding: 5vh 0;
+    margin: auto !important;
     max-width: 1200px;
     display: flex;
     justify-content: center !important;
@@ -704,14 +735,37 @@ img {
     font-size: 21.6px !important;
   }
   .contact-wrap form .row.row-name p {
-    max-width: 150px;
-    font-size: 22.4px !important;
+    max-width: 176px;
+    font-size: 28px !important;
   }
   .contact-wrap form .row.row-method p {
     font-size: 23.2px !important;
   }
+  .contact-wrap form .row.row-submit button {
+    text-align: center;
+    font-size: 21.6px !important;
+    padding: 12px 0 !important;
+    margin-top: 24px;
+    width: 192px !important;
+  }
   .contact-wrap .contact-direct {
     margin-top: 5vh;
+  }
+  .contact-wrap .contact-direct .method {
+    margin-bottom: 3vh !important;
+  }
+  .contact-wrap .contact-direct .method i {
+    font-size: 56px !important;
+  }
+  .contact-wrap .contact-direct .method a {
+    font-size: 24px !important;
+  }
+  .contact-wrap .contact-direct .links {
+    border-radius: 80px !important;
+  }
+  .contact-wrap .contact-direct .links i {
+    font-size: 48px !important;
+    margin: 0 16px !important;
   }
 }
 @media (min-width: 1000px) {
@@ -745,14 +799,6 @@ img {
     text-align: right !important;
     font-size: 21.6px !important;
   }
-  .landing-wrap .landing-intro-wrap .landing-intro-body .address-bar {
-    text-align: center;
-    font-style: italic;
-    margin: 7.5vh auto 2.5vh auto;
-  }
-  .landing-wrap .landing-intro-wrap .landing-intro-body .address-bar a {
-    text-decoration: none;
-  }
   .landing-wrap .landing-intro-wrap .photo-wrap {
     transform: scaleX(-1);
     position: absolute;
@@ -761,9 +807,9 @@ img {
     display: flex !important;
   }
   .landing-wrap .landing-intro-wrap .photo-wrap img {
-    width: 40vw;
+    width: 44vw;
     min-width: 450px;
-    max-width: 600px;
+    max-width: 616px;
   }
 
   .about-me-wrap {
@@ -865,6 +911,7 @@ img {
     bottom: 0;
   }
   .App .direct-links {
+    z-index: 1000;
     max-width: 20vw;
     display: flex;
     justify-content: center;
@@ -878,6 +925,9 @@ img {
     cursor: pointer;
     margin: 0 7px;
     font-size: 30px;
+  }
+  .App .page-progress-wrap {
+    z-index: 1000;
   }
   .App .page-progress-wrap .progressBar-wrap {
     display: none;
@@ -904,6 +954,15 @@ img {
   }
   .App .page-progress-wrap .page-progress-indicators a {
     text-decoration: none;
+  }
+  .App .fixed-address-bar {
+    display: none;
+  }
+  .App .next-page-link {
+    position: absolute;
+    bottom: 5%;
+    left: calc(50% - 25px);
+    font-size: 50px;
   }
   .App .section-title {
     text-transform: uppercase;
@@ -937,6 +996,7 @@ img {
     direction: rtl;
     text-align: left;
     font-size: 28px;
+    line-height: 1.5;
   }
   .App .landing-wrap .landing-intro-wrap .landing-intro-body .address-bar {
     text-align: center;
@@ -1002,12 +1062,13 @@ img {
   .App .services-wrap .services-gallery-wrap {
     max-width: 100vw;
     display: flex;
-    overflow-x: overlay;
+    overflow-y: overlay;
     /* Width */
     /* Track */
     /* Handle */
   }
   .App .services-wrap .services-gallery-wrap .service-wrap {
+    overflow: hidden;
     flex-shrink: 0;
     height: 71.5vh;
     width: 72.5vw;
@@ -1015,9 +1076,22 @@ img {
     justify-content: flex-end;
     align-items: flex-end;
     padding-bottom: 8.5vh;
+    position: relative;
+  }
+  .App .services-wrap .services-gallery-wrap .service-wrap .service-background {
     background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    transition: width 1s ease-in-out;
   }
   .App .services-wrap .services-gallery-wrap .service-wrap .title-wrap {
+    z-index: 100;
+    transition: opacity 0.25s ease-in, visibility 1s ease-in;
     width: 80%;
   }
   .App .services-wrap .services-gallery-wrap .service-wrap .title-wrap .number {
@@ -1036,6 +1110,56 @@ img {
     max-width: 312.4px;
     margin-left: auto;
   }
+  .App .services-wrap .services-gallery-wrap .service-wrap .service-description {
+    z-index: 100;
+    transition: opacity 0.25s ease-out, transform 0.5s ease-out;
+    transform: scale(0.85);
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 20%;
+    bottom: 20%;
+    left: 5%;
+    right: 5%;
+    padding-top: 25%;
+    padding: 25% 2% 0 2%;
+    text-align: center;
+  }
+  .App .services-wrap .services-gallery-wrap .service-wrap .service-description .title {
+    font-size: 31px;
+  }
+  .App .services-wrap .services-gallery-wrap .service-wrap .service-description .description {
+    margin-top: 5%;
+    font-size: 25px;
+    padding: 0 3%;
+  }
+  .App .services-wrap .services-gallery-wrap .service-wrap:hover .service-background {
+    width: 102.5%;
+    transition: width 1s ease-in-out;
+  }
+  .App .services-wrap .services-gallery-wrap .service-wrap:hover .title-wrap {
+    transition: opacity 0.25s ease-out, visibility 1s ease-out;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .App .services-wrap .services-gallery-wrap .service-wrap:hover .service-description {
+    transition: visibility 1s ease-in, opacity 0.75s ease-in, transform 0.5s ease-in;
+    transform: scale(1);
+    visibility: initial !important;
+    opacity: 1;
+  }
+  .App .services-wrap .services-gallery-wrap .service-wrap:last-child .title-wrap {
+    display: none;
+  }
+  .App .services-wrap .services-gallery-wrap .service-wrap:last-child .service-description {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+  .App .services-wrap .services-gallery-wrap .service-wrap:last-child:hover .service-background {
+    width: 100%;
+    height: 100%;
+  }
   .App .services-wrap .services-gallery-wrap::-webkit-scrollbar {
     width: 50%;
   }
@@ -1048,6 +1172,7 @@ img {
     border-radius: 5px;
   }
   .App .services-wrap .services-reach-out {
+    margin-bottom: 4.5vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1117,95 +1242,7 @@ img {
     z-index: 999;
   }
   .App .contact-wrap {
-    margin: 10vh auto;
-  }
-  .App .contact-wrap form {
-    padding: 20px 5px;
-  }
-  .App .contact-wrap form .row {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 15px 0;
-  }
-  .App .contact-wrap form .row .input-wrap {
-    display: flex;
-    flex-direction: column;
-  }
-  .App .contact-wrap form .row .input-wrap label {
-    font-size: 25px;
-    margin-left: 15px;
-  }
-  .App .contact-wrap form .row .input-wrap input, .App .contact-wrap form .row .input-wrap textarea {
-    font-size: 25px;
-    padding: 9px 5%;
-  }
-  .App .contact-wrap form .row.row-name p {
-    margin: 0 10px;
-    font-size: 25px;
-    text-align: right;
-  }
-  .App .contact-wrap form .row.row-name .input-wrap {
-    width: 100%;
-  }
-  .App .contact-wrap form .row.row-method .input-wrap input {
-    width: 90%;
-  }
-  .App .contact-wrap form .row.row-method p {
-    font-size: 27px;
-    margin: 0 25px;
-  }
-  .App .contact-wrap form .row.row-inquiry {
-    width: 100%;
-  }
-  .App .contact-wrap form .row.row-inquiry .textarea-wrap {
-    width: 100%;
-  }
-  .App .contact-wrap form .row.row-inquiry .textarea-wrap textarea {
-    height: 100px;
-    resize: none;
-  }
-  .App .contact-wrap form .row.row-submit {
-    justify-content: flex-end;
-  }
-  .App .contact-wrap form .row.row-submit button {
-    font-size: 25px;
-    width: 200px;
-    padding: 7px 0;
-    border-radius: 20px;
-  }
-  .App .contact-wrap .contact-direct {
-    padding: 20px 25px;
-  }
-  .App .contact-wrap .contact-direct .method {
-    display: flex;
-    align-items: center;
-    margin: 20px 0;
-  }
-  .App .contact-wrap .contact-direct .method i {
-    font-size: 60px;
-  }
-  .App .contact-wrap .contact-direct .method a {
-    text-decoration: none;
-    margin-left: 15px;
-    font-size: 25px;
-  }
-  .App .contact-wrap .contact-direct .links {
-    width: 90%;
-    margin: auto;
-    margin-top: 30px;
-    padding: 15px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 40px;
-  }
-  .App .contact-wrap .contact-direct .links i {
-    font-size: 55px;
-    margin: 0 10px;
-  }
-  .App .contact-wrap {
-    margin: 10vh auto;
+    margin: 0 auto;
   }
   .App .contact-wrap form {
     padding: 20px 5px;
@@ -1293,6 +1330,11 @@ img {
     margin: 0 10px;
   }
 
+  header {
+    height: 4.3vh;
+    max-height: 50px;
+    min-height: 40px;
+  }
   header .tools {
     margin-right: 0 !important;
     margin-left: auto;
@@ -1325,14 +1367,14 @@ img {
   .direct-links {
     max-width: 5vw !important;
     flex-direction: column;
-    padding: 7px 10px !important;
+    padding: 10px 11px !important;
     bottom: initial !important;
     right: initial !important;
     left: 0;
     top: 25vh;
   }
   .direct-links i {
-    margin: 5px 0 !important;
+    margin: 7px 0 !important;
     font-size: 25px !important;
   }
   .direct-links i.fa-instagram {
@@ -1366,6 +1408,17 @@ img {
     text-decoration: none;
   }
 
+  .fixed-address-bar {
+    display: initial !important;
+    mix-blend-mode: difference;
+    margin: 0 !important;
+    position: fixed;
+    z-index: 1000;
+    bottom: 0.5vh;
+    left: 1vw;
+    font-style: italic;
+  }
+
   .section-title {
     font-size: 45px !important;
   }
@@ -1381,6 +1434,7 @@ img {
     font-size: 25px !important;
   }
   .landing-wrap .landing-intro-wrap .landing-intro-body .address-bar {
+    display: none;
     margin: 0 !important;
     position: fixed;
     z-index: 1000;
@@ -1403,17 +1457,29 @@ img {
 
   .services-wrap {
     margin-top: 0 !important;
+    height: 92.7vh !important;
   }
   .services-wrap .services-gallery-wrap .service-wrap {
-    height: 80vh !important;
+    height: 83.7vh !important;
     width: 42.5vw !important;
     max-width: 500px;
+  }
+  .services-wrap .services-gallery-wrap .service-wrap .service-description {
+    left: 15% !important;
+    right: 15% !important;
+  }
+  .services-wrap .services-gallery-wrap .service-wrap .service-description .title {
+    font-size: 35px !important;
+  }
+  .services-wrap .services-gallery-wrap .service-wrap .service-description .description {
+    font-size: 27px !important;
   }
   .services-wrap .services-reach-out {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5vh 10vw !important;
+    margin-bottom: 0 !important;
   }
   .services-wrap .services-reach-out * {
     margin: 0 2vw;
@@ -1463,7 +1529,9 @@ img {
 
   .contact-wrap {
     width: 100vw !important;
+    max-width: 1375px !important;
     padding: 5vh 0;
+    margin: auto !important;
     max-width: 1500px;
     display: flex;
     justify-content: center !important;
@@ -1482,14 +1550,37 @@ img {
     font-size: 27px !important;
   }
   .contact-wrap form .row.row-name p {
-    max-width: 150px;
-    font-size: 28px !important;
+    max-width: 220px;
+    font-size: 35px !important;
   }
   .contact-wrap form .row.row-method p {
     font-size: 29px !important;
   }
+  .contact-wrap form .row.row-submit button {
+    text-align: center;
+    font-size: 27px !important;
+    padding: 15px 0 !important;
+    margin-top: 30px;
+    width: 240px !important;
+  }
   .contact-wrap .contact-direct {
     margin-top: 5vh;
+  }
+  .contact-wrap .contact-direct .method {
+    margin-bottom: 3vh !important;
+  }
+  .contact-wrap .contact-direct .method i {
+    font-size: 70px !important;
+  }
+  .contact-wrap .contact-direct .method a {
+    font-size: 30px !important;
+  }
+  .contact-wrap .contact-direct .links {
+    border-radius: 100px !important;
+  }
+  .contact-wrap .contact-direct .links i {
+    font-size: 60px !important;
+    margin: 0 20px !important;
   }
 
   header .logo a {
@@ -1522,14 +1613,6 @@ img {
     text-align: right !important;
     font-size: 27px !important;
   }
-  .landing-wrap .landing-intro-wrap .landing-intro-body .address-bar {
-    text-align: center;
-    font-style: italic;
-    margin: 7.5vh auto 2.5vh auto;
-  }
-  .landing-wrap .landing-intro-wrap .landing-intro-body .address-bar a {
-    text-decoration: none;
-  }
   .landing-wrap .landing-intro-wrap .photo-wrap {
     transform: scaleX(-1);
     position: absolute;
@@ -1538,9 +1621,9 @@ img {
     display: flex !important;
   }
   .landing-wrap .landing-intro-wrap .photo-wrap img {
-    width: 40vw;
+    width: 44vw;
     min-width: 450px;
-    max-width: 750px;
+    max-width: 770px;
   }
 
   .about-me-wrap {

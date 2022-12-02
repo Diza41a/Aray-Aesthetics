@@ -24,6 +24,15 @@ export default function SliderLinks() {
           <a href="#">5</a>
         </div>
       </div>
+      <p className="fixed-address-bar">
+            <a
+              href="https://www.google.com/maps/place/Aray+Aesthetics+LLC/@27.3382035,-82.5447385,17z/data=!3m2!4b1!5s0x88c34012997bac11:0xcbdde6b609505471!4m5!3m4!1s0x88c3413f6acc1f9f:0xafb624f699265217!8m2!3d27.3381988!4d-82.5425445"
+              target="_blank"
+              rel="noreferrer"
+            >
+              200 Central Ave, Sarasota, FL 34236
+            </a>
+      </p>
     </>
   );
 };

@@ -73,7 +73,7 @@ export default function Particle() {
             frequency: 0.75,
           },
           collisions: {
-            enable: true,
+            enable: false,
           },
           move: {
             direction: 'top-right',
@@ -82,13 +82,17 @@ export default function Particle() {
               default: 'out',
             },
             random: true,
+            // speed: {
+            //   min: 0.5,
+            //   max: 1.5,
+            // },
             speed: 1.5,
             straight: false,
           },
           number: {
             density: {
               enable: true,
-              area: 500,
+              area: 800,
             },
             value: 10,
           },
@@ -122,8 +126,8 @@ export default function Particle() {
           shadow: {
             blur: 25,
             color: {
-              value: "#ffffff"
-              // value: "#f096fc"
+              // value: "#ffffff"
+              value: "#f096fca5"
               // value: "#000000"
             },
             enable: true,

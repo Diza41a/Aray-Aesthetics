@@ -1,8 +1,10 @@
 import React from 'react';
+import AnimatedLayout from './subcomponents/AnimatedLayout.jsx';
+import NextPageLink from './subcomponents/NextPageLink.jsx';
 
 export default function Landing() {
   return (
-    <div className="landing-wrap" id="landing">
+    <AnimatedLayout props={{ className: "landing-wrap", id:"landing" }}>
       <div className="landing-intro-wrap">
         <div className="landing-intro-body">
           <h2>Lorem Ipsum! <br /> Eat a blueberry croissant and check out the next page!</h2>
@@ -27,10 +29,7 @@ export default function Landing() {
           <img src="./assets/images/mockLanding.png" alt="" />
         </div>
       </div>
-      {/* down arrow */}
-      {/* <button id="leave-landing-button">
-        <i className="fa-solid fa-chevron-down" />
-      </button> */}
-    </div>
+      <NextPageLink props={{ href: '/about' }} />
+    </AnimatedLayout>
   );
 };

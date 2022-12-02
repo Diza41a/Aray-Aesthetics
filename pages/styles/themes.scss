@@ -14,15 +14,77 @@
 }
 
 #root {
-  background-image: url(../../public/assets/images/mockBackground.jpg);
+  // background-image: url(../../public/assets/images/mockBackground.jpg);
+  background-image: url(../../public/assets/images/test.jpeg);
   background-size: cover;
   background-attachment: fixed;
 }
 
+* {
+    /* Width */
+    &::-webkit-scrollbar {
+      width: 0.5em;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background-color: #626060fd;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: rgba(55, 55, 55, 0.973);
+      border: 1px solid #323232a3;
+      border-radius: 4px;
+    }
+}
+
+// animations
+@mixin breathingText($color, $glowColor) {
+  @keyframes breathingText {
+    from {
+      text-shadow: -1px -1px 8px $glowColor;
+    }
+    to {
+      text-shadow: -1px -1px 15px $glowColor;
+    }
+  };
+
+  animation: breathingText 2s alternate-reverse infinite;
+}
+
+@mixin breathingBorder($color, $glowColor) {
+  @keyframes breathingBorder {
+    from {
+      box-shadow: 0 13px 10px -10px $glowColor;
+    }
+    to {
+      box-shadow: 0 13px 10px -9px $glowColor;
+    }
+  };
+
+  animation: breathingBorder 1s alternate-reverse infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  49% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// mixins
 @mixin glowingBorder($color, $glowColor) {
   border-bottom: 2px solid $color;
   // box-shadow: 0 0 10px $glowColor;
   box-shadow: 0 13px 10px -10px $glowColor;
+
+  @include breathingBorder($color, $glowColor);
 }
 
 @mixin basicBorder {
@@ -32,6 +94,8 @@
 @mixin glowingText($color, $glowColor) {
   color: $color;
   text-shadow: -1px -1px 10px $glowColor;
+
+  @include breathingText($color, $glowColor);
 }
 
 @mixin button($color, $glowColor, $iconColor, $backColor, $font) {
@@ -71,6 +135,16 @@
     }
   }
 
+  .address-bar, .fixed-address-bar {
+    mix-blend-mode: difference;
+
+    a {
+      font-family: $mainFont;
+      color: $mainFontColor;
+
+    }
+  }
+
   // section title
   .section-title {
     font-family: $tertiaryFont;
@@ -99,14 +173,6 @@
 
         ul {
           font-family: $mainFont;
-        }
-
-        .address-bar {
-          a {
-            font-family: $mainFont;
-            color: $mainFontColor;
-
-          }
         }
       }
     }
@@ -179,7 +245,23 @@
             @include basicBorder();
             border-right: none;
           }
+
         }
+
+        .service-description {
+          background-color: $mainBack;
+          @include basicBorder();
+
+          .title {
+            font-family: $tertiaryFont;
+            color: $mainFontColor;
+          }
+          .description {
+            font-family: $tertiaryFont;
+            color: $mainFontColor;
+          }
+        }
+
       }
     }
 
@@ -366,6 +448,12 @@
         background-color: white;
       }
     }
+  }
+
+  .next-page-link {
+    color: $mainFontColor;
+
+    animation: fadeIn 2s linear;
   }
 
 }

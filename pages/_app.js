@@ -11,8 +11,10 @@ import Header from './subcomponents/header.jsx';
 import SliderLinks from './subcomponents/sliderLinks.jsx';
 
 // Misc
-import AnimatedCursor from "react-animated-cursor";
-import { useDraggable } from "react-use-draggable-scroll";
+import AnimatedCursor from 'react-animated-cursor';
+import { useDraggable } from 'react-use-draggable-scroll';
+import { AnimatePresence } from 'framer-motion';
+import {v4 as uuidv4} from 'uuid';
 
 function MyApp({ Component, pageProps }) {
   const [onClient, toggleOnClient] = useState(false);
@@ -39,7 +41,9 @@ function MyApp({ Component, pageProps }) {
             /> : null}
         <Header />
 
-        <Component {...pageProps} />
+        {onClient ? <AnimatePresence mode="wait" initial={false}>
+          <Component {...pageProps} key={uuidv4()} />
+        </AnimatePresence> : null}
 
         <SliderLinks />
         </div>

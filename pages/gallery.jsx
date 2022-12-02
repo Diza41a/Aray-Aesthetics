@@ -1,11 +1,13 @@
 import React from 'react';
+import AnimatedLayout from './subcomponents/AnimatedLayout.jsx';
+import NextPageLink from './subcomponents/NextPageLink.jsx';
 
 export default function Gallery() {
 
   return (
     <>
       <h2 className="section-title" id="gallery">Gallery</h2>
-      <section className="gallery-wrap">
+      <AnimatedLayout props={{className: "gallery-wrap"}}>
         <div className="gallery-gate">
           <div className="row-img">
             <div className="img-wrap">
@@ -27,7 +29,8 @@ export default function Gallery() {
             </div>
           </div>
         </div>
-      </section>
+        <NextPageLink props={{ href: '/contact' }} />
+      </AnimatedLayout>
     </>
   );
 };
