@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Particle from './subcomponents/particle.jsx';
 
 // Styles
@@ -16,8 +16,31 @@ import { useDraggable } from 'react-use-draggable-scroll';
 import { AnimatePresence } from 'framer-motion';
 import {v4 as uuidv4} from 'uuid';
 
+export const ThemeContext = React.createContext('main-theme');
+
 function MyApp({ Component, pageProps }) {
   const [onClient, toggleOnClient] = useState(false);
+  const [theme, toggleTheme] = useState('main-theme');
+  const particleThemes = {
+    'main-theme': {
+      color: '#ffffff',
+      strokeColor: "#ffffff",
+      glowColor: "#f096fca5",
+    },
+    'light-theme': {
+      color: '#ffffff',
+      strokeColor: "#ffffff",
+      glowColor: "#000000",
+    }
+  };
+  const cursorThemes = {
+    'main-theme': {
+      color: '255, 255, 255',
+    },
+    'light-theme': {
+      color: '0, 0, 0',
+    }
+  };
 
   // ComponentDidMount
   useEffect(() => {
@@ -28,28 +51,33 @@ function MyApp({ Component, pageProps }) {
     <>
       <Script src="https://kit.fontawesome.com/4d1f2bd158.js" crossorigin="anonymous" />
 
-      <div id="root">
-        <Particle />
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <div id="root" className={theme}>
+          <Particle props={ particleThemes[theme] } />
 
-        <div className="App main-theme">
-        {onClient ? <AnimatedCursor
-         color='255, 255, 255'
-          innerSize={13}
-           outerSize={22}
-            outerScale={3}
-              clickables={['a', 'input', 'textarea', 'select', 'i', 'button']}
-            /> : null}
-        <Header />
+          <div className="App">
+          {onClient ? <AnimatedCursor
+          color={ cursorThemes[theme].color }
+            innerSize={13}
+            outerSize={22}
+              outerScale={3}
+                clickables={['a', 'input', 'textarea', 'select', 'i', 'button']}
+                  innerStyle={{ zIndex: 10000 }}
+              /> : null}
+          <Header />
 
-        {onClient ? <AnimatePresence mode="wait" initial={false}>
-          <Component {...pageProps} key={uuidv4()} />
-        </AnimatePresence> : null}
+          {onClient ? <AnimatePresence mode="wait" initial={false}>
+            <Component {...pageProps} key={uuidv4()} />
+          </AnimatePresence> : null}
 
-        <SliderLinks />
+          <SliderLinks />
+
+          <div className="bottom-gradient" />
+          </div>
         </div>
-      </div>
+      </ThemeContext.Provider>
     </>
   )
 }
 
-export default MyApp
+export default MyApp;

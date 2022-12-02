@@ -11,7 +11,6 @@
   src: url(./fonts/Lora.ttf);
 }
 #root {
-  background-image: url(../../public/assets/images/test.jpeg);
   background-size: cover;
   background-attachment: fixed;
 }
@@ -44,206 +43,155 @@
     opacity: 1;
   }
 }
-.App.main-theme header {
+/* theme( $logoFont, $mainFont, $tertiaryFont,
+  $mainBack, $secondBack, $mainFontColor, $secondFontColor, $borderColor, $borderGlowColor, $extraBorderGlowColor) */
+#root.main-theme {
+  background-image: url(../../public/assets/images/purpleBack.jpeg);
+}
+#root.main-theme .App header {
   background-color: rgba(50, 50, 50, 0.6823529412);
   color: #fff;
   border-bottom: 2px solid #fff;
   box-shadow: 0 13px 10px -10px rgb(249, 104, 239);
-  animation: breathingBorder 1s alternate-reverse infinite;
 }
-@keyframes breathingBorder {
-  from {
-    box-shadow: 0 13px 10px -10px rgb(249, 104, 239);
-  }
-  to {
-    box-shadow: 0 13px 10px -9px rgb(249, 104, 239);
-  }
-}
-.App.main-theme header .logo {
+#root.main-theme .App header .logo {
   font-family: Nickainley;
 }
-.App.main-theme header .logo a {
+#root.main-theme .App header .logo a {
   color: #fff;
 }
-.App.main-theme header nav a {
+#root.main-theme .App header .tools .theme-selector-toggle .theme-option-list {
+  background-color: rgb(50, 50, 50);
+  font-family: Montserrat;
+}
+#root.main-theme .App header .tools .theme-selector-toggle .theme-option-list li.active {
+  background-color: rgba(50, 50, 50, 0.6823529412);
+  color: #fff;
+  text-shadow: -1px -1px 10px rgb(249, 104, 239);
+}
+#root.main-theme .App header nav a {
   font-family: Montserrat;
   color: #fff;
 }
-.App.main-theme .address-bar, .App.main-theme .fixed-address-bar {
+#root.main-theme .App header nav a.active {
+  color: #fff;
+  text-shadow: -1px -1px 10px rgb(249, 104, 239);
+}
+#root.main-theme .App header nav a:hover {
+  text-decoration: underline;
+}
+#root.main-theme .App .address-bar, #root.main-theme .App .fixed-address-bar {
   mix-blend-mode: difference;
 }
-.App.main-theme .address-bar a, .App.main-theme .fixed-address-bar a {
+#root.main-theme .App .address-bar a, #root.main-theme .App .fixed-address-bar a {
   font-family: Montserrat;
   color: #fff;
 }
-.App.main-theme .section-title {
+#root.main-theme .App .section-title {
   font-family: Lora;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
-  animation: breathingText 2s alternate-reverse infinite;
 }
-@keyframes breathingText {
-  from {
-    text-shadow: -1px -1px 8px rgb(249, 104, 239);
-  }
-  to {
-    text-shadow: -1px -1px 15px rgb(249, 104, 239);
-  }
-}
-.App.main-theme .landing-wrap .landing-intro-wrap {
+#root.main-theme .App .landing-wrap .landing-intro-wrap {
   background-color: rgba(50, 50, 50, 0.6823529412);
   border-bottom: 2px solid #fff;
   box-shadow: 0 13px 10px -10px rgb(249, 104, 239);
-  animation: breathingBorder 1s alternate-reverse infinite;
 }
-@keyframes breathingBorder {
-  from {
-    box-shadow: 0 13px 10px -10px rgb(249, 104, 239);
-  }
-  to {
-    box-shadow: 0 13px 10px -9px rgb(249, 104, 239);
-  }
-}
-.App.main-theme .landing-wrap .landing-intro-wrap .landing-intro-body {
+#root.main-theme .App .landing-wrap .landing-intro-wrap .landing-intro-body {
   background-color: rgba(50, 50, 50, 0.6823529412);
   border: 0.15px dashed rgba(255, 255, 255, 0.447);
   color: #fff;
 }
-.App.main-theme .landing-wrap .landing-intro-wrap .landing-intro-body h2 {
+#root.main-theme .App .landing-wrap .landing-intro-wrap .landing-intro-body h2 {
   font-family: Lora;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
-  animation: breathingText 2s alternate-reverse infinite;
 }
-@keyframes breathingText {
-  from {
-    text-shadow: -1px -1px 8px rgb(249, 104, 239);
-  }
-  to {
-    text-shadow: -1px -1px 15px rgb(249, 104, 239);
-  }
-}
-.App.main-theme .landing-wrap .landing-intro-wrap .landing-intro-body ul {
+#root.main-theme .App .landing-wrap .landing-intro-wrap .landing-intro-body ul {
   font-family: Montserrat;
 }
-.App.main-theme .landing-wrap #leave-landing-button {
+#root.main-theme .App .landing-wrap #leave-landing-button {
   background: none;
   border: none;
   outline: none;
 }
-.App.main-theme .landing-wrap #leave-landing-button i {
+#root.main-theme .App .landing-wrap #leave-landing-button i {
   color: #fff;
 }
-.App.main-theme .about-me-wrap {
+#root.main-theme .App .about-me-wrap {
   background-color: rgba(50, 50, 50, 0.6823529412);
   border: 0.15px dashed rgba(255, 255, 255, 0.447);
   border-bottom: 2px solid #fff;
   box-shadow: 0 13px 10px -10px rgb(249, 104, 239);
-  animation: breathingBorder 1s alternate-reverse infinite;
 }
-@keyframes breathingBorder {
-  from {
-    box-shadow: 0 13px 10px -10px rgb(249, 104, 239);
-  }
-  to {
-    box-shadow: 0 13px 10px -9px rgb(249, 104, 239);
-  }
-}
-.App.main-theme .about-me-wrap .about-me-description {
+#root.main-theme .App .about-me-wrap .about-me-description {
   background-color: rgba(50, 50, 50, 0.6823529412);
   border: 0.15px dashed rgba(255, 255, 255, 0.447);
 }
-.App.main-theme .about-me-wrap .about-me-description .title {
+#root.main-theme .App .about-me-wrap .about-me-description .title {
   font-family: Lora;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
-  animation: breathingText 2s alternate-reverse infinite;
 }
-@keyframes breathingText {
-  from {
-    text-shadow: -1px -1px 8px rgb(249, 104, 239);
-  }
-  to {
-    text-shadow: -1px -1px 15px rgb(249, 104, 239);
-  }
-}
-.App.main-theme .about-me-wrap .about-me-description .bio {
+#root.main-theme .App .about-me-wrap .about-me-description .bio {
   font-family: Montserrat;
   color: #fff;
 }
-.App.main-theme .services-wrap {
+#root.main-theme .App .services-wrap {
   margin: 0 auto;
 }
-.App.main-theme .services-wrap .services-gallery-wrap .service-wrap .title-wrap .number {
+#root.main-theme .App .services-wrap .services-gallery-wrap .service-wrap .title-wrap .number {
   font-family: Montserrat;
   font-weight: bold;
   color: #fff;
 }
-.App.main-theme .services-wrap .services-gallery-wrap .service-wrap .title-wrap .title {
+#root.main-theme .App .services-wrap .services-gallery-wrap .service-wrap .title-wrap .title {
   font-family: Lora;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
-  animation: breathingText 2s alternate-reverse infinite;
   background-color: rgba(50, 50, 50, 0.6823529412);
   border: 0.15px dashed rgba(255, 255, 255, 0.447);
   border-right: none;
 }
-@keyframes breathingText {
-  from {
-    text-shadow: -1px -1px 8px rgb(249, 104, 239);
-  }
-  to {
-    text-shadow: -1px -1px 15px rgb(249, 104, 239);
-  }
-}
-.App.main-theme .services-wrap .services-gallery-wrap .service-wrap .service-description {
+#root.main-theme .App .services-wrap .services-gallery-wrap .service-wrap .service-description {
   background-color: rgba(50, 50, 50, 0.6823529412);
   border: 0.15px dashed rgba(255, 255, 255, 0.447);
 }
-.App.main-theme .services-wrap .services-gallery-wrap .service-wrap .service-description .title {
+#root.main-theme .App .services-wrap .services-gallery-wrap .service-wrap .service-description .title {
   font-family: Lora;
   color: #fff;
 }
-.App.main-theme .services-wrap .services-gallery-wrap .service-wrap .service-description .description {
+#root.main-theme .App .services-wrap .services-gallery-wrap .service-wrap .service-description .description {
   font-family: Lora;
   color: #fff;
 }
-.App.main-theme .services-wrap .services-reach-out {
+#root.main-theme .App .services-wrap .services-reach-out {
   background-color: rgba(50, 50, 50, 0.6823529412);
   border: 0.15px dashed rgba(255, 255, 255, 0.447);
   border-left: none;
   border-right: none;
 }
-.App.main-theme .services-wrap .services-reach-out p {
+#root.main-theme .App .services-wrap .services-reach-out p {
   color: #fff;
   font-family: Lora;
 }
-.App.main-theme .services-wrap .services-reach-out .contact-btn {
+#root.main-theme .App .services-wrap .services-reach-out .contact-btn {
   background-color: #000000;
   border: none;
   outline: none;
 }
-.App.main-theme .services-wrap .services-reach-out .contact-btn span {
+#root.main-theme .App .services-wrap .services-reach-out .contact-btn span {
   font-family: Montserrat;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
-  animation: breathingText 2s alternate-reverse infinite;
 }
-@keyframes breathingText {
-  from {
-    text-shadow: -1px -1px 8px rgb(249, 104, 239);
-  }
-  to {
-    text-shadow: -1px -1px 15px rgb(249, 104, 239);
-  }
-}
-.App.main-theme .services-wrap .services-reach-out .contact-btn i {
+#root.main-theme .App .services-wrap .services-reach-out .contact-btn i {
   color: #fee8fb;
 }
-.App.main-theme .gallery-wrap {
+#root.main-theme .App .gallery-wrap {
   background-color: rgba(50, 50, 50, 0.6823529412);
 }
-.App.main-theme .gallery-wrap .gallery-gate .row-img div img ::after {
+#root.main-theme .App .gallery-wrap .gallery-gate .row-img div img ::after {
   box-shadow: 0px 0px 0px 24px rgba(255, 255, 255, 0.69) inset;
   content: "";
   display: block;
@@ -252,7 +200,7 @@
   top: 0;
   width: 100%;
 }
-.App.main-theme .gallery-wrap .gallery-gate .row-img div img::after {
+#root.main-theme .App .gallery-wrap .gallery-gate .row-img div img::after {
   box-shadow: 0px 0px 0px 24px rgba(255, 255, 255, 0.69) inset;
   content: "";
   display: block;
@@ -261,7 +209,7 @@
   top: 0;
   width: 100%;
 }
-.App.main-theme .gallery-wrap .gallery-gate .row-img div::after {
+#root.main-theme .App .gallery-wrap .gallery-gate .row-img div::after {
   box-shadow: 0px 0px 0px 20px rgba(255, 255, 255, 0.19) inset;
   content: "";
   display: block;
@@ -271,125 +219,350 @@
   left: -2.5%;
   width: 105%;
 }
-.App.main-theme .gallery-wrap .gallery-gate .row-btn button {
+#root.main-theme .App .gallery-wrap .gallery-gate .row-btn button {
   font-family: Montserrat;
   color: #fff;
   background-color: rgba(50, 50, 50, 0.6823529412);
   border: 0.5px solid white;
 }
-.App.main-theme .contact-wrap {
+#root.main-theme .App .contact-wrap {
   background-color: rgba(50, 50, 50, 0.6823529412);
   border-bottom: 2px solid #fff;
   box-shadow: 0 13px 10px -10px rgb(249, 104, 239);
-  animation: breathingBorder 1s alternate-reverse infinite;
 }
-@keyframes breathingBorder {
-  from {
-    box-shadow: 0 13px 10px -10px rgb(249, 104, 239);
-  }
-  to {
-    box-shadow: 0 13px 10px -9px rgb(249, 104, 239);
-  }
-}
-.App.main-theme .contact-wrap form {
+#root.main-theme .App .contact-wrap form {
   background-color: rgba(50, 50, 50, 0.6823529412);
   border: 0.15px dashed rgba(255, 255, 255, 0.447);
 }
-.App.main-theme .contact-wrap form .row .input-wrap label {
+#root.main-theme .App .contact-wrap form .row .input-wrap label {
   font-family: Montserrat;
   color: #fff;
 }
-.App.main-theme .contact-wrap form .row .input-wrap input, .App.main-theme .contact-wrap form .row .input-wrap textarea {
+#root.main-theme .App .contact-wrap form .row .input-wrap input, #root.main-theme .App .contact-wrap form .row .input-wrap textarea {
   font-family: Montserrat;
   color: #fff;
   background-color: rgba(255, 255, 255, 0.27);
   border: none;
 }
-.App.main-theme .contact-wrap form .row.row-name p {
+#root.main-theme .App .contact-wrap form .row.row-name p {
   font-family: Lora;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
-  animation: breathingText 2s alternate-reverse infinite;
 }
-@keyframes breathingText {
-  from {
-    text-shadow: -1px -1px 8px rgb(249, 104, 239);
-  }
-  to {
-    text-shadow: -1px -1px 15px rgb(249, 104, 239);
-  }
-}
-.App.main-theme .contact-wrap form .row.row-method p {
+#root.main-theme .App .contact-wrap form .row.row-method p {
   font-family: Montserrat;
   color: #fff;
 }
-.App.main-theme .contact-wrap form .row.row-submit button {
+#root.main-theme .App .contact-wrap form .row.row-submit button {
   background-color: #000000;
   border: none;
   outline: none;
 }
-.App.main-theme .contact-wrap form .row.row-submit button span {
+#root.main-theme .App .contact-wrap form .row.row-submit button span {
   font-family: Montserrat;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
-  animation: breathingText 2s alternate-reverse infinite;
 }
-@keyframes breathingText {
-  from {
-    text-shadow: -1px -1px 8px rgb(249, 104, 239);
-  }
-  to {
-    text-shadow: -1px -1px 15px rgb(249, 104, 239);
-  }
-}
-.App.main-theme .contact-wrap form .row.row-submit button i {
+#root.main-theme .App .contact-wrap form .row.row-submit button i {
   color: #fee8fb;
 }
-.App.main-theme .contact-wrap .contact-direct .method i {
+#root.main-theme .App .contact-wrap .contact-direct .method i {
   color: #fff;
 }
-.App.main-theme .contact-wrap .contact-direct .method a {
+#root.main-theme .App .contact-wrap .contact-direct .method a {
   font-family: Lora;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
-  animation: breathingText 2s alternate-reverse infinite;
 }
-@keyframes breathingText {
-  from {
-    text-shadow: -1px -1px 8px rgb(249, 104, 239);
-  }
-  to {
-    text-shadow: -1px -1px 15px rgb(249, 104, 239);
-  }
-}
-.App.main-theme .contact-wrap .contact-direct .links {
+#root.main-theme .App .contact-wrap .contact-direct .links {
   background-color: rgba(0, 0, 0, 0.6666666667);
 }
-.App.main-theme .contact-wrap .contact-direct .links i {
+#root.main-theme .App .contact-wrap .contact-direct .links i {
   color: #fff;
 }
-.App.main-theme .direct-links {
+#root.main-theme .App .direct-links {
   background-color: rgba(50, 50, 50, 0.6823529412);
 }
-.App.main-theme .direct-links i {
+#root.main-theme .App .direct-links i {
   color: #fff;
 }
-.App.main-theme .mobile-nav-wrap {
+#root.main-theme .App .mobile-nav-wrap {
   background-color: rgba(50, 50, 50, 0.6823529412);
 }
-.App.main-theme .page-progress-wrap .page-progress-indicators a {
+#root.main-theme .App .page-progress-wrap .page-progress-indicators a {
   font-family: Montserrat;
   color: #fff;
 }
-.App.main-theme .page-progress-wrap .progressBar-wrap {
+#root.main-theme .App .page-progress-wrap .progressBar-wrap {
   background-color: rgba(50, 50, 50, 0.6823529412);
 }
-.App.main-theme .page-progress-wrap .progressBar-wrap .progressBar {
+#root.main-theme .App .page-progress-wrap .progressBar-wrap .progressBar {
   background-color: white;
 }
-.App.main-theme .next-page-link {
+#root.main-theme .App .next-page-link {
   color: #fff;
   animation: fadeIn 2s linear;
+}
+#root.light-theme {
+  background-image: url(../../public/assets/images/lightBack.jpg);
+}
+#root.light-theme .App header {
+  background-color: rgba(255, 255, 255, 0.6823529412);
+  color: rgb(0, 0, 0);
+  border-bottom: 2px solid #fff;
+  box-shadow: 0 13px 10px -10px rgb(42, 42, 42);
+}
+#root.light-theme .App header .logo {
+  font-family: Nickainley;
+}
+#root.light-theme .App header .logo a {
+  color: rgb(0, 0, 0);
+}
+#root.light-theme .App header .tools .theme-selector-toggle .theme-option-list {
+  background-color: rgb(50, 50, 50);
+  font-family: Montserrat;
+}
+#root.light-theme .App header .tools .theme-selector-toggle .theme-option-list li.active {
+  background-color: rgba(255, 255, 255, 0.6823529412);
+  color: #fff;
+  text-shadow: -1px -1px 10px rgb(42, 42, 42);
+}
+#root.light-theme .App header nav a {
+  font-family: Montserrat;
+  color: rgb(0, 0, 0);
+}
+#root.light-theme .App header nav a.active {
+  color: #fff;
+  text-shadow: -1px -1px 10px rgb(42, 42, 42);
+}
+#root.light-theme .App header nav a:hover {
+  text-decoration: underline;
+}
+#root.light-theme .App .address-bar, #root.light-theme .App .fixed-address-bar {
+  mix-blend-mode: difference;
+}
+#root.light-theme .App .address-bar a, #root.light-theme .App .fixed-address-bar a {
+  font-family: Montserrat;
+  color: #fff;
+}
+#root.light-theme .App .section-title {
+  font-family: Lora;
+  color: #fff;
+  text-shadow: -1px -1px 10px rgb(42, 42, 42);
+}
+#root.light-theme .App .landing-wrap .landing-intro-wrap {
+  background-color: rgba(255, 255, 255, 0.6823529412);
+  border-bottom: 2px solid #fff;
+  box-shadow: 0 13px 10px -10px rgb(42, 42, 42);
+}
+#root.light-theme .App .landing-wrap .landing-intro-wrap .landing-intro-body {
+  background-color: rgba(50, 50, 50, 0.6823529412);
+  border: 0.15px dashed rgba(255, 255, 255, 0.447);
+  color: #fff;
+}
+#root.light-theme .App .landing-wrap .landing-intro-wrap .landing-intro-body h2 {
+  font-family: Lora;
+  color: #fff;
+  text-shadow: -1px -1px 10px rgb(42, 42, 42);
+}
+#root.light-theme .App .landing-wrap .landing-intro-wrap .landing-intro-body ul {
+  font-family: Montserrat;
+}
+#root.light-theme .App .landing-wrap #leave-landing-button {
+  background: none;
+  border: none;
+  outline: none;
+}
+#root.light-theme .App .landing-wrap #leave-landing-button i {
+  color: #fff;
+}
+#root.light-theme .App .about-me-wrap {
+  background-color: rgba(255, 255, 255, 0.6823529412);
+  border: 0.15px dashed rgba(255, 255, 255, 0.447);
+  border-bottom: 2px solid #fff;
+  box-shadow: 0 13px 10px -10px rgb(42, 42, 42);
+}
+#root.light-theme .App .about-me-wrap .about-me-description {
+  background-color: rgba(50, 50, 50, 0.6823529412);
+  border: 0.15px dashed rgba(255, 255, 255, 0.447);
+}
+#root.light-theme .App .about-me-wrap .about-me-description .title {
+  font-family: Lora;
+  color: #fff;
+  text-shadow: -1px -1px 10px rgb(42, 42, 42);
+}
+#root.light-theme .App .about-me-wrap .about-me-description .bio {
+  font-family: Montserrat;
+  color: #fff;
+}
+#root.light-theme .App .services-wrap {
+  margin: 0 auto;
+}
+#root.light-theme .App .services-wrap .services-gallery-wrap .service-wrap .title-wrap .number {
+  font-family: Montserrat;
+  font-weight: bold;
+  color: #fff;
+}
+#root.light-theme .App .services-wrap .services-gallery-wrap .service-wrap .title-wrap .title {
+  font-family: Lora;
+  color: #fff;
+  text-shadow: -1px -1px 10px rgb(249, 104, 239);
+  background-color: rgba(50, 50, 50, 0.6823529412);
+  border: 0.15px dashed rgba(255, 255, 255, 0.447);
+  border-right: none;
+}
+#root.light-theme .App .services-wrap .services-gallery-wrap .service-wrap .service-description {
+  background-color: rgba(50, 50, 50, 0.6823529412);
+  border: 0.15px dashed rgba(255, 255, 255, 0.447);
+}
+#root.light-theme .App .services-wrap .services-gallery-wrap .service-wrap .service-description .title {
+  font-family: Lora;
+  color: #fff;
+}
+#root.light-theme .App .services-wrap .services-gallery-wrap .service-wrap .service-description .description {
+  font-family: Lora;
+  color: #fff;
+}
+#root.light-theme .App .services-wrap .services-reach-out {
+  background-color: rgba(50, 50, 50, 0.6823529412);
+  border: 0.15px dashed rgba(255, 255, 255, 0.447);
+  border-left: none;
+  border-right: none;
+}
+#root.light-theme .App .services-wrap .services-reach-out p {
+  color: #fff;
+  font-family: Lora;
+}
+#root.light-theme .App .services-wrap .services-reach-out .contact-btn {
+  background-color: #000000;
+  border: none;
+  outline: none;
+}
+#root.light-theme .App .services-wrap .services-reach-out .contact-btn span {
+  font-family: Montserrat;
+  color: #fff;
+  text-shadow: -1px -1px 10px rgb(42, 42, 42);
+}
+#root.light-theme .App .services-wrap .services-reach-out .contact-btn i {
+  color: #fee8fb;
+}
+#root.light-theme .App .gallery-wrap {
+  background-color: rgba(255, 255, 255, 0.6823529412);
+}
+#root.light-theme .App .gallery-wrap .gallery-gate .row-img div img ::after {
+  box-shadow: 0px 0px 0px 24px rgba(255, 255, 255, 0.69) inset;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+#root.light-theme .App .gallery-wrap .gallery-gate .row-img div img::after {
+  box-shadow: 0px 0px 0px 24px rgba(255, 255, 255, 0.69) inset;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+#root.light-theme .App .gallery-wrap .gallery-gate .row-img div::after {
+  box-shadow: 0px 0px 0px 20px rgba(255, 255, 255, 0.19) inset;
+  content: "";
+  display: block;
+  height: 105%;
+  position: absolute;
+  top: -3.5%;
+  left: -2.5%;
+  width: 105%;
+}
+#root.light-theme .App .gallery-wrap .gallery-gate .row-btn button {
+  font-family: Montserrat;
+  color: #fff;
+  background-color: rgba(50, 50, 50, 0.6823529412);
+  border: 0.5px solid white;
+}
+#root.light-theme .App .contact-wrap {
+  background-color: rgba(50, 50, 50, 0.6823529412);
+  border-bottom: 2px solid #fff;
+  box-shadow: 0 13px 10px -10px rgb(42, 42, 42);
+}
+#root.light-theme .App .contact-wrap form {
+  background-color: rgba(50, 50, 50, 0.6823529412);
+  border: 0.15px dashed rgba(255, 255, 255, 0.447);
+}
+#root.light-theme .App .contact-wrap form .row .input-wrap label {
+  font-family: Montserrat;
+  color: #fff;
+}
+#root.light-theme .App .contact-wrap form .row .input-wrap input, #root.light-theme .App .contact-wrap form .row .input-wrap textarea {
+  font-family: Montserrat;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.27);
+  border: none;
+}
+#root.light-theme .App .contact-wrap form .row.row-name p {
+  font-family: Lora;
+  color: #fff;
+  text-shadow: -1px -1px 10px rgb(249, 104, 239);
+}
+#root.light-theme .App .contact-wrap form .row.row-method p {
+  font-family: Montserrat;
+  color: #fff;
+}
+#root.light-theme .App .contact-wrap form .row.row-submit button {
+  background-color: #000000;
+  border: none;
+  outline: none;
+}
+#root.light-theme .App .contact-wrap form .row.row-submit button span {
+  font-family: Montserrat;
+  color: #fff;
+  text-shadow: -1px -1px 10px rgb(249, 104, 239);
+}
+#root.light-theme .App .contact-wrap form .row.row-submit button i {
+  color: #fee8fb;
+}
+#root.light-theme .App .contact-wrap .contact-direct .method i {
+  color: #fff;
+}
+#root.light-theme .App .contact-wrap .contact-direct .method a {
+  font-family: Lora;
+  color: #fff;
+  text-shadow: -1px -1px 10px rgb(249, 104, 239);
+}
+#root.light-theme .App .contact-wrap .contact-direct .links {
+  background-color: rgba(0, 0, 0, 0.6666666667);
+}
+#root.light-theme .App .contact-wrap .contact-direct .links i {
+  color: #fff;
+}
+#root.light-theme .App .direct-links {
+  background-color: rgba(50, 50, 50, 0.6823529412);
+}
+#root.light-theme .App .direct-links i {
+  color: #fff;
+}
+#root.light-theme .App .mobile-nav-wrap {
+  background-color: rgba(50, 50, 50, 0.6823529412);
+}
+#root.light-theme .App .page-progress-wrap .page-progress-indicators a {
+  font-family: Montserrat;
+  color: #fff;
+}
+#root.light-theme .App .page-progress-wrap .progressBar-wrap {
+  background-color: rgba(255, 255, 255, 0.6823529412);
+}
+#root.light-theme .App .page-progress-wrap .progressBar-wrap .progressBar {
+  background-color: white;
+}
+#root.light-theme .App .next-page-link {
+  color: #fff;
+  animation: fadeIn 2s linear;
+}
+#root.light-theme .App .landing-wrap .landing-intro-wrap .landing-intro-body h2 {
+  animation: none !important;
 }
 
 /*# sourceMappingURL=themes.css.map */

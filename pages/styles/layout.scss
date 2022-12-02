@@ -2,6 +2,7 @@
 * {
   margin: 0;
   padding: 0;
+  z-index: 1;
   // border: 1px solid transparent;
 }
 
@@ -82,6 +83,31 @@ img {
           .arrow {
             font-size: $fontSize;
           }
+
+          position: relative;
+          .theme-option-list {
+            display: none;
+            font-size: $fontSize * 1.2;
+            width: $fontSize * 6;
+            padding: 0 $fontSize * 0.25;
+            border-radius: $fontSize * 0.5;
+            list-style-type: none;
+
+            position: absolute;
+            // left: 0;
+            right: 0;
+
+            li {
+              margin: 0.5vh $fontSize * 0.25;
+              padding: 0.15vh 0;
+            }
+          }
+
+          &.dropped {
+            .theme-option-list {
+              display: block;
+            }
+          }
         }
 
         .burger {
@@ -145,7 +171,7 @@ img {
         left: 3vw;
 
         .progressBar {
-          width: 0;
+          width: 16.67%;
           height: 6px;
         }
       }
@@ -177,6 +203,16 @@ img {
       bottom: 5%;
       left: calc(50% - $fontSize * 1.25);
       font-size: $fontSize * 2.5;
+    }
+
+    .bottom-gradient {
+      position: fixed;
+      z-index: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 35%;
+      background: linear-gradient(180deg, rgba(60,59,60,0) 6%, rgba(0,0,0,0.8127626050420168) 100%);
     }
 
     // section title
@@ -645,7 +681,7 @@ img {
 
           a {
             text-decoration: none;
-            margin-left: $fontSize * 0.75;
+            margin-left: $fontSize * 1.25;
             font-size: $fontSize * 1.25;
           }
         }
@@ -746,7 +782,7 @@ img {
 
     .page-progress-indicators {
       mix-blend-mode: difference;
-      height: 20vh!important;
+      height: 19.5vh!important;
       width: initial!important;
       display: flex;
       flex-direction: column;

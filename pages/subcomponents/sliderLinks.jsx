@@ -1,9 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
-
-import ScrollProgressBar from './mini/ScrollProgressBar.jsx';
+import React, { useRef, useEffect } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function SliderLinks() {
+  const router = useRouter();
+  const progressBarEl = useRef(null);
+  const order = ['/', '/about', '/services', '/gallery', '/contact'];
+
+  useEffect(() => {
+    const thumbWidth = 100 / order.length;
+    progressBarEl.current.style.marginLeft = `${(order.indexOf(router.pathname)) * (thumbWidth + thumbWidth * 0.1)}%`;
+  }, [router.pathname]);
+
   return (
     <>
       <div className="mobile-nav-wrap"></div>
@@ -13,15 +22,20 @@ export default function SliderLinks() {
         <i className="fa-brands fa-instagram" />
       </div>
       <div className="page-progress-wrap">
-        <ScrollProgressBar />
+        {/* Website progress bar */}
+        <div className="progressBar-wrap">
+          <div className="progressBar" ref={progressBarEl} />
+        </div>
+
+        {/* Website progress indicators */}
         <div className="page-progress-indicators">
-          <a href="#">
+          <Link href="/">
             <i className="fa-solid fa-house" />
-          </a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">4</a>
-          <a href="#">5</a>
+          </Link>
+          <Link href="/about">2</Link>
+          <Link href="/services">3</Link>
+          <Link href="/gallery">4</Link>
+          <Link href="/contact">5</Link>
         </div>
       </div>
       <p className="fixed-address-bar">

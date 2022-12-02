@@ -2,7 +2,9 @@ import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import React, { useCallback } from 'react';
 
-export default function Particle() {
+export default function Particle({ props }) {
+  const { color, strokeColor, glowColor } = props;
+
   const particlesInit = useCallback(async (engine) => {
     // console.log(engine);
     await loadFull(engine);
@@ -62,7 +64,7 @@ export default function Particle() {
             }
           },
           color: {
-            value: '#ffffff',
+            value: color,
           },
           links: {
             color: '#ffffff',
@@ -119,7 +121,7 @@ export default function Particle() {
           stroke: {
             width: 0.5,
             color: {
-              value: "#ffffff",
+              value: strokeColor,
             },
             opacity: 1,
           },
@@ -127,8 +129,9 @@ export default function Particle() {
             blur: 25,
             color: {
               // value: "#ffffff"
-              value: "#f096fca5"
+              // value: "#f096fca5"
               // value: "#000000"
+              value: glowColor,
             },
             enable: true,
             offset: {

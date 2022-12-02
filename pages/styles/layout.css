@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  z-index: 1;
 }
 
 a {
@@ -63,9 +64,27 @@ img {
 }
 .App header .tools .theme-selector-toggle {
   margin-right: 3vw;
+  position: relative;
 }
 .App header .tools .theme-selector-toggle .arrow {
   font-size: 16px;
+}
+.App header .tools .theme-selector-toggle .theme-option-list {
+  display: none;
+  font-size: 19.2px;
+  width: 96px;
+  padding: 0 4px;
+  border-radius: 8px;
+  list-style-type: none;
+  position: absolute;
+  right: 0;
+}
+.App header .tools .theme-selector-toggle .theme-option-list li {
+  margin: 0.5vh 4px;
+  padding: 0.15vh 0;
+}
+.App header .tools .theme-selector-toggle.dropped .theme-option-list {
+  display: block;
 }
 .App header .tools .burger {
   font-size: 28px;
@@ -118,7 +137,7 @@ img {
   left: 3vw;
 }
 .App .page-progress-wrap .progressBar-wrap .progressBar {
-  width: 0;
+  width: 16.67%;
   height: 6px;
 }
 .App .page-progress-wrap .page-progress-indicators {
@@ -143,6 +162,15 @@ img {
   bottom: 5%;
   left: calc(50% - 20px);
   font-size: 40px;
+}
+.App .bottom-gradient {
+  position: fixed;
+  z-index: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: linear-gradient(180deg, rgba(60, 59, 60, 0) 6%, rgba(0, 0, 0, 0.812762605) 100%);
 }
 .App .section-title {
   text-transform: uppercase;
@@ -492,7 +520,7 @@ img {
 }
 .App .contact-wrap .contact-direct .method a {
   text-decoration: none;
-  margin-left: 12px;
+  margin-left: 20px;
   font-size: 20px;
 }
 .App .contact-wrap .contact-direct .links {
@@ -577,7 +605,7 @@ img {
   }
   .page-progress-wrap .page-progress-indicators {
     mix-blend-mode: difference;
-    height: 20vh !important;
+    height: 19.5vh !important;
     width: initial !important;
     display: flex;
     flex-direction: column;
@@ -883,9 +911,27 @@ img {
   }
   .App header .tools .theme-selector-toggle {
     margin-right: 3vw;
+    position: relative;
   }
   .App header .tools .theme-selector-toggle .arrow {
     font-size: 20px;
+  }
+  .App header .tools .theme-selector-toggle .theme-option-list {
+    display: none;
+    font-size: 24px;
+    width: 120px;
+    padding: 0 5px;
+    border-radius: 10px;
+    list-style-type: none;
+    position: absolute;
+    right: 0;
+  }
+  .App header .tools .theme-selector-toggle .theme-option-list li {
+    margin: 0.5vh 5px;
+    padding: 0.15vh 0;
+  }
+  .App header .tools .theme-selector-toggle.dropped .theme-option-list {
+    display: block;
   }
   .App header .tools .burger {
     font-size: 35px;
@@ -938,7 +984,7 @@ img {
     left: 3vw;
   }
   .App .page-progress-wrap .progressBar-wrap .progressBar {
-    width: 0;
+    width: 16.67%;
     height: 6px;
   }
   .App .page-progress-wrap .page-progress-indicators {
@@ -963,6 +1009,15 @@ img {
     bottom: 5%;
     left: calc(50% - 25px);
     font-size: 50px;
+  }
+  .App .bottom-gradient {
+    position: fixed;
+    z-index: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 35%;
+    background: linear-gradient(180deg, rgba(60, 59, 60, 0) 6%, rgba(0, 0, 0, 0.812762605) 100%);
   }
   .App .section-title {
     text-transform: uppercase;
@@ -1312,7 +1367,7 @@ img {
   }
   .App .contact-wrap .contact-direct .method a {
     text-decoration: none;
-    margin-left: 15px;
+    margin-left: 25px;
     font-size: 25px;
   }
   .App .contact-wrap .contact-direct .links {
@@ -1392,7 +1447,7 @@ img {
   }
   .page-progress-wrap .page-progress-indicators {
     mix-blend-mode: difference;
-    height: 20vh !important;
+    height: 19.5vh !important;
     width: initial !important;
     display: flex;
     flex-direction: column;

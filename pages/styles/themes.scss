@@ -14,8 +14,6 @@
 }
 
 #root {
-  // background-image: url(../../public/assets/images/mockBackground.jpg);
-  background-image: url(../../public/assets/images/test.jpeg);
   background-size: cover;
   background-attachment: fixed;
 }
@@ -40,6 +38,18 @@
 }
 
 // animations
+// @mixin breathingText($color, $glowColor) {
+//   @keyframes breathingText {
+//     from {
+//       text-shadow: -1px -1px 8px $glowColor;
+//     }
+//     to {
+//       text-shadow: -1px -1px 15px $glowColor;
+//     }
+//   };
+
+//   animation: breathingText 2s alternate-reverse infinite;
+// }
 @mixin breathingText($color, $glowColor) {
   @keyframes breathingText {
     from {
@@ -84,7 +94,7 @@
   // box-shadow: 0 0 10px $glowColor;
   box-shadow: 0 13px 10px -10px $glowColor;
 
-  @include breathingBorder($color, $glowColor);
+  // @include breathingBorder($color, $glowColor);
 }
 
 @mixin basicBorder {
@@ -95,7 +105,7 @@
   color: $color;
   text-shadow: -1px -1px 10px $glowColor;
 
-  @include breathingText($color, $glowColor);
+  // @include breathingText($color, $glowColor);
 }
 
 @mixin button($color, $glowColor, $iconColor, $backColor, $font) {
@@ -114,23 +124,50 @@
 }
 
 @mixin theme(/* fonts */ $logoFont, $mainFont, $tertiaryFont,
-/* colors */ $mainBack, $mainFontColor, $borderGlowColor) {
+/* colors */ $mainBack, $secondBack, $mainFontColor, $secondFontColor, $borderColor, $borderGlowColor, $extraBorderGlowColor) {
   header {
     background-color: $mainBack;
-    color: $mainFontColor;
-    @include glowingBorder($mainFontColor, $borderGlowColor);
+    color: $secondFontColor;
+    @include glowingBorder($borderColor, $borderGlowColor);
 
     .logo {
       font-family: $logoFont;
       a {
-        color: $mainFontColor;
+        color: $secondFontColor;
+      }
+    }
+
+    .tools {
+      .theme-selector-toggle {
+
+        .theme-option-list {
+          background-color: rgb(50, 50, 50);
+          font-family: $mainFont;
+
+          li {
+            &.active {
+              background-color: $mainBack;
+
+              @include glowingText($mainFontColor, $borderGlowColor);
+            }
+          }
+        }
       }
     }
 
     nav {
       a {
         font-family: $mainFont;
-        color: $mainFontColor;
+        color: $secondFontColor;
+
+        &.active {
+          @include glowingText($mainFontColor, $borderGlowColor);
+          // text-decoration: underline;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -141,7 +178,6 @@
     a {
       font-family: $mainFont;
       color: $mainFontColor;
-
     }
   }
 
@@ -156,13 +192,13 @@
 
     .landing-intro-wrap {
       background-color: $mainBack;
-      @include glowingBorder($mainFontColor, $borderGlowColor);
+      @include glowingBorder($borderColor, $borderGlowColor);
 
       .photo-wrap {
       }
 
       .landing-intro-body {
-        background-color: $mainBack;
+        background-color: $secondBack;
         @include basicBorder();
         color: $mainFontColor;
 
@@ -192,10 +228,10 @@
   .about-me-wrap {
     background-color: $mainBack;
     @include basicBorder();
-    @include glowingBorder($mainFontColor, $borderGlowColor);
+    @include glowingBorder($borderColor, $borderGlowColor);
 
     .about-me-description {
-      background-color: $mainBack;
+      background-color: $secondBack;
       @include basicBorder();
 
       .title {
@@ -240,8 +276,8 @@
 
           .title {
             font-family: $tertiaryFont;
-            @include glowingText($mainFontColor, $borderGlowColor);
-            background-color: $mainBack;
+            @include glowingText($mainFontColor, $extraBorderGlowColor);
+            background-color: $secondBack;
             @include basicBorder();
             border-right: none;
           }
@@ -249,7 +285,7 @@
         }
 
         .service-description {
-          background-color: $mainBack;
+          background-color: $secondBack;
           @include basicBorder();
 
           .title {
@@ -266,7 +302,7 @@
     }
 
     .services-reach-out {
-      background-color: $mainBack;
+      background-color: $secondBack;
       @include basicBorder();
       border-left: none;
       border-right: none;
@@ -335,7 +371,7 @@
         button {
           font-family: $mainFont;
           color: $mainFontColor;
-          background-color: $mainBack;
+          background-color: $secondBack;
           border: 0.5px solid white;
         }
       }
@@ -344,11 +380,11 @@
 
   // contact
   .contact-wrap {
-    background-color: $mainBack;
-    @include glowingBorder($mainFontColor, $borderGlowColor);
+    background-color: $secondBack;
+    @include glowingBorder($borderColor, $borderGlowColor);
 
     form {
-      background-color: $mainBack;
+      background-color: $secondBack;
       @include basicBorder();
 
       .row {
@@ -371,7 +407,7 @@
         &.row-name {
           p {
             font-family: $tertiaryFont;
-            @include glowingText($mainFontColor, $borderGlowColor);
+            @include glowingText($mainFontColor, $extraBorderGlowColor);
           }
         }
 
@@ -382,16 +418,9 @@
           }
         }
 
-        &.row-inquiry {
-          .textarea-wrap {
-            textarea {
-            }
-          }
-        }
-
         &.row-submit {
           button {
-            @include button($mainFontColor, $borderGlowColor, #fee8fb, #000000, $mainFont);
+            @include button($mainFontColor, $extraBorderGlowColor, #fee8fb, #000000, $mainFont);
           }
         }
       }
@@ -406,7 +435,7 @@
 
         a {
           font-family: $tertiaryFont;
-          @include glowingText($mainFontColor, $borderGlowColor);
+          @include glowingText($mainFontColor, $extraBorderGlowColor);
         }
       }
 
@@ -421,7 +450,7 @@
   }
 
   .direct-links {
-    background-color: $mainBack;
+    background-color: $secondBack;
 
     i {
       color: $mainFontColor;
@@ -429,7 +458,7 @@
   }
 
   .mobile-nav-wrap {
-    background-color: $mainBack;
+    background-color: $secondBack;
   }
 
   .page-progress-wrap {
@@ -458,8 +487,30 @@
 
 }
 
-.App {
+/* theme( $logoFont, $mainFont, $tertiaryFont,
+  $mainBack, $secondBack, $mainFontColor, $secondFontColor, $borderColor, $borderGlowColor, $extraBorderGlowColor) */
+#root {
   &.main-theme {
-    @include theme(Nickainley, Montserrat, Lora, /* colors */ #323232ae, #fff, rgb(249, 104, 239));
+    background-image: url(../../public/assets/images/purpleBack.jpeg);
+    .App {
+      @include theme(Nickainley, Montserrat, Lora, /* colors */ #323232ae, #323232ae, #fff, #fff, #fff, rgb(249, 104, 239), rgb(249, 104, 239));
+    }
+  }
+  &.light-theme {
+    background-image: url(../../public/assets/images/lightBack.jpg);
+    .App {
+      @include theme(Nickainley, Montserrat, Lora, /* colors */ #ffffffae, #323232ae, #fff, rgb(0, 0, 0), #fff, rgb(42, 42, 42), rgb(249, 104, 239));
+
+      .landing-wrap {
+
+        .landing-intro-wrap {
+          .landing-intro-body {
+            h2 {
+              animation: none!important;
+            }
+          }
+        }
+      }
+    }
   }
 }
