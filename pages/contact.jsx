@@ -1,8 +1,8 @@
 import React from 'react';
-import AnimatedLayout from './subcomponents/AnimatedLayout.jsx';
+import AnimatedLayout from '../subcomponents/AnimatedLayout.jsx';
 
 // Helpers
-import { makeInputBox, makeTextArea } from './subcomponents/helpers.js';
+import { makeInputBox, makeTextArea } from '../subcomponents/helpers.js';
 
 export default function Contact() {
 

@@ -2,7 +2,7 @@
 import React, { useRef, useContext } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { ThemeContext } from '../_app.js';
+import { ThemeContext } from '../pages/_app.js';
 
 // helpers
 import { toggleClass } from './helpers.js';

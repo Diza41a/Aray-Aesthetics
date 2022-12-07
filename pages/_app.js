@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Particle from './subcomponents/particle.jsx';
+import Particle from '../subcomponents/particle.jsx';
 
 // Styles
 import './styles/layout.css';
@@ -7,8 +7,8 @@ import './styles/themes.css';
 
 // Trans-page components:)
 import Script from 'next/script';
-import Header from './subcomponents/header.jsx';
-import SliderLinks from './subcomponents/sliderLinks.jsx';
+import Header from '../subcomponents/header.jsx';
+import SliderLinks from '../subcomponents/sliderLinks.jsx';
 
 // Misc
 import AnimatedCursor from 'react-animated-cursor';

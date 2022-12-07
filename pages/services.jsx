@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import Link from 'next/link';
-import AnimatedLayout from './subcomponents/AnimatedLayout.jsx';
+import AnimatedLayout from '../subcomponents/AnimatedLayout.jsx';
 import { useDraggable } from "react-use-draggable-scroll";
-import NextPageLink from './subcomponents/NextPageLink.jsx';
+import NextPageLink from '../subcomponents/NextPageLink.jsx';
 
 // Data imports
 const servicesJSON = require('./data/services.json');

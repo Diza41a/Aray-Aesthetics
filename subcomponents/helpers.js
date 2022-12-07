@@ -28,6 +28,7 @@ const makeTextArea = (name) => {
   );
 };
 
+
 export {
   toggleClass,
   makeInputBox,

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import AnimatedLayout from './subcomponents/AnimatedLayout.jsx';
-import NextPageLink from './subcomponents/NextPageLink.jsx';
+import AnimatedLayout from '../subcomponents/AnimatedLayout.jsx';
+import NextPageLink from '../subcomponents/NextPageLink.jsx';
 
 import { Gallery as GridGallery } from 'react-grid-gallery';
 import galleryData from './data/gallery.json';

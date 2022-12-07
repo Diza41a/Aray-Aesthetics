@@ -1,6 +1,6 @@
 import React from 'react';
-import AnimatedLayout from './subcomponents/AnimatedLayout.jsx';
-import NextPageLink from './subcomponents/NextPageLink.jsx';
+import AnimatedLayout from '../subcomponents/AnimatedLayout.jsx';
+import NextPageLink from '../subcomponents/NextPageLink.jsx';
 
 export default function Landing() {
   return (
