@@ -20,7 +20,7 @@ export default function Particle({ props }) {
       init={particlesInit}
       loaded={particlesLoaded}
       options={{
-        fpsLimit: 120,
+        fpsLimit: 60 /* 120 */,
         interactivity: {
           events: {
             onClick: {

@@ -146,7 +146,7 @@ img {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: $fontSize * 0.5 $fontSize;
+      padding: calc(2.25vh - $fontSize * 0.75) $fontSize;
 
       position: fixed;
       bottom: 0;
@@ -396,6 +396,7 @@ img {
 
           position: relative;
           .service-description {
+            overflow-y: auto;
             z-index: 100;
             transition: opacity 0.25s ease-out, transform 0.5s ease-out;
             transform: scale(0.85);
@@ -408,8 +409,8 @@ img {
             left: 5%;
             right: 5%;
 
-            padding-top: 25%;
-            padding: 25% 2% 0 2%;
+            // padding-top: 25%;
+            padding: 25% 2% 25% 2%;
             text-align: center;
 
             .title {
@@ -547,6 +548,7 @@ img {
 
             img {
               width: 35vw;
+
             }
           }
 
@@ -587,6 +589,44 @@ img {
             position: relative;
             z-index: 999;
           }
+        }
+      }
+
+      .expanded-gallery {
+        padding: 1vh 3vw;
+
+        .ReactGridGallery {
+          >div {
+            width: 105%;
+            position: relative;
+            right: 1%;
+          }
+
+          .ReactGridGallery_tile {
+            margin: 0.5vh $fontSize * 0.25!important;
+
+            img {
+              cursor: none!important;
+            }
+
+            &:nth-child(2n - 1) {
+              // .ReactGridGallery_tile-viewport {
+              //   height: 100%!important;
+              //   overflow: hidden!important;
+
+              //   img {
+              //     height: calc(100% + 4px)!important;
+              //   }
+              // }
+            }
+          }
+        }
+
+        #collapse-gallery {
+          font-size: $fontSize * 1.75;
+          position: relative;
+          right: 1.5vw;
+          margin-bottom: 1.5vh;
         }
       }
     }

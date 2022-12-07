@@ -1,32 +1,53 @@
 [
   {
-    "name": "First Service",
-    "description": "something blank for now...",
+    "name": "European Facial",
+    "description":
+      ["European Facial combines steam, exfoliation, massage, cleansing, and masks to ",
+       "be as relaxing as it is beautifying. The results afterwards are immediately noticeable",
+       ", and patients leave the spa with brighter, softer skin."],
+    "price": "100",
     "imageUri": "./assets/images/mock.png",
     "backgroundPositionX": "95%"
   },
   {
-    "name": "Second Service",
-    "description": "something blank for now...",
+    "name": "Deep Pore Cleansing Facial",
+    "description":
+      ["A deep pore cleansing facial is a treatment involving a 3 steps procedure that ",
+       "penetrates your skin deeply to remove dirt and debris that accumulates in your pores. ",
+       "This treatment is the best solution to achieve a clear, radiant complexion."],
+    "price": "150",
     "imageUri": "./assets/images/mock2.png",
     "backgroundPositionX": "76%"
   },
   {
-    "name": "Third Service",
-    "description": "something blank for now...",
+    "name": "Customized Facial",
+    "description":
+      ["Custom facials use products and techniques that precisely fit your skincare concerns. ",
+       "Custom facials can address a variety of needs ranging from premature aging and environmental ",
+       "damage to acne flare-ups to a dull and patchy complexion. When it comes to our skin, ",
+       "sometimes it's tough to face the facts."],
+    "price": "100-200",
     "imageUri": "./assets/images/mock3.png",
     "backgroundPositionX": "49%"
   },
   {
-    "name": "Fourth Service",
-    "description": "something blank for now...",
-    "imageUri": "./assets/images/mock.png",
-    "backgroundPositionX": "95%"
+    "name": "Powder Brow Technique aka Ombre",
+    "description":
+      ["Powder Brows uses and ultra-fine tattoo needle and a Permanent Makeup (PMU) Device to deliver ",
+       "pigment to the skin. Powder Brows are sometimes referred to or called \"Ombre Brows\". Powder ",
+       "Brows result in a look most like makeup powder, hence the name \"Powder Brows\"."],
+    "price": "500",
+    "imageUri": "./assets/images/ombre-alter.jpeg",
+    "backgroundPositionX": "25%"
   },
   {
-    "name": "Fifth Service",
-    "description": "something blank for now...",
-    "imageUri": "./assets/images/mock2.png",
+    "name": "Lip Shading",
+    "description":
+      ["Lip shading, also called lip blushing or lip tattooing, is a semi-permanent cosmetic procedure ",
+       "that can change the color and the shape of your lips. To create this effect, and aesthetician uses ",
+       "tiny needles to deposit a pigment in your lips through a process called pixelation."],
+    "price": "500",
+    "imageUri": "./assets/images/lip-shading.jpeg",
     "backgroundPositionX": "76%"
   },
   {

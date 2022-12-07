@@ -32,6 +32,10 @@
   border-radius: 4px;
 }
 
+.react-grid-item {
+  border: 1px solid red;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -192,7 +196,7 @@
   background-color: rgba(50, 50, 50, 0.6823529412);
 }
 #root.main-theme .App .gallery-wrap .gallery-gate .row-img div img ::after {
-  box-shadow: 0px 0px 0px 24px rgba(255, 255, 255, 0.69) inset;
+  box-shadow: 0px 0px 0px 24px rgba(50, 50, 50, 0.69) inset;
   content: "";
   display: block;
   height: 100%;
@@ -201,7 +205,7 @@
   width: 100%;
 }
 #root.main-theme .App .gallery-wrap .gallery-gate .row-img div img::after {
-  box-shadow: 0px 0px 0px 24px rgba(255, 255, 255, 0.69) inset;
+  box-shadow: 0px 0px 0px 24px rgba(50, 50, 50, 0.69) inset;
   content: "";
   display: block;
   height: 100%;
@@ -224,6 +228,32 @@
   color: #fff;
   background-color: rgba(50, 50, 50, 0.6823529412);
   border: 0.5px solid white;
+}
+#root.main-theme .App .gallery-wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile {
+  transform: scale(1);
+  z-index: 9;
+  transition: transform 0.75s ease-in;
+}
+#root.main-theme .App .gallery-wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile:nth-child(2n) {
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  box-shadow: 0 -13px 10px -10px rgb(249, 104, 239), 0 13px 10px -10px rgb(249, 104, 239);
+}
+#root.main-theme .App .gallery-wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile:nth-child(2n-1) {
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+#root.main-theme .App .gallery-wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile:hover {
+  transform: scale(1.25);
+  z-index: 10;
+  transition: transform 0.75s ease-out;
+}
+#root.main-theme .App .gallery-wrap .expanded-gallery #collapse-gallery {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: Montserrat;
+  color: #fff;
 }
 #root.main-theme .App .contact-wrap {
   background-color: rgba(50, 50, 50, 0.6823529412);
@@ -483,6 +513,32 @@
   background-color: rgba(50, 50, 50, 0.6823529412);
   border: 0.5px solid white;
 }
+#root.light-theme .App .gallery-wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile {
+  transform: scale(1);
+  z-index: 9;
+  transition: transform 0.75s ease-in;
+}
+#root.light-theme .App .gallery-wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile:nth-child(2n) {
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  box-shadow: 0 -13px 10px -10px rgb(249, 104, 239), 0 13px 10px -10px rgb(249, 104, 239);
+}
+#root.light-theme .App .gallery-wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile:nth-child(2n-1) {
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+#root.light-theme .App .gallery-wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile:hover {
+  transform: scale(1.25);
+  z-index: 10;
+  transition: transform 0.75s ease-out;
+}
+#root.light-theme .App .gallery-wrap .expanded-gallery #collapse-gallery {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: Montserrat;
+  color: rgb(0, 0, 0);
+}
 #root.light-theme .App .contact-wrap {
   background-color: rgba(50, 50, 50, 0.6823529412);
   border-bottom: 2px solid #fff;
@@ -563,6 +619,290 @@
 }
 #root.light-theme .App .landing-wrap .landing-intro-wrap .landing-intro-body h2 {
   animation: none !important;
+}
+#root.dark-theme {
+  background: rgb(28, 28, 28);
+}
+#root.dark-theme .App header {
+  background-color: rgba(42, 42, 42, 0.6784313725);
+  color: #e3ddd2;
+  border-bottom: 2px solid rgba(42, 42, 42, 0.6784313725);
+  box-shadow: 0 13px 10px -10px rgba(42, 42, 42, 0.6784313725);
+}
+#root.dark-theme .App header .logo {
+  font-family: Nickainley;
+}
+#root.dark-theme .App header .logo a {
+  color: #e3ddd2;
+}
+#root.dark-theme .App header .tools .theme-selector-toggle .theme-option-list {
+  background-color: rgb(50, 50, 50);
+  font-family: Montserrat;
+}
+#root.dark-theme .App header .tools .theme-selector-toggle .theme-option-list li.active {
+  background-color: rgba(42, 42, 42, 0.6784313725);
+  color: #e3ddd2;
+  text-shadow: -1px -1px 10px rgba(42, 42, 42, 0.6784313725);
+}
+#root.dark-theme .App header nav a {
+  font-family: Montserrat;
+  color: #e3ddd2;
+}
+#root.dark-theme .App header nav a.active {
+  color: #e3ddd2;
+  text-shadow: -1px -1px 10px rgba(42, 42, 42, 0.6784313725);
+}
+#root.dark-theme .App header nav a:hover {
+  text-decoration: underline;
+}
+#root.dark-theme .App .address-bar, #root.dark-theme .App .fixed-address-bar {
+  mix-blend-mode: difference;
+}
+#root.dark-theme .App .address-bar a, #root.dark-theme .App .fixed-address-bar a {
+  font-family: Montserrat;
+  color: #e3ddd2;
+}
+#root.dark-theme .App .section-title {
+  font-family: Lora;
+  color: #e3ddd2;
+  text-shadow: -1px -1px 10px rgba(42, 42, 42, 0.6784313725);
+}
+#root.dark-theme .App .landing-wrap .landing-intro-wrap {
+  background-color: rgba(42, 42, 42, 0.6784313725);
+  border-bottom: 2px solid rgba(42, 42, 42, 0.6784313725);
+  box-shadow: 0 13px 10px -10px rgba(42, 42, 42, 0.6784313725);
+}
+#root.dark-theme .App .landing-wrap .landing-intro-wrap .landing-intro-body {
+  background-color: rgba(42, 42, 42, 0.6784313725);
+  border: 0.15px dashed rgba(255, 255, 255, 0.447);
+  color: #e3ddd2;
+}
+#root.dark-theme .App .landing-wrap .landing-intro-wrap .landing-intro-body h2 {
+  font-family: Lora;
+  color: #e3ddd2;
+  text-shadow: -1px -1px 10px rgba(42, 42, 42, 0.6784313725);
+}
+#root.dark-theme .App .landing-wrap .landing-intro-wrap .landing-intro-body ul {
+  font-family: Montserrat;
+}
+#root.dark-theme .App .landing-wrap #leave-landing-button {
+  background: none;
+  border: none;
+  outline: none;
+}
+#root.dark-theme .App .landing-wrap #leave-landing-button i {
+  color: #e3ddd2;
+}
+#root.dark-theme .App .about-me-wrap {
+  background-color: rgba(42, 42, 42, 0.6784313725);
+  border: 0.15px dashed rgba(255, 255, 255, 0.447);
+  border-bottom: 2px solid rgba(42, 42, 42, 0.6784313725);
+  box-shadow: 0 13px 10px -10px rgba(42, 42, 42, 0.6784313725);
+}
+#root.dark-theme .App .about-me-wrap .about-me-description {
+  background-color: rgba(42, 42, 42, 0.6784313725);
+  border: 0.15px dashed rgba(255, 255, 255, 0.447);
+}
+#root.dark-theme .App .about-me-wrap .about-me-description .title {
+  font-family: Lora;
+  color: #e3ddd2;
+  text-shadow: -1px -1px 10px rgba(42, 42, 42, 0.6784313725);
+}
+#root.dark-theme .App .about-me-wrap .about-me-description .bio {
+  font-family: Montserrat;
+  color: #e3ddd2;
+}
+#root.dark-theme .App .services-wrap {
+  margin: 0 auto;
+}
+#root.dark-theme .App .services-wrap .services-gallery-wrap .service-wrap .title-wrap .number {
+  font-family: Montserrat;
+  font-weight: bold;
+  color: #e3ddd2;
+}
+#root.dark-theme .App .services-wrap .services-gallery-wrap .service-wrap .title-wrap .title {
+  font-family: Lora;
+  color: #e3ddd2;
+  text-shadow: -1px -1px 10px rgba(42, 42, 42, 0.6784313725);
+  background-color: rgba(42, 42, 42, 0.6784313725);
+  border: 0.15px dashed rgba(255, 255, 255, 0.447);
+  border-right: none;
+}
+#root.dark-theme .App .services-wrap .services-gallery-wrap .service-wrap .service-description {
+  background-color: rgba(42, 42, 42, 0.6784313725);
+  border: 0.15px dashed rgba(255, 255, 255, 0.447);
+}
+#root.dark-theme .App .services-wrap .services-gallery-wrap .service-wrap .service-description .title {
+  font-family: Lora;
+  color: #e3ddd2;
+}
+#root.dark-theme .App .services-wrap .services-gallery-wrap .service-wrap .service-description .description {
+  font-family: Lora;
+  color: #e3ddd2;
+}
+#root.dark-theme .App .services-wrap .services-reach-out {
+  background-color: rgba(42, 42, 42, 0.6784313725);
+  border: 0.15px dashed rgba(255, 255, 255, 0.447);
+  border-left: none;
+  border-right: none;
+}
+#root.dark-theme .App .services-wrap .services-reach-out p {
+  color: #e3ddd2;
+  font-family: Lora;
+}
+#root.dark-theme .App .services-wrap .services-reach-out .contact-btn {
+  background-color: #000000;
+  border: none;
+  outline: none;
+}
+#root.dark-theme .App .services-wrap .services-reach-out .contact-btn span {
+  font-family: Montserrat;
+  color: #e3ddd2;
+  text-shadow: -1px -1px 10px rgba(42, 42, 42, 0.6784313725);
+}
+#root.dark-theme .App .services-wrap .services-reach-out .contact-btn i {
+  color: #fee8fb;
+}
+#root.dark-theme .App .gallery-wrap {
+  background-color: rgba(42, 42, 42, 0.6784313725);
+}
+#root.dark-theme .App .gallery-wrap .gallery-gate .row-img div img ::after {
+  box-shadow: 0px 0px 0px 24px rgba(42, 42, 42, 0.69) inset;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+#root.dark-theme .App .gallery-wrap .gallery-gate .row-img div img::after {
+  box-shadow: 0px 0px 0px 24px rgba(42, 42, 42, 0.69) inset;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+#root.dark-theme .App .gallery-wrap .gallery-gate .row-img div::after {
+  box-shadow: 0px 0px 0px 20px rgba(255, 255, 255, 0.19) inset;
+  content: "";
+  display: block;
+  height: 105%;
+  position: absolute;
+  top: -3.5%;
+  left: -2.5%;
+  width: 105%;
+}
+#root.dark-theme .App .gallery-wrap .gallery-gate .row-btn button {
+  font-family: Montserrat;
+  color: #e3ddd2;
+  background-color: rgba(42, 42, 42, 0.6784313725);
+  border: 0.5px solid white;
+}
+#root.dark-theme .App .gallery-wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile {
+  transform: scale(1);
+  z-index: 9;
+  transition: transform 0.75s ease-in;
+}
+#root.dark-theme .App .gallery-wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile:nth-child(2n) {
+  border-top: 2px solid #e3ddd2;
+  border-bottom: 2px solid #e3ddd2;
+  box-shadow: 0 -13px 10px -10px rgba(42, 42, 42, 0.6784313725), 0 13px 10px -10px rgba(42, 42, 42, 0.6784313725);
+}
+#root.dark-theme .App .gallery-wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile:nth-child(2n-1) {
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+#root.dark-theme .App .gallery-wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile:hover {
+  transform: scale(1.25);
+  z-index: 10;
+  transition: transform 0.75s ease-out;
+}
+#root.dark-theme .App .gallery-wrap .expanded-gallery #collapse-gallery {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: Montserrat;
+  color: #e3ddd2;
+}
+#root.dark-theme .App .contact-wrap {
+  background-color: rgba(42, 42, 42, 0.6784313725);
+  border-bottom: 2px solid rgba(42, 42, 42, 0.6784313725);
+  box-shadow: 0 13px 10px -10px rgba(42, 42, 42, 0.6784313725);
+}
+#root.dark-theme .App .contact-wrap form {
+  background-color: rgba(42, 42, 42, 0.6784313725);
+  border: 0.15px dashed rgba(255, 255, 255, 0.447);
+}
+#root.dark-theme .App .contact-wrap form .row .input-wrap label {
+  font-family: Montserrat;
+  color: #e3ddd2;
+}
+#root.dark-theme .App .contact-wrap form .row .input-wrap input, #root.dark-theme .App .contact-wrap form .row .input-wrap textarea {
+  font-family: Montserrat;
+  color: #e3ddd2;
+  background-color: rgba(255, 255, 255, 0.27);
+  border: none;
+}
+#root.dark-theme .App .contact-wrap form .row.row-name p {
+  font-family: Lora;
+  color: #e3ddd2;
+  text-shadow: -1px -1px 10px rgba(42, 42, 42, 0.6784313725);
+}
+#root.dark-theme .App .contact-wrap form .row.row-method p {
+  font-family: Montserrat;
+  color: #e3ddd2;
+}
+#root.dark-theme .App .contact-wrap form .row.row-submit button {
+  background-color: #000000;
+  border: none;
+  outline: none;
+}
+#root.dark-theme .App .contact-wrap form .row.row-submit button span {
+  font-family: Montserrat;
+  color: #e3ddd2;
+  text-shadow: -1px -1px 10px rgba(42, 42, 42, 0.6784313725);
+}
+#root.dark-theme .App .contact-wrap form .row.row-submit button i {
+  color: #fee8fb;
+}
+#root.dark-theme .App .contact-wrap .contact-direct .method i {
+  color: #e3ddd2;
+}
+#root.dark-theme .App .contact-wrap .contact-direct .method a {
+  font-family: Lora;
+  color: #e3ddd2;
+  text-shadow: -1px -1px 10px rgba(42, 42, 42, 0.6784313725);
+}
+#root.dark-theme .App .contact-wrap .contact-direct .links {
+  background-color: rgba(0, 0, 0, 0.6666666667);
+}
+#root.dark-theme .App .contact-wrap .contact-direct .links i {
+  color: #e3ddd2;
+}
+#root.dark-theme .App .direct-links {
+  background-color: rgba(42, 42, 42, 0.6784313725);
+}
+#root.dark-theme .App .direct-links i {
+  color: #e3ddd2;
+}
+#root.dark-theme .App .mobile-nav-wrap {
+  background-color: rgba(42, 42, 42, 0.6784313725);
+}
+#root.dark-theme .App .page-progress-wrap .page-progress-indicators a {
+  font-family: Montserrat;
+  color: #e3ddd2;
+}
+#root.dark-theme .App .page-progress-wrap .progressBar-wrap {
+  background-color: rgba(42, 42, 42, 0.6784313725);
+}
+#root.dark-theme .App .page-progress-wrap .progressBar-wrap .progressBar {
+  background-color: white;
+}
+#root.dark-theme .App .next-page-link {
+  color: #e3ddd2;
+  animation: fadeIn 2s linear;
 }
 
 /*# sourceMappingURL=themes.css.map */

@@ -31,6 +31,11 @@ function MyApp({ Component, pageProps }) {
       color: '#ffffff',
       strokeColor: "#ffffff",
       glowColor: "#000000",
+    },
+    'dark-theme': {
+      color: '#ffffff',
+      strokeColor: "#ffffff",
+      glowColor: "#ffffff",
     }
   };
   const cursorThemes = {
@@ -39,11 +44,19 @@ function MyApp({ Component, pageProps }) {
     },
     'light-theme': {
       color: '0, 0, 0',
+    },
+    'dark-theme': {
+      color: '255, 255, 255',
     }
   };
 
   // ComponentDidMount
   useEffect(() => {
+    const storedTheme = window.localStorage.getItem('theme') || 'main-theme';
+    if (theme !== storedTheme) {
+      toggleTheme(storedTheme);
+    }
+
     toggleOnClient(true);
   }, []);
 

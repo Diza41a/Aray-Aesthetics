@@ -37,6 +37,10 @@
     }
 }
 
+.react-grid-item {
+  border: 1px solid red;
+}
+
 // animations
 // @mixin breathingText($color, $glowColor) {
 //   @keyframes breathingText {
@@ -334,7 +338,7 @@
 
           img {
             ::after {
-              box-shadow: 0px 0px 0px 24px rgba(255,255,255,0.69) inset;
+              box-shadow: 0px 0px 0px 24px rgba($mainBack,0.69) inset;
               content: '';
               display: block;
               height: 100%;
@@ -343,7 +347,7 @@
               width: 100%;
             }
             &::after {
-              box-shadow: 0px 0px 0px 24px rgba(255,255,255,0.69) inset;
+              box-shadow: 0px 0px 0px 24px rgba($mainBack,0.69) inset;
               content: '';
               display: block;
               height: 100%;
@@ -374,6 +378,43 @@
           background-color: $secondBack;
           border: 0.5px solid white;
         }
+      }
+    }
+
+    .expanded-gallery {
+
+      .ReactGridGallery {
+        .ReactGridGallery_tile {
+          &:nth-child(2n) {
+            // hereh
+            // @include glowingBorder($mainFontColor, $extraBorderGlowColor);
+            border-top: 2px solid $mainFontColor;
+            border-bottom: 2px solid $mainFontColor;
+            box-shadow: 0 -13px 10px -10px $extraBorderGlowColor, 0 13px 10px -10px $extraBorderGlowColor;
+          }
+
+          &:nth-child(2n - 1) {
+            border-top: 2px solid transparent;
+            border-bottom: 2px solid transparent;
+          }
+
+          transform: scale(1);
+          z-index: 9;
+          transition: transform 0.75s ease-in;
+          &:hover {
+            transform: scale(1.25);
+            z-index: 10;
+            transition: transform 0.75s ease-out;
+          }
+        }
+      }
+
+      #collapse-gallery {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-family: $mainFont;
+        color: $secondFontColor;
       }
     }
   }
@@ -511,6 +552,16 @@
           }
         }
       }
+    }
+  }
+  &.dark-theme {
+    background:rgb(28, 28, 28);
+    .App {
+      @include theme(Nickainley, Montserrat, Lora, /* colors */ #2a2a2aad, #2a2a2aad, #e3ddd2, #e3ddd2, #2a2a2aad, #2a2a2aad, #2a2a2aad);
+    }
+
+    img, div {
+      // filter: grayscale(0.5) contrast(1.05)!important;
     }
   }
 }
