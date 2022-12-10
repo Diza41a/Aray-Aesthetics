@@ -1,0 +1,37 @@
+[
+  {
+    "src": "./assets/images/instagram/1.jpg",
+    "width": 220,
+    "height": 174
+  },
+  {
+    "src": "./assets/images/instagram/2.jpg",
+    "width": 320,
+    "height": 212
+  },
+  {
+    "src": "./assets/images/instagram/3.jpg",
+    "width": 320,
+    "height": 212
+  },
+  {
+    "src": "./assets/images/instagram/4.jpg",
+    "width": 320,
+    "height": 174
+  },
+  {
+    "src": "./assets/images/instagram/5.jpg",
+    "width": 320,
+    "height": 212
+  },
+  {
+    "src": "./assets/images/instagram/6.jpg",
+    "width": 320,
+    "height": 212
+  },
+  {
+    "src": "./assets/images/instagram/7.jpg",
+    "width": 220,
+    "height": 174
+  }
+]

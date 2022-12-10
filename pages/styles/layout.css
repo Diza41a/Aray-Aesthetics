@@ -162,6 +162,12 @@ img {
   bottom: 5%;
   left: calc(50% - 20px);
   font-size: 40px;
+  transform: scale(1);
+  transition: transform 0.75s ease-out;
+}
+.App .next-page-link:hover {
+  transform: scale(1.25);
+  transition: transform 0.75s ease-in;
 }
 .App .bottom-gradient {
   position: fixed;
@@ -194,8 +200,44 @@ img {
   padding: 2.5vh 2vw 0 0;
 }
 .App .landing-wrap .landing-intro-wrap .landing-intro-body h2 {
+  position: relative;
+  z-index: 999;
   margin: 0 3vw;
   text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.App .landing-wrap .landing-intro-wrap .landing-intro-body h2 .line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.App .landing-wrap .landing-intro-wrap .landing-intro-body h2 .line .letter {
+  user-select: none;
+  display: inline-block;
+  transform: scale(1);
+  transition: transform 0.1s ease-out;
+  position: relative;
+  z-index: 999;
+}
+.App .landing-wrap .landing-intro-wrap .landing-intro-body h2 .line .letter:hover {
+  transform: scale(1.6);
+  transition: transform 0.25s ease-out;
+}
+.App .landing-wrap .landing-intro-wrap .landing-intro-body h2 .line .letter.enlarging {
+  animation: enlargeLetter 0.5s ease-in-out;
+}
+@keyframes enlargeLetter {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.6);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 .App .landing-wrap .landing-intro-wrap .landing-intro-body ul {
   width: 70%;
@@ -330,7 +372,7 @@ img {
   bottom: 20%;
   left: 5%;
   right: 5%;
-  padding: 25% 2% 25% 2%;
+  padding: 15% 2% 15% 2%;
   text-align: center;
 }
 .App .services-wrap .services-gallery-wrap .service-wrap .service-description .title {
@@ -398,7 +440,8 @@ img {
   padding-bottom: 8.8px;
 }
 .App .services-wrap .services-reach-out .contact-btn span {
-  margin-right: 4px;
+  margin: 0 !important;
+  margin-right: 4px !important;
 }
 .App .services-wrap .services-reach-out .contact-btn .arrow {
   font-size: 12px;
@@ -449,21 +492,70 @@ img {
   position: relative;
   z-index: 999;
 }
-.App .gallery-wrap .expanded-gallery {
+.App .gallery-wrap .wrap {
+  display: flex;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10001;
+}
+.App .gallery-wrap .wrap video {
+  display: none;
+  flex-basis: 50%;
+  height: 100vh;
+  width: 35vw;
+  opacity: 0.75;
+  object-fit: cover;
+}
+.App .gallery-wrap .wrap .expanded-gallery {
+  background-color: rgba(11, 11, 11, 0.855);
   padding: 1vh 3vw;
+  width: 100%;
+  min-height: 98vh;
 }
-.App .gallery-wrap .expanded-gallery .ReactGridGallery > div {
-  width: 105%;
-  position: relative;
-  right: 1%;
+.App .gallery-wrap .wrap .expanded-gallery .carousel-root {
+  margin-top: 15%;
 }
-.App .gallery-wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile {
+.App .gallery-wrap .wrap .expanded-gallery .carousel-root .slide {
+  margin: auto;
+}
+.App .gallery-wrap .wrap .expanded-gallery .carousel-root .slide div img, .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slide div video {
+  max-height: 45vh;
+  max-width: 60vw;
+  object-fit: contain;
+}
+.App .gallery-wrap .wrap .expanded-gallery .carousel-root .slide div video {
+  width: 90%;
+}
+.App .gallery-wrap .wrap .expanded-gallery .ReactGridGallery {
+  height: 30vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.App .gallery-wrap .wrap .expanded-gallery .ReactGridGallery::-webkit-scrollbar-track {
+  border-radius: 16px;
+}
+.App .gallery-wrap .wrap .expanded-gallery .ReactGridGallery > div {
+  justify-content: center;
+}
+.App .gallery-wrap .wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile {
   margin: 0.5vh 4px !important;
+  max-width: 80px !important;
+  max-height: 80px !important;
 }
-.App .gallery-wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile img {
+.App .gallery-wrap .wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile img {
+  margin: 0 !important;
+  max-width: 80px !important;
+  max-height: 80px !important;
+  object-fit: cover !important;
   cursor: none !important;
 }
-.App .gallery-wrap .expanded-gallery #collapse-gallery {
+.App .gallery-wrap .wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile .ReactGridGallery_tile-viewport {
+  height: 100% !important;
+  width: 100% !important;
+}
+.App .gallery-wrap .wrap .expanded-gallery #collapse-gallery {
   font-size: 28px;
   position: relative;
   right: 1.5vw;
@@ -759,6 +851,20 @@ img {
     font-size: 28px !important;
     padding: 24px 64px !important;
   }
+  .gallery-wrap .wrap video {
+    display: initial !important;
+  }
+  .gallery-wrap .wrap .expanded-gallery {
+    width: 60vw !important;
+  }
+  .gallery-wrap .wrap .expanded-gallery .ReactGridGallery_tile {
+    max-width: 128px !important;
+    max-height: 128px !important;
+  }
+  .gallery-wrap .wrap .expanded-gallery .ReactGridGallery_tile img {
+    max-width: 128px !important;
+    max-height: 128px !important;
+  }
 
   .contact-wrap {
     width: 100vw !important;
@@ -840,6 +946,10 @@ img {
     font-size: 32px !important;
     margin: 0 1vw !important;
     text-align: right !important;
+    justify-content: right !important;
+  }
+  .landing-wrap .landing-intro-wrap .landing-intro-body h2 .line {
+    justify-content: right !important;
   }
   .landing-wrap .landing-intro-wrap .landing-intro-body ul {
     width: 40%;
@@ -848,13 +958,36 @@ img {
     font-size: 21.6px !important;
   }
   .landing-wrap .landing-intro-wrap .photo-wrap {
-    transform: scaleX(-1);
     position: absolute;
-    right: 1vw;
-    bottom: 0;
     display: flex !important;
   }
-  .landing-wrap .landing-intro-wrap .photo-wrap img {
+  .landing-wrap .landing-intro-wrap .photo-wrap.main-theme-landing {
+    transform: scaleX(-1);
+    right: 1vw;
+    bottom: 0;
+  }
+  .landing-wrap .landing-intro-wrap .photo-wrap.main-theme-landing img {
+    width: 44vw;
+    min-width: 450px;
+    max-width: 616px;
+  }
+  .landing-wrap .landing-intro-wrap .photo-wrap.light-theme-landing {
+    transform: scaleX(1) rotate(9deg);
+    right: -2vw;
+    bottom: -1vh;
+  }
+  .landing-wrap .landing-intro-wrap .photo-wrap.light-theme-landing img {
+    width: 39vw;
+    min-width: 450px;
+    max-width: 616px;
+  }
+  .landing-wrap .landing-intro-wrap .photo-wrap.gold-theme-landing {
+    transform: scaleX(-1) rotate(25deg);
+    right: 1vw;
+    bottom: 10vh;
+  }
+  .landing-wrap .landing-intro-wrap .photo-wrap.gold-theme-landing img {
+    filter: drop-shadow(-4px 11px 19px black) saturate(0.55) contrast(1.15) !important;
     width: 44vw;
     min-width: 450px;
     max-width: 616px;
@@ -1029,6 +1162,12 @@ img {
     bottom: 5%;
     left: calc(50% - 25px);
     font-size: 50px;
+    transform: scale(1);
+    transition: transform 0.75s ease-out;
+  }
+  .App .next-page-link:hover {
+    transform: scale(1.25);
+    transition: transform 0.75s ease-in;
   }
   .App .bottom-gradient {
     position: fixed;
@@ -1061,8 +1200,44 @@ img {
     padding: 2.5vh 2vw 0 0;
   }
   .App .landing-wrap .landing-intro-wrap .landing-intro-body h2 {
+    position: relative;
+    z-index: 999;
     margin: 0 3vw;
     text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .App .landing-wrap .landing-intro-wrap .landing-intro-body h2 .line {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .App .landing-wrap .landing-intro-wrap .landing-intro-body h2 .line .letter {
+    user-select: none;
+    display: inline-block;
+    transform: scale(1);
+    transition: transform 0.1s ease-out;
+    position: relative;
+    z-index: 999;
+  }
+  .App .landing-wrap .landing-intro-wrap .landing-intro-body h2 .line .letter:hover {
+    transform: scale(1.6);
+    transition: transform 0.25s ease-out;
+  }
+  .App .landing-wrap .landing-intro-wrap .landing-intro-body h2 .line .letter.enlarging {
+    animation: enlargeLetter 0.5s ease-in-out;
+  }
+  @keyframes enlargeLetter {
+    from {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.6);
+    }
+    to {
+      transform: scale(1);
+    }
   }
   .App .landing-wrap .landing-intro-wrap .landing-intro-body ul {
     width: 70%;
@@ -1197,7 +1372,7 @@ img {
     bottom: 20%;
     left: 5%;
     right: 5%;
-    padding: 25% 2% 25% 2%;
+    padding: 15% 2% 15% 2%;
     text-align: center;
   }
   .App .services-wrap .services-gallery-wrap .service-wrap .service-description .title {
@@ -1265,7 +1440,8 @@ img {
     padding-bottom: 11px;
   }
   .App .services-wrap .services-reach-out .contact-btn span {
-    margin-right: 5px;
+    margin: 0 !important;
+    margin-right: 5px !important;
   }
   .App .services-wrap .services-reach-out .contact-btn .arrow {
     font-size: 15px;
@@ -1316,21 +1492,70 @@ img {
     position: relative;
     z-index: 999;
   }
-  .App .gallery-wrap .expanded-gallery {
+  .App .gallery-wrap .wrap {
+    display: flex;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10001;
+  }
+  .App .gallery-wrap .wrap video {
+    display: none;
+    flex-basis: 50%;
+    height: 100vh;
+    width: 35vw;
+    opacity: 0.75;
+    object-fit: cover;
+  }
+  .App .gallery-wrap .wrap .expanded-gallery {
+    background-color: rgba(11, 11, 11, 0.855);
     padding: 1vh 3vw;
+    width: 100%;
+    min-height: 98vh;
   }
-  .App .gallery-wrap .expanded-gallery .ReactGridGallery > div {
-    width: 105%;
-    position: relative;
-    right: 1%;
+  .App .gallery-wrap .wrap .expanded-gallery .carousel-root {
+    margin-top: 15%;
   }
-  .App .gallery-wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile {
+  .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slide {
+    margin: auto;
+  }
+  .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slide div img, .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slide div video {
+    max-height: 45vh;
+    max-width: 60vw;
+    object-fit: contain;
+  }
+  .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slide div video {
+    width: 90%;
+  }
+  .App .gallery-wrap .wrap .expanded-gallery .ReactGridGallery {
+    height: 30vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .App .gallery-wrap .wrap .expanded-gallery .ReactGridGallery::-webkit-scrollbar-track {
+    border-radius: 20px;
+  }
+  .App .gallery-wrap .wrap .expanded-gallery .ReactGridGallery > div {
+    justify-content: center;
+  }
+  .App .gallery-wrap .wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile {
     margin: 0.5vh 5px !important;
+    max-width: 100px !important;
+    max-height: 100px !important;
   }
-  .App .gallery-wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile img {
+  .App .gallery-wrap .wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile img {
+    margin: 0 !important;
+    max-width: 100px !important;
+    max-height: 100px !important;
+    object-fit: cover !important;
     cursor: none !important;
   }
-  .App .gallery-wrap .expanded-gallery #collapse-gallery {
+  .App .gallery-wrap .wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile .ReactGridGallery_tile-viewport {
+    height: 100% !important;
+    width: 100% !important;
+  }
+  .App .gallery-wrap .wrap .expanded-gallery #collapse-gallery {
     font-size: 35px;
     position: relative;
     right: 1.5vw;
@@ -1621,6 +1846,20 @@ img {
     font-size: 35px !important;
     padding: 30px 80px !important;
   }
+  .gallery-wrap .wrap video {
+    display: initial !important;
+  }
+  .gallery-wrap .wrap .expanded-gallery {
+    width: 60vw !important;
+  }
+  .gallery-wrap .wrap .expanded-gallery .ReactGridGallery_tile {
+    max-width: 160px !important;
+    max-height: 160px !important;
+  }
+  .gallery-wrap .wrap .expanded-gallery .ReactGridGallery_tile img {
+    max-width: 160px !important;
+    max-height: 160px !important;
+  }
 
   .contact-wrap {
     width: 100vw !important;
@@ -1701,6 +1940,10 @@ img {
     font-size: 40px !important;
     margin: 0 1vw !important;
     text-align: right !important;
+    justify-content: right !important;
+  }
+  .landing-wrap .landing-intro-wrap .landing-intro-body h2 .line {
+    justify-content: right !important;
   }
   .landing-wrap .landing-intro-wrap .landing-intro-body ul {
     width: 40%;
@@ -1709,13 +1952,36 @@ img {
     font-size: 27px !important;
   }
   .landing-wrap .landing-intro-wrap .photo-wrap {
-    transform: scaleX(-1);
     position: absolute;
-    right: 1vw;
-    bottom: 0;
     display: flex !important;
   }
-  .landing-wrap .landing-intro-wrap .photo-wrap img {
+  .landing-wrap .landing-intro-wrap .photo-wrap.main-theme-landing {
+    transform: scaleX(-1);
+    right: 1vw;
+    bottom: 0;
+  }
+  .landing-wrap .landing-intro-wrap .photo-wrap.main-theme-landing img {
+    width: 44vw;
+    min-width: 450px;
+    max-width: 770px;
+  }
+  .landing-wrap .landing-intro-wrap .photo-wrap.light-theme-landing {
+    transform: scaleX(1) rotate(9deg);
+    right: -2vw;
+    bottom: -1vh;
+  }
+  .landing-wrap .landing-intro-wrap .photo-wrap.light-theme-landing img {
+    width: 39vw;
+    min-width: 450px;
+    max-width: 770px;
+  }
+  .landing-wrap .landing-intro-wrap .photo-wrap.gold-theme-landing {
+    transform: scaleX(-1) rotate(25deg);
+    right: 1vw;
+    bottom: 10vh;
+  }
+  .landing-wrap .landing-intro-wrap .photo-wrap.gold-theme-landing img {
+    filter: drop-shadow(-4px 11px 19px black) saturate(0.55) contrast(1.15) !important;
     width: 44vw;
     min-width: 450px;
     max-width: 770px;

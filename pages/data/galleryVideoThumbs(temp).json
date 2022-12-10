@@ -1,0 +1,22 @@
+[
+  {
+    "src": "./assets/images/instagram/v1.png",
+    "width": 220,
+    "height": 174
+  },
+  {
+    "src": "./assets/images/instagram/v2.png",
+    "width": 320,
+    "height": 212
+  },
+  {
+    "src": "./assets/images/instagram/v3.png",
+    "width": 320,
+    "height": 212
+  },
+  {
+    "src": "./assets/images/instagram/v4.png",
+    "width": 320,
+    "height": 174
+  }
+]

@@ -61,7 +61,7 @@ export default function Header() {
           <ul className="theme-option-list" onClick={changeTheme}>
             <li data-theme="main-theme" className={theme === 'main-theme' ? 'active' : ''}>Main</li>
             <li data-theme="light-theme" className={theme === 'light-theme' ? 'active' : ''}>Light</li>
-            <li data-theme="dark-theme" className={theme === 'dark-theme' ? 'active' : ''}>Dark</li>
+            <li data-theme="gold-theme" className={theme === 'gold-theme' ? 'active' : ''}>Gold</li>
           </ul>
         </div>
         <i className="fa-solid fa-bars burger" onClick={toggleNav} />

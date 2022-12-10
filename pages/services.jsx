@@ -55,11 +55,13 @@ export default function Services() {
 
         <div className="services-reach-out">
           <p>Call for availability and most recent pricing!</p>
-          <Link href="/contact" className="contact-btn btn">
-            <span>Contact</span>
-            <i className="fa-solid fa-phone" />{' '}
-            <i className="fa-solid fa-chevron-down arrow" />
-          </Link>
+          <button className="contact-btn btn">
+            <Link href="/contact" >
+              <span>Contact</span>
+              <i className="fa-solid fa-phone" />{' '}
+              <i className="fa-solid fa-chevron-down arrow" />
+            </Link>
+          </button>
         </div>
         {/* <NextPageLink props={{ href: '/gallery', style: {right: '10%', left: 'initial'} }} /> */}
       </AnimatedLayout>

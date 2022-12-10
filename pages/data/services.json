@@ -6,8 +6,8 @@
        "be as relaxing as it is beautifying. The results afterwards are immediately noticeable",
        ", and patients leave the spa with brighter, softer skin."],
     "price": "100",
-    "imageUri": "./assets/images/mock.png",
-    "backgroundPositionX": "95%"
+    "imageUri": "./assets/images/mock2.png",
+    "backgroundPositionX": "76%"
   },
   {
     "name": "Deep Pore Cleansing Facial",
@@ -16,8 +16,8 @@
        "penetrates your skin deeply to remove dirt and debris that accumulates in your pores. ",
        "This treatment is the best solution to achieve a clear, radiant complexion."],
     "price": "150",
-    "imageUri": "./assets/images/mock2.png",
-    "backgroundPositionX": "76%"
+    "imageUri": "./assets/images/mock3.png",
+    "backgroundPositionX": "49%"
   },
   {
     "name": "Customized Facial",
@@ -27,8 +27,8 @@
        "damage to acne flare-ups to a dull and patchy complexion. When it comes to our skin, ",
        "sometimes it's tough to face the facts."],
     "price": "100-200",
-    "imageUri": "./assets/images/mock3.png",
-    "backgroundPositionX": "49%"
+    "imageUri": "./assets/images/mock.png",
+    "backgroundPositionX": "95%"
   },
   {
     "name": "Powder Brow Technique aka Ombre",
@@ -51,9 +51,17 @@
     "backgroundPositionX": "76%"
   },
   {
+  "name": "Waxing",
+  "description":
+    ["Eyebrows, upper lip, chin, jawline, cheeks, arms, legs (toes included)."],
+  "price": "20-100",
+  "imageUri": "./assets/images/waxing.jpeg",
+  "backgroundPositionX": "70%"
+  },
+  {
     "name": "And more...",
     "description": "reach out for up to date info...",
-    "imageUri": "./assets/images/mock3.png",
-    "backgroundPositionX": "49%"
+    "imageUri": "./assets/images/more.jpeg",
+    "backgroundPositionX": "70%"
   }
 ]

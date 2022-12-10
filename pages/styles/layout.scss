@@ -203,6 +203,14 @@ img {
       bottom: 5%;
       left: calc(50% - $fontSize * 1.25);
       font-size: $fontSize * 2.5;
+
+      transform: scale(1);
+      transition: transform 0.75s ease-out;
+
+      &:hover {
+        transform: scale(1.25);
+        transition: transform 0.75s ease-in;
+      }
     }
 
     .bottom-gradient {
@@ -244,8 +252,51 @@ img {
           padding: 2.5vh 2vw 0 0;
 
           h2 {
+            position: relative;
+            z-index: 999;
+
             margin: 0 3vw;
             text-align: center;
+            justify-content: center;
+
+            display: flex;
+            flex-wrap: wrap;
+
+            .line {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+
+              .letter {
+                user-select: none;
+                display: inline-block;
+                transform: scale(1);
+                transition: transform 0.1s ease-out;
+                position: relative;
+                z-index: 999;
+
+                &:hover {
+                  transform: scale(1.6);
+                  transition: transform 0.25s ease-out;
+                }
+
+                &.enlarging {
+                  animation: enlargeLetter 0.5s ease-in-out;
+
+                  @keyframes enlargeLetter {
+                    from {
+                      transform: scale(1);
+                    }
+                    50% {
+                      transform: scale(1.6);
+                    }
+                    to {
+                      transform: scale(1);
+                    }
+                  }
+                }
+              }
+            }
           }
 
           ul {
@@ -410,7 +461,7 @@ img {
             right: 5%;
 
             // padding-top: 25%;
-            padding: 25% 2% 25% 2%;
+            padding: 15% 2% 15% 2%;
             text-align: center;
 
             .title {
@@ -516,7 +567,8 @@ img {
           padding-bottom: $fontSize * 0.55;
 
           span {
-            margin-right: $fontSize * 0.25;
+            margin: 0!important;
+            margin-right: $fontSize * 0.25!important;
           }
 
           .arrow {
@@ -592,43 +644,163 @@ img {
         }
       }
 
-      .expanded-gallery {
-        padding: 1vh 3vw;
 
-        .ReactGridGallery {
-          >div {
-            width: 105%;
-            position: relative;
-            right: 1%;
-          }
 
-          .ReactGridGallery_tile {
-            margin: 0.5vh $fontSize * 0.25!important;
+      // .expanded-gallery {
+      //   padding: 1vh 3vw;
 
-            img {
-              cursor: none!important;
-            }
+      //   .carousel-root {
 
-            &:nth-child(2n - 1) {
-              // .ReactGridGallery_tile-viewport {
-              //   height: 100%!important;
-              //   overflow: hidden!important;
+      //     .slide {
+      //       margin: auto;
+      //     }
+      //   }
 
-              //   img {
-              //     height: calc(100% + 4px)!important;
-              //   }
-              // }
-            }
-          }
+      //   .ReactGridGallery {
+      //     >div {
+      //       // width: 105%;
+      //       // position: relative;
+      //       // right: 1%;
+      //       justify-content: center;
+      //     }
+
+      //     .ReactGridGallery_tile {
+      //       margin: 0.5vh $fontSize * 0.25!important;
+      //       max-width: $fontSize * 8!important;
+      //       max-height: $fontSize * 8!important;
+
+      //       img {
+      //         margin: 0!important;
+      //         max-width: $fontSize * 8!important;
+      //         max-height: $fontSize * 8!important;
+      //         object-fit: cover!important;
+      //         cursor: none!important;
+      //       }
+
+      //       &:nth-child(2n - 1) {
+      //         // .ReactGridGallery_tile-viewport {
+      //         //   height: 100%!important;
+      //         //   overflow: hidden!important;
+
+      //         //   img {
+      //         //     height: calc(100% + 4px)!important;
+      //         //   }
+      //         // }
+      //       }
+      //     }
+      //   }
+
+      //   #collapse-gallery {
+      //     font-size: $fontSize * 1.75;
+      //     position: relative;
+      //     right: 1.5vw;
+      //     margin-bottom: 1.5vh;
+      //   }
+      // }
+
+
+
+      .wrap {
+        display: flex;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10001;
+
+        video {
+          display: none;
+          flex-basis: 50%;
+          height: 100vh;
+          width: 35vw;
+          opacity: 0.75;
+          object-fit: cover;
         }
 
-        #collapse-gallery {
-          font-size: $fontSize * 1.75;
-          position: relative;
-          right: 1.5vw;
-          margin-bottom: 1.5vh;
+        .expanded-gallery {
+          background-color: rgba(11, 11, 11, 0.855);
+          padding: 1vh 3vw;
+          width: 100%;
+          min-height: 98vh;
+
+          .carousel-root {
+            margin-top: 15%;
+
+            .slide {
+              margin: auto;
+
+              div {
+                img, video {
+                  max-height: 45vh;
+                  max-width: 60vw;
+                  object-fit: contain;
+                }
+
+                video {
+                  width: 90%;
+                }
+              }
+            }
+          }
+
+          .ReactGridGallery {
+            height: 30vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+
+            &::-webkit-scrollbar-track {
+              border-radius: $fontSize;
+            }
+
+            >div {
+              // width: 105%;
+              // position: relative;
+              // right: 1%;
+              justify-content: center;
+            }
+
+            .ReactGridGallery_tile {
+              margin: 0.5vh $fontSize * 0.25!important;
+              max-width: $fontSize * 5!important;
+              max-height: $fontSize * 5!important;
+
+              img {
+                margin: 0!important;
+                max-width: $fontSize * 5!important;
+                max-height: $fontSize * 5!important;
+                object-fit: cover!important;
+                cursor: none!important;
+              }
+
+              .ReactGridGallery_tile-viewport {
+                height: 100%!important;
+                width: 100%!important;
+              }
+
+              &:nth-child(2n - 1) {
+                // .ReactGridGallery_tile-viewport {
+                //   height: 100%!important;
+                //   overflow: hidden!important;
+
+                //   img {
+                //     height: calc(100% + 4px)!important;
+                //   }
+                // }
+              }
+            }
+          }
+
+          #collapse-gallery {
+            font-size: $fontSize * 1.75;
+            position: relative;
+            right: 1.5vw;
+            margin-bottom: 1.5vh;
+          }
         }
       }
+
+
+
     }
 
     // contact
@@ -1017,6 +1189,26 @@ img {
         }
       }
     }
+
+    .wrap {
+      video {
+        display: initial!important;
+      }
+
+      .expanded-gallery {
+        width: 60vw!important;
+
+        .ReactGridGallery_tile {
+          max-width: $fontSize * 8!important;
+          max-height: $fontSize * 8!important;
+
+          img {
+              max-width: $fontSize * 8!important;
+              max-height: $fontSize * 8!important;
+          }
+        }
+      }
+    }
   }
 
   // contact
@@ -1134,6 +1326,11 @@ img {
           font-size: $fontSize * 2!important;
           margin: 0 1vw!important;
           text-align: right!important;
+          justify-content: right!important;
+
+          .line {
+            justify-content: right!important;
+          }
         }
 
         ul {
@@ -1156,16 +1353,44 @@ img {
       }
 
       .photo-wrap {
-        transform: scaleX(-1);
         position: absolute;
-        right: 1vw;
-        bottom: 0;
         display: flex!important;
 
-        img {
-          width: 44vw;
-          min-width: 450px;
-          max-width: $fontSize * 38.5 /* 16px * 37.5 = 600px */;
+        &.main-theme-landing {
+          transform: scaleX(-1);
+          right: 1vw;
+          bottom: 0;
+
+          img {
+            width: 44vw;
+            min-width: 450px;
+            max-width: $fontSize * 38.5 /* 16px * 37.5 = 600px */;
+          }
+        }
+
+        &.light-theme-landing {
+          transform: scaleX(1) rotate(9deg);
+          right: -2vw;
+          bottom: -1vh;
+
+          img {
+            width: 39vw;
+            min-width: 450px;
+            max-width: $fontSize * 38.5 /* 16px * 37.5 = 600px */;
+          }
+        }
+
+        &.gold-theme-landing {
+          transform: scaleX(-1) rotate(25deg);
+          right: 1vw;
+          bottom: 10vh;
+
+          img {
+            filter: drop-shadow(-4px 11px 19px black) saturate(0.55) contrast(1.15)!important;
+            width: 44vw;
+            min-width: 450px;
+            max-width: $fontSize * 38.5 /* 16px * 37.5 = 600px */;
+          }
         }
       }
     }

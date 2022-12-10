@@ -30,16 +30,22 @@ export default function Contact() {
         <div className="contact-direct">
           <div className="method">
             <i className="fa-solid fa-envelope" />
-            <a href="mailto:SomeEmail23@gmail.com">SomeEmail23@gmail.com</a>
+            <a href="mailto:araysyzdykova@yahoo.com">AraySyzdykova@yahoo.com</a>
           </div>
           <div className="method">
             <i className="fa-solid fa-phone" />
-            <a href="tel:9413740327">{'+1 (941)374-0327'}</a>
+            <a href="tel:9419141541">{'+1 (941)914-1541'}</a>
           </div>
           <div className="links">
-            <i className="fa-brands fa-instagram" />
-            <i className="fa-brands fa-facebook" />
-            <i className="fa-brands fa-pinterest" />
+            <a href="https://www.instagram.com/aray_aesthetics_llc/" target="_blank" rel="noreferrer">
+              <i className="fa-brands fa-instagram" />
+            </a>
+            <a>
+              <i className="fa-brands fa-facebook disabled" />
+            </a>
+            <a>
+              <i className="fa-brands fa-pinterest disabled" />
+            </a>
           </div>
           <div className="method"></div>
         </div>

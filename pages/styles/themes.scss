@@ -13,6 +13,18 @@
   src: url(./fonts/Lora.ttf);
 }
 
+@font-face {
+  font-family: Raleway;
+  src: url(./fonts/Raleway.ttf);
+  font-weight: 150;
+}
+
+@font-face {
+  font-family: Raleway-Italic;
+  src: url(./fonts/Raleway-italic.ttf);
+  font-weight: 175;
+}
+
 #root {
   background-size: cover;
   background-attachment: fixed;
@@ -37,23 +49,7 @@
     }
 }
 
-.react-grid-item {
-  border: 1px solid red;
-}
-
 // animations
-// @mixin breathingText($color, $glowColor) {
-//   @keyframes breathingText {
-//     from {
-//       text-shadow: -1px -1px 8px $glowColor;
-//     }
-//     to {
-//       text-shadow: -1px -1px 15px $glowColor;
-//     }
-//   };
-
-//   animation: breathingText 2s alternate-reverse infinite;
-// }
 @mixin breathingText($color, $glowColor) {
   @keyframes breathingText {
     from {
@@ -80,23 +76,70 @@
   animation: breathingBorder 1s alternate-reverse infinite;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+@mixin blurInText($mainFontColor) {
+  @keyframes blurInText {
+    from {
+      text-shadow: 0 0 1em $mainFontColor;
+      color: transparent;
+    }
+    to {
+      text-shadow: none;
+      color: $mainFontColor;
+    }
   }
-  49% {
-    opacity: 0;
+
+  animation: blurInText ease-in 0.75s;
+}
+
+@mixin fadeIn($delay: 2s) {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    49% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
-  100% {
-    opacity: 1;
+
+  animation: fadeIn $delay ease-in;
+}
+
+@mixin pulse {
+  @keyframes pulse {
+    from {
+      transform: scale(1.0);
+    }
+    to {
+      transform: scale(1.1);
+    }
   }
+
+  animation: pulse 1s alternate-reverse infinite;
+}
+
+@mixin bounce {
+  position: relative;
+
+  @keyframes bounce {
+    from {
+      top: 0;
+    }
+    to {
+      top: 2vh;
+    }
+  }
+
+  animation: bounce 1s alternate-reverse infinite;
 }
 
 // mixins
-@mixin glowingBorder($color, $glowColor) {
-  border-bottom: 2px solid $color;
+@mixin glowingBorder($color, $glowColor, $extraGlowColor) {
+  border-bottom: 1px solid $color;
   // box-shadow: 0 0 10px $glowColor;
-  box-shadow: 0 13px 10px -10px $glowColor;
+  box-shadow: 0 13px 10px -10px $glowColor, 0 -13px 5px -11.5px $glowColor inset;
 
   // @include breathingBorder($color, $glowColor);
 }
@@ -132,7 +175,7 @@
   header {
     background-color: $mainBack;
     color: $secondFontColor;
-    @include glowingBorder($borderColor, $borderGlowColor);
+    @include glowingBorder($borderColor, $borderGlowColor, $extraBorderGlowColor);
 
     .logo {
       font-family: $logoFont;
@@ -196,7 +239,7 @@
 
     .landing-intro-wrap {
       background-color: $mainBack;
-      @include glowingBorder($borderColor, $borderGlowColor);
+      @include glowingBorder($borderColor, $borderGlowColor, $extraBorderGlowColor);
 
       .photo-wrap {
       }
@@ -209,10 +252,15 @@
         h2 {
           font-family: $tertiaryFont;
           @include glowingText($mainFontColor, $borderGlowColor);
+          // @include fadeIn(0.25s);
         }
 
         ul {
           font-family: $mainFont;
+
+          li {
+            @include blurInText($mainFontColor);
+          }
         }
       }
     }
@@ -232,7 +280,7 @@
   .about-me-wrap {
     background-color: $mainBack;
     @include basicBorder();
-    @include glowingBorder($borderColor, $borderGlowColor);
+    @include glowingBorder($borderColor, $borderGlowColor, $extraBorderGlowColor);
 
     .about-me-description {
       background-color: $secondBack;
@@ -241,11 +289,13 @@
       .title {
         font-family: $tertiaryFont;
         @include glowingText($mainFontColor, $borderGlowColor);
+        // @include fadeIn(0.75s);
       }
 
       .bio {
         font-family: $mainFont;
         color: $mainFontColor;
+        @include blurInText($mainFontColor);
       }
     }
 
@@ -319,6 +369,7 @@
       .contact-btn {
         // $color, $glowColor, $backColor, $font
         @include button($mainFontColor, $borderGlowColor, #fee8fb, #000000, $mainFont);
+        @include pulse();
 
         .arrow {
         }
@@ -334,7 +385,26 @@
 
       .row-img {
 
+        @keyframes rotate3dTop {
+          from {
+            transform: rotate3d(-7, -4, 1, 10deg);
+          }
+          to {
+            transform: rotate3d(7, 4, -1, 10deg);
+          }
+        }
+
+        @keyframes rotate3dBottom {
+          from {
+            transform: rotate3d(7, 4, -1, 10deg);
+          }
+          to {
+            transform: rotate3d(-7, -4, 1, 10deg);
+          }
+        }
+
         div {
+          box-shadow: -6px 4px 2em 0.5em black;
 
           img {
             ::after {
@@ -368,6 +438,32 @@
             width: 105%;
           }
         }
+
+        &:first-child {
+          animation: rotate3dTop 5s alternate-reverse infinite;
+
+          div {
+            &:first-child {
+
+            }
+            &:nth-child(2) {
+
+            }
+          }
+        }
+
+        &:nth-child(3) {
+          animation: rotate3dBottom 5s alternate-reverse infinite;
+
+          div {
+            &:first-child {
+
+            }
+            &:nth-child(2) {
+
+            }
+          }
+        }
       }
 
       .row-btn {
@@ -376,26 +472,56 @@
           font-family: $mainFont;
           color: $mainFontColor;
           background-color: $secondBack;
-          border: 0.5px solid white;
+          // border: 0.5px solid white;
+
+          border: 1px solid transparent;
+          box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+          outline: 1px solid;
+          outline-color: rgba(255, 255, 255, .5);
+          outline-offset: 0px;
+          text-shadow: none;
+          transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+
+          &:hover {
+            border: 1px solid white;
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+            outline-color: rgba(255, 255, 255, 0);
+            outline-offset: 15px;
+            text-shadow: 1px 1px 2px #427388;
+          }
         }
       }
     }
 
     .expanded-gallery {
 
+      .carousel-root {
+        margin-bottom: 1em * 0.5;
+        border-top: 2px solid $mainFontColor;
+        border-bottom: 2px solid $mainFontColor;
+        box-shadow: 0 -13px 10px -10px wheat, 0 13px 10px -10px wheat;
+        background-color: rgba($color: rgb(50, 50, 50), $alpha: 0.75);
+
+        .slide {
+          div {
+            img {
+            }
+          }
+        }
+      }
+
       .ReactGridGallery {
         .ReactGridGallery_tile {
           &:nth-child(2n) {
-            // hereh
-            // @include glowingBorder($mainFontColor, $extraBorderGlowColor);
-            border-top: 2px solid $mainFontColor;
-            border-bottom: 2px solid $mainFontColor;
-            box-shadow: 0 -13px 10px -10px $extraBorderGlowColor, 0 13px 10px -10px $extraBorderGlowColor;
+            // @include glowingBorder($mainFontColor, $extraBorderGlowColor, $extraBorderGlowColor);
+            // border-top: 2px solid $mainFontColor;
+            // border-bottom: 2px solid $mainFontColor;
+            // box-shadow: 0 -13px 10px -10px $extraBorderGlowColor, 0 13px 10px -10px $extraBorderGlowColor;
           }
 
           &:nth-child(2n - 1) {
-            border-top: 2px solid transparent;
-            border-bottom: 2px solid transparent;
+            // border-top: 2px solid transparent;
+            // border-bottom: 2px solid transparent;
           }
 
           transform: scale(1);
@@ -414,7 +540,8 @@
         border: none;
         outline: none;
         font-family: $mainFont;
-        color: $secondFontColor;
+        color: #fff;
+        // color: $secondFontColor;
       }
     }
   }
@@ -422,7 +549,7 @@
   // contact
   .contact-wrap {
     background-color: $secondBack;
-    @include glowingBorder($borderColor, $borderGlowColor);
+    @include glowingBorder($borderColor, $borderGlowColor, $extraBorderGlowColor);
 
     form {
       background-color: $secondBack;
@@ -442,6 +569,11 @@
             color: $mainFontColor;
             background-color: rgba(255, 255, 255, 0.27);
             border: none;
+
+            &:autofill {
+              box-shadow: 0 0 0 30px rgb(114, 114, 114) inset !important;
+              -webkit-text-fill-color: $mainFontColor;
+            }
           }
         }
 
@@ -462,6 +594,7 @@
         &.row-submit {
           button {
             @include button($mainFontColor, $extraBorderGlowColor, #fee8fb, #000000, $mainFont);
+            @include pulse();
           }
         }
       }
@@ -485,6 +618,11 @@
 
         i {
           color: $mainFontColor;
+
+          &.disabled {
+            opacity: 0.5;
+            cursor: not-allowed!important;
+          }
         }
       }
     }
@@ -522,15 +660,45 @@
 
   .next-page-link {
     color: $mainFontColor;
-
-    animation: fadeIn 2s linear;
+    @include fadeIn();
   }
-
 }
 
 /* theme( $logoFont, $mainFont, $tertiaryFont,
   $mainBack, $secondBack, $mainFontColor, $secondFontColor, $borderColor, $borderGlowColor, $extraBorderGlowColor) */
 #root {
+  .loading-wrap {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(22, 22, 22, 0.90);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    >span {
+      // height: 100vh!important;
+      // margin: auto;
+      span {
+        box-shadow: 0 0 10px 3px rgb(243, 70, 243);
+      }
+    }
+
+    .loading-text {
+      margin-top: 1vh;
+      color: white;
+      font-family: Montserrat;
+      font-size: 20px;
+    }
+  }
+
+  .App {
+    @include fadeIn(0.5s);
+  }
+
   &.main-theme {
     background-image: url(../../public/assets/images/purpleBack.jpeg);
     .App {
@@ -554,14 +722,26 @@
       }
     }
   }
-  &.dark-theme {
-    background:rgb(28, 28, 28);
+  &.gold-theme {
+    background-image: url(../../public/assets/images/goldenBack.jpeg);
     .App {
-      @include theme(Nickainley, Montserrat, Lora, /* colors */ #2a2a2aad, #2a2a2aad, #e3ddd2, #e3ddd2, #2a2a2aad, #2a2a2aad, #2a2a2aad);
-    }
+      @include theme(Nickainley, Raleway-Italic, Raleway, /* colors */ #2a2a2aad, #2a2a2aad, #fdf5e7, #e4e2e2, #2a2a2aad, rgb(255, 207, 118), rgb(255, 204, 108));
 
-    img, div {
-      // filter: grayscale(0.5) contrast(1.05)!important;
+      img {
+        filter: drop-shadow(2px 4px 6px black) saturate(0.55) contrast(1.15);
+      }
+
+      .service-background {
+        filter: drop-shadow(2px 4px 6px black) saturate(0.55) contrast(1.15);
+      }
+
+      .slide {
+        div {
+          img {
+            filter: none!important;
+          }
+        }
+      }
     }
   }
 }

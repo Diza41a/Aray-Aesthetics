@@ -1,21 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import AnimatedLayout from '../subcomponents/AnimatedLayout.jsx';
 import NextPageLink from '../subcomponents/NextPageLink.jsx';
+import FadeLoader from 'react-spinners/FadeLoader';
 
 import { Gallery as GridGallery } from 'react-grid-gallery';
-import galleryData from './data/gallery.json';
+import galleryImages from './data/galleryImages.json';
+import galleryVideos from './data/galleryVideos.json';
+// temp!
+import galleryThumbs from './data/galleryVideoThumbs(temp).json';
 
-import Lightbox from 'react-image-lightbox';
-import 'react-image-lightbox/style.css';
+// choose one!!
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 export default function Gallery() {
   const [isExpanded, toggleExpand] = useState(false);
-
-  const [isZoomed, toggleZoomed] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
+  const [isLoading, toggleLoading] = useState(false);
 
-  const images = [...galleryData, ...galleryData];
+  let images = [...galleryImages];
   const imageUris = images.map(({src}) => src);
+  images = [...images, ...galleryThumbs];
+  const videos = [...galleryVideos];
+  const videoUris = videos.map(({src}) => src);
+
+  let originalBackground = '';
 
   // ComponentDidMount()
   useEffect(() => {
@@ -24,6 +33,9 @@ export default function Gallery() {
 
     return () => {
         document.body.style.overflowY = 'hidden';
+        document.querySelector('header').style.display = 'flex';
+        document.querySelector('.page-progress-wrap').style.display = 'initial';
+        document.querySelector('#root').style.backgroundImage = originalBackground;
     };
   }, []);
 
@@ -31,67 +43,110 @@ export default function Gallery() {
     <>
       <h2 className="section-title" id="gallery">Gallery</h2>
       <AnimatedLayout props={{className: "gallery-wrap"}}>
-        {
-          isExpanded ?
-          <div className="expanded-gallery">
-            <button id="collapse-gallery" onClick={(() => {
-              toggleExpand(false);
-              toggleZoomed(false);
-            })}>
-              <i className="fa-solid fa-left-long" />
-              <span>{' Collapse'}</span>
-            </button>
-            <GridGallery images={images} enableImageSelection={false} onClick={((e) => {
-              setPhotoIndex(e);
-              toggleZoomed(true);
-            })} />
-
-            {isZoomed && (
-              <Lightbox
-                onImageLoad={() => {
-                  window.dispatchEvent(new Event('resize'));
-                }}
-                mainSrc={imageUris[photoIndex]}
-                nextSrc={imageUris[(photoIndex + 1) % imageUris.length]}
-                prevSrc={imageUris[(photoIndex + imageUris.length - 1) % imageUris.length]}
-                onCloseRequest={() => toggleZoomed(false)}
-                onMovePrevRequest={() =>
-                  setPhotoIndex((photoIndex + imageUris.length - 1) % imageUris.length)
-                }
-                onMoveNextRequest={() =>
-                  setPhotoIndex((photoIndex + 1) % imageUris.length)
-                }
-              />
-            )}
-
+        { isLoading
+          ?
+          <div className="loading-wrap">
+            <FadeLoader
+              color={'#ffffff'}
+              loading={true}
+              // cssOverride={}
+              size={150}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+            <p className="loading-text">Loading...</p>
           </div>
           :
-          <div className="gallery-gate">
-            <div className="row-img">
-              <div className="img-wrap">
-                <img src="./assets/images/gallery1.png" alt="" />
-              </div>
-              <div className="img-wrap">
-                <img src="./assets/images/gallery2.png" alt="" />
-              </div>
-            </div>
-            <div className="row-btn">
-              <button onClick={(() => {
-                toggleExpand(true);
-              })}>Open Gallery...</button>
-            </div>
-            <div className="row-img">
-              <div className="img-wrap">
-                <img src="./assets/images/gallery3.png" alt="" />
-              </div>
-              <div className="img-wrap">
-                <img src="./assets/images/gallery4.png" alt="" />
-              </div>
+          isExpanded
+          ?
+          <div className="wrap">
+            <video loop autoPlay muted>
+              <source src="./assets/images/demo.mp4"/>
+              <source src="./assets/images/back.mp4"/>
+            </video>
+            <div className="expanded-gallery">
+
+              <button id="collapse-gallery" onClick={(() => {
+                document.querySelector('header').style.display = 'flex';
+                document.querySelector('.page-progress-wrap').style.display = 'initial';
+                document.querySelector('#root').style.backgroundImage = originalBackground;
+
+                const galleryWrap = document.querySelector('.gallery-wrap');
+                toggleExpand(false);
+              })}>
+                <i className="fa-solid fa-left-long" />
+                <span>{' Collapse'}</span>
+              </button>
+
+              <Carousel
+                emulateTouch
+                showThumbs={false}
+                showIndicators={false}
+                selectedItem={photoIndex}
+              >
+                {imageUris.map((uri, i) => {
+                  return (<div key={i}>
+                    <img src={`${uri}`} data-index={i} loading="lazy" />
+                  </div>);
+                })}
+                {videoUris.map((uri, i) => {
+                  return (<div key={i}>
+                    <video data-index={imageUris.length + i} controls={true} muted>
+                      <source src={`${uri}`} />
+                    </video>
+                  </div>);
+                })}
+                {/* <div>
+                  <video src="./assets/images/demo1.mp4" muted controls>
+                  </video>
+                </div> */}
+              </Carousel>
+
+              <GridGallery images={images} enableImageSelection={false} onClick={((e) => {
+                setPhotoIndex(e);
+              })} />
             </div>
           </div>
+          :
+          <>
+            <div className="gallery-gate">
+              <div className="row-img">
+                <div className="img-wrap">
+                  <img src="./assets/images/gallery1.png" alt="" />
+                </div>
+                <div className="img-wrap">
+                  <img src="./assets/images/gallery2.png" alt="" />
+                </div>
+              </div>
+              <div className="row-btn">
+                <button onClick={(() => {
+                  document.querySelector('header').style.display = 'none';
+                  document.querySelector('.page-progress-wrap').style.display = 'none';
+                  originalBackground = document.querySelector('#root').style.backgroundImage;
+                  document.querySelector('#root').style.backgroundImage = 'url(./assets/images/purpleBack.jpeg)';
+
+                  const galleryWrap = document.querySelector('.gallery-wrap');
+                  toggleLoading(true);
+
+                  setTimeout(() => {
+                    toggleExpand(true);
+                    toggleLoading(false);
+                  }, 2500);
+                })}>Open Gallery...</button>
+              </div>
+              <div className="row-img">
+                <div className="img-wrap">
+                  <img src="./assets/images/gallery3.png" alt="" />
+                </div>
+                <div className="img-wrap">
+                  <img src="./assets/images/gallery4.png" alt="" />
+                </div>
+              </div>
+            </div>
+            <NextPageLink props={{ href: '/contact' }} />
+          </>
         }
 
-        <NextPageLink props={{ href: '/contact' }} />
       </AnimatedLayout>
     </>
   );

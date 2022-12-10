@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Particle from '../subcomponents/particle.jsx';
+import FadeLoader from 'react-spinners/FadeLoader';
 
 // Styles
 import './styles/layout.css';
@@ -32,10 +33,10 @@ function MyApp({ Component, pageProps }) {
       strokeColor: "#ffffff",
       glowColor: "#000000",
     },
-    'dark-theme': {
-      color: '#ffffff',
-      strokeColor: "#ffffff",
-      glowColor: "#ffffff",
+    'gold-theme': {
+      color: 'rgb(252, 231, 193)',
+      strokeColor: "#fff",
+      glowColor: "rgba(255, 204, 108, 0.743)",
     }
   };
   const cursorThemes = {
@@ -45,7 +46,7 @@ function MyApp({ Component, pageProps }) {
     'light-theme': {
       color: '0, 0, 0',
     },
-    'dark-theme': {
+    'gold-theme': {
       color: '255, 255, 255',
     }
   };
@@ -57,7 +58,9 @@ function MyApp({ Component, pageProps }) {
       toggleTheme(storedTheme);
     }
 
-    toggleOnClient(true);
+    setTimeout(() => {
+      toggleOnClient(true);
+    }, 1500);
   }, []);
 
   return (
@@ -66,27 +69,45 @@ function MyApp({ Component, pageProps }) {
 
       <ThemeContext.Provider value={{ theme, toggleTheme }}>
         <div id="root" className={theme}>
-          <Particle props={ particleThemes[theme] } />
-
-          <div className="App">
-          {onClient ? <AnimatedCursor
-          color={ cursorThemes[theme].color }
-            innerSize={13}
-            outerSize={22}
-              outerScale={3}
-                clickables={['a', 'input', 'textarea', 'select', 'i', 'button']}
+          {
+            onClient
+            ?
+            <>
+              <div className="App">
+              <Particle props={ particleThemes[theme] } />
+                <AnimatedCursor
+                  color={ cursorThemes[theme].color }
+                  innerSize={13}
+                  outerSize={22}
+                  outerScale={3}
+                  clickables={['a', 'input', 'textarea', 'select', 'i', 'button']}
                   innerStyle={{ zIndex: 10000 }}
-              /> : null}
-          <Header />
+                />
 
-          {onClient ? <AnimatePresence mode="wait" initial={false}>
-            <Component {...pageProps} key={uuidv4()} />
-          </AnimatePresence> : null}
+                <Header />
 
-          <SliderLinks />
+                <AnimatePresence mode="wait" initial={false}>
+                  <Component {...pageProps} key={uuidv4()} />
+                </AnimatePresence>
 
-          <div className="bottom-gradient" />
-          </div>
+                <SliderLinks />
+
+                <div className="bottom-gradient" />
+              </div>
+            </>
+            :
+            <div className="loading-wrap">
+              <FadeLoader
+                color={'#ffffff'}
+                loading={true}
+                // cssOverride={}
+                size={150}
+                aria-label="Loading Spinner"
+                data-testid="loader"
+              />
+              <p className="loading-text">Loading...</p>
+            </div>
+          }
         </div>
       </ThemeContext.Provider>
     </>

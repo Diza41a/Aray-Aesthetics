@@ -17,9 +17,15 @@ export default function SliderLinks() {
     <>
       <div className="mobile-nav-wrap"></div>
       <div className="direct-links">
-        <i className="fa-solid fa-phone" />
-        <i className="fa-solid fa-envelope" />
-        <i className="fa-brands fa-instagram" />
+        <a href="tel:(941)914-1541">
+          <i className="fa-solid fa-phone" />
+        </a>
+        <a href="mailto:araysyzdykova@yahoo.com">
+          <i className="fa-solid fa-envelope" />
+        </a>
+        <a href="https://www.instagram.com/aray_aesthetics_llc/" target="_blank" rel="noreferrer">
+          <i className="fa-brands fa-instagram" />
+        </a>
       </div>
       <div className="page-progress-wrap">
         {/* Website progress bar */}
