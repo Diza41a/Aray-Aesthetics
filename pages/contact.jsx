@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AnimatedLayout from '../subcomponents/AnimatedLayout.jsx';
 
 // Helpers
 import { makeInputBox, makeTextArea } from '../subcomponents/helpers.js';
 
 export default function Contact() {
+  // ComponentDidMount
+  useEffect(() => {
+    document.body.style.overflowY = 'initial';
+
+    return () => {
+        document.body.style.overflowY = 'hidden';
+    }
+  }, []);
 
   return (
     <>

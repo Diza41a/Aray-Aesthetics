@@ -1,13 +1,16 @@
 @font-face {
   font-family: Nickainley;
+  font-weight: 100;
   src: url(./fonts//Nickainley-Normal.otf);
 }
 @font-face {
   font-family: Montserrat;
+  font-weight: 100;
   src: url(./fonts/Montserrat.ttf);
 }
 @font-face {
   font-family: Lora;
+  font-weight: 100;
   src: url(./fonts/Lora.ttf);
 }
 @font-face {
@@ -306,9 +309,13 @@
   width: 105%;
 }
 #root.main-theme .App .gallery-wrap .gallery-gate .row-img:first-child {
+  position: relative;
+  z-index: 900;
   animation: rotate3dTop 5s alternate-reverse infinite;
 }
 #root.main-theme .App .gallery-wrap .gallery-gate .row-img:nth-child(3) {
+  position: relative;
+  z-index: 900;
   animation: rotate3dBottom 5s alternate-reverse infinite;
 }
 #root.main-theme .App .gallery-wrap .gallery-gate .row-btn button {
@@ -711,9 +718,13 @@
   width: 105%;
 }
 #root.light-theme .App .gallery-wrap .gallery-gate .row-img:first-child {
+  position: relative;
+  z-index: 900;
   animation: rotate3dTop 5s alternate-reverse infinite;
 }
 #root.light-theme .App .gallery-wrap .gallery-gate .row-img:nth-child(3) {
+  position: relative;
+  z-index: 900;
   animation: rotate3dBottom 5s alternate-reverse infinite;
 }
 #root.light-theme .App .gallery-wrap .gallery-gate .row-btn button {
@@ -1119,9 +1130,13 @@
   width: 105%;
 }
 #root.gold-theme .App .gallery-wrap .gallery-gate .row-img:first-child {
+  position: relative;
+  z-index: 900;
   animation: rotate3dTop 5s alternate-reverse infinite;
 }
 #root.gold-theme .App .gallery-wrap .gallery-gate .row-img:nth-child(3) {
+  position: relative;
+  z-index: 900;
   animation: rotate3dBottom 5s alternate-reverse infinite;
 }
 #root.gold-theme .App .gallery-wrap .gallery-gate .row-btn button {

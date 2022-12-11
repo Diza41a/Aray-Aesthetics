@@ -58,20 +58,24 @@ img {
   margin-right: 2vw;
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 2000;
 }
 .App header .tools div, .App header .tools i {
   cursor: pointer;
 }
 .App header .tools .theme-selector-toggle {
   margin-right: 3vw;
+  font-size: 16px;
   position: relative;
 }
 .App header .tools .theme-selector-toggle .arrow {
-  font-size: 16px;
+  margin-left: 1.6px;
+  font-size: 12.8px;
 }
 .App header .tools .theme-selector-toggle .theme-option-list {
   display: none;
-  font-size: 19.2px;
+  font-size: 16px;
   width: 96px;
   padding: 0 4px;
   border-radius: 8px;
@@ -87,15 +91,15 @@ img {
   display: block;
 }
 .App header .tools .burger {
-  font-size: 28px;
+  font-size: 20.16px;
 }
 .App header nav {
   display: flex;
   justify-content: space-around;
   flex-basis: 100%;
   text-align: center;
-  font-size: 20px;
-  padding: 1vh 2vw;
+  font-size: 16.8px;
+  padding: 1vh 2vw 0 2vw;
 }
 .App header nav a {
   text-decoration: none;
@@ -123,7 +127,7 @@ img {
 .App .direct-links i {
   cursor: pointer;
   margin: 0 5.6px;
-  font-size: 24px;
+  font-size: 22.4px;
 }
 .App .page-progress-wrap {
   z-index: 1000;
@@ -149,7 +153,7 @@ img {
   position: fixed;
   bottom: 0;
   left: 3vw;
-  font-size: 21.6px;
+  font-size: 16.8px;
 }
 .App .page-progress-wrap .page-progress-indicators a {
   text-decoration: none;
@@ -158,10 +162,11 @@ img {
   display: none;
 }
 .App .next-page-link {
+  display: none;
   position: absolute;
   bottom: 5%;
-  left: calc(50% - 20px);
-  font-size: 40px;
+  left: calc(50% - 16px);
+  font-size: 38.4px;
   transform: scale(1);
   transition: transform 0.75s ease-out;
 }
@@ -197,7 +202,7 @@ img {
 }
 .App .landing-wrap .landing-intro-wrap .landing-intro-body {
   margin: 0 5vw;
-  padding: 2.5vh 2vw 0 0;
+  padding: 2.5vh 1vw 0 1vw;
 }
 .App .landing-wrap .landing-intro-wrap .landing-intro-body h2 {
   position: relative;
@@ -240,15 +245,16 @@ img {
   }
 }
 .App .landing-wrap .landing-intro-wrap .landing-intro-body ul {
-  width: 70%;
+  width: 60%;
   margin: auto;
   margin-top: 3vh;
   direction: rtl;
   text-align: left;
-  font-size: 22.4px;
+  font-size: 18.4px;
   line-height: 1.5;
 }
 .App .landing-wrap .landing-intro-wrap .landing-intro-body .address-bar {
+  font-size: 15.6px;
   text-align: center;
   font-style: italic;
   margin: 7.5vh auto 2.5vh auto;
@@ -264,6 +270,7 @@ img {
 }
 .App .about-me-wrap {
   margin: 0 1.5vw;
+  margin-bottom: 6.75vh;
 }
 .App .about-me-wrap .about-me-description {
   width: 83%;
@@ -459,6 +466,7 @@ img {
 .App .gallery-wrap .gallery-gate .row-img {
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 .App .gallery-wrap .gallery-gate .row-img div {
   height: fit-content;
@@ -485,6 +493,7 @@ img {
 }
 .App .gallery-wrap .gallery-gate .row-btn {
   text-align: center;
+  margin: 1.5vh 0;
 }
 .App .gallery-wrap .gallery-gate .row-btn button {
   font-size: 24px;
@@ -500,7 +509,7 @@ img {
   left: 0;
   z-index: 10001;
 }
-.App .gallery-wrap .wrap video {
+.App .gallery-wrap .wrap > video {
   display: none;
   flex-basis: 50%;
   height: 100vh;
@@ -563,6 +572,7 @@ img {
 }
 .App .contact-wrap {
   margin: 0 auto;
+  margin-bottom: 4.5vh;
 }
 .App .contact-wrap form {
   padding: 16px 4px;
@@ -653,6 +663,10 @@ img {
 @media (min-width: 780px) {
   body {
     overflow-y: hidden;
+  }
+
+  .next-page-link {
+    display: initial !important;
   }
 
   header {
@@ -827,6 +841,7 @@ img {
 
   .gallery-wrap {
     width: 70vw !important;
+    margin: auto !important;
   }
   .gallery-wrap .gallery-gate {
     max-width: 775px;
@@ -1068,20 +1083,24 @@ img {
     margin-right: 2vw;
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 2000;
   }
   .App header .tools div, .App header .tools i {
     cursor: pointer;
   }
   .App header .tools .theme-selector-toggle {
     margin-right: 3vw;
+    font-size: 20px;
     position: relative;
   }
   .App header .tools .theme-selector-toggle .arrow {
-    font-size: 20px;
+    margin-left: 2px;
+    font-size: 16px;
   }
   .App header .tools .theme-selector-toggle .theme-option-list {
     display: none;
-    font-size: 24px;
+    font-size: 20px;
     width: 120px;
     padding: 0 5px;
     border-radius: 10px;
@@ -1097,15 +1116,15 @@ img {
     display: block;
   }
   .App header .tools .burger {
-    font-size: 35px;
+    font-size: 25.2px;
   }
   .App header nav {
     display: flex;
     justify-content: space-around;
     flex-basis: 100%;
     text-align: center;
-    font-size: 25px;
-    padding: 1vh 2vw;
+    font-size: 21px;
+    padding: 1vh 2vw 0 2vw;
   }
   .App header nav a {
     text-decoration: none;
@@ -1133,7 +1152,7 @@ img {
   .App .direct-links i {
     cursor: pointer;
     margin: 0 7px;
-    font-size: 30px;
+    font-size: 28px;
   }
   .App .page-progress-wrap {
     z-index: 1000;
@@ -1159,7 +1178,7 @@ img {
     position: fixed;
     bottom: 0;
     left: 3vw;
-    font-size: 27px;
+    font-size: 21px;
   }
   .App .page-progress-wrap .page-progress-indicators a {
     text-decoration: none;
@@ -1168,10 +1187,11 @@ img {
     display: none;
   }
   .App .next-page-link {
+    display: none;
     position: absolute;
     bottom: 5%;
-    left: calc(50% - 25px);
-    font-size: 50px;
+    left: calc(50% - 20px);
+    font-size: 48px;
     transform: scale(1);
     transition: transform 0.75s ease-out;
   }
@@ -1207,7 +1227,7 @@ img {
   }
   .App .landing-wrap .landing-intro-wrap .landing-intro-body {
     margin: 0 5vw;
-    padding: 2.5vh 2vw 0 0;
+    padding: 2.5vh 1vw 0 1vw;
   }
   .App .landing-wrap .landing-intro-wrap .landing-intro-body h2 {
     position: relative;
@@ -1250,15 +1270,16 @@ img {
     }
   }
   .App .landing-wrap .landing-intro-wrap .landing-intro-body ul {
-    width: 70%;
+    width: 60%;
     margin: auto;
     margin-top: 3vh;
     direction: rtl;
     text-align: left;
-    font-size: 28px;
+    font-size: 23px;
     line-height: 1.5;
   }
   .App .landing-wrap .landing-intro-wrap .landing-intro-body .address-bar {
+    font-size: 19.5px;
     text-align: center;
     font-style: italic;
     margin: 7.5vh auto 2.5vh auto;
@@ -1274,6 +1295,7 @@ img {
   }
   .App .about-me-wrap {
     margin: 0 1.5vw;
+    margin-bottom: 6.75vh;
   }
   .App .about-me-wrap .about-me-description {
     width: 83%;
@@ -1469,6 +1491,7 @@ img {
   .App .gallery-wrap .gallery-gate .row-img {
     display: flex;
     justify-content: space-between;
+    position: relative;
   }
   .App .gallery-wrap .gallery-gate .row-img div {
     height: fit-content;
@@ -1495,6 +1518,7 @@ img {
   }
   .App .gallery-wrap .gallery-gate .row-btn {
     text-align: center;
+    margin: 1.5vh 0;
   }
   .App .gallery-wrap .gallery-gate .row-btn button {
     font-size: 30px;
@@ -1510,7 +1534,7 @@ img {
     left: 0;
     z-index: 10001;
   }
-  .App .gallery-wrap .wrap video {
+  .App .gallery-wrap .wrap > video {
     display: none;
     flex-basis: 50%;
     height: 100vh;
@@ -1573,6 +1597,7 @@ img {
   }
   .App .contact-wrap {
     margin: 0 auto;
+    margin-bottom: 4.5vh;
   }
   .App .contact-wrap form {
     padding: 20px 5px;
@@ -1658,6 +1683,10 @@ img {
   .App .contact-wrap .contact-direct .links i {
     font-size: 55px;
     margin: 0 10px;
+  }
+
+  .next-page-link {
+    display: initial !important;
   }
 
   header {
@@ -1832,6 +1861,7 @@ img {
 
   .gallery-wrap {
     width: 70vw !important;
+    margin: auto !important;
   }
   .gallery-wrap .gallery-gate {
     max-width: 775px;

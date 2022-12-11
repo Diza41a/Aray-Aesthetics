@@ -72,6 +72,8 @@ img {
         margin-right: 2vw;
         display: flex;
         align-items: center;
+        position: relative;
+        z-index: 2000;
 
         div, i {
           cursor: pointer;
@@ -79,15 +81,17 @@ img {
 
         .theme-selector-toggle {
           margin-right: 3vw;
+          font-size: $fontSize * 1;
 
           .arrow {
-            font-size: $fontSize;
+            margin-left: $fontSize * 0.1;
+            font-size: $fontSize * 0.8;
           }
 
           position: relative;
           .theme-option-list {
             display: none;
-            font-size: $fontSize * 1.2;
+            font-size: $fontSize * 1;
             width: $fontSize * 6;
             padding: 0 $fontSize * 0.25;
             border-radius: $fontSize * 0.5;
@@ -111,7 +115,7 @@ img {
         }
 
         .burger {
-          font-size: $fontSize * 1.75;
+          font-size: $fontSize * 1.26;
         }
       }
 
@@ -120,8 +124,8 @@ img {
         justify-content: space-around;
         flex-basis: 100%;
         text-align: center;
-        font-size: $fontSize * 1.25;
-        padding: 1vh 2vw;
+        font-size: $fontSize * 1.05;
+        padding: 1vh 2vw 0 2vw;
 
         a {
           text-decoration: none;
@@ -155,7 +159,7 @@ img {
       i {
         cursor: pointer;
         margin: 0 $fontSize * 0.35;
-        font-size: $fontSize * 1.5;
+        font-size: $fontSize * 1.4;
       }
     }
 
@@ -186,7 +190,7 @@ img {
         bottom: 0;
         left: 3vw;
 
-        font-size: $fontSize * 1.35;
+        font-size: $fontSize * 1.05;
 
         a {
           text-decoration: none;
@@ -199,10 +203,11 @@ img {
     }
 
     .next-page-link {
+      display: none;
       position: absolute;
       bottom: 5%;
-      left: calc(50% - $fontSize * 1.25);
-      font-size: $fontSize * 2.5;
+      left: calc(50% - $fontSize * 1);
+      font-size: $fontSize * 2.4;
 
       transform: scale(1);
       transition: transform 0.75s ease-out;
@@ -249,7 +254,7 @@ img {
 
         .landing-intro-body {
           margin: 0 5vw;
-          padding: 2.5vh 2vw 0 0;
+          padding: 2.5vh 1vw 0 1vw;
 
           h2 {
             position: relative;
@@ -300,16 +305,17 @@ img {
           }
 
           ul {
-            width: 70%;
+            width: 60%;
             margin: auto;
             margin-top: 3vh;
             direction: rtl;
             text-align: left;
-            font-size: $fontSize * 1.4;
-            line-height: 1.5  ;
+            font-size: $fontSize * 1.15;
+            line-height: 1.5;
           }
 
           .address-bar {
+            font-size: $fontSize * 0.975;
             text-align: center;
             font-style: italic;
             margin: 7.5vh auto 2.5vh auto;
@@ -332,6 +338,7 @@ img {
     //about me
     .about-me-wrap {
       margin: 0 1.5vw;
+      margin-bottom: $footer * 1.5;
       // height: 100vh - $footer;
 
       .about-me-description {
@@ -581,7 +588,6 @@ img {
     // gallery
     .gallery-wrap {
       width: 90vw;
-      // height: 40vh;
       margin: 10vh auto;
 
       .gallery-gate {
@@ -594,6 +600,7 @@ img {
         .row-img {
           display: flex;
           justify-content: space-between;
+          position: relative;
 
           div {
             height: fit-content;
@@ -633,6 +640,7 @@ img {
 
         .row-btn {
           text-align: center;
+          margin: 1.5vh 0;
 
           button {
             font-size: $fontSize * 1.5;
@@ -708,7 +716,7 @@ img {
         left: 0;
         z-index: 10001;
 
-        video {
+        >video {
           display: none;
           flex-basis: 50%;
           height: 100vh;
@@ -810,6 +818,7 @@ img {
     // contact
     .contact-wrap {
       margin: 0 auto;
+      margin-bottom: $footer;
 
       form {
         padding: $fontSize $fontSize * 0.25;
@@ -924,6 +933,10 @@ img {
 }
 
 @mixin mediumView($fontSize) {
+  .next-page-link {
+    display: initial!important;
+  }
+
   header {
     height: 4.3vh;
     max-height: 50px;
@@ -1152,6 +1165,7 @@ img {
   .gallery-wrap {
     width: 70vw!important;
     // margin-bottom: 20vh!important;
+    margin: auto!important;
 
     .gallery-gate {
       max-width: 775px;

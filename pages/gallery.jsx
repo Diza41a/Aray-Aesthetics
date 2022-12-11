@@ -86,20 +86,16 @@ export default function Gallery() {
               >
                 {imageUris.map((uri, i) => {
                   return (<div key={i}>
-                    <img src={`${uri}`} data-index={i} loading="lazy" />
+                    <img src={`${uri}`} data-index={i} loading="lazy" decoding="sync" />
                   </div>);
                 })}
                 {videoUris.map((uri, i) => {
                   return (<div key={i}>
-                    <video data-index={imageUris.length + i} controls={true} muted>
-                      <source src={`${uri}`} />
+                    <video data-index={imageUris.length + i} controls={true} playsInline muted>
+                      <source src={`${uri}`} type="video/mp4"/>
                     </video>
                   </div>);
                 })}
-                {/* <div>
-                  <video src="./assets/images/demo1.mp4" muted controls>
-                  </video>
-                </div> */}
               </Carousel>
 
               <GridGallery images={images} enableImageSelection={false} onClick={((e) => {
