@@ -493,6 +493,35 @@
       }
     }
 
+    .wrap {
+      // hererere
+      @keyframes zoomIn {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+
+      // animation: zoomIn 1s ease-in;
+    }
+
+    .wrap {
+      @keyframes galleryIn {
+        from {
+          opacity: 0.5;
+          filter: blur(15px);
+        }
+        to {
+          opacity: 1;
+          filter: blur(0px);
+        }
+      }
+
+      animation: galleryIn 0.5s ease-in;
+    }
+
     .expanded-gallery {
 
       .carousel-root {
@@ -501,6 +530,10 @@
         border-bottom: 2px solid $mainFontColor;
         box-shadow: 0 -13px 10px -10px wheat, 0 13px 10px -10px wheat;
         background-color: rgba($color: rgb(50, 50, 50), $alpha: 0.75);
+
+        .slider-wrapper {
+          background-color: black;
+        }
 
         .slide {
           div {

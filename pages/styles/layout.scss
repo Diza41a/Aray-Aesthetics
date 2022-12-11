@@ -726,18 +726,22 @@ img {
           .carousel-root {
             margin-top: 15%;
 
-            .slide {
-              margin: auto;
+            .slider {
+              // width: 50%;
 
-              div {
-                img, video {
-                  max-height: 45vh;
-                  max-width: 60vw;
-                  object-fit: contain;
-                }
+              .slide {
+                margin: auto;
 
-                video {
-                  width: 90%;
+                div {
+                  img, video {
+                    max-height: 45vh;
+                    max-width: 60vw;
+                    object-fit: contain;
+                  }
+
+                  video {
+                    width: 90%;
+                  }
                 }
               }
             }
@@ -1207,6 +1211,10 @@ img {
               max-height: $fontSize * 8!important;
           }
         }
+
+        .slider {
+          width: 50%;
+        }
       }
     }
   }
@@ -1357,14 +1365,34 @@ img {
         display: flex!important;
 
         &.main-theme-landing {
-          transform: scaleX(-1);
-          right: 1vw;
-          bottom: 0;
+          // PERSON
+          // transform: scaleX(-1);
+          // right: 1vw;
+          // bottom: 0;
+
+          // img {
+          //   width: 44vw;
+          //   min-width: 450px;
+          //   max-width: $fontSize * 38.5 /* 16px * 37.5 = 600px */;
+          // }
+
+          // BRUSH
+          transform: scaleX(1) rotate(311deg);
+          right: -2.5vw;
+          bottom: 15vh;
 
           img {
-            width: 44vw;
+            transform: scale(1);
+            filter: drop-shadow(2px 4px 6px black) contrast(1.15);
+            width: 50vw;
             min-width: 450px;
-            max-width: $fontSize * 38.5 /* 16px * 37.5 = 600px */;
+            max-width: $fontSize * 40 /* 16px * 37.5 = 600px */;
+
+            transition: all 1s ease-out;
+            &:hover {
+              transform: scale(1.05);
+              filter: drop-shadow(2px 4px 8px black) contrast(1.15);
+            }
           }
         }
 

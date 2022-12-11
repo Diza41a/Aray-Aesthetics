@@ -517,15 +517,15 @@ img {
 .App .gallery-wrap .wrap .expanded-gallery .carousel-root {
   margin-top: 15%;
 }
-.App .gallery-wrap .wrap .expanded-gallery .carousel-root .slide {
+.App .gallery-wrap .wrap .expanded-gallery .carousel-root .slider .slide {
   margin: auto;
 }
-.App .gallery-wrap .wrap .expanded-gallery .carousel-root .slide div img, .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slide div video {
+.App .gallery-wrap .wrap .expanded-gallery .carousel-root .slider .slide div img, .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slider .slide div video {
   max-height: 45vh;
   max-width: 60vw;
   object-fit: contain;
 }
-.App .gallery-wrap .wrap .expanded-gallery .carousel-root .slide div video {
+.App .gallery-wrap .wrap .expanded-gallery .carousel-root .slider .slide div video {
   width: 90%;
 }
 .App .gallery-wrap .wrap .expanded-gallery .ReactGridGallery {
@@ -865,6 +865,9 @@ img {
     max-width: 128px !important;
     max-height: 128px !important;
   }
+  .gallery-wrap .wrap .expanded-gallery .slider {
+    width: 50%;
+  }
 
   .contact-wrap {
     width: 100vw !important;
@@ -962,14 +965,21 @@ img {
     display: flex !important;
   }
   .landing-wrap .landing-intro-wrap .photo-wrap.main-theme-landing {
-    transform: scaleX(-1);
-    right: 1vw;
-    bottom: 0;
+    transform: scaleX(1) rotate(311deg);
+    right: -2.5vw;
+    bottom: 15vh;
   }
   .landing-wrap .landing-intro-wrap .photo-wrap.main-theme-landing img {
-    width: 44vw;
+    transform: scale(1);
+    filter: drop-shadow(2px 4px 6px black) contrast(1.15);
+    width: 50vw;
     min-width: 450px;
-    max-width: 616px;
+    max-width: 640px;
+    transition: all 1s ease-out;
+  }
+  .landing-wrap .landing-intro-wrap .photo-wrap.main-theme-landing img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(2px 4px 8px black) contrast(1.15);
   }
   .landing-wrap .landing-intro-wrap .photo-wrap.light-theme-landing {
     transform: scaleX(1) rotate(9deg);
@@ -1517,15 +1527,15 @@ img {
   .App .gallery-wrap .wrap .expanded-gallery .carousel-root {
     margin-top: 15%;
   }
-  .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slide {
+  .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slider .slide {
     margin: auto;
   }
-  .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slide div img, .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slide div video {
+  .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slider .slide div img, .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slider .slide div video {
     max-height: 45vh;
     max-width: 60vw;
     object-fit: contain;
   }
-  .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slide div video {
+  .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slider .slide div video {
     width: 90%;
   }
   .App .gallery-wrap .wrap .expanded-gallery .ReactGridGallery {
@@ -1860,6 +1870,9 @@ img {
     max-width: 160px !important;
     max-height: 160px !important;
   }
+  .gallery-wrap .wrap .expanded-gallery .slider {
+    width: 50%;
+  }
 
   .contact-wrap {
     width: 100vw !important;
@@ -1956,14 +1969,21 @@ img {
     display: flex !important;
   }
   .landing-wrap .landing-intro-wrap .photo-wrap.main-theme-landing {
-    transform: scaleX(-1);
-    right: 1vw;
-    bottom: 0;
+    transform: scaleX(1) rotate(311deg);
+    right: -2.5vw;
+    bottom: 15vh;
   }
   .landing-wrap .landing-intro-wrap .photo-wrap.main-theme-landing img {
-    width: 44vw;
+    transform: scale(1);
+    filter: drop-shadow(2px 4px 6px black) contrast(1.15);
+    width: 50vw;
     min-width: 450px;
-    max-width: 770px;
+    max-width: 800px;
+    transition: all 1s ease-out;
+  }
+  .landing-wrap .landing-intro-wrap .photo-wrap.main-theme-landing img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(2px 4px 8px black) contrast(1.15);
   }
   .landing-wrap .landing-intro-wrap .photo-wrap.light-theme-landing {
     transform: scaleX(1) rotate(9deg);
