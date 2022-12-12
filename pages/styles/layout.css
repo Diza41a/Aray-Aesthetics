@@ -119,11 +119,10 @@ img {
 }
 .App header.hidden {
   max-height: 3vh;
-  overflow: hidden;
   transition: max-height 0.25s ease-out;
 }
 .App header.hidden nav {
-  transition: 0.25s opacity linear;
+  transition: 0.1s opacity linear;
   opacity: 0;
 }
 .App .mobile-nav-wrap {
@@ -1271,11 +1270,10 @@ img {
   }
   .App header.hidden {
     max-height: 3vh;
-    overflow: hidden;
     transition: max-height 0.25s ease-out;
   }
   .App header.hidden nav {
-    transition: 0.25s opacity linear;
+    transition: 0.1s opacity linear;
     opacity: 0;
   }
   .App .mobile-nav-wrap {

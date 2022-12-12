@@ -781,7 +781,7 @@
     }
 
     .App {
-      @include theme(Nickainley, Montserrat, Raleway-Bold, /* colors */ #323232ae, #323232ae, #fff, #fff, #fff, rgb(249, 104, 239), rgb(249, 104, 239));
+      @include theme(Nickainley, Montserrat, Lora, /* colors */ #323232ae, #323232ae, #fff, #fff, #fff, rgb(249, 104, 239), rgb(249, 104, 239));
     }
   }
 
@@ -799,7 +799,7 @@
     }
 
     .App {
-      @include theme(Nickainley, Montserrat, Raleway-Bold, /* colors */ #ffffffae, #323232ae, #fff, rgb(0, 0, 0), #fff, rgb(42, 42, 42), rgb(249, 104, 239));
+      @include theme(Nickainley, Montserrat, Lora, /* colors */ #ffffffae, #323232ae, #fff, rgb(0, 0, 0), #fff, rgb(42, 42, 42), rgb(249, 104, 239));
 
       .landing-wrap {
 

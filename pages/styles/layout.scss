@@ -148,11 +148,10 @@ img {
       transition: max-height 0.25s ease-in;
       &.hidden {
         max-height: 3vh;
-        overflow: hidden;
         transition: max-height 0.25s ease-out;
 
         nav {
-          transition: 0.25s opacity linear;
+          transition: 0.1s opacity linear;
           opacity: 0;
         }
       }
