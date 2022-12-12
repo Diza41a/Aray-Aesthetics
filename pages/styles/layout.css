@@ -701,6 +701,7 @@ img {
   text-decoration: none;
   margin-left: 20px;
   font-size: 20px;
+  min-width: 40%;
 }
 .App .contact-wrap .contact-direct .links {
   width: 90%;
@@ -1852,6 +1853,7 @@ img {
     text-decoration: none;
     margin-left: 22.5px;
     font-size: 22.5px;
+    min-width: 40%;
   }
   .App .contact-wrap .contact-direct .links {
     width: 90%;
