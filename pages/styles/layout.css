@@ -61,7 +61,7 @@ img {
   z-index: 1000;
   padding: 1.5vh 2vw;
   font-size: 22.4px;
-  max-height: calc(5vh + 16px);
+  max-height: calc(5vh + 24px);
   transition: max-height 0.25s ease-in;
 }
 .App header .tools {
@@ -1212,7 +1212,7 @@ img {
     z-index: 1000;
     padding: 1.5vh 2vw;
     font-size: 25.2px;
-    max-height: calc(5vh + 18px);
+    max-height: calc(5vh + 27px);
     transition: max-height 0.25s ease-in;
   }
   .App header .tools {
