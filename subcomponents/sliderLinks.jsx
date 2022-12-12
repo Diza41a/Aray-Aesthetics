@@ -35,13 +35,13 @@ export default function SliderLinks() {
 
         {/* Website progress indicators */}
         <div className="page-progress-indicators">
-          <Link href="/">
+          <Link href="/" className={router.pathname === '/' ? 'active' : ''}>
             <i className="fa-solid fa-house" />
           </Link>
-          <Link href="/about">2</Link>
-          <Link href="/services">3</Link>
-          <Link href="/gallery">4</Link>
-          <Link href="/contact">5</Link>
+          <Link href="/about" className={router.pathname === '/about' ? 'active' : ''}>2</Link>
+          <Link href="/services" className={router.pathname === '/services' ? 'active' : ''}>3</Link>
+          <Link href="/gallery" className={router.pathname === '/gallery' ? 'active' : ''}>4</Link>
+          <Link href="/contact" className={router.pathname === '/contact' ? 'active' : ''}>5</Link>
         </div>
       </div>
       <p className="fixed-address-bar">

@@ -69,6 +69,8 @@ function MyApp({ Component, pageProps }) {
 
       <ThemeContext.Provider value={{ theme, toggleTheme }}>
         <div id="root" className={theme}>
+          {/* Website background */}
+          <div className="hero" />
           {
             onClient
             ?

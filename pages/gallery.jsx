@@ -35,7 +35,7 @@ export default function Gallery() {
         document.body.style.overflowY = 'hidden';
         document.querySelector('header').style.display = 'flex';
         document.querySelector('.page-progress-wrap').style.display = 'initial';
-        document.querySelector('#root').style.backgroundImage = originalBackground;
+        document.querySelector('.hero').style.backgroundImage = originalBackground;
     };
   }, []);
 
@@ -69,7 +69,7 @@ export default function Gallery() {
               <button id="collapse-gallery" onClick={(() => {
                 document.querySelector('header').style.display = 'flex';
                 document.querySelector('.page-progress-wrap').style.display = 'initial';
-                document.querySelector('#root').style.backgroundImage = originalBackground;
+                document.querySelector('.hero').style.backgroundImage = originalBackground;
 
                 const galleryWrap = document.querySelector('.gallery-wrap');
                 toggleExpand(false);
@@ -96,6 +96,7 @@ export default function Gallery() {
                     </video>
                   </div>);
                 })}
+
               </Carousel>
 
               <GridGallery images={images} enableImageSelection={false} onClick={((e) => {
@@ -118,8 +119,8 @@ export default function Gallery() {
                 <button onClick={(() => {
                   document.querySelector('header').style.display = 'none';
                   document.querySelector('.page-progress-wrap').style.display = 'none';
-                  originalBackground = document.querySelector('#root').style.backgroundImage;
-                  document.querySelector('#root').style.backgroundImage = 'url(./assets/images/purpleBack.jpeg)';
+                  originalBackground = document.querySelector('.hero').style.backgroundImage;
+                  document.querySelector('.hero').style.backgroundImage = 'url(./assets/images/purpleBack.jpeg)';
 
                   const galleryWrap = document.querySelector('.gallery-wrap');
                   toggleLoading(true);

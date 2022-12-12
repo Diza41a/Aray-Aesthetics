@@ -38,8 +38,8 @@ export default function Particle({ props }) {
               quantity: 4,
             },
             repulse: {
-              distance: 200,
-              duration: 2,
+              distance: 300,
+              duration: 3,
             },
           },
         },
@@ -94,7 +94,7 @@ export default function Particle({ props }) {
           number: {
             density: {
               enable: true,
-              area: 800,
+              area: 1500,
             },
             value: 10,
           },

@@ -691,6 +691,11 @@
       a {
         font-family: $mainFont;
         color: $mainFontColor;
+
+        &.active {
+          font-weight: bold;
+          @include glowingText($mainFontColor, $extraBorderGlowColor);
+        }
       }
     }
 
@@ -712,6 +717,9 @@
 /* theme( $logoFont, $mainFont, $tertiaryFont,
   $mainBack, $secondBack, $mainFontColor, $secondFontColor, $borderColor, $borderGlowColor, $extraBorderGlowColor) */
 #root {
+  // transform:translatez(0);
+  // -webkit-transform:translatez(0);
+
   .loading-wrap {
     position: absolute;
     top: 0;
@@ -745,13 +753,36 @@
   }
 
   &.main-theme {
-    background-image: url(../../public/assets/images/purpleBack.jpeg);
+    .loading-wrap {
+      >span {
+        span {
+          box-shadow: 0 0 10px 3px rgb(243, 70, 243);
+        }
+      }
+    }
+
+    .hero {
+      background-image: url(../../public/assets/images/purpleBack.jpeg);
+    }
+
     .App {
       @include theme(Nickainley, Montserrat, Lora, /* colors */ #323232ae, #323232ae, #fff, #fff, #fff, rgb(249, 104, 239), rgb(249, 104, 239));
     }
   }
+
   &.light-theme {
-    background-image: url(../../public/assets/images/lightBack.jpg);
+    .loading-wrap {
+      >span {
+        span {
+          box-shadow: 0 0 10px 3px black;
+        }
+      }
+    }
+
+    .hero {
+      background-image: url(../../public/assets/images/lightBack.jpg);
+    }
+
     .App {
       @include theme(Nickainley, Montserrat, Lora, /* colors */ #ffffffae, #323232ae, #fff, rgb(0, 0, 0), #fff, rgb(42, 42, 42), rgb(249, 104, 239));
 
@@ -767,8 +798,20 @@
       }
     }
   }
+
   &.gold-theme {
-    background-image: url(../../public/assets/images/goldenBack.jpeg);
+    .loading-wrap {
+      >span {
+        span {
+          box-shadow: 0 0 10px 3px rgb(255, 207, 118);
+        }
+      }
+    }
+
+    .hero {
+      background-image: url(../../public/assets/images/goldenBack.jpeg);
+    }
+
     .App {
       @include theme(Nickainley, Raleway-Italic, Raleway, /* colors */ #2a2a2aad, #2a2a2aad, #fdf5e7, #e4e2e2, #2a2a2aad, rgb(255, 207, 118), rgb(255, 204, 108));
 
