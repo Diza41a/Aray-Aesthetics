@@ -11,6 +11,7 @@
 @font-face {
   font-family: Lora;
   font-weight: 100;
+  font-style: normal;
   src: url(./fonts/Lora.ttf);
 }
 @font-face {
@@ -29,6 +30,7 @@
 }
 
 * {
+  -webkit-font-smoothing: antialiased;
   /* Width */
   /* Track */
   /* Handle */

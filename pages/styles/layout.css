@@ -190,7 +190,8 @@ img {
   font-size: 40px;
 }
 .App .landing-wrap {
-  margin: auto;
+  height: 50vh;
+  margin: 15vh 0;
 }
 .App .landing-wrap .landing-intro-wrap {
   width: 85vw;
@@ -1215,7 +1216,8 @@ img {
     font-size: 50px;
   }
   .App .landing-wrap {
-    margin: auto;
+    height: 50vh;
+    margin: 15vh 0;
   }
   .App .landing-wrap .landing-intro-wrap {
     width: 85vw;
