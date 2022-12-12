@@ -61,7 +61,7 @@ img {
   z-index: 1000;
   padding: 1.5vh 2vw;
   font-size: 22.4px;
-  max-height: 6vh;
+  max-height: calc(5vh + 16px);
   transition: max-height 0.25s ease-in;
 }
 .App header .tools {
@@ -118,7 +118,7 @@ img {
   text-decoration: none;
 }
 .App header.hidden {
-  max-height: 3vh;
+  max-height: 3.5vh;
   transition: max-height 0.25s ease-out;
 }
 .App header.hidden nav {
@@ -1212,7 +1212,7 @@ img {
     z-index: 1000;
     padding: 1.5vh 2vw;
     font-size: 25.2px;
-    max-height: 6vh;
+    max-height: calc(5vh + 18px);
     transition: max-height 0.25s ease-in;
   }
   .App header .tools {
@@ -1269,7 +1269,7 @@ img {
     text-decoration: none;
   }
   .App header.hidden {
-    max-height: 3vh;
+    max-height: 3.5vh;
     transition: max-height 0.25s ease-out;
   }
   .App header.hidden nav {
