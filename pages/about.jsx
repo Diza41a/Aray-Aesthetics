@@ -16,8 +16,12 @@ export default function AboutMe() {
           </p>
         </div>
         <div className="about-me-pics">
-          <img src="./assets/images/mock.jpg" alt="" />
-          <img src="./assets/images/mock2.jpg" alt="" />
+          <div className="img-wrap">
+            <img src="./assets/images/mock.jpg" alt="" />
+          </div>
+          <div className="img-wrap">
+            <img src="./assets/images/mock2.jpg" alt="" />
+          </div>
         </div>
         <NextPageLink props={{ href: '/services' }} />
       </AnimatedLayout>

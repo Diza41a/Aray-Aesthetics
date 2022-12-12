@@ -67,8 +67,8 @@ img {
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      // position: fixed;
-      position: sticky;
+      position: fixed;
+      // position: sticky;
       top: 0;
       left: 0;
       right: 0;
@@ -148,7 +148,7 @@ img {
     .mobile-nav-wrap {
       height: $footer;
       width: 100%;
-      position: fixed;
+      position: absolute;
       bottom: 0;
     }
 
@@ -160,7 +160,7 @@ img {
       align-items: center;
       padding: calc(2.25vh - $fontSize * 0.75) $fontSize;
 
-      position: fixed;
+      position: absolute;
       bottom: 0;
       right: 0;
 
@@ -191,10 +191,11 @@ img {
       .page-progress-indicators {
         height: 4.5vh;
         width: 50vw;
+        max-width: 250px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        position: fixed;
+        position: absolute;
         bottom: 0;
         left: 3vw;
 
@@ -238,9 +239,12 @@ img {
 
     // section title
     .section-title {
+      max-height: 6vh;
+      height: 6vh;
       text-transform: uppercase;
       text-align: center;
       padding: 2vh 0;
+      padding-top: 7.5vh;
       font-size: $fontSize * 2.5;
     }
 
@@ -384,10 +388,24 @@ img {
         display: flex;
         flex-direction: column;
 
-        img {
+        .img-wrap{
+          box-shadow: -6px 4px 2em 0.5em black;
           width: 50vw;
           max-width: 350px;
-          height: auto;
+
+          img {
+            width: 50vw;
+            max-width: 350px;
+            height: auto;
+
+            &:first-child {
+              transform: rotate(2deg);
+            }
+
+            &:nth-child(2) {
+              transform: rotate(-1deg);
+            }
+          }
 
           &:first-child {
             align-self: flex-end;
@@ -399,7 +417,19 @@ img {
             position: relative;
             bottom: 5vh;
           }
+
+          &::after {
+            box-shadow: 0px 0px 0px 20px rgba(255, 255, 255, 0.19) inset;
+            content: '';
+            display: block;
+            height: 105%;
+            position: absolute;
+            top: -3.5%;
+            left: -2.5%;
+            width: 105%;
+          }
         }
+
       }
     }
 
@@ -412,13 +442,17 @@ img {
         // cursor: none;
         display: flex;
         overflow-y: overlay;
+        &::-webkit-scrollbar {
+          display: none;  /* Safari and Chrome */
+        }
         // overflow: hidden;
 
         .service-wrap {
           overflow: hidden;
           flex-shrink: 0;
-          height: 71.5vh;
-          width: 72.5vw;
+          // height: 71.5vh;
+          height: 74.5vh;
+          width: 85.5vw;
 
           display: flex;
           justify-content: flex-end;
@@ -599,7 +633,7 @@ img {
     // gallery
     .gallery-wrap {
       width: 90vw;
-      margin: 10vh auto;
+      margin: auto;
 
       .gallery-gate {
         position: relative;
@@ -675,7 +709,7 @@ img {
           display: none;
           flex-basis: 50%;
           height: 100vh;
-          width: 35vw;
+          width: 30vw;
           opacity: 0.75;
           object-fit: cover;
         }
@@ -694,6 +728,7 @@ img {
                 margin: auto;
 
                 div {
+                  cursor: zoom-in!important;
                   img, video {
                     max-height: 45vh;
                     // max-width: 60vw;
@@ -770,11 +805,14 @@ img {
 
     // contact
     .contact-wrap {
-      margin: 0 auto;
-      margin-bottom: $footer;
+      margin: auto;
+      width: 90%;
 
       form {
-        padding: $fontSize $fontSize * 0.25;
+        padding: $fontSize $fontSize * 0.75;
+        width: 90%;
+        margin: auto;
+        margin-top: 2vh!important;
 
         .row {
           display: flex;
@@ -787,18 +825,21 @@ img {
             flex-direction: column;
 
             label {
-              font-size: $fontSize * 1.25;
+              font-size: $fontSize * 1.1;
               margin-left: $fontSize * 0.75;
             }
 
             input, textarea {
-              font-size: $fontSize * 1.25;
+              font-size: $fontSize * 1.1;
               padding: $fontSize * 0.45 5%;
             }
           }
 
           &.row-name {
+            flex-direction: column-reverse;
+
             p {
+              width: 95%;
               margin: 0 $fontSize * 0.5;
               font-size: $fontSize * 1.25;
               text-align: right;
@@ -809,6 +850,7 @@ img {
           }
 
           &.row-method {
+            align-items: flex-end;
             .input-wrap {
               input {
                 width: calc(100% - 5% * 2);
@@ -834,9 +876,10 @@ img {
           }
 
           &.row-submit {
-            justify-content: flex-end;
+            margin-top: $fontSize;
+            justify-content: center;
             button {
-              font-size: $fontSize * 1.25;
+              font-size: $fontSize * 1.15;
               width: $fontSize * 10;
               padding: $fontSize * 0.35 0;
               border-radius: $fontSize;
@@ -891,8 +934,8 @@ img {
   }
 
   header {
-    height: 4.3vh;
-    max-height: 50px;
+    height: 4.3vh!important;
+    max-height: 50px!important;
     min-height: 40px;
 
     .tools {
@@ -928,7 +971,7 @@ img {
   }
 
   .mobile-nav-wrap {
-    display: none;
+    display: none!important;
   }
 
   .direct-links {
@@ -997,7 +1040,9 @@ img {
 
   // section title
   .section-title {
+    height: 3.5vh!important;
     font-size: $fontSize * 2.25!important;
+    padding-top: 9.5vh!important;
   }
 
   // landing
@@ -1048,8 +1093,12 @@ img {
     .about-me-pics {
       width: 75%!important;
 
-      img {
-        width: 40vw!important;
+      .img-wrap {
+        width: 35vw!important;
+
+        img {
+          width: 35vw!important;
+        }
       }
     }
   }
@@ -1064,7 +1113,7 @@ img {
       // overflow-y: overlay!important;
 
       .service-wrap {
-        height: 83.7vh!important;
+        height: 76.5vh!important;
         width: 42.5vw!important;
         max-width: 500px;
 
@@ -1130,7 +1179,7 @@ img {
       .row-img {
 
         img {
-          max-width: 300px;
+          max-width: 250px;
         }
 
         &:first-child {
@@ -1170,7 +1219,7 @@ img {
       }
 
       .expanded-gallery {
-        width: 60vw!important;
+        // width: 60vw!important;
 
         .ReactGridGallery_tile {
           max-width: $fontSize * 8!important;
@@ -1191,7 +1240,7 @@ img {
 
   // contact
   .contact-wrap {
-    width: 100vw!important;
+    width: 90vw!important;
     max-width: $fontSize * 68.75!important /* 1100px (16px) */;
     padding: 5vh 0;
     margin: auto!important;
@@ -1200,7 +1249,7 @@ img {
     justify-content: center!important;
 
     form {
-      width: 110%;
+      width: 110%!important;
       max-width: $fontSize * 40.63 /* 650px */;
       padding: 1vh 2vw!important;
       position: relative;
@@ -1209,50 +1258,45 @@ img {
       .row {
         .input-wrap {
           label {
-            font-size: $fontSize * 1.35!important;
+            font-size: $fontSize * 1.1!important;
           }
 
           input, textarea {
-            font-size: $fontSize * 1.35!important;
-          }
-        }
-
-        &.row-name {
-          p {
-            max-width: $fontSize * 11;
-            font-size: $fontSize * 1.75!important;
+            font-size: $fontSize * 1.1!important;
           }
         }
 
         &.row-method {
           p {
-            font-size: $fontSize * 1.45!important;
+            font-size: $fontSize * 1.25!important;
           }
         }
 
         &.row-submit {
+          margin-top: 0!important;
+          justify-content: flex-end!important;
           button {
             text-align: center;
-            font-size: $fontSize * 1.35!important;
-            padding: $fontSize * 0.75 0!important;
+            font-size: $fontSize * 1.1!important;
+            padding: $fontSize * 0.5 0!important;
             margin-top: $fontSize * 1.5;
-            width: $fontSize * 12!important;
+            width: $fontSize * 10!important;
           }
         }
       }
     }
 
     .contact-direct {
-      margin-top: 5vh;
+      margin: auto;
 
       .method {
         margin-bottom: 3vh!important;
         i {
-          font-size: $fontSize * 3.5!important;
+          font-size: $fontSize * 2.5!important;
         }
 
         a {
-          font-size: $fontSize * 1.5!important;
+          font-size: $fontSize * 1.35!important;
         }
       }
 
@@ -1260,7 +1304,7 @@ img {
         border-radius: $fontSize * 5!important;
 
         i {
-          font-size: $fontSize * 3!important;
+          font-size: $fontSize * 2.5!important;
           margin: 0 $fontSize!important;
         }
       }
@@ -1271,6 +1315,7 @@ img {
 
 @mixin mainView($fontSize) {
   header {
+    position: sticky!important;
     .logo {
       a {
         font-size: $fontSize * 1.75;
@@ -1435,17 +1480,107 @@ img {
       // position: relative;
       // bottom: 3vh;
 
-      img {
-        margin: 1.5vh 0;
+      .img-wrap {
         width: 23.5vw!important;
+
+          img {
+            margin: 1.5vh 0;
+            width: 23.5vw!important;
+          }
+      }
+
+    }
+  }
+
+  // services
+  .services-wrap {
+
+    .services-gallery-wrap {
+
+      .service-wrap {
+        height: 83.7vh!important;
       }
     }
   }
+
+  // gallery
+  .gallery-wrap {
+    .gallery-gate {
+      .row-img {
+        img {
+          max-width: 300px!important;
+        }
+      }
+    }
+  }
+
+  // contact
+  .contact-wrap {
+    form {
+      .row {
+        .input-wrap {
+          label {
+            font-size: $fontSize * 1.35!important;
+          }
+
+          input, textarea {
+            font-size: $fontSize * 1.35!important;
+          }
+        }
+
+        &.row-name {
+          flex-direction: row!important;
+
+          p {
+            font-size: $fontSize * 1.75!important;
+            max-width: $fontSize * 11;
+          }
+        }
+
+        &.row-method {
+          p {
+            font-size: $fontSize * 1.45!important;
+          }
+        }
+
+        &.row-submit {
+          button {
+            font-size: $fontSize * 1.35!important;
+            padding: $fontSize * 0.75 0!important;
+            width: $fontSize * 12!important;
+          }
+        }
+      }
+    }
+
+    .contact-direct {
+
+      .method {
+        i {
+          font-size: $fontSize * 3.5!important;
+        }
+
+        a {
+          font-size: $fontSize * 1.5!important;
+        }
+      }
+
+      .links {
+
+        i {
+          font-size: $fontSize * 3!important;
+        }
+      }
+    }
+  }
+
+
+
 }
 
 @include mobileView(16px);
 
-@media (min-width: 780px) {
+@media (min-width: 768px) {
   @include mediumView(16px);
 }
 
@@ -1458,7 +1593,7 @@ img {
 }
 
 @media (min-width: 1600px) {
-  @include mobileView(20px);
-  @include mediumView(20px);
-  @include mainView(20px);
+  @include mobileView(18px);
+  @include mediumView(18px);
+  @include mainView(18px);
 }

@@ -61,9 +61,6 @@
   align-items: center;
   justify-content: center;
 }
-#root .loading-wrap > span span {
-  box-shadow: 0 0 10px 3px rgb(243, 70, 243);
-}
 #root .loading-wrap .loading-text {
   margin-top: 1vh;
   color: white;
@@ -130,6 +127,7 @@
   color: #fff;
 }
 #root.main-theme .App .section-title {
+  background-color: rgba(50, 50, 50, 0.6823529412);
   font-family: Lora;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
@@ -203,6 +201,10 @@
     text-shadow: none;
     color: #fff;
   }
+}
+#root.main-theme .App .about-me-wrap .about-me-pics .img-wrap {
+  border: 1px solid rgba(50, 50, 50, 0.6823529412);
+  outline: 1px solid rgba(50, 50, 50, 0.6823529412);
 }
 #root.main-theme .App .services-wrap {
   margin: 0 auto;
@@ -285,6 +287,8 @@
 }
 #root.main-theme .App .gallery-wrap .gallery-gate .row-img div {
   box-shadow: -6px 4px 2em 0.5em black;
+  border: 1px solid rgba(50, 50, 50, 0.6823529412);
+  outline: 1px solid rgba(50, 50, 50, 0.6823529412);
 }
 #root.main-theme .App .gallery-wrap .gallery-gate .row-img div img ::after {
   box-shadow: 0px 0px 0px 24px rgba(50, 50, 50, 0.69) inset;
@@ -503,7 +507,7 @@
   }
 }
 #root.light-theme .loading-wrap > span span {
-  box-shadow: 0 0 10px 3px black;
+  box-shadow: 0 0 10px 3px white;
 }
 #root.light-theme .hero {
   background-image: url(../../public/assets/images/lightBack.jpg);
@@ -548,6 +552,7 @@
   color: #fff;
 }
 #root.light-theme .App .section-title {
+  background-color: rgba(50, 50, 50, 0.6823529412);
   font-family: Lora;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(42, 42, 42);
@@ -621,6 +626,10 @@
     text-shadow: none;
     color: #fff;
   }
+}
+#root.light-theme .App .about-me-wrap .about-me-pics .img-wrap {
+  border: 1px solid rgba(255, 255, 255, 0.6823529412);
+  outline: 1px solid rgba(255, 255, 255, 0.6823529412);
 }
 #root.light-theme .App .services-wrap {
   margin: 0 auto;
@@ -703,6 +712,8 @@
 }
 #root.light-theme .App .gallery-wrap .gallery-gate .row-img div {
   box-shadow: -6px 4px 2em 0.5em black;
+  border: 1px solid rgba(255, 255, 255, 0.6823529412);
+  outline: 1px solid rgba(255, 255, 255, 0.6823529412);
 }
 #root.light-theme .App .gallery-wrap .gallery-gate .row-img div img ::after {
   box-shadow: 0px 0px 0px 24px rgba(255, 255, 255, 0.69) inset;
@@ -969,6 +980,7 @@
   color: #fdf5e7;
 }
 #root.gold-theme .App .section-title {
+  background-color: rgba(42, 42, 42, 0.6784313725);
   font-family: Raleway;
   color: #fdf5e7;
   text-shadow: -1px -1px 10px rgb(255, 207, 118);
@@ -1042,6 +1054,10 @@
     text-shadow: none;
     color: #fdf5e7;
   }
+}
+#root.gold-theme .App .about-me-wrap .about-me-pics .img-wrap {
+  border: 1px solid rgba(42, 42, 42, 0.6784313725);
+  outline: 1px solid rgba(42, 42, 42, 0.6784313725);
 }
 #root.gold-theme .App .services-wrap {
   margin: 0 auto;
@@ -1124,6 +1140,8 @@
 }
 #root.gold-theme .App .gallery-wrap .gallery-gate .row-img div {
   box-shadow: -6px 4px 2em 0.5em black;
+  border: 1px solid rgba(42, 42, 42, 0.6784313725);
+  outline: 1px solid rgba(42, 42, 42, 0.6784313725);
 }
 #root.gold-theme .App .gallery-wrap .gallery-gate .row-img div img ::after {
   box-shadow: 0px 0px 0px 24px rgba(42, 42, 42, 0.69) inset;

@@ -8,15 +8,21 @@ export default function Contact() {
   // ComponentDidMount
   useEffect(() => {
     document.body.style.overflowY = 'initial';
+    document.querySelector('.direct-links').style.display = 'none';
+    document.querySelector('header').style.position = 'sticky';
+    document.querySelector('.mobile-nav-wrap').style.position = 'sticky';
 
     return () => {
+        document.querySelector('.direct-links').style.display = 'flex';
+        document.querySelector('header').style.position = 'fixed';
+        document.querySelector('.mobile-nav-wrap').style.position = 'absolute';
         document.body.style.overflowY = 'hidden';
     }
   }, []);
 
   return (
     <>
-      <h2 className="section-title" id="contact">Contact</h2>
+      {/* <h2 className="section-title" id="contact">Contact</h2> */}
       <AnimatedLayout props={{className: "contact-wrap"}}>
         <form action="submit">
           <div className="row-name row">

@@ -9,12 +9,13 @@ import galleryVideos from './data/galleryVideos.json';
 // temp!
 import galleryThumbs from './data/galleryVideoThumbs(temp).json';
 
-// choose one!!
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import { Lightbox } from "react-modal-image";
 
 export default function Gallery() {
   const [isExpanded, toggleExpand] = useState(false);
+  const [zoomInfo, setZoomInfo] = useState({ index: 0, active: false });
   const [photoIndex, setPhotoIndex] = useState(0);
   const [isLoading, toggleLoading] = useState(false);
 
@@ -85,7 +86,12 @@ export default function Gallery() {
                 showThumbs={false}
                 showIndicators={false}
                 selectedItem={photoIndex}
-                onClickItem={(...args) => console.log(args)}
+                onClickItem={(index, reactWrap) => {
+                  const element = reactWrap.props.children;
+                  if (element.type === 'img') {
+                    setZoomInfo({ index: element.props['data-index'], active: true });
+                  }
+                }}
               >
                 {imageUris.map((uri, i) => {
                   return (<div key={i}>
@@ -106,6 +112,15 @@ export default function Gallery() {
                 setPhotoIndex(e);
               })} />
             </div>
+            {zoomInfo.active ?
+            <Lightbox
+            large={imageUris[zoomInfo.index]}
+            onClose={() => {
+              (setZoomInfo({ ...zoomInfo, active: false }));
+            }}
+            />
+            :
+            null}
           </div>
           :
           <>

@@ -236,6 +236,7 @@
 
   // section title
   .section-title {
+    background-color: $secondBack;
     font-family: $tertiaryFont;
     @include glowingText($mainFontColor, $borderGlowColor);
   }
@@ -307,6 +308,11 @@
     }
 
     .about-me-pics {
+
+      .img-wrap {
+        border: 1px solid $mainBack;
+        outline: 1px solid $mainBack;
+      }
 
       img {
 
@@ -412,6 +418,8 @@
 
         div {
           box-shadow: -6px 4px 2em 0.5em black;
+          border: 1px solid $mainBack;
+          outline: 1px solid $mainBack;
 
           img {
             ::after {
@@ -736,9 +744,6 @@
     >span {
       // height: 100vh!important;
       // margin: auto;
-      span {
-        box-shadow: 0 0 10px 3px rgb(243, 70, 243);
-      }
     }
 
     .loading-text {
@@ -775,7 +780,7 @@
     .loading-wrap {
       >span {
         span {
-          box-shadow: 0 0 10px 3px black;
+          box-shadow: 0 0 10px 3px white;
         }
       }
     }

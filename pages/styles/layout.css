@@ -54,7 +54,7 @@ img {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -118,7 +118,7 @@ img {
 .App .mobile-nav-wrap {
   height: 4.5vh;
   width: 100%;
-  position: fixed;
+  position: absolute;
   bottom: 0;
 }
 .App .direct-links {
@@ -128,7 +128,7 @@ img {
   justify-content: center;
   align-items: center;
   padding: calc(2.25vh - 12px) 16px;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   right: 0;
 }
@@ -155,10 +155,11 @@ img {
 .App .page-progress-wrap .page-progress-indicators {
   height: 4.5vh;
   width: 50vw;
+  max-width: 250px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 3vw;
   font-size: 16.8px;
@@ -192,9 +193,12 @@ img {
   background: linear-gradient(180deg, rgba(60, 59, 60, 0) 6%, rgba(0, 0, 0, 0.812762605) 100%);
 }
 .App .section-title {
+  max-height: 6vh;
+  height: 6vh;
   text-transform: uppercase;
   text-align: center;
   padding: 2vh 0;
+  padding-top: 7.5vh;
   font-size: 40px;
 }
 .App .landing-wrap {
@@ -310,19 +314,40 @@ img {
   display: flex;
   flex-direction: column;
 }
-.App .about-me-wrap .about-me-pics img {
+.App .about-me-wrap .about-me-pics .img-wrap {
+  box-shadow: -6px 4px 2em 0.5em black;
+  width: 50vw;
+  max-width: 350px;
+}
+.App .about-me-wrap .about-me-pics .img-wrap img {
   width: 50vw;
   max-width: 350px;
   height: auto;
 }
-.App .about-me-wrap .about-me-pics img:first-child {
+.App .about-me-wrap .about-me-pics .img-wrap img:first-child {
+  transform: rotate(2deg);
+}
+.App .about-me-wrap .about-me-pics .img-wrap img:nth-child(2) {
+  transform: rotate(-1deg);
+}
+.App .about-me-wrap .about-me-pics .img-wrap:first-child {
   align-self: flex-end;
   transform: rotate(6.5deg);
 }
-.App .about-me-wrap .about-me-pics img:nth-child(2) {
+.App .about-me-wrap .about-me-pics .img-wrap:nth-child(2) {
   transform: rotate(-5.5deg);
   position: relative;
   bottom: 5vh;
+}
+.App .about-me-wrap .about-me-pics .img-wrap::after {
+  box-shadow: 0px 0px 0px 20px rgba(255, 255, 255, 0.19) inset;
+  content: "";
+  display: block;
+  height: 105%;
+  position: absolute;
+  top: -3.5%;
+  left: -2.5%;
+  width: 105%;
 }
 .App .services-wrap {
   margin: 0 auto;
@@ -335,11 +360,15 @@ img {
   /* Track */
   /* Handle */
 }
+.App .services-wrap .services-gallery-wrap::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
 .App .services-wrap .services-gallery-wrap .service-wrap {
   overflow: hidden;
   flex-shrink: 0;
-  height: 71.5vh;
-  width: 72.5vw;
+  height: 74.5vh;
+  width: 85.5vw;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -466,7 +495,7 @@ img {
 }
 .App .gallery-wrap {
   width: 90vw;
-  margin: 10vh auto;
+  margin: auto;
 }
 .App .gallery-wrap .gallery-gate {
   position: relative;
@@ -524,7 +553,7 @@ img {
   display: none;
   flex-basis: 50%;
   height: 100vh;
-  width: 35vw;
+  width: 30vw;
   opacity: 0.75;
   object-fit: cover;
 }
@@ -539,6 +568,9 @@ img {
 }
 .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slider .slide {
   margin: auto;
+}
+.App .gallery-wrap .wrap .expanded-gallery .carousel-root .slider .slide div {
+  cursor: zoom-in !important;
 }
 .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slider .slide div img, .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slider .slide div video {
   max-height: 45vh;
@@ -581,11 +613,14 @@ img {
   margin-bottom: 1.5vh;
 }
 .App .contact-wrap {
-  margin: 0 auto;
-  margin-bottom: 4.5vh;
+  margin: auto;
+  width: 90%;
 }
 .App .contact-wrap form {
-  padding: 16px 4px;
+  padding: 16px 12px;
+  width: 90%;
+  margin: auto;
+  margin-top: 2vh !important;
 }
 .App .contact-wrap form .row {
   display: flex;
@@ -598,20 +633,27 @@ img {
   flex-direction: column;
 }
 .App .contact-wrap form .row .input-wrap label {
-  font-size: 20px;
+  font-size: 17.6px;
   margin-left: 12px;
 }
 .App .contact-wrap form .row .input-wrap input, .App .contact-wrap form .row .input-wrap textarea {
-  font-size: 20px;
+  font-size: 17.6px;
   padding: 7.2px 5%;
 }
+.App .contact-wrap form .row.row-name {
+  flex-direction: column-reverse;
+}
 .App .contact-wrap form .row.row-name p {
+  width: 95%;
   margin: 0 8px;
   font-size: 20px;
   text-align: right;
 }
 .App .contact-wrap form .row.row-name .input-wrap {
   width: 100%;
+}
+.App .contact-wrap form .row.row-method {
+  align-items: flex-end;
 }
 .App .contact-wrap form .row.row-method .input-wrap input {
   width: 90%;
@@ -631,10 +673,11 @@ img {
   resize: none;
 }
 .App .contact-wrap form .row.row-submit {
-  justify-content: flex-end;
+  margin-top: 16px;
+  justify-content: center;
 }
 .App .contact-wrap form .row.row-submit button {
-  font-size: 20px;
+  font-size: 18.4px;
   width: 160px;
   padding: 5.6px 0;
   border-radius: 16px;
@@ -670,14 +713,14 @@ img {
   margin: 0 8px;
 }
 
-@media (min-width: 780px) {
+@media (min-width: 768px) {
   .next-page-link {
     display: initial !important;
   }
 
   header {
-    height: 4.3vh;
-    max-height: 50px;
+    height: 4.3vh !important;
+    max-height: 50px !important;
     min-height: 40px;
   }
   header .tools {
@@ -706,7 +749,7 @@ img {
   }
 
   .mobile-nav-wrap {
-    display: none;
+    display: none !important;
   }
 
   .direct-links {
@@ -765,7 +808,9 @@ img {
   }
 
   .section-title {
+    height: 3.5vh !important;
     font-size: 36px !important;
+    padding-top: 9.5vh !important;
   }
 
   .landing-wrap {
@@ -800,8 +845,11 @@ img {
   .about-me-wrap .about-me-pics {
     width: 75% !important;
   }
-  .about-me-wrap .about-me-pics img {
-    width: 40vw !important;
+  .about-me-wrap .about-me-pics .img-wrap {
+    width: 35vw !important;
+  }
+  .about-me-wrap .about-me-pics .img-wrap img {
+    width: 35vw !important;
   }
 
   .services-wrap {
@@ -809,7 +857,7 @@ img {
     height: 92.7vh !important;
   }
   .services-wrap .services-gallery-wrap .service-wrap {
-    height: 83.7vh !important;
+    height: 76.5vh !important;
     width: 42.5vw !important;
     max-width: 500px;
   }
@@ -858,7 +906,7 @@ img {
     margin: auto;
   }
   .gallery-wrap .gallery-gate .row-img img {
-    max-width: 300px;
+    max-width: 250px;
   }
   .gallery-wrap .gallery-gate .row-img:first-child img:first-child {
     transform: rotate(-5deg);
@@ -879,9 +927,6 @@ img {
   .gallery-wrap .wrap video {
     display: initial !important;
   }
-  .gallery-wrap .wrap .expanded-gallery {
-    width: 60vw !important;
-  }
   .gallery-wrap .wrap .expanded-gallery .ReactGridGallery_tile {
     max-width: 128px !important;
     max-height: 128px !important;
@@ -895,7 +940,7 @@ img {
   }
 
   .contact-wrap {
-    width: 100vw !important;
+    width: 90vw !important;
     max-width: 1100px !important;
     padding: 5vh 0;
     margin: auto !important;
@@ -904,49 +949,49 @@ img {
     justify-content: center !important;
   }
   .contact-wrap form {
-    width: 110%;
+    width: 110% !important;
     max-width: 650.08px;
     padding: 1vh 2vw !important;
     position: relative;
     left: -2vw;
   }
   .contact-wrap form .row .input-wrap label {
-    font-size: 21.6px !important;
+    font-size: 17.6px !important;
   }
   .contact-wrap form .row .input-wrap input, .contact-wrap form .row .input-wrap textarea {
-    font-size: 21.6px !important;
-  }
-  .contact-wrap form .row.row-name p {
-    max-width: 176px;
-    font-size: 28px !important;
+    font-size: 17.6px !important;
   }
   .contact-wrap form .row.row-method p {
-    font-size: 23.2px !important;
+    font-size: 20px !important;
+  }
+  .contact-wrap form .row.row-submit {
+    margin-top: 0 !important;
+    justify-content: flex-end !important;
   }
   .contact-wrap form .row.row-submit button {
     text-align: center;
-    font-size: 21.6px !important;
-    padding: 12px 0 !important;
+    font-size: 17.6px !important;
+    padding: 8px 0 !important;
     margin-top: 24px;
-    width: 192px !important;
+    width: 160px !important;
   }
   .contact-wrap .contact-direct {
-    margin-top: 5vh;
+    margin: auto;
   }
   .contact-wrap .contact-direct .method {
     margin-bottom: 3vh !important;
   }
   .contact-wrap .contact-direct .method i {
-    font-size: 56px !important;
+    font-size: 40px !important;
   }
   .contact-wrap .contact-direct .method a {
-    font-size: 24px !important;
+    font-size: 21.6px !important;
   }
   .contact-wrap .contact-direct .links {
     border-radius: 80px !important;
   }
   .contact-wrap .contact-direct .links i {
-    font-size: 48px !important;
+    font-size: 40px !important;
     margin: 0 16px !important;
   }
 }
@@ -955,6 +1000,9 @@ img {
     overflow-y: hidden;
   }
 
+  header {
+    position: sticky !important;
+  }
   header .logo a {
     font-size: 28px;
   }
@@ -1064,9 +1112,51 @@ img {
   .about-me-wrap .about-me-pics {
     width: 100% !important;
   }
-  .about-me-wrap .about-me-pics img {
+  .about-me-wrap .about-me-pics .img-wrap {
+    width: 23.5vw !important;
+  }
+  .about-me-wrap .about-me-pics .img-wrap img {
     margin: 1.5vh 0;
     width: 23.5vw !important;
+  }
+
+  .services-wrap .services-gallery-wrap .service-wrap {
+    height: 83.7vh !important;
+  }
+
+  .gallery-wrap .gallery-gate .row-img img {
+    max-width: 300px !important;
+  }
+
+  .contact-wrap form .row .input-wrap label {
+    font-size: 21.6px !important;
+  }
+  .contact-wrap form .row .input-wrap input, .contact-wrap form .row .input-wrap textarea {
+    font-size: 21.6px !important;
+  }
+  .contact-wrap form .row.row-name {
+    flex-direction: row !important;
+  }
+  .contact-wrap form .row.row-name p {
+    font-size: 28px !important;
+    max-width: 176px;
+  }
+  .contact-wrap form .row.row-method p {
+    font-size: 23.2px !important;
+  }
+  .contact-wrap form .row.row-submit button {
+    font-size: 21.6px !important;
+    padding: 12px 0 !important;
+    width: 192px !important;
+  }
+  .contact-wrap .contact-direct .method i {
+    font-size: 56px !important;
+  }
+  .contact-wrap .contact-direct .method a {
+    font-size: 24px !important;
+  }
+  .contact-wrap .contact-direct .links i {
+    font-size: 48px !important;
   }
 }
 @media (min-width: 1600px) {
@@ -1094,13 +1184,13 @@ img {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
     padding: 1.5vh 2vw;
-    font-size: 28px;
+    font-size: 25.2px;
   }
   .App header .tools {
     margin-right: 2vw;
@@ -1114,39 +1204,39 @@ img {
   }
   .App header .tools .theme-selector-toggle {
     margin-right: 3vw;
-    font-size: 20px;
+    font-size: 18px;
     position: relative;
   }
   .App header .tools .theme-selector-toggle .arrow {
-    margin-left: 2px;
-    font-size: 16px;
+    margin-left: 1.8px;
+    font-size: 14.4px;
   }
   .App header .tools .theme-selector-toggle .theme-option-list {
     display: none;
-    font-size: 20px;
-    width: 120px;
-    padding: 0 5px;
-    border-radius: 10px;
+    font-size: 18px;
+    width: 108px;
+    padding: 0 4.5px;
+    border-radius: 9px;
     list-style-type: none;
     position: absolute;
     right: 0;
   }
   .App header .tools .theme-selector-toggle .theme-option-list li {
-    margin: 0.5vh 5px;
+    margin: 0.5vh 4.5px;
     padding: 0.15vh 0;
   }
   .App header .tools .theme-selector-toggle.dropped .theme-option-list {
     display: block;
   }
   .App header .tools .burger {
-    font-size: 25.2px;
+    font-size: 22.68px;
   }
   .App header nav {
     display: flex;
     justify-content: space-around;
     flex-basis: 100%;
     text-align: center;
-    font-size: 21px;
+    font-size: 18.9px;
     padding: 1vh 2vw 0 2vw;
   }
   .App header nav a {
@@ -1158,7 +1248,7 @@ img {
   .App .mobile-nav-wrap {
     height: 4.5vh;
     width: 100%;
-    position: fixed;
+    position: absolute;
     bottom: 0;
   }
   .App .direct-links {
@@ -1167,15 +1257,15 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: calc(2.25vh - 15px) 20px;
-    position: fixed;
+    padding: calc(2.25vh - 13.5px) 18px;
+    position: absolute;
     bottom: 0;
     right: 0;
   }
   .App .direct-links i {
     cursor: pointer;
-    margin: 0 7px;
-    font-size: 28px;
+    margin: 0 6.3px;
+    font-size: 25.2px;
   }
   .App .page-progress-wrap {
     z-index: 1000;
@@ -1195,13 +1285,14 @@ img {
   .App .page-progress-wrap .page-progress-indicators {
     height: 4.5vh;
     width: 50vw;
+    max-width: 250px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 3vw;
-    font-size: 21px;
+    font-size: 18.9px;
   }
   .App .page-progress-wrap .page-progress-indicators a {
     text-decoration: none;
@@ -1213,8 +1304,8 @@ img {
     display: none;
     position: absolute;
     bottom: 5%;
-    left: calc(50% - 20px);
-    font-size: 48px;
+    left: calc(50% - 18px);
+    font-size: 43.2px;
     transform: scale(1);
     transition: transform 0.75s ease-out;
   }
@@ -1232,10 +1323,13 @@ img {
     background: linear-gradient(180deg, rgba(60, 59, 60, 0) 6%, rgba(0, 0, 0, 0.812762605) 100%);
   }
   .App .section-title {
+    max-height: 6vh;
+    height: 6vh;
     text-transform: uppercase;
     text-align: center;
     padding: 2vh 0;
-    font-size: 50px;
+    padding-top: 7.5vh;
+    font-size: 45px;
   }
   .App .landing-wrap {
     margin: auto;
@@ -1304,11 +1398,11 @@ img {
     margin-top: 3vh;
     direction: rtl;
     text-align: left;
-    font-size: 23px;
+    font-size: 20.7px;
     line-height: 1.5;
   }
   .App .landing-wrap .landing-intro-wrap .landing-intro-body .address-bar {
-    font-size: 19.5px;
+    font-size: 17.55px;
     text-align: center;
     font-style: italic;
     margin: 7.5vh auto 2.5vh auto;
@@ -1317,10 +1411,10 @@ img {
     text-decoration: none;
   }
   .App .landing-wrap #leave-landing-button {
-    width: 35px;
-    margin-left: calc(50vw - 35px);
+    width: 31.5px;
+    margin-left: calc(50vw - 31.5px);
     margin-top: 10vh;
-    font-size: 33px;
+    font-size: 29.7px;
   }
   .App .about-me-wrap {
     margin: 0 1.5vw;
@@ -1335,12 +1429,12 @@ img {
     text-align: center;
   }
   .App .about-me-wrap .about-me-description .title {
-    font-size: 29px;
+    font-size: 26.1px;
     margin-bottom: 1.5vh;
   }
   .App .about-me-wrap .about-me-description .bio {
     line-height: 1.5;
-    font-size: 27px;
+    font-size: 24.3px;
   }
   .App .about-me-wrap .about-me-pics {
     width: 85%;
@@ -1350,19 +1444,40 @@ img {
     display: flex;
     flex-direction: column;
   }
-  .App .about-me-wrap .about-me-pics img {
+  .App .about-me-wrap .about-me-pics .img-wrap {
+    box-shadow: -6px 4px 2em 0.5em black;
+    width: 50vw;
+    max-width: 350px;
+  }
+  .App .about-me-wrap .about-me-pics .img-wrap img {
     width: 50vw;
     max-width: 350px;
     height: auto;
   }
-  .App .about-me-wrap .about-me-pics img:first-child {
+  .App .about-me-wrap .about-me-pics .img-wrap img:first-child {
+    transform: rotate(2deg);
+  }
+  .App .about-me-wrap .about-me-pics .img-wrap img:nth-child(2) {
+    transform: rotate(-1deg);
+  }
+  .App .about-me-wrap .about-me-pics .img-wrap:first-child {
     align-self: flex-end;
     transform: rotate(6.5deg);
   }
-  .App .about-me-wrap .about-me-pics img:nth-child(2) {
+  .App .about-me-wrap .about-me-pics .img-wrap:nth-child(2) {
     transform: rotate(-5.5deg);
     position: relative;
     bottom: 5vh;
+  }
+  .App .about-me-wrap .about-me-pics .img-wrap::after {
+    box-shadow: 0px 0px 0px 20px rgba(255, 255, 255, 0.19) inset;
+    content: "";
+    display: block;
+    height: 105%;
+    position: absolute;
+    top: -3.5%;
+    left: -2.5%;
+    width: 105%;
   }
   .App .services-wrap {
     margin: 0 auto;
@@ -1375,11 +1490,15 @@ img {
     /* Track */
     /* Handle */
   }
+  .App .services-wrap .services-gallery-wrap::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+  }
   .App .services-wrap .services-gallery-wrap .service-wrap {
     overflow: hidden;
     flex-shrink: 0;
-    height: 71.5vh;
-    width: 72.5vw;
+    height: 74.5vh;
+    width: 85.5vw;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -1403,19 +1522,19 @@ img {
     width: 80%;
   }
   .App .services-wrap .services-gallery-wrap .service-wrap .title-wrap .number {
-    font-size: 46px;
-    margin-right: 10px;
+    font-size: 41.4px;
+    margin-right: 9px;
     text-align: right;
     position: relative;
-    top: 27px;
+    top: 24.3px;
   }
   .App .services-wrap .services-gallery-wrap .service-wrap .title-wrap .title {
     text-transform: capitalize;
-    font-size: 31px;
-    padding: 15px 0;
-    padding-right: 30px;
+    font-size: 27.9px;
+    padding: 13.5px 0;
+    padding-right: 27px;
     text-align: right;
-    max-width: 312.4px;
+    max-width: 281.16px;
     margin-left: auto;
   }
   .App .services-wrap .services-gallery-wrap .service-wrap .service-description {
@@ -1434,11 +1553,11 @@ img {
     text-align: center;
   }
   .App .services-wrap .services-gallery-wrap .service-wrap .service-description .title {
-    font-size: 31px;
+    font-size: 27.9px;
   }
   .App .services-wrap .services-gallery-wrap .service-wrap .service-description .description {
     margin-top: 5%;
-    font-size: 25px;
+    font-size: 22.5px;
     padding: 0 3%;
   }
   .App .services-wrap .services-gallery-wrap .service-wrap:hover .service-background {
@@ -1477,7 +1596,7 @@ img {
   .App .services-wrap .services-gallery-wrap::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.663);
     border: 1px solid rgba(50, 50, 50, 0.6392156863);
-    border-radius: 5px;
+    border-radius: 4.5px;
   }
   .App .services-wrap .services-reach-out {
     margin-bottom: 4.5vh;
@@ -1487,26 +1606,26 @@ img {
     padding: 1vh 2vw;
   }
   .App .services-wrap .services-reach-out p {
-    font-size: 23px;
+    font-size: 20.7px;
     text-align: center;
   }
   .App .services-wrap .services-reach-out .contact-btn {
     flex-basis: 70%;
-    font-size: 22px;
-    border-radius: 20px;
-    padding-top: 11px;
-    padding-bottom: 11px;
+    font-size: 19.8px;
+    border-radius: 18px;
+    padding-top: 9.9px;
+    padding-bottom: 9.9px;
   }
   .App .services-wrap .services-reach-out .contact-btn span {
     margin: 0 !important;
-    margin-right: 5px !important;
+    margin-right: 4.5px !important;
   }
   .App .services-wrap .services-reach-out .contact-btn .arrow {
-    font-size: 15px;
+    font-size: 13.5px;
   }
   .App .gallery-wrap {
     width: 90vw;
-    margin: 10vh auto;
+    margin: auto;
   }
   .App .gallery-wrap .gallery-gate {
     position: relative;
@@ -1547,8 +1666,8 @@ img {
     margin: 1.5vh 0;
   }
   .App .gallery-wrap .gallery-gate .row-btn button {
-    font-size: 30px;
-    padding: 15px 35px;
+    font-size: 27px;
+    padding: 13.5px 31.5px;
     position: relative;
     z-index: 999;
   }
@@ -1564,7 +1683,7 @@ img {
     display: none;
     flex-basis: 50%;
     height: 100vh;
-    width: 35vw;
+    width: 30vw;
     opacity: 0.75;
     object-fit: cover;
   }
@@ -1580,6 +1699,9 @@ img {
   .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slider .slide {
     margin: auto;
   }
+  .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slider .slide div {
+    cursor: zoom-in !important;
+  }
   .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slider .slide div img, .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slider .slide div video {
     max-height: 45vh;
     object-fit: contain;
@@ -1593,20 +1715,20 @@ img {
     overflow-x: hidden;
   }
   .App .gallery-wrap .wrap .expanded-gallery .ReactGridGallery::-webkit-scrollbar-track {
-    border-radius: 20px;
+    border-radius: 18px;
   }
   .App .gallery-wrap .wrap .expanded-gallery .ReactGridGallery > div {
     justify-content: center;
   }
   .App .gallery-wrap .wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile {
-    margin: 0.5vh 5px !important;
-    max-width: 100px !important;
-    max-height: 100px !important;
+    margin: 0.5vh 4.5px !important;
+    max-width: 90px !important;
+    max-height: 90px !important;
   }
   .App .gallery-wrap .wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile img {
     margin: 0 !important;
-    max-width: 100px !important;
-    max-height: 100px !important;
+    max-width: 90px !important;
+    max-height: 90px !important;
     object-fit: cover !important;
     cursor: none !important;
   }
@@ -1615,50 +1737,60 @@ img {
     width: 100% !important;
   }
   .App .gallery-wrap .wrap .expanded-gallery #collapse-gallery {
-    font-size: 35px;
+    font-size: 31.5px;
     position: relative;
     right: 1.5vw;
     margin-bottom: 1.5vh;
   }
   .App .contact-wrap {
-    margin: 0 auto;
-    margin-bottom: 4.5vh;
+    margin: auto;
+    width: 90%;
   }
   .App .contact-wrap form {
-    padding: 20px 5px;
+    padding: 18px 13.5px;
+    width: 90%;
+    margin: auto;
+    margin-top: 2vh !important;
   }
   .App .contact-wrap form .row {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin: 15px 0;
+    margin: 13.5px 0;
   }
   .App .contact-wrap form .row .input-wrap {
     display: flex;
     flex-direction: column;
   }
   .App .contact-wrap form .row .input-wrap label {
-    font-size: 25px;
-    margin-left: 15px;
+    font-size: 19.8px;
+    margin-left: 13.5px;
   }
   .App .contact-wrap form .row .input-wrap input, .App .contact-wrap form .row .input-wrap textarea {
-    font-size: 25px;
-    padding: 9px 5%;
+    font-size: 19.8px;
+    padding: 8.1px 5%;
+  }
+  .App .contact-wrap form .row.row-name {
+    flex-direction: column-reverse;
   }
   .App .contact-wrap form .row.row-name p {
-    margin: 0 10px;
-    font-size: 25px;
+    width: 95%;
+    margin: 0 9px;
+    font-size: 22.5px;
     text-align: right;
   }
   .App .contact-wrap form .row.row-name .input-wrap {
     width: 100%;
   }
+  .App .contact-wrap form .row.row-method {
+    align-items: flex-end;
+  }
   .App .contact-wrap form .row.row-method .input-wrap input {
     width: 90%;
   }
   .App .contact-wrap form .row.row-method p {
-    font-size: 27px;
-    margin: 0 25px;
+    font-size: 24.3px;
+    margin: 0 22.5px;
   }
   .App .contact-wrap form .row.row-inquiry {
     width: 100%;
@@ -1667,47 +1799,48 @@ img {
     width: 100%;
   }
   .App .contact-wrap form .row.row-inquiry .textarea-wrap textarea {
-    height: 100px;
+    height: 90px;
     resize: none;
   }
   .App .contact-wrap form .row.row-submit {
-    justify-content: flex-end;
+    margin-top: 18px;
+    justify-content: center;
   }
   .App .contact-wrap form .row.row-submit button {
-    font-size: 25px;
-    width: 200px;
-    padding: 7px 0;
-    border-radius: 20px;
+    font-size: 20.7px;
+    width: 180px;
+    padding: 6.3px 0;
+    border-radius: 18px;
   }
   .App .contact-wrap .contact-direct {
-    padding: 20px 25px;
+    padding: 18px 22.5px;
   }
   .App .contact-wrap .contact-direct .method {
     display: flex;
     align-items: center;
-    margin: 20px 0;
+    margin: 18px 0;
   }
   .App .contact-wrap .contact-direct .method i {
-    font-size: 60px;
+    font-size: 54px;
   }
   .App .contact-wrap .contact-direct .method a {
     text-decoration: none;
-    margin-left: 25px;
-    font-size: 25px;
+    margin-left: 22.5px;
+    font-size: 22.5px;
   }
   .App .contact-wrap .contact-direct .links {
     width: 90%;
     margin: auto;
-    margin-top: 30px;
-    padding: 15px 0;
+    margin-top: 27px;
+    padding: 13.5px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 40px;
+    border-radius: 36px;
   }
   .App .contact-wrap .contact-direct .links i {
-    font-size: 55px;
-    margin: 0 10px;
+    font-size: 49.5px;
+    margin: 0 9px;
   }
 
   .next-page-link {
@@ -1715,8 +1848,8 @@ img {
   }
 
   header {
-    height: 4.3vh;
-    max-height: 50px;
+    height: 4.3vh !important;
+    max-height: 50px !important;
     min-height: 40px;
   }
   header .tools {
@@ -1725,10 +1858,10 @@ img {
   }
   header .tools .theme-selector-toggle {
     margin-right: 0 !important;
-    font-size: 22px !important;
+    font-size: 19.8px !important;
   }
   header .tools .theme-selector-toggle .arrow {
-    font-size: 10px !important;
+    font-size: 9px !important;
   }
   header .tools .burger {
     display: none;
@@ -1737,32 +1870,32 @@ img {
     flex-basis: initial !important;
   }
   header nav a {
-    margin: 0 9px;
-    font-size: 21px !important;
+    margin: 0 8.1px;
+    font-size: 18.9px !important;
   }
   header nav.hidden {
     display: initial !important;
   }
 
   .mobile-nav-wrap {
-    display: none;
+    display: none !important;
   }
 
   .direct-links {
     max-width: 5vw !important;
     flex-direction: column;
-    padding: 10px 11px !important;
+    padding: 9px 9.9px !important;
     bottom: initial !important;
     right: initial !important;
     left: 0;
     top: 25vh;
   }
   .direct-links i {
-    margin: 7px 0 !important;
-    font-size: 25px !important;
+    margin: 6.3px 0 !important;
+    font-size: 22.5px !important;
   }
   .direct-links i.fa-instagram {
-    font-size: 28px !important;
+    font-size: 25.2px !important;
   }
 
   .page-progress-wrap .progressBar-wrap {
@@ -1786,7 +1919,7 @@ img {
     left: initial !important;
     right: 2vw;
     top: 20.3vh;
-    font-size: 21px !important;
+    font-size: 18.9px !important;
   }
   .page-progress-wrap .page-progress-indicators a {
     text-decoration: none;
@@ -1804,7 +1937,9 @@ img {
   }
 
   .section-title {
-    font-size: 45px !important;
+    height: 3.5vh !important;
+    font-size: 40.5px !important;
+    padding-top: 9.5vh !important;
   }
 
   .landing-wrap {
@@ -1819,7 +1954,7 @@ img {
     width: 40% !important;
     margin-bottom: 4vh !important;
     text-align: center !important;
-    font-size: 25px !important;
+    font-size: 22.5px !important;
   }
   .landing-wrap .landing-intro-wrap .landing-intro-body .address-bar {
     display: none;
@@ -1830,17 +1965,20 @@ img {
     left: 1vw;
   }
   .landing-wrap #leave-landing-button {
-    width: 37px !important;
-    margin-left: calc(50vw - 37px) !important;
+    width: 33.3px !important;
+    margin-left: calc(50vw - 33.3px) !important;
     margin-top: 15vh !important;
-    font-size: 35px !important;
+    font-size: 31.5px !important;
   }
 
   .about-me-wrap .about-me-pics {
     width: 75% !important;
   }
-  .about-me-wrap .about-me-pics img {
-    width: 40vw !important;
+  .about-me-wrap .about-me-pics .img-wrap {
+    width: 35vw !important;
+  }
+  .about-me-wrap .about-me-pics .img-wrap img {
+    width: 35vw !important;
   }
 
   .services-wrap {
@@ -1848,7 +1986,7 @@ img {
     height: 92.7vh !important;
   }
   .services-wrap .services-gallery-wrap .service-wrap {
-    height: 83.7vh !important;
+    height: 76.5vh !important;
     width: 42.5vw !important;
     max-width: 500px;
   }
@@ -1857,10 +1995,10 @@ img {
     right: 15% !important;
   }
   .services-wrap .services-gallery-wrap .service-wrap .service-description .title {
-    font-size: 35px !important;
+    font-size: 31.5px !important;
   }
   .services-wrap .services-gallery-wrap .service-wrap .service-description .description {
-    font-size: 27px !important;
+    font-size: 24.3px !important;
   }
   .services-wrap .services-reach-out {
     display: flex;
@@ -1873,16 +2011,16 @@ img {
     margin: 0 2vw;
   }
   .services-wrap .services-reach-out p {
-    font-size: 30px !important;
-    max-width: 375px;
+    font-size: 27px !important;
+    max-width: 337.5px;
   }
   .services-wrap .services-reach-out .contact-btn {
-    font-size: 29px !important;
-    padding-top: 20px !important;
-    padding-bottom: 20px !important;
+    font-size: 26.1px !important;
+    padding-top: 18px !important;
+    padding-bottom: 18px !important;
     flex-basis: 50% !important;
     max-width: 250px;
-    border-radius: 40px !important;
+    border-radius: 36px !important;
   }
   .services-wrap .services-reach-out .contact-btn i {
     margin: 0;
@@ -1897,7 +2035,7 @@ img {
     margin: auto;
   }
   .gallery-wrap .gallery-gate .row-img img {
-    max-width: 300px;
+    max-width: 250px;
   }
   .gallery-wrap .gallery-gate .row-img:first-child img:first-child {
     transform: rotate(-5deg);
@@ -1912,85 +2050,85 @@ img {
     transform: rotate(-7.5deg);
   }
   .gallery-wrap .gallery-gate .row-btn button {
-    font-size: 35px !important;
-    padding: 30px 80px !important;
+    font-size: 31.5px !important;
+    padding: 27px 72px !important;
   }
   .gallery-wrap .wrap video {
     display: initial !important;
   }
-  .gallery-wrap .wrap .expanded-gallery {
-    width: 60vw !important;
-  }
   .gallery-wrap .wrap .expanded-gallery .ReactGridGallery_tile {
-    max-width: 160px !important;
-    max-height: 160px !important;
+    max-width: 144px !important;
+    max-height: 144px !important;
   }
   .gallery-wrap .wrap .expanded-gallery .ReactGridGallery_tile img {
-    max-width: 160px !important;
-    max-height: 160px !important;
+    max-width: 144px !important;
+    max-height: 144px !important;
   }
   .gallery-wrap .wrap .expanded-gallery .slider {
     width: 50%;
   }
 
   .contact-wrap {
-    width: 100vw !important;
-    max-width: 1375px !important;
+    width: 90vw !important;
+    max-width: 1237.5px !important;
     padding: 5vh 0;
     margin: auto !important;
-    max-width: 1500px;
+    max-width: 1350px;
     display: flex;
     justify-content: center !important;
   }
   .contact-wrap form {
-    width: 110%;
-    max-width: 812.6px;
+    width: 110% !important;
+    max-width: 731.34px;
     padding: 1vh 2vw !important;
     position: relative;
     left: -2vw;
   }
   .contact-wrap form .row .input-wrap label {
-    font-size: 27px !important;
+    font-size: 19.8px !important;
   }
   .contact-wrap form .row .input-wrap input, .contact-wrap form .row .input-wrap textarea {
-    font-size: 27px !important;
-  }
-  .contact-wrap form .row.row-name p {
-    max-width: 220px;
-    font-size: 35px !important;
+    font-size: 19.8px !important;
   }
   .contact-wrap form .row.row-method p {
-    font-size: 29px !important;
+    font-size: 22.5px !important;
+  }
+  .contact-wrap form .row.row-submit {
+    margin-top: 0 !important;
+    justify-content: flex-end !important;
   }
   .contact-wrap form .row.row-submit button {
     text-align: center;
-    font-size: 27px !important;
-    padding: 15px 0 !important;
-    margin-top: 30px;
-    width: 240px !important;
+    font-size: 19.8px !important;
+    padding: 9px 0 !important;
+    margin-top: 27px;
+    width: 180px !important;
   }
   .contact-wrap .contact-direct {
-    margin-top: 5vh;
+    margin: auto;
   }
   .contact-wrap .contact-direct .method {
     margin-bottom: 3vh !important;
   }
   .contact-wrap .contact-direct .method i {
-    font-size: 70px !important;
+    font-size: 45px !important;
   }
   .contact-wrap .contact-direct .method a {
-    font-size: 30px !important;
+    font-size: 24.3px !important;
   }
   .contact-wrap .contact-direct .links {
-    border-radius: 100px !important;
+    border-radius: 90px !important;
   }
   .contact-wrap .contact-direct .links i {
-    font-size: 60px !important;
-    margin: 0 20px !important;
+    font-size: 45px !important;
+    margin: 0 18px !important;
   }
 
+  header {
+    position: sticky !important;
+  }
   header .logo a {
-    font-size: 35px;
+    font-size: 31.5px;
   }
 
   .section-title {
@@ -2009,7 +2147,7 @@ img {
   }
   .landing-wrap .landing-intro-wrap .landing-intro-body h2 {
     width: 90% !important;
-    font-size: 40px !important;
+    font-size: 36px !important;
     margin: 0 1vw !important;
     text-align: right !important;
     justify-content: right !important;
@@ -2021,7 +2159,7 @@ img {
     width: 40%;
     margin: 3.5vh 7.5vw 15% 10% !important;
     text-align: right !important;
-    font-size: 27px !important;
+    font-size: 24.3px !important;
   }
   .landing-wrap .landing-intro-wrap .photo-wrap {
     position: absolute;
@@ -2037,7 +2175,7 @@ img {
     filter: drop-shadow(2px 4px 6px black) contrast(1.15);
     width: 50vw;
     min-width: 450px;
-    max-width: 800px;
+    max-width: 720px;
     transition: all 1s ease-out;
   }
   .landing-wrap .landing-intro-wrap .photo-wrap.main-theme-landing img:hover {
@@ -2052,7 +2190,7 @@ img {
   .landing-wrap .landing-intro-wrap .photo-wrap.light-theme-landing img {
     width: 39vw;
     min-width: 450px;
-    max-width: 770px;
+    max-width: 693px;
   }
   .landing-wrap .landing-intro-wrap .photo-wrap.gold-theme-landing {
     transform: scaleX(-1) rotate(25deg);
@@ -2063,7 +2201,7 @@ img {
     filter: drop-shadow(-4px 11px 19px black) saturate(0.55) contrast(1.15) !important;
     width: 44vw;
     min-width: 450px;
-    max-width: 770px;
+    max-width: 693px;
   }
 
   .about-me-wrap {
@@ -2084,13 +2222,13 @@ img {
     padding-bottom: 11.5vh !important;
   }
   .about-me-wrap .about-me-description .title {
-    font-size: 39px !important;
+    font-size: 35.1px !important;
     width: 110%;
     position: relative;
     right: 10%;
   }
   .about-me-wrap .about-me-description .bio {
-    font-size: 29px !important;
+    font-size: 26.1px !important;
     width: 120% !important;
     position: relative;
     right: 20% !important;
@@ -2098,9 +2236,51 @@ img {
   .about-me-wrap .about-me-pics {
     width: 100% !important;
   }
-  .about-me-wrap .about-me-pics img {
+  .about-me-wrap .about-me-pics .img-wrap {
+    width: 23.5vw !important;
+  }
+  .about-me-wrap .about-me-pics .img-wrap img {
     margin: 1.5vh 0;
     width: 23.5vw !important;
+  }
+
+  .services-wrap .services-gallery-wrap .service-wrap {
+    height: 83.7vh !important;
+  }
+
+  .gallery-wrap .gallery-gate .row-img img {
+    max-width: 300px !important;
+  }
+
+  .contact-wrap form .row .input-wrap label {
+    font-size: 24.3px !important;
+  }
+  .contact-wrap form .row .input-wrap input, .contact-wrap form .row .input-wrap textarea {
+    font-size: 24.3px !important;
+  }
+  .contact-wrap form .row.row-name {
+    flex-direction: row !important;
+  }
+  .contact-wrap form .row.row-name p {
+    font-size: 31.5px !important;
+    max-width: 198px;
+  }
+  .contact-wrap form .row.row-method p {
+    font-size: 26.1px !important;
+  }
+  .contact-wrap form .row.row-submit button {
+    font-size: 24.3px !important;
+    padding: 13.5px 0 !important;
+    width: 216px !important;
+  }
+  .contact-wrap .contact-direct .method i {
+    font-size: 63px !important;
+  }
+  .contact-wrap .contact-direct .method a {
+    font-size: 27px !important;
+  }
+  .contact-wrap .contact-direct .links i {
+    font-size: 54px !important;
   }
 }
 
