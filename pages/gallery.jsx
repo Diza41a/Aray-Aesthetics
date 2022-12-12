@@ -9,14 +9,17 @@ import galleryVideos from './data/galleryVideos.json';
 // temp!
 import galleryThumbs from './data/galleryVideoThumbs(temp).json';
 
-// choose one!!
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 export default function Gallery() {
   const [isExpanded, toggleExpand] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
   const [isLoading, toggleLoading] = useState(false);
+
+  const [zoomContent, setZoomContent] = useState({ active: false, src: '' });
 
   let images = [...galleryImages];
   const imageUris = images.map(({src}) => src);
@@ -34,6 +37,7 @@ export default function Gallery() {
     return () => {
         document.body.style.overflowY = 'hidden';
         document.querySelector('header').style.display = 'flex';
+        document.querySelector('.mobile-nav-wrap').style.display = 'initial';
         document.querySelector('.page-progress-wrap').style.display = 'initial';
         document.querySelector('.hero').style.backgroundImage = originalBackground;
     };
@@ -60,49 +64,76 @@ export default function Gallery() {
           isExpanded
           ?
           <div className="wrap">
-            <video loop autoPlay muted>
-              <source src="./assets/images/demo.mp4"/>
-              <source src="./assets/images/back.mp4"/>
-            </video>
-            <div className="expanded-gallery">
+            {
+              zoomContent.active
+              ?
+              <TransformWrapper
+              initialScale={1}
+              initialPositionX={200}
+              initialPositionY={100}
+            >
+              {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
+                <React.Fragment>
+                  <div className="tools">
+                    <button onClick={() => zoomIn()}>+</button>
+                    <button onClick={() => zoomOut()}>-</button>
+                    <button onClick={() => resetTransform()}>x</button>
+                  </div>
+                  <TransformComponent>
+                    <img src={zoomContent.src} alt="test" />
+                    <div>Example text</div>
+                  </TransformComponent>
+                </React.Fragment>
+              )}
+            </TransformWrapper>
+              :
+              <>
+              <video loop autoPlay muted>
+                <source src="./assets/images/demo.mp4"/>
+                <source src="./assets/images/back.mp4"/>
+              </video>
+              <div className="expanded-gallery">
 
-              <button id="collapse-gallery" onClick={(() => {
-                document.querySelector('header').style.display = 'flex';
-                document.querySelector('.page-progress-wrap').style.display = 'initial';
-                document.querySelector('.hero').style.backgroundImage = originalBackground;
+                <button id="collapse-gallery" onClick={(() => {
+                  document.querySelector('header').style.display = 'flex';
+                  document.querySelector('.mobile-nav-wrap').style.display = 'initial';
+                  document.querySelector('.page-progress-wrap').style.display = 'initial';
+                  document.querySelector('.hero').style.backgroundImage = originalBackground;
 
-                const galleryWrap = document.querySelector('.gallery-wrap');
-                toggleExpand(false);
-              })}>
-                <i className="fa-solid fa-left-long" />
-                <span>{' Collapse'}</span>
-              </button>
+                  const galleryWrap = document.querySelector('.gallery-wrap');
+                  toggleExpand(false);
+                })}>
+                  <i className="fa-solid fa-left-long" />
+                  <span>{' Collapse'}</span>
+                </button>
 
-              <Carousel
-                emulateTouch
-                showThumbs={false}
-                showIndicators={false}
-                selectedItem={photoIndex}
-              >
-                {imageUris.map((uri, i) => {
-                  return (<div key={i}>
-                    <img src={`${uri}`} data-index={i} loading="lazy" decoding="sync" />
-                  </div>);
-                })}
-                {videoUris.map((uri, i) => {
-                  return (<div key={i}>
-                    <video data-index={imageUris.length + i} controls={true} playsInline muted>
-                      <source src={`${uri}`} type="video/mp4"/>
-                    </video>
-                  </div>);
-                })}
+                <Carousel
+                  emulateTouch
+                  showThumbs={false}
+                  showIndicators={false}
+                  selectedItem={photoIndex}
+                  onClickItem={(...args) => /*setZoomContent({ active: true, src: imageUris[0] })*/ console.log(args) }
+                >
+                  {imageUris.map((uri, i) => {
+                    return (<div key={i}>
+                      <img src={`${uri}`} data-index={i} loading="lazy" decoding="sync" />
+                    </div>);
+                  })}
+                  {videoUris.map((uri, i) => {
+                    return (<div key={i}>
+                      <video data-index={imageUris.length + i} controls={true} playsInline muted>
+                        <source src={`${uri}`} type="video/mp4"/>
+                      </video>
+                    </div>);
+                  })}
 
-              </Carousel>
+                </Carousel>
 
-              <GridGallery images={images} enableImageSelection={false} onClick={((e) => {
-                setPhotoIndex(e);
-              })} />
-            </div>
+                <GridGallery images={images} enableImageSelection={false} onClick={((e) => {
+                  setPhotoIndex(e);
+                })} />
+              </div></>
+            }
           </div>
           :
           <>
@@ -118,6 +149,7 @@ export default function Gallery() {
               <div className="row-btn">
                 <button onClick={(() => {
                   document.querySelector('header').style.display = 'none';
+                  document.querySelector('.mobile-nav-wrap').style.display = 'none';
                   document.querySelector('.page-progress-wrap').style.display = 'none';
                   originalBackground = document.querySelector('.hero').style.backgroundImage;
                   document.querySelector('.hero').style.backgroundImage = 'url(./assets/images/purpleBack.jpeg)';

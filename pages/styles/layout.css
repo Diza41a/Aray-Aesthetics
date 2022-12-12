@@ -545,7 +545,6 @@ img {
 }
 .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slider .slide div img, .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slider .slide div video {
   max-height: 45vh;
-  max-width: 60vw;
   object-fit: contain;
 }
 .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slider .slide div video {
@@ -1588,7 +1587,6 @@ img {
   }
   .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slider .slide div img, .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slider .slide div video {
     max-height: 45vh;
-    max-width: 60vw;
     object-fit: contain;
   }
   .App .gallery-wrap .wrap .expanded-gallery .carousel-root .slider .slide div video {

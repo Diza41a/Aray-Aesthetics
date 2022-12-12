@@ -664,62 +664,6 @@ img {
         }
       }
 
-
-
-      // .expanded-gallery {
-      //   padding: 1vh 3vw;
-
-      //   .carousel-root {
-
-      //     .slide {
-      //       margin: auto;
-      //     }
-      //   }
-
-      //   .ReactGridGallery {
-      //     >div {
-      //       // width: 105%;
-      //       // position: relative;
-      //       // right: 1%;
-      //       justify-content: center;
-      //     }
-
-      //     .ReactGridGallery_tile {
-      //       margin: 0.5vh $fontSize * 0.25!important;
-      //       max-width: $fontSize * 8!important;
-      //       max-height: $fontSize * 8!important;
-
-      //       img {
-      //         margin: 0!important;
-      //         max-width: $fontSize * 8!important;
-      //         max-height: $fontSize * 8!important;
-      //         object-fit: cover!important;
-      //         cursor: none!important;
-      //       }
-
-      //       &:nth-child(2n - 1) {
-      //         // .ReactGridGallery_tile-viewport {
-      //         //   height: 100%!important;
-      //         //   overflow: hidden!important;
-
-      //         //   img {
-      //         //     height: calc(100% + 4px)!important;
-      //         //   }
-      //         // }
-      //       }
-      //     }
-      //   }
-
-      //   #collapse-gallery {
-      //     font-size: $fontSize * 1.75;
-      //     position: relative;
-      //     right: 1.5vw;
-      //     margin-bottom: 1.5vh;
-      //   }
-      // }
-
-
-
       .wrap {
         display: flex;
         width: 100vw;
@@ -747,15 +691,13 @@ img {
             margin-top: 15%;
 
             .slider {
-              // width: 50%;
-
               .slide {
                 margin: auto;
 
                 div {
                   img, video {
                     max-height: 45vh;
-                    max-width: 60vw;
+                    // max-width: 60vw;
                     object-fit: contain;
                   }
 
