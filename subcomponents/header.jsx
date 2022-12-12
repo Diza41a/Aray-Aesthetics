@@ -20,7 +20,7 @@ export default function Header() {
   const defaultThemeOption = themeOptions[0];
 
   // Methods
-  const toggleNav = (e) => {
+  const toggleNav = () => {
     const navEl = navRef.current;
     toggleClass(navEl, 'hidden');
   };
@@ -50,7 +50,7 @@ export default function Header() {
   };
 
   return (
-    <header>
+    <header ref={navRef} className="hidden">
       <div className="logo">
         <Link href="/" className={router.pathname === '/' ? 'active' : ''}>Aray Aesthetics</Link>
       </div>
@@ -66,7 +66,9 @@ export default function Header() {
         </div>
         <i className="fa-solid fa-bars burger" onClick={toggleNav} />
       </div>
-      <nav ref={navRef} className="hidden">
+      <nav onClick={() => {
+        toggleNav();
+      }}>
         <Link href="/about" className={router.pathname === '/about' ? 'active' : ''}>About me</Link>
         <Link href="/services" className={router.pathname === '/services' ? 'active' : ''}>Services</Link>
         <Link href="/gallery" className={router.pathname === '/gallery' ? 'active' : ''}>Works</Link>

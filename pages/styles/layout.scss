@@ -135,12 +135,25 @@ img {
         font-size: $fontSize * 1.05;
         padding: 1vh 2vw 0 2vw;
 
+        transition: 0.25s opacity linear;
+        transition-delay: 0.25s;
+        opacity: 1;
+
         a {
           text-decoration: none;
         }
+      }
 
-        &.hidden {
-          display: none;
+      max-height: 6vh;
+      transition: max-height 0.25s ease-in;
+      &.hidden {
+        max-height: 3vh;
+        overflow: hidden;
+        transition: max-height 0.25s ease-out;
+
+        nav {
+          transition: 0.25s opacity linear;
+          opacity: 0;
         }
       }
     }
@@ -240,24 +253,24 @@ img {
     // section title
     .section-title {
       max-height: 6vh;
-      height: 6vh;
+      height: 3vh;
       text-transform: uppercase;
       text-align: center;
       padding: 2vh 0;
-      padding-top: 7.5vh;
-      font-size: $fontSize * 2.5;
+      padding-top: 8vh;
+      font-size: $fontSize * 1.5;
     }
 
     // landing
     .landing-wrap {
       margin: auto;
 
-      position: absolute;
-      height: 50vh;
-      top: 25vh;
-      bottom: 25vh;
-      left: 0;
-      right: 0;
+      // position: absolute;
+      // height: 50vh;
+      // top: 25vh;
+      // bottom: 25vh;
+      // left: 0;
+      // right: 0;
 
       .landing-intro-wrap {
         width: 85vw;
@@ -964,8 +977,13 @@ img {
         font-size: $fontSize * 1.05!important;
       }
 
-      &.hidden {
-        display: initial!important;
+    }
+
+    &.hidden {
+      max-height: initial!important;
+
+      nav {
+        opacity: 1!important;
       }
     }
   }
@@ -1397,12 +1415,12 @@ img {
           bottom: 15vh;
 
           img {
-            transform: scale(1);
-            filter: drop-shadow(2px 4px 6px black) contrast(1.15);
             width: 50vw;
             min-width: 450px;
             max-width: $fontSize * 40 /* 16px * 37.5 = 600px */;
 
+            transform: scale(1);
+            filter: drop-shadow(2px 4px 6px black) contrast(1.15);
             transition: all 1s ease-out;
             &:hover {
               transform: scale(1.05);
@@ -1420,6 +1438,14 @@ img {
             width: 39vw;
             min-width: 450px;
             max-width: $fontSize * 38.5 /* 16px * 37.5 = 600px */;
+
+            transform: scale(1);
+            filter: drop-shadow(0px 0px 0px transparent);
+            transition: all 1s ease-out;
+            &:hover {
+              transform: scale(1.05);
+              filter: drop-shadow(2px 4px 8px white) contrast(1.15);
+            }
           }
         }
 
@@ -1433,6 +1459,14 @@ img {
             width: 44vw;
             min-width: 450px;
             max-width: $fontSize * 38.5 /* 16px * 37.5 = 600px */;
+
+            transform: scale(1);
+            filter: drop-shadow(-4px 11px 19px black) saturate(0.55) contrast(1.15);
+            transition: all 1s ease-out;
+            &:hover {
+              transform: scale(1.05);
+              filter: drop-shadow(2px 4px 21px black) saturate(0.55) contrast(1.15);
+            }
           }
         }
       }

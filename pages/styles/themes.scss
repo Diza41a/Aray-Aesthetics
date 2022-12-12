@@ -6,14 +6,19 @@
 
 @font-face {
   font-family: Montserrat;
-  font-weight: 100;
+  font-weight: 300;
+  src: url(./fonts/Montserrat.ttf);
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  font-weight: 600;
   src: url(./fonts/Montserrat.ttf);
 }
 
 @font-face {
   font-family: Lora;
   font-weight: 100;
-  font-style: normal;
   src: url(./fonts/Lora.ttf);
 }
 
@@ -21,6 +26,12 @@
   font-family: Raleway;
   src: url(./fonts/Raleway.ttf);
   font-weight: 150;
+}
+
+@font-face {
+  font-family: Raleway-Bold;
+  src: url(./fonts/Raleway.ttf);
+  font-weight: 300;
 }
 
 @font-face {
@@ -248,9 +259,6 @@
       background-color: $mainBack;
       @include glowingBorder($borderColor, $borderGlowColor, $extraBorderGlowColor);
 
-      .photo-wrap {
-      }
-
       .landing-intro-body {
         background-color: $secondBack;
         @include basicBorder();
@@ -258,6 +266,7 @@
 
         h2 {
           font-family: $tertiaryFont;
+          font-weight: bolder;
           @include glowingText($mainFontColor, $borderGlowColor);
           // @include fadeIn(0.25s);
         }
@@ -772,7 +781,7 @@
     }
 
     .App {
-      @include theme(Nickainley, Montserrat, Lora, /* colors */ #323232ae, #323232ae, #fff, #fff, #fff, rgb(249, 104, 239), rgb(249, 104, 239));
+      @include theme(Nickainley, Montserrat, Raleway-Bold, /* colors */ #323232ae, #323232ae, #fff, #fff, #fff, rgb(249, 104, 239), rgb(249, 104, 239));
     }
   }
 
@@ -790,7 +799,7 @@
     }
 
     .App {
-      @include theme(Nickainley, Montserrat, Lora, /* colors */ #ffffffae, #323232ae, #fff, rgb(0, 0, 0), #fff, rgb(42, 42, 42), rgb(249, 104, 239));
+      @include theme(Nickainley, Montserrat, Raleway-Bold, /* colors */ #ffffffae, #323232ae, #fff, rgb(0, 0, 0), #fff, rgb(42, 42, 42), rgb(249, 104, 239));
 
       .landing-wrap {
 

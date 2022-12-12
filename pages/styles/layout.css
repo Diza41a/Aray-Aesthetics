@@ -61,6 +61,8 @@ img {
   z-index: 1000;
   padding: 1.5vh 2vw;
   font-size: 22.4px;
+  max-height: 6vh;
+  transition: max-height 0.25s ease-in;
 }
 .App header .tools {
   margin-right: 2vw;
@@ -108,12 +110,21 @@ img {
   text-align: center;
   font-size: 16.8px;
   padding: 1vh 2vw 0 2vw;
+  transition: 0.25s opacity linear;
+  transition-delay: 0.25s;
+  opacity: 1;
 }
 .App header nav a {
   text-decoration: none;
 }
-.App header nav.hidden {
-  display: none;
+.App header.hidden {
+  max-height: 3vh;
+  overflow: hidden;
+  transition: max-height 0.25s ease-out;
+}
+.App header.hidden nav {
+  transition: 0.25s opacity linear;
+  opacity: 0;
 }
 .App .mobile-nav-wrap {
   height: 4.5vh;
@@ -194,21 +205,15 @@ img {
 }
 .App .section-title {
   max-height: 6vh;
-  height: 6vh;
+  height: 3vh;
   text-transform: uppercase;
   text-align: center;
   padding: 2vh 0;
-  padding-top: 7.5vh;
-  font-size: 40px;
+  padding-top: 8vh;
+  font-size: 24px;
 }
 .App .landing-wrap {
   margin: auto;
-  position: absolute;
-  height: 50vh;
-  top: 25vh;
-  bottom: 25vh;
-  left: 0;
-  right: 0;
 }
 .App .landing-wrap .landing-intro-wrap {
   width: 85vw;
@@ -744,8 +749,11 @@ img {
     margin: 0 7.2px;
     font-size: 16.8px !important;
   }
-  header nav.hidden {
-    display: initial !important;
+  header.hidden {
+    max-height: initial !important;
+  }
+  header.hidden nav {
+    opacity: 1 !important;
   }
 
   .mobile-nav-wrap {
@@ -1047,11 +1055,11 @@ img {
     bottom: 15vh;
   }
   .landing-wrap .landing-intro-wrap .photo-wrap.main-theme-landing img {
-    transform: scale(1);
-    filter: drop-shadow(2px 4px 6px black) contrast(1.15);
     width: 50vw;
     min-width: 450px;
     max-width: 640px;
+    transform: scale(1);
+    filter: drop-shadow(2px 4px 6px black) contrast(1.15);
     transition: all 1s ease-out;
   }
   .landing-wrap .landing-intro-wrap .photo-wrap.main-theme-landing img:hover {
@@ -1067,6 +1075,13 @@ img {
     width: 39vw;
     min-width: 450px;
     max-width: 616px;
+    transform: scale(1);
+    filter: drop-shadow(0px 0px 0px transparent);
+    transition: all 1s ease-out;
+  }
+  .landing-wrap .landing-intro-wrap .photo-wrap.light-theme-landing img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(2px 4px 8px white) contrast(1.15);
   }
   .landing-wrap .landing-intro-wrap .photo-wrap.gold-theme-landing {
     transform: scaleX(-1) rotate(25deg);
@@ -1078,6 +1093,13 @@ img {
     width: 44vw;
     min-width: 450px;
     max-width: 616px;
+    transform: scale(1);
+    filter: drop-shadow(-4px 11px 19px black) saturate(0.55) contrast(1.15);
+    transition: all 1s ease-out;
+  }
+  .landing-wrap .landing-intro-wrap .photo-wrap.gold-theme-landing img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(2px 4px 21px black) saturate(0.55) contrast(1.15);
   }
 
   .about-me-wrap {
@@ -1191,6 +1213,8 @@ img {
     z-index: 1000;
     padding: 1.5vh 2vw;
     font-size: 25.2px;
+    max-height: 6vh;
+    transition: max-height 0.25s ease-in;
   }
   .App header .tools {
     margin-right: 2vw;
@@ -1238,12 +1262,21 @@ img {
     text-align: center;
     font-size: 18.9px;
     padding: 1vh 2vw 0 2vw;
+    transition: 0.25s opacity linear;
+    transition-delay: 0.25s;
+    opacity: 1;
   }
   .App header nav a {
     text-decoration: none;
   }
-  .App header nav.hidden {
-    display: none;
+  .App header.hidden {
+    max-height: 3vh;
+    overflow: hidden;
+    transition: max-height 0.25s ease-out;
+  }
+  .App header.hidden nav {
+    transition: 0.25s opacity linear;
+    opacity: 0;
   }
   .App .mobile-nav-wrap {
     height: 4.5vh;
@@ -1324,21 +1357,15 @@ img {
   }
   .App .section-title {
     max-height: 6vh;
-    height: 6vh;
+    height: 3vh;
     text-transform: uppercase;
     text-align: center;
     padding: 2vh 0;
-    padding-top: 7.5vh;
-    font-size: 45px;
+    padding-top: 8vh;
+    font-size: 27px;
   }
   .App .landing-wrap {
     margin: auto;
-    position: absolute;
-    height: 50vh;
-    top: 25vh;
-    bottom: 25vh;
-    left: 0;
-    right: 0;
   }
   .App .landing-wrap .landing-intro-wrap {
     width: 85vw;
@@ -1873,8 +1900,11 @@ img {
     margin: 0 8.1px;
     font-size: 18.9px !important;
   }
-  header nav.hidden {
-    display: initial !important;
+  header.hidden {
+    max-height: initial !important;
+  }
+  header.hidden nav {
+    opacity: 1 !important;
   }
 
   .mobile-nav-wrap {
@@ -2171,11 +2201,11 @@ img {
     bottom: 15vh;
   }
   .landing-wrap .landing-intro-wrap .photo-wrap.main-theme-landing img {
-    transform: scale(1);
-    filter: drop-shadow(2px 4px 6px black) contrast(1.15);
     width: 50vw;
     min-width: 450px;
     max-width: 720px;
+    transform: scale(1);
+    filter: drop-shadow(2px 4px 6px black) contrast(1.15);
     transition: all 1s ease-out;
   }
   .landing-wrap .landing-intro-wrap .photo-wrap.main-theme-landing img:hover {
@@ -2191,6 +2221,13 @@ img {
     width: 39vw;
     min-width: 450px;
     max-width: 693px;
+    transform: scale(1);
+    filter: drop-shadow(0px 0px 0px transparent);
+    transition: all 1s ease-out;
+  }
+  .landing-wrap .landing-intro-wrap .photo-wrap.light-theme-landing img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(2px 4px 8px white) contrast(1.15);
   }
   .landing-wrap .landing-intro-wrap .photo-wrap.gold-theme-landing {
     transform: scaleX(-1) rotate(25deg);
@@ -2202,6 +2239,13 @@ img {
     width: 44vw;
     min-width: 450px;
     max-width: 693px;
+    transform: scale(1);
+    filter: drop-shadow(-4px 11px 19px black) saturate(0.55) contrast(1.15);
+    transition: all 1s ease-out;
+  }
+  .landing-wrap .landing-intro-wrap .photo-wrap.gold-theme-landing img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(2px 4px 21px black) saturate(0.55) contrast(1.15);
   }
 
   .about-me-wrap {

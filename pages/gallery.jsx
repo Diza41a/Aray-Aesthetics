@@ -115,6 +115,7 @@ export default function Gallery() {
             {zoomInfo.active ?
             <Lightbox
             large={imageUris[zoomInfo.index]}
+            hideDownload={true}
             onClose={() => {
               (setZoomInfo({ ...zoomInfo, active: false }));
             }}

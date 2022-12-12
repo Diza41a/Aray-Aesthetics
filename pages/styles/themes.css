@@ -5,19 +5,28 @@
 }
 @font-face {
   font-family: Montserrat;
-  font-weight: 100;
+  font-weight: 300;
+  src: url(./fonts/Montserrat.ttf);
+}
+@font-face {
+  font-family: Montserrat-Bold;
+  font-weight: 600;
   src: url(./fonts/Montserrat.ttf);
 }
 @font-face {
   font-family: Lora;
   font-weight: 100;
-  font-style: normal;
   src: url(./fonts/Lora.ttf);
 }
 @font-face {
   font-family: Raleway;
   src: url(./fonts/Raleway.ttf);
   font-weight: 150;
+}
+@font-face {
+  font-family: Raleway-Bold;
+  src: url(./fonts/Raleway.ttf);
+  font-weight: 300;
 }
 @font-face {
   font-family: Raleway-Italic;
@@ -128,7 +137,7 @@
 }
 #root.main-theme .App .section-title {
   background-color: rgba(50, 50, 50, 0.6823529412);
-  font-family: Lora;
+  font-family: Raleway-Bold;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
 }
@@ -143,7 +152,8 @@
   color: #fff;
 }
 #root.main-theme .App .landing-wrap .landing-intro-wrap .landing-intro-body h2 {
-  font-family: Lora;
+  font-family: Raleway-Bold;
+  font-weight: bolder;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
 }
@@ -183,7 +193,7 @@
   border: 0.15px dashed rgba(255, 255, 255, 0.447);
 }
 #root.main-theme .App .about-me-wrap .about-me-description .title {
-  font-family: Lora;
+  font-family: Raleway-Bold;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
 }
@@ -215,7 +225,7 @@
   color: #fff;
 }
 #root.main-theme .App .services-wrap .services-gallery-wrap .service-wrap .title-wrap .title {
-  font-family: Lora;
+  font-family: Raleway-Bold;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
   background-color: rgba(50, 50, 50, 0.6823529412);
@@ -227,11 +237,11 @@
   border: 0.15px dashed rgba(255, 255, 255, 0.447);
 }
 #root.main-theme .App .services-wrap .services-gallery-wrap .service-wrap .service-description .title {
-  font-family: Lora;
+  font-family: Raleway-Bold;
   color: #fff;
 }
 #root.main-theme .App .services-wrap .services-gallery-wrap .service-wrap .service-description .description {
-  font-family: Lora;
+  font-family: Raleway-Bold;
   color: #fff;
 }
 #root.main-theme .App .services-wrap .services-reach-out {
@@ -242,7 +252,7 @@
 }
 #root.main-theme .App .services-wrap .services-reach-out p {
   color: #fff;
-  font-family: Lora;
+  font-family: Raleway-Bold;
 }
 #root.main-theme .App .services-wrap .services-reach-out .contact-btn {
   background-color: #000000;
@@ -419,7 +429,7 @@
   -webkit-text-fill-color: #fff;
 }
 #root.main-theme .App .contact-wrap form .row.row-name p {
-  font-family: Lora;
+  font-family: Raleway-Bold;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
 }
@@ -453,7 +463,7 @@
   color: #fff;
 }
 #root.main-theme .App .contact-wrap .contact-direct .method a {
-  font-family: Lora;
+  font-family: Raleway-Bold;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
 }
@@ -553,7 +563,7 @@
 }
 #root.light-theme .App .section-title {
   background-color: rgba(50, 50, 50, 0.6823529412);
-  font-family: Lora;
+  font-family: Raleway-Bold;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(42, 42, 42);
 }
@@ -568,7 +578,8 @@
   color: #fff;
 }
 #root.light-theme .App .landing-wrap .landing-intro-wrap .landing-intro-body h2 {
-  font-family: Lora;
+  font-family: Raleway-Bold;
+  font-weight: bolder;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(42, 42, 42);
 }
@@ -608,7 +619,7 @@
   border: 0.15px dashed rgba(255, 255, 255, 0.447);
 }
 #root.light-theme .App .about-me-wrap .about-me-description .title {
-  font-family: Lora;
+  font-family: Raleway-Bold;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(42, 42, 42);
 }
@@ -640,7 +651,7 @@
   color: #fff;
 }
 #root.light-theme .App .services-wrap .services-gallery-wrap .service-wrap .title-wrap .title {
-  font-family: Lora;
+  font-family: Raleway-Bold;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
   background-color: rgba(50, 50, 50, 0.6823529412);
@@ -652,11 +663,11 @@
   border: 0.15px dashed rgba(255, 255, 255, 0.447);
 }
 #root.light-theme .App .services-wrap .services-gallery-wrap .service-wrap .service-description .title {
-  font-family: Lora;
+  font-family: Raleway-Bold;
   color: #fff;
 }
 #root.light-theme .App .services-wrap .services-gallery-wrap .service-wrap .service-description .description {
-  font-family: Lora;
+  font-family: Raleway-Bold;
   color: #fff;
 }
 #root.light-theme .App .services-wrap .services-reach-out {
@@ -667,7 +678,7 @@
 }
 #root.light-theme .App .services-wrap .services-reach-out p {
   color: #fff;
-  font-family: Lora;
+  font-family: Raleway-Bold;
 }
 #root.light-theme .App .services-wrap .services-reach-out .contact-btn {
   background-color: #000000;
@@ -844,7 +855,7 @@
   -webkit-text-fill-color: #fff;
 }
 #root.light-theme .App .contact-wrap form .row.row-name p {
-  font-family: Lora;
+  font-family: Raleway-Bold;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
 }
@@ -878,7 +889,7 @@
   color: #fff;
 }
 #root.light-theme .App .contact-wrap .contact-direct .method a {
-  font-family: Lora;
+  font-family: Raleway-Bold;
   color: #fff;
   text-shadow: -1px -1px 10px rgb(249, 104, 239);
 }
@@ -997,6 +1008,7 @@
 }
 #root.gold-theme .App .landing-wrap .landing-intro-wrap .landing-intro-body h2 {
   font-family: Raleway;
+  font-weight: bolder;
   color: #fdf5e7;
   text-shadow: -1px -1px 10px rgb(255, 207, 118);
 }
