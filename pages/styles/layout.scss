@@ -360,20 +360,19 @@ img {
         margin-right: 5vw;
         margin-left: auto;
         padding: 5vh 2vw 7.5vh 2vw;
-
-        text-align: right;
+        text-align: center;
 
         .title {
-          font-size: $fontSize * 1.5;
+          font-size: $fontSize * 1.45;
           margin-bottom: 1.5vh;
         }
 
         .bio {
           line-height: 1.5;
-          font-size: $fontSize * 1.25;
-          width: 105%;
-          position: relative;
-          right: 5%;
+          font-size: $fontSize * 1.35;
+          // width: 105%;
+          // position: relative;
+          // right: 5%;
         }
       }
 
@@ -1407,6 +1406,7 @@ img {
     align-items: center;
 
     .about-me-description {
+      text-align: right!important;
       width: 80%!important;
       align-self: center;
       display: flex;

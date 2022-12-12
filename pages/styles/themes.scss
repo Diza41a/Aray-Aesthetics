@@ -289,6 +289,7 @@
     @include glowingBorder($borderColor, $borderGlowColor, $extraBorderGlowColor);
 
     .about-me-description {
+      box-shadow: -7px 9px 8px 2px black;
       background-color: $secondBack;
       @include basicBorder();
 

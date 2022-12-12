@@ -292,18 +292,15 @@ img {
   margin-right: 5vw;
   margin-left: auto;
   padding: 5vh 2vw 7.5vh 2vw;
-  text-align: right;
+  text-align: center;
 }
 .App .about-me-wrap .about-me-description .title {
-  font-size: 24px;
+  font-size: 23.2px;
   margin-bottom: 1.5vh;
 }
 .App .about-me-wrap .about-me-description .bio {
   line-height: 1.5;
-  font-size: 20px;
-  width: 105%;
-  position: relative;
-  right: 5%;
+  font-size: 21.6px;
 }
 .App .about-me-wrap .about-me-pics {
   width: 85%;
@@ -1043,6 +1040,7 @@ img {
     align-items: center;
   }
   .about-me-wrap .about-me-description {
+    text-align: right !important;
     width: 80% !important;
     align-self: center;
     display: flex;
@@ -1334,18 +1332,15 @@ img {
     margin-right: 5vw;
     margin-left: auto;
     padding: 5vh 2vw 7.5vh 2vw;
-    text-align: right;
+    text-align: center;
   }
   .App .about-me-wrap .about-me-description .title {
-    font-size: 30px;
+    font-size: 29px;
     margin-bottom: 1.5vh;
   }
   .App .about-me-wrap .about-me-description .bio {
     line-height: 1.5;
-    font-size: 25px;
-    width: 105%;
-    position: relative;
-    right: 5%;
+    font-size: 27px;
   }
   .App .about-me-wrap .about-me-pics {
     width: 85%;
@@ -2079,6 +2074,7 @@ img {
     align-items: center;
   }
   .about-me-wrap .about-me-description {
+    text-align: right !important;
     width: 80% !important;
     align-self: center;
     display: flex;

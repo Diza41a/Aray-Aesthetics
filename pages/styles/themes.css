@@ -180,6 +180,7 @@
   box-shadow: 0 13px 10px -10px rgb(249, 104, 239), 0 -13px 5px -11.5px rgb(249, 104, 239) inset;
 }
 #root.main-theme .App .about-me-wrap .about-me-description {
+  box-shadow: -7px 9px 8px 2px black;
   background-color: rgba(50, 50, 50, 0.6823529412);
   border: 0.15px dashed rgba(255, 255, 255, 0.447);
 }
@@ -597,6 +598,7 @@
   box-shadow: 0 13px 10px -10px rgb(42, 42, 42), 0 -13px 5px -11.5px rgb(42, 42, 42) inset;
 }
 #root.light-theme .App .about-me-wrap .about-me-description {
+  box-shadow: -7px 9px 8px 2px black;
   background-color: rgba(50, 50, 50, 0.6823529412);
   border: 0.15px dashed rgba(255, 255, 255, 0.447);
 }
@@ -1017,6 +1019,7 @@
   box-shadow: 0 13px 10px -10px rgb(255, 207, 118), 0 -13px 5px -11.5px rgb(255, 207, 118) inset;
 }
 #root.gold-theme .App .about-me-wrap .about-me-description {
+  box-shadow: -7px 9px 8px 2px black;
   background-color: rgba(42, 42, 42, 0.6784313725);
   border: 0.15px dashed rgba(255, 255, 255, 0.447);
 }
