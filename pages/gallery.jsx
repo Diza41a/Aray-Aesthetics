@@ -35,7 +35,6 @@ export default function Gallery() {
     return () => {
         document.body.style.overflowY = 'hidden';
         document.querySelector('header').style.display = 'flex';
-        document.querySelector('.mobile-nav-wrap').style.display = 'initial';
         document.querySelector('.page-progress-wrap').style.display = 'initial';
         document.querySelector('.hero').style.backgroundImage = originalBackground;
     };
@@ -70,7 +69,6 @@ export default function Gallery() {
 
               <button id="collapse-gallery" onClick={(() => {
                 document.querySelector('header').style.display = 'flex';
-                document.querySelector('.mobile-nav-wrap').style.display = 'initial';
                 document.querySelector('.page-progress-wrap').style.display = 'initial';
                 document.querySelector('.hero').style.backgroundImage = originalBackground;
 
@@ -137,7 +135,6 @@ export default function Gallery() {
               <div className="row-btn">
                 <button onClick={(() => {
                   document.querySelector('header').style.display = 'none';
-                  document.querySelector('.mobile-nav-wrap').style.display = 'none';
                   document.querySelector('.page-progress-wrap').style.display = 'none';
                   originalBackground = document.querySelector('.hero').style.backgroundImage;
                   document.querySelector('.hero').style.backgroundImage = 'url(./assets/images/purpleBack.jpeg)';

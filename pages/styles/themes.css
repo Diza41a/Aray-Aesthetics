@@ -231,6 +231,19 @@
   background-color: rgba(50, 50, 50, 0.6823529412);
   border: 0.15px dashed rgba(255, 255, 255, 0.447);
   border-right: none;
+  border-color: transparent;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, 0.5);
+  outline-offset: 0px;
+}
+@keyframes pulsatingTitle {
+  to {
+    border-color: white;
+    box-shadow: inset 0 0 7.5px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+  }
 }
 #root.main-theme .App .services-wrap .services-gallery-wrap .service-wrap .service-description {
   background-color: rgba(50, 50, 50, 0.6823529412);
@@ -243,6 +256,9 @@
 #root.main-theme .App .services-wrap .services-gallery-wrap .service-wrap .service-description .description {
   font-family: Lora;
   color: #fff;
+}
+#root.main-theme .App .services-wrap .services-gallery-wrap .service-wrap:nth-child(2n-1) .title-wrap .title {
+  animation: pulsatingTitle 2s alternate infinite;
 }
 #root.main-theme .App .services-wrap .services-reach-out {
   background-color: rgba(50, 50, 50, 0.6823529412);
@@ -387,6 +403,9 @@
 }
 #root.main-theme .App .gallery-wrap .expanded-gallery .carousel-root .slider-wrapper {
   background-color: black;
+}
+#root.main-theme .App .gallery-wrap .expanded-gallery .carousel-root .slide div {
+  outline: 1px solid white;
 }
 #root.main-theme .App .gallery-wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile {
   transform: scale(1);
@@ -657,6 +676,19 @@
   background-color: rgba(50, 50, 50, 0.6823529412);
   border: 0.15px dashed rgba(255, 255, 255, 0.447);
   border-right: none;
+  border-color: transparent;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, 0.5);
+  outline-offset: 0px;
+}
+@keyframes pulsatingTitle {
+  to {
+    border-color: white;
+    box-shadow: inset 0 0 7.5px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+  }
 }
 #root.light-theme .App .services-wrap .services-gallery-wrap .service-wrap .service-description {
   background-color: rgba(50, 50, 50, 0.6823529412);
@@ -669,6 +701,9 @@
 #root.light-theme .App .services-wrap .services-gallery-wrap .service-wrap .service-description .description {
   font-family: Lora;
   color: #fff;
+}
+#root.light-theme .App .services-wrap .services-gallery-wrap .service-wrap:nth-child(2n-1) .title-wrap .title {
+  animation: pulsatingTitle 2s alternate infinite;
 }
 #root.light-theme .App .services-wrap .services-reach-out {
   background-color: rgba(50, 50, 50, 0.6823529412);
@@ -813,6 +848,9 @@
 }
 #root.light-theme .App .gallery-wrap .expanded-gallery .carousel-root .slider-wrapper {
   background-color: black;
+}
+#root.light-theme .App .gallery-wrap .expanded-gallery .carousel-root .slide div {
+  outline: 1px solid white;
 }
 #root.light-theme .App .gallery-wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile {
   transform: scale(1);
@@ -1086,6 +1124,19 @@
   background-color: rgba(42, 42, 42, 0.6784313725);
   border: 0.15px dashed rgba(255, 255, 255, 0.447);
   border-right: none;
+  border-color: transparent;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, 0.5);
+  outline-offset: 0px;
+}
+@keyframes pulsatingTitle {
+  to {
+    border-color: white;
+    box-shadow: inset 0 0 7.5px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+  }
 }
 #root.gold-theme .App .services-wrap .services-gallery-wrap .service-wrap .service-description {
   background-color: rgba(42, 42, 42, 0.6784313725);
@@ -1098,6 +1149,9 @@
 #root.gold-theme .App .services-wrap .services-gallery-wrap .service-wrap .service-description .description {
   font-family: Raleway;
   color: #fdf5e7;
+}
+#root.gold-theme .App .services-wrap .services-gallery-wrap .service-wrap:nth-child(2n-1) .title-wrap .title {
+  animation: pulsatingTitle 2s alternate infinite;
 }
 #root.gold-theme .App .services-wrap .services-reach-out {
   background-color: rgba(42, 42, 42, 0.6784313725);
@@ -1243,6 +1297,9 @@
 #root.gold-theme .App .gallery-wrap .expanded-gallery .carousel-root .slider-wrapper {
   background-color: black;
 }
+#root.gold-theme .App .gallery-wrap .expanded-gallery .carousel-root .slide div {
+  outline: 1px solid white;
+}
 #root.gold-theme .App .gallery-wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile {
   transform: scale(1);
   z-index: 9;
@@ -1379,6 +1436,18 @@
 }
 #root.gold-theme .App .slide div img {
   filter: none !important;
+}
+#root.gold-theme .App #react-modal-image-img {
+  filter: none !important;
+}
+
+@media (min-width: 1000px) {
+  .service-wrap .title-wrap .title {
+    animation: none !important;
+    outline: none !important;
+    border: 0.15px dashed rgba(255, 255, 255, 0.447) !important;
+    border-right: none !important;
+  }
 }
 
 /*# sourceMappingURL=themes.css.map */

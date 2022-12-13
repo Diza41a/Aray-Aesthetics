@@ -341,7 +341,6 @@
     .services-gallery-wrap {
 
       .service-wrap {
-
         .title-wrap {
 
           .number {
@@ -356,6 +355,23 @@
             background-color: $secondBack;
             @include basicBorder();
             border-right: none;
+
+            border-color: transparent;
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+            outline: 1px solid;
+            outline-color: rgba(255, 255, 255, .5);
+            outline-offset: 0px;
+            // text-shadow: none;
+
+            @keyframes pulsatingTitle {
+              to {
+                border-color: white;
+                box-shadow: inset 0 0 7.5px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+                outline-color: rgba(255, 255, 255, 0);
+                outline-offset: 15px;
+                // text-shadow: 1px 1px 2px #427388;
+              }
+            }
           }
 
         }
@@ -374,6 +390,13 @@
           }
         }
 
+        &:nth-child(2n - 1) {
+          .title-wrap {
+            .title {
+              animation: pulsatingTitle 2s alternate infinite;
+            }
+          }
+        }
       }
     }
 
@@ -567,8 +590,35 @@
 
         .slide {
           div {
-            img {
-            }
+            outline: 1px solid white;
+
+            // animation: pulseSlide 5s linear infinite;
+
+            // @keyframes pulseSlide {
+            //   from {
+            //     // box-shadow: 0 0 0 0 rgba(42, 42, 42, 0.831) inset;
+            //     outline-color: rgba(255, 255, 255, 0.775);
+            //     outline-width: 1px;
+            //     outline-offset: -3px;
+            //   }
+            //   10% {
+            //     outline-offset: -15px;
+            //   }
+            //   20% {
+            //     // box-shadow: 0 0 0 0 rgba(42, 42, 42, 0.831) inset;
+            //     outline-color: rgba(255, 255, 255, 0.775);
+            //     outline-width: 1px;
+            //     outline-offset: -3px;
+            //   }
+            //   50% {
+            //     outline: none;
+            //     box-shadow: none;
+            //   }
+            //   100% {
+            //     outline: none;
+            //     box-shadow: none;
+            //   }
+            // }
           }
         }
       }
@@ -844,6 +894,23 @@
             filter: none!important;
           }
         }
+      }
+
+      #react-modal-image-img {
+        filter: none!important;
+      }
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .service-wrap {
+    .title-wrap {
+      .title {
+        animation: none!important;
+        outline: none!important;
+        border: 0.15px dashed rgba(255, 255, 255, 0.447)!important;
+        border-right: none!important;
       }
     }
   }

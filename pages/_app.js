@@ -17,11 +17,11 @@ import { useDraggable } from 'react-use-draggable-scroll';
 import { AnimatePresence } from 'framer-motion';
 import {v4 as uuidv4} from 'uuid';
 
-export const ThemeContext = React.createContext('main-theme');
+export const ThemeContext = React.createContext('light-theme');
 
 function MyApp({ Component, pageProps }) {
   const [onClient, toggleOnClient] = useState(false);
-  const [theme, toggleTheme] = useState('main-theme');
+  const [theme, toggleTheme] = useState('light-theme');
   const particleThemes = {
     'main-theme': {
       color: '#ffffff',

@@ -15,7 +15,7 @@ export default function SliderLinks() {
 
   return (
     <>
-      <div className="mobile-nav-wrap"></div>
+      {/* <div className="mobile-nav-wrap"></div> */}
       <div className="direct-links">
         <a href="tel:(941)914-1541">
           <i className="fa-solid fa-phone" />
