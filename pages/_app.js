@@ -53,7 +53,7 @@ function MyApp({ Component, pageProps }) {
 
   // ComponentDidMount
   useEffect(() => {
-    const storedTheme = window.localStorage.getItem('theme') || 'main-theme';
+    const storedTheme = window.localStorage.getItem('theme') || 'light-theme';
     if (theme !== storedTheme) {
       toggleTheme(storedTheme);
     }
