@@ -301,12 +301,12 @@ img {
   text-align: center;
 }
 .App .about-me-wrap .about-me-description .title {
-  font-size: 23.2px;
+  font-size: 21.6px;
   margin-bottom: 1.5vh;
 }
 .App .about-me-wrap .about-me-description .bio {
   line-height: 1.5;
-  font-size: 21.6px;
+  font-size: 20px;
 }
 .App .about-me-wrap .about-me-pics {
   width: 85%;
@@ -1462,12 +1462,12 @@ img {
     text-align: center;
   }
   .App .about-me-wrap .about-me-description .title {
-    font-size: 26.1px;
+    font-size: 24.3px;
     margin-bottom: 1.5vh;
   }
   .App .about-me-wrap .about-me-description .bio {
     line-height: 1.5;
-    font-size: 24.3px;
+    font-size: 22.5px;
   }
   .App .about-me-wrap .about-me-pics {
     width: 85%;
