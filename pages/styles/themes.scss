@@ -655,6 +655,11 @@
             background-color: rgba(255, 255, 255, 0.27);
             border: none;
 
+            &::placeholder {
+              color: rgba($color: $mainFontColor, $alpha: 0.75);
+              font-size: 16px;
+            }
+
             &:autofill {
               box-shadow: 0 0 0 30px rgb(114, 114, 114) inset !important;
               -webkit-text-fill-color: $mainFontColor;
@@ -682,6 +687,11 @@
             @include pulse();
           }
         }
+      }
+
+      .result {
+        font-family: $mainFont;
+        color: $mainFontColor;
       }
     }
 

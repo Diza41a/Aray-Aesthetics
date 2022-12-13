@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import AnimatedLayout from '../subcomponents/AnimatedLayout.jsx';
+const axios = require('axios');
 
 // Helpers
 import { makeInputBox, makeTextArea } from '../subcomponents/helpers.js';
@@ -13,6 +14,78 @@ export default function Contact() {
         document.querySelector('header').style.position = 'fixed';
     }
   }, []);
+
+  // Form handlers
+  const validateLength = (str, len) => str.length >= len;
+  const validatePhone = (phone) => phone.match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
+  const validateEmail = (email) => String(email)
+    .toLowerCase()
+    .match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+
+  const sendRequest = (e) => {
+    e.preventDefault();
+    const nameEl = document.getElementById('name');
+    const phoneEl = document.getElementById('phone-number');
+    const emailEl = document.getElementById('email');
+    const inquiryEl = document.getElementById('your-inquiry');
+
+    // Length validation
+    let invalidPresent = false;
+    for (const [inputEl, len] of [[nameEl, 4], [inquiryEl, 20]]) {
+      inputEl.value = inputEl.value.trim();
+      if (!validateLength(inputEl.value, len)) {
+        inputEl.value = '';
+        inputEl.placeholder = `Min length: ${len}`;
+        invalidPresent = true;
+      }
+    }
+
+    const phoneOrEmail = {
+      phone: false,
+      email: false,
+    };
+
+    // Phone validation
+    if (!validatePhone(phoneEl.value)) {
+      phoneEl.value = '';
+      phoneEl.placeholder = 'invalid';
+    } else {
+      phoneOrEmail.phone = true;
+    }
+
+    // Email validation
+    if (!validateEmail(emailEl.value)) {
+      emailEl.value = '';
+      emailEl.placeholder = 'invalid';
+    } else {
+      phoneOrEmail.email = true;
+    }
+
+    // If invalid inputs exist, don't submit the form
+    if (invalidPresent
+      || (!phoneOrEmail.phone && !phoneOrEmail.email)) {
+      return;
+    }
+
+    const resultEl = document.querySelector('p.result');
+    console.log(resultEl);
+    axios.post('/api/mail', {
+      username: nameEl.value,
+      phone: phoneOrEmail.phone ? phoneEl.value : undefined,
+      email: phoneOrEmail.email ? emailEl.value : undefined,
+      inquiry: inquiryEl.value,
+     })
+      .then((res) => {
+        for (const inputEl of [nameEl, phoneEl, emailEl, inquiryEl]) {
+          inputEl.placeholder = '';
+          inputEl.value = '';
+        }
+        resultEl.innerText = 'Message submitted...';
+      })
+      .catch((err) => {
+        resultEl.innerText = 'Error, try again later...';
+      });
+  }
 
   return (
     <>
@@ -32,8 +105,9 @@ export default function Contact() {
             {makeTextArea('Your Inquiry')}
           </div>
           <div className="row-submit row">
-            <button id="submit"><span>Submit</span></button>
+            <button id="submit" onClick={sendRequest}><span>Submit</span></button>
           </div>
+          <p className="result" />
         </form>
         <div className="contact-direct">
           <div className="method">

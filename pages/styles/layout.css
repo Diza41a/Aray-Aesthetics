@@ -695,6 +695,11 @@ img {
   padding: 5.6px 0;
   border-radius: 16px;
 }
+.App .contact-wrap form .result {
+  font-size: 16px;
+  font-style: italic;
+  text-align: right;
+}
 .App .contact-wrap .contact-direct {
   padding: 16px 20px;
 }
@@ -992,6 +997,9 @@ img {
     margin-top: 24px;
     width: 160px !important;
   }
+  .contact-wrap form .result {
+    font-size: 17.6px !important;
+  }
   .contact-wrap .contact-direct {
     margin: auto;
   }
@@ -1185,6 +1193,9 @@ img {
     font-size: 21.6px !important;
     padding: 12px 0 !important;
     width: 192px !important;
+  }
+  .contact-wrap form .result {
+    font-size: 20px !important;
   }
   .contact-wrap .contact-direct .method i {
     font-size: 56px !important;
@@ -1862,6 +1873,11 @@ img {
     padding: 6.3px 0;
     border-radius: 18px;
   }
+  .App .contact-wrap form .result {
+    font-size: 18px;
+    font-style: italic;
+    text-align: right;
+  }
   .App .contact-wrap .contact-direct {
     padding: 18px 22.5px;
   }
@@ -2158,6 +2174,9 @@ img {
     margin-top: 27px;
     width: 180px !important;
   }
+  .contact-wrap form .result {
+    font-size: 19.8px !important;
+  }
   .contact-wrap .contact-direct {
     margin: auto;
   }
@@ -2346,6 +2365,9 @@ img {
     font-size: 24.3px !important;
     padding: 13.5px 0 !important;
     width: 216px !important;
+  }
+  .contact-wrap form .result {
+    font-size: 22.5px !important;
   }
   .contact-wrap .contact-direct .method i {
     font-size: 63px !important;

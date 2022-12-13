@@ -7,23 +7,23 @@ const toggleClass = (el, className) => {
 };
 
 const makeInputBox = (name) => {
-  const id = name.split(' ').join().toLowerCase();
+  const id = name.split(' ').join('-').toLowerCase();
 
   return (
     <div className="input-wrap">
       <label htmlFor={id}>{name}</label>
-      <input id={id} />
+      <input id={id} onFocus={((e) => e.target.placeholder = '')}/>
     </div>
   );
 };
 
 const makeTextArea = (name) => {
-  const id = name.split(' ').join().toLowerCase();
+  const id = name.split(' ').join('-').toLowerCase();
 
   return (
     <div className="input-wrap textarea-wrap">
       <label htmlFor={id}>{name}</label>
-      <textarea id={id} />
+      <textarea id={id} onFocus={((e) => e.target.placeholder = '')}/>
     </div>
   );
 };

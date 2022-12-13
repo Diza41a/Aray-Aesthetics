@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Head from 'next/head';
 import Particle from '../subcomponents/particle.jsx';
 import FadeLoader from 'react-spinners/FadeLoader';
 
@@ -65,6 +66,13 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <Head>
+        <title>Aray Aesthetics</title>
+        <link rel="shortcut icon" href="/images/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon(32x32).png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon(16x16).png"/>
+      </Head>
       <Script src="https://kit.fontawesome.com/4d1f2bd158.js" crossorigin="anonymous" />
 
       <ThemeContext.Provider value={{ theme, toggleTheme }}>

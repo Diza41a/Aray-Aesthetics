@@ -924,6 +924,12 @@ img {
             }
           }
         }
+
+        .result {
+          font-size: $fontSize;
+          font-style: italic;
+          text-align: right;
+        }
       }
 
       .contact-direct {
@@ -1335,6 +1341,10 @@ img {
           }
         }
       }
+
+      .result {
+        font-size: $fontSize * 1.1!important;
+      }
     }
 
     .contact-direct {
@@ -1624,6 +1634,10 @@ img {
             width: $fontSize * 12!important;
           }
         }
+      }
+
+      .result {
+        font-size: $fontSize * 1.25!important;
       }
     }
 

@@ -443,6 +443,10 @@
   background-color: rgba(255, 255, 255, 0.27);
   border: none;
 }
+#root.main-theme .App .contact-wrap form .row .input-wrap input::placeholder, #root.main-theme .App .contact-wrap form .row .input-wrap textarea::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 16px;
+}
 #root.main-theme .App .contact-wrap form .row .input-wrap input:autofill, #root.main-theme .App .contact-wrap form .row .input-wrap textarea:autofill {
   box-shadow: 0 0 0 30px rgb(114, 114, 114) inset !important;
   -webkit-text-fill-color: #fff;
@@ -477,6 +481,10 @@
   to {
     transform: scale(1.1);
   }
+}
+#root.main-theme .App .contact-wrap form .result {
+  font-family: Montserrat;
+  color: #fff;
 }
 #root.main-theme .App .contact-wrap .contact-direct .method i {
   color: #fff;
@@ -888,6 +896,10 @@
   background-color: rgba(255, 255, 255, 0.27);
   border: none;
 }
+#root.light-theme .App .contact-wrap form .row .input-wrap input::placeholder, #root.light-theme .App .contact-wrap form .row .input-wrap textarea::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 16px;
+}
 #root.light-theme .App .contact-wrap form .row .input-wrap input:autofill, #root.light-theme .App .contact-wrap form .row .input-wrap textarea:autofill {
   box-shadow: 0 0 0 30px rgb(114, 114, 114) inset !important;
   -webkit-text-fill-color: #fff;
@@ -922,6 +934,10 @@
   to {
     transform: scale(1.1);
   }
+}
+#root.light-theme .App .contact-wrap form .result {
+  font-family: Montserrat;
+  color: #fff;
 }
 #root.light-theme .App .contact-wrap .contact-direct .method i {
   color: #fff;
@@ -1336,6 +1352,10 @@
   background-color: rgba(255, 255, 255, 0.27);
   border: none;
 }
+#root.gold-theme .App .contact-wrap form .row .input-wrap input::placeholder, #root.gold-theme .App .contact-wrap form .row .input-wrap textarea::placeholder {
+  color: rgba(253, 245, 231, 0.75);
+  font-size: 16px;
+}
 #root.gold-theme .App .contact-wrap form .row .input-wrap input:autofill, #root.gold-theme .App .contact-wrap form .row .input-wrap textarea:autofill {
   box-shadow: 0 0 0 30px rgb(114, 114, 114) inset !important;
   -webkit-text-fill-color: #fdf5e7;
@@ -1370,6 +1390,10 @@
   to {
     transform: scale(1.1);
   }
+}
+#root.gold-theme .App .contact-wrap form .result {
+  font-family: Raleway-Italic;
+  color: #fdf5e7;
 }
 #root.gold-theme .App .contact-wrap .contact-direct .method i {
   color: #fdf5e7;
