@@ -209,6 +209,7 @@
           font-family: $mainFont;
 
           li {
+            color: $mainFontColor;
             &.active {
               background-color: $mainBack;
 

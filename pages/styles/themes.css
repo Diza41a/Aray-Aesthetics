@@ -112,6 +112,9 @@
   background-color: rgb(50, 50, 50);
   font-family: Montserrat;
 }
+#root.main-theme .App header .tools .theme-selector-toggle .theme-option-list li {
+  color: #fff;
+}
 #root.main-theme .App header .tools .theme-selector-toggle .theme-option-list li.active {
   background-color: rgba(50, 50, 50, 0.6823529412);
   color: #fff;
@@ -553,6 +556,9 @@
 #root.light-theme .App header .tools .theme-selector-toggle .theme-option-list {
   background-color: rgb(50, 50, 50);
   font-family: Montserrat;
+}
+#root.light-theme .App header .tools .theme-selector-toggle .theme-option-list li {
+  color: #fff;
 }
 #root.light-theme .App header .tools .theme-selector-toggle .theme-option-list li.active {
   background-color: rgba(255, 255, 255, 0.6823529412);
@@ -998,6 +1004,9 @@
 #root.gold-theme .App header .tools .theme-selector-toggle .theme-option-list {
   background-color: rgb(50, 50, 50);
   font-family: Raleway-Italic;
+}
+#root.gold-theme .App header .tools .theme-selector-toggle .theme-option-list li {
+  color: #fdf5e7;
 }
 #root.gold-theme .App header .tools .theme-selector-toggle .theme-option-list li.active {
   background-color: rgba(42, 42, 42, 0.6784313725);
