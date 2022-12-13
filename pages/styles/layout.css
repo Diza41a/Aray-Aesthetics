@@ -622,6 +622,9 @@ img {
   right: 1.5vw;
   margin-bottom: 1.5vh;
 }
+.App .gallery-wrap.expanded ~ .direct-links, .App .gallery-wrap.expanded ~ .page-progress-wrap {
+  display: none !important;
+}
 .App .contact-wrap {
   margin: auto;
   width: 90%;
@@ -724,7 +727,7 @@ img {
   font-size: 44px;
   margin: 0 8px;
 }
-.App .contact-wrap + .direct-links {
+.App .contact-wrap ~ .direct-links {
   display: none !important;
 }
 
@@ -1786,6 +1789,9 @@ img {
     right: 1.5vw;
     margin-bottom: 1.5vh;
   }
+  .App .gallery-wrap.expanded ~ .direct-links, .App .gallery-wrap.expanded ~ .page-progress-wrap {
+    display: none !important;
+  }
   .App .contact-wrap {
     margin: auto;
     width: 90%;
@@ -1888,7 +1894,7 @@ img {
     font-size: 49.5px;
     margin: 0 9px;
   }
-  .App .contact-wrap + .direct-links {
+  .App .contact-wrap ~ .direct-links {
     display: none !important;
   }
 

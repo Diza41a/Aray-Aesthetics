@@ -29,13 +29,9 @@ export default function Gallery() {
 
   // ComponentDidMount()
   useEffect(() => {
-    // Double scrollbar workaround (services)
-    // document.body.style.overflowY = 'initial';
-
     return () => {
         // document.body.style.overflowY = 'hidden';
         document.querySelector('header').style.display = 'flex';
-        document.querySelector('.page-progress-wrap').style.display = 'initial';
         document.querySelector('.hero').style.backgroundImage = originalBackground;
     };
   }, []);
@@ -43,7 +39,7 @@ export default function Gallery() {
   return (
     <>
       <h2 className="section-title" id="gallery">Gallery</h2>
-      <AnimatedLayout props={{className: "gallery-wrap"}}>
+      <AnimatedLayout props={{className: `gallery-wrap ${isExpanded ? 'expanded' : ''}`}}>
         { isLoading
           ?
           <div className="loading-wrap">

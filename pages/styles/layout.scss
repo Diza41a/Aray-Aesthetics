@@ -833,7 +833,11 @@ img {
         }
       }
 
-
+      &.expanded {
+        ~.direct-links, ~.page-progress-wrap {
+          display: none!important;
+        }
+      }
 
     }
 
@@ -960,7 +964,7 @@ img {
         }
       }
 
-      +.direct-links {
+      ~.direct-links {
         display: none!important;
       }
     }
