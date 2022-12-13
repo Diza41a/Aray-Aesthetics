@@ -404,9 +404,6 @@
 #root.main-theme .App .gallery-wrap .expanded-gallery .carousel-root .slider-wrapper {
   background-color: black;
 }
-#root.main-theme .App .gallery-wrap .expanded-gallery .carousel-root .slide div {
-  outline: 1px solid white;
-}
 #root.main-theme .App .gallery-wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile {
   transform: scale(1);
   z-index: 9;
@@ -848,9 +845,6 @@
 }
 #root.light-theme .App .gallery-wrap .expanded-gallery .carousel-root .slider-wrapper {
   background-color: black;
-}
-#root.light-theme .App .gallery-wrap .expanded-gallery .carousel-root .slide div {
-  outline: 1px solid white;
 }
 #root.light-theme .App .gallery-wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile {
   transform: scale(1);
@@ -1296,9 +1290,6 @@
 }
 #root.gold-theme .App .gallery-wrap .expanded-gallery .carousel-root .slider-wrapper {
   background-color: black;
-}
-#root.gold-theme .App .gallery-wrap .expanded-gallery .carousel-root .slide div {
-  outline: 1px solid white;
 }
 #root.gold-theme .App .gallery-wrap .expanded-gallery .ReactGridGallery .ReactGridGallery_tile {
   transform: scale(1);

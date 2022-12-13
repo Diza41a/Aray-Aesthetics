@@ -132,7 +132,7 @@ img {
   justify-content: center;
   align-items: center;
   padding: calc(2.25vh - 12px) 16px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
 }
@@ -164,7 +164,7 @@ img {
   max-width: 250px;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 3vw;
   font-size: 16.8px;
@@ -278,6 +278,9 @@ img {
 }
 .App .landing-wrap .landing-intro-wrap .landing-intro-body .address-bar a {
   text-decoration: none;
+}
+.App .landing-wrap .next-page-link {
+  display: initial !important;
 }
 .App .landing-wrap #leave-landing-button {
   width: 28px;
@@ -787,7 +790,7 @@ img {
     transform: rotate(90deg);
     bottom: initial !important;
     left: initial !important;
-    right: calc(1vw - 10vh);
+    right: calc(1.5vw - 10vh);
     top: 30vh;
   }
   .page-progress-wrap .page-progress-indicators {
@@ -801,7 +804,7 @@ img {
     align-items: center;
     bottom: initial !important;
     left: initial !important;
-    right: 2vw;
+    right: 2.5vw;
     top: 20.3vh;
     font-size: 16.8px !important;
   }
@@ -1290,7 +1293,7 @@ img {
     justify-content: center;
     align-items: center;
     padding: calc(2.25vh - 13.5px) 18px;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 0;
   }
@@ -1322,7 +1325,7 @@ img {
     max-width: 250px;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 3vw;
     font-size: 18.9px;
@@ -1436,6 +1439,9 @@ img {
   }
   .App .landing-wrap .landing-intro-wrap .landing-intro-body .address-bar a {
     text-decoration: none;
+  }
+  .App .landing-wrap .next-page-link {
+    display: initial !important;
   }
   .App .landing-wrap #leave-landing-button {
     width: 31.5px;
@@ -1944,7 +1950,7 @@ img {
     transform: rotate(90deg);
     bottom: initial !important;
     left: initial !important;
-    right: calc(1vw - 10vh);
+    right: calc(1.5vw - 10vh);
     top: 30vh;
   }
   .page-progress-wrap .page-progress-indicators {
@@ -1958,7 +1964,7 @@ img {
     align-items: center;
     bottom: initial !important;
     left: initial !important;
-    right: 2vw;
+    right: 2.5vw;
     top: 20.3vh;
     font-size: 18.9px !important;
   }

@@ -173,7 +173,7 @@ img {
       align-items: center;
       padding: calc(2.25vh - $fontSize * 0.75) $fontSize;
 
-      position: absolute;
+      position: fixed;
       bottom: 0;
       right: 0;
 
@@ -211,7 +211,7 @@ img {
         // display: flex;
         justify-content: space-between;
         align-items: center;
-        position: absolute;
+        position: fixed;
         bottom: 0;
         left: 3vw;
 
@@ -357,6 +357,10 @@ img {
             }
           }
         }
+      }
+
+      .next-page-link {
+        display: initial!important;
       }
 
       #leave-landing-button {
@@ -1041,7 +1045,7 @@ img {
       transform: rotate(90deg);
       bottom: initial!important;
       left: initial!important;
-      right: calc(1vw - 10vh);
+      right: calc(1.5vw - 10vh);
       top: 30vh;
     }
 
@@ -1056,7 +1060,7 @@ img {
       align-items: center;
       bottom: initial!important;
       left: initial!important;
-      right: 2vw;
+      right: 2.5vw;
       top: 20.3vh;
 
       font-size: $fontSize * 1.05!important;

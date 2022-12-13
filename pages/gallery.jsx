@@ -30,10 +30,10 @@ export default function Gallery() {
   // ComponentDidMount()
   useEffect(() => {
     // Double scrollbar workaround (services)
-    document.body.style.overflowY = 'initial';
+    // document.body.style.overflowY = 'initial';
 
     return () => {
-        document.body.style.overflowY = 'hidden';
+        // document.body.style.overflowY = 'hidden';
         document.querySelector('header').style.display = 'flex';
         document.querySelector('.page-progress-wrap').style.display = 'initial';
         document.querySelector('.hero').style.backgroundImage = originalBackground;
