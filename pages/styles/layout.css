@@ -724,6 +724,9 @@ img {
   font-size: 44px;
   margin: 0 8px;
 }
+.App .contact-wrap + .direct-links {
+  display: none !important;
+}
 
 @media (min-width: 768px) {
   .next-page-link {
@@ -1884,6 +1887,9 @@ img {
   .App .contact-wrap .contact-direct .links i {
     font-size: 49.5px;
     margin: 0 9px;
+  }
+  .App .contact-wrap + .direct-links {
+    display: none !important;
   }
 
   .next-page-link {

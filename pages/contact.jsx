@@ -7,14 +7,10 @@ import { makeInputBox, makeTextArea } from '../subcomponents/helpers.js';
 export default function Contact() {
   // ComponentDidMount
   useEffect(() => {
-    // document.body.style.overflowY = 'initial';
-    document.querySelector('.direct-links').style.display = 'none';
     document.querySelector('header').style.position = 'sticky';
 
     return () => {
-        document.querySelector('.direct-links').style.display = 'flex';
         document.querySelector('header').style.position = 'fixed';
-        // document.body.style.overflowY = 'hidden';
     }
   }, []);
 
