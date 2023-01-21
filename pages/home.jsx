@@ -34,7 +34,7 @@ export default function Landing() {
           <h2>
             <div className="line">
               {
-              'Welcome!'.split(' ').map((word, i) => (
+              'Welcome to Aray Aesthetics!'.split(' ').map((word, i) => (
                 <div className="word" key={i}>
                   {[...word].map((letter, j) => (
                     <span key={j} className="letter">{letter}</span>
@@ -46,7 +46,7 @@ export default function Landing() {
             </div>
             <div className="line">
               {
-              'Eat a blueberry croissant and check out the next page!'.split(' ').map((word, i) => (
+              'Explore our services, and let us help you discover the beauty within!'.split(' ').map((word, i) => (
                 <div className="word" key={i}>
                   {[...word].map((letter, j) => (
                     <span key={j} className="letter">{letter}</span>

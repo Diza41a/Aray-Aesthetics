@@ -204,6 +204,7 @@
   font-family: Montserrat;
   color: #fff;
   animation: blurInText ease-in 0.75s;
+  text-shadow: -3px -1px 5px black;
 }
 @keyframes blurInText {
   from {
@@ -211,7 +212,7 @@
     color: transparent;
   }
   to {
-    text-shadow: none;
+    text-shadow: -3px -1px 5px black;
     color: #fff;
   }
 }
@@ -657,6 +658,7 @@
   font-family: Montserrat;
   color: #fff;
   animation: blurInText ease-in 0.75s;
+  text-shadow: -3px -1px 5px black;
 }
 @keyframes blurInText {
   from {
@@ -664,7 +666,7 @@
     color: transparent;
   }
   to {
-    text-shadow: none;
+    text-shadow: -3px -1px 5px black;
     color: #fff;
   }
 }
@@ -1113,6 +1115,7 @@
   font-family: Raleway-Italic;
   color: #fdf5e7;
   animation: blurInText ease-in 0.75s;
+  text-shadow: -3px -1px 5px black;
 }
 @keyframes blurInText {
   from {
@@ -1120,7 +1123,7 @@
     color: transparent;
   }
   to {
-    text-shadow: none;
+    text-shadow: -3px -1px 5px black;
     color: #fdf5e7;
   }
 }

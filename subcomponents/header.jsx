@@ -69,7 +69,7 @@ export default function Header() {
       <nav onClick={() => {
         toggleNav();
       }}>
-        <Link href="/about" className={router.pathname === '/about' ? 'active' : ''}>About me</Link>
+        <Link href="/about" className={router.pathname === '/about' ? 'active' : ''}>About us</Link>
         <Link href="/services" className={router.pathname === '/services' ? 'active' : ''}>Services</Link>
         <Link href="/gallery" className={router.pathname === '/gallery' ? 'active' : ''}>Works</Link>
         <Link href="/contact" className={router.pathname === '/contact' ? 'active' : ''}>Contact</Link>

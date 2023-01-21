@@ -93,14 +93,18 @@
   animation: breathingBorder 1s alternate-reverse infinite;
 }
 
-@mixin blurInText($mainFontColor) {
+@mixin blurInText($mainFontColor, $endWidth: 0) {
   @keyframes blurInText {
     from {
       text-shadow: 0 0 1em $mainFontColor;
       color: transparent;
     }
     to {
-      text-shadow: none;
+      @if ($endWidth == 0) {
+        text-shadow: none;
+      } @else {
+        text-shadow: -3px -1px #{$endWidth}px black;
+      }
       color: $mainFontColor;
     }
   }
@@ -313,7 +317,8 @@
       .bio {
         font-family: $mainFont;
         color: $mainFontColor;
-        @include blurInText($mainFontColor);
+        @include blurInText($mainFontColor, 5);
+        text-shadow: -3px -1px 5px black;
       }
     }
 
