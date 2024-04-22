@@ -1,5 +1,5 @@
-import config from '../../config.json';
-const { EMAIL_FROM, EMAIL_PASS, EMAIL_TO } = config;
+require('dotenv').config();
+const { EMAIL_FROM, EMAIL_PASS, EMAIL_TO } = process.env;
 const nodemailer = require('nodemailer');
 const path = require('path');
 
